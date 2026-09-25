@@ -77,7 +77,7 @@ export const TestimonialsSection = ({
       {/* Matches reference screenshot: light sky-blue circular arc entering from top-left */}
       <svg
         id="testimonials-left-bg-circle"
-        className="absolute top-0 left-0 w-[420px] sm:w-[480px] lg:w-[520px] h-[580px] pointer-events-none z-0"
+        className="absolute top-0 left-0 w-[320px] sm:w-[300px] lg:w-[320px] h-[380px] pointer-events-none z-0"
         viewBox="0 0 520 580"
         fill="none"
         aria-hidden="true"
@@ -92,7 +92,7 @@ export const TestimonialsSection = ({
       {/* Matches reference screenshot: soft light-blue dome rising from bottom-right corner */}
       <div
         id="testimonials-right-bg-circle"
-        className="absolute -bottom-28 -right-20 sm:-bottom-32 sm:-right-24 w-[360px] sm:w-[420px] lg:w-[480px] h-[360px] sm:h-[420px] lg:h-[480px] rounded-full pointer-events-none z-0"
+        className="absolute -bottom-28 -right-20 sm:-bottom-32 sm:-right-24 w-[260px] sm:w-[320px] lg:w-[380px] h-[260px] sm:h-[320px] lg:h-[380px] rounded-full pointer-events-none z-0"
         style={{
           backgroundColor: '#daf0ff',
         }}
@@ -140,7 +140,7 @@ export const TestimonialsSection = ({
               </div>
 
               {/* 4-Line Display Heading: "Trusted by / businesses / that believe in / growth." */}
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[48px] font-extrabold text-[#0a1e38] tracking-[-0.035em] leading-[1.08] mb-6 sm:mb-8">
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] xl:text-[44px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-6 sm:mb-8">
                 Trusted by <br />
                 businesses <br />
                 that believe in <br />

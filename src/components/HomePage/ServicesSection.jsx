@@ -98,7 +98,7 @@ export const ServicesSection = ({
   ];
 
   return (
-    <section id="services" className="relative w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden select-none">
+    <section id="services" className="relative w-full py-4 sm:py-5 lg:py-6 bg-white overflow-hidden select-none">
       {/* ================= BACKGROUND DECORATIVE ELEMENTS ================= */}
       
       {/* 1. Top Right Subtle Radial Glow */}
@@ -126,7 +126,7 @@ export const ServicesSection = ({
             </div>
 
             {/* Section H2: Plus Jakarta Sans 800 */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0a1e38] tracking-[-0.03em] leading-[1.08]">
+            <h2 className="text-4xl sm:text-5xl lg:text-[40px] font-bold text-[#062A78] tracking-[-0.03em] leading-[1.08]">
               Everything your <br />
               business <br />
               needs in <span className="text-[#0066ff]">one place.</span>
@@ -136,7 +136,7 @@ export const ServicesSection = ({
           {/* Right Column: Left-aligned Description & Link Button */}
           <div className="lg:max-w-[440px] xl:max-w-[480px] lg:pt-6 flex flex-col items-start text-left">
             {/* Body paragraphs: Plus Jakarta Sans 500 */}
-            <p className="text-[15px] sm:text-base text-slate-600 font-medium leading-[1.65] mb-4 sm:mb-5">
+            <p className="text-[15px] sm:text-base text-[#051330ff] font-medium leading-[1.65] mb-4 sm:mb-5">
               From building your digital presence to generating leads and growing your audience,
               our services work together to deliver real business results.
             </p>
@@ -160,7 +160,7 @@ export const ServicesSection = ({
               key={card.id}
               id={`service-card-${card.id}`}
               onClick={() => onSelectService(card.title)}
-              className="group relative bg-white rounded-[22px] p-5 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[285px] cursor-pointer"
+              className="group relative bg-white rounded-[22px] p-4 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[265px] cursor-pointer"
             >
               <div>
                 {/* Top Squircle Icon */}
@@ -171,12 +171,12 @@ export const ServicesSection = ({
                 </div>
 
                 {/* Card headings: Plus Jakarta Sans 700 */}
-                <h3 className="text-[15px] sm:text-[15.5px] font-bold text-[#0a1e38] tracking-tight leading-snug mb-2 group-hover:text-[#0066ff] transition-colors">
+                <h3 className="text-[15px] sm:text-[13.4px] font-semibold text-[#0f2c6cff] tracking-tight leading-snug mb-2 group-hover:text-[#0066ff] transition-colors">
                   {card.title}
                 </h3>
 
                 {/* Body paragraphs: Plus Jakarta Sans 500 */}
-                <p className="text-[12.5px] sm:text-[13px] text-slate-500 font-medium leading-[1.55]">
+                <p className="text-[12.5px] sm:text-[12.5px] text-slate-500 font-medium leading-[1.55]">
                   {card.description}
                 </p>
               </div>

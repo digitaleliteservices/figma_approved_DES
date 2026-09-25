@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import { Logo } from './HomePage/Logo.jsx';
+import { Logo } from './Logo.jsx';
 import { motion, AnimatePresence } from 'motion/react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 

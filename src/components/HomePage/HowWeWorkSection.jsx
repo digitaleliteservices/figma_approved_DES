@@ -14,7 +14,7 @@ export const HowWeWorkSection = ({
   return (
     <section
       id="process"
-      className="relative w-full py-16 sm:py-24 lg:py-28 overflow-hidden bg-white select-none"
+      className="relative w-full py-4 sm:py-6 lg:py-8 overflow-hidden bg-white select-none"
     >
       {/* ================= BACKGROUND ELEMENTS ================= */}
 
@@ -52,7 +52,7 @@ export const HowWeWorkSection = ({
           <div className="lg:col-span-5 relative z-10">
             {/* EXACT LARGE LIGHT-BLUE BACKGROUND CIRCLE */}
             <div
-              className="absolute -left-[180px] sm:-left-[140px] lg:-left-[110px] -top-4 sm:-top-6 lg:-top-10 w-[220px] sm:w-[280px] lg:w-[220px] h-[220px] sm:h-[280px] lg:h-[220px] rounded-full pointer-events-none -z-10"
+              className="absolute -left-[180px] sm:-left-[140px] lg:-left-[110px] -top-4 sm:-top-6 lg:-top-10 w-[220px] sm:w-[280px] lg:w-[320px] h-[220px] sm:h-[280px] lg:h-[320px] rounded-full pointer-events-none -z-10"
               style={{
                 backgroundColor: '#cbe4ff',
               }}
@@ -65,7 +65,7 @@ export const HowWeWorkSection = ({
             </div>
 
             {/* Section H2: Plus Jakarta Sans 800 with Blue Period */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold text-[#0a1e38] tracking-[-0.035em] leading-[1.08] mb-5 sm:mb-6">
+            <h2 className="text-4xl sm:text-5xl lg:text-[44px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-5 sm:mb-6">
               A simple process <br />
               for extraordinary <br />
               <span>results</span>

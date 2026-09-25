@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar.jsx';
 import { Footer } from './components/Footer.jsx';
-import { ScrollToTop } from './components/HomePage/ScrollToTop.jsx';
+import { ScrollToTop } from './components/ScrollToTop.jsx';
 import { HomePage } from './pages/HomePage.jsx';
 import { AboutPage } from './pages/AboutPage.jsx';
 import { ServicesPage } from './pages/ServicesPage.jsx';
@@ -10,9 +10,9 @@ import { ProcessPage } from './pages/ProcessPage.jsx';
 import { WorkPage } from './pages/WorkPage.jsx';
 import { ContactPage } from './pages/ContactPage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage.jsx';
-import { ProjectModal } from './components/HomePage/ProjectModal.jsx';
-import { ServicesModal } from './components/HomePage/ServicesModal.jsx';
-import { AboutModal } from './components/HomePage/AboutModal.jsx';
+import { ProjectModal } from './components/ProjectModal.jsx';
+import { ServicesModal } from './components/ServicesModal.jsx';
+import { AboutModal } from './components/AboutModal.jsx';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('home');

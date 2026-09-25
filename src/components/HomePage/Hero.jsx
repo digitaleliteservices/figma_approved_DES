@@ -158,7 +158,7 @@ export const Hero = ({
           </div>
 
           {/* Display Headline: Plus Jakarta Sans 800 */}
-          <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-extrabold text-[#062A78] tracking-[-0.035em] leading-[1.07] mb-5 sm:mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6" style={{ lineHeight: '1.1' }}>
             Digital <br />
             Solutions for <br />
             <span className="text-[#0066ff]">Real Growth.</span>

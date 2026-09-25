@@ -85,13 +85,13 @@ export const SelectedWorkSection = ({
     <section id="work" className="relative w-full bg-white overflow-hidden select-none">
       
       {/* ================= ZONE 1: SELECTED WORK SECTION (EXACT TO SCREENSHOT) ================= */}
-      <div className="relative pt-10 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-24">
+      <div className="relative pt-10 sm:pt-12 lg:pt-10 pb-10 sm:pb-12 lg:pb-16">
         
         {/* ================= EXACT BACKGROUND CIRCLE (SVG EXACT MATCH) ================= */}
         {/* Matches reference image: Top edge cut at x=360px, apex at x=415px, completely encloses View All Work button with generous blue margin, exits at y=665px */}
         <svg
           id="selected-work-bg-circle"
-          className="absolute top-0 left-0 w-[520px] lg:w-[560px] h-[680px] pointer-events-none z-0"
+          className="absolute top-0 left-0 w-[520px] lg:w-[360px] h-[480px] pointer-events-none z-0"
           viewBox="0 0 560 680"
           fill="none"
           aria-hidden="true"
@@ -140,7 +140,7 @@ export const SelectedWorkSection = ({
                 </div>
 
                 {/* Main Heading with Exact 3-line Break */}
-                <h2 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[48px] font-extrabold text-[#0a1e38] tracking-[-0.035em] leading-[1.08] mb-4 sm:mb-5">
+                <h2 className="text-3xl sm:text-4xl lg:text-[40px] xl:text-[40px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-4 sm:mb-5">
                   Ideas are good. <br />
                   Results are <br />
                   <span className="text-[#0066ff]">better.</span>
@@ -217,7 +217,7 @@ export const SelectedWorkSection = ({
       </div>
 
       {/* ================= ZONE 2: DARK NAVY STATISTICS BANNER ================= */}
-      <div className="relative w-full bg-[#061a38] py-10 sm:py-12 border-t border-slate-800/50 overflow-hidden">
+      <div className="relative w-full bg-[#062A78] py-4 sm:py-6 border-t border-slate-800/50 overflow-hidden">
         
         {/* Subtle Wave Line Art: Left Side */}
         <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
@@ -277,10 +277,10 @@ export const SelectedWorkSection = ({
                 <Trophy className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-white tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
                   150+
                 </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium mt-1.5 leading-snug">
+                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium  leading-snug">
                   Projects Delivered
                 </div>
               </div>
@@ -292,10 +292,10 @@ export const SelectedWorkSection = ({
                 <Users className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-white tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
                   70+
                 </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium mt-1.5 leading-snug">
+                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
                   Happy Clients
                 </div>
               </div>
@@ -307,10 +307,10 @@ export const SelectedWorkSection = ({
                 <TrendingUp className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-white tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
                   300%
                 </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium mt-1.5 leading-snug">
+                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
                   Average ROI Growth
                 </div>
               </div>
@@ -322,10 +322,10 @@ export const SelectedWorkSection = ({
                 <Star className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
               </div>
               <div>
-                <div className="text-3xl sm:text-4xl lg:text-[38px] font-extrabold text-white tracking-tight leading-none">
+                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
                   5+
                 </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium mt-1.5 leading-snug">
+                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
                   Years of Experience
                 </div>
               </div>
