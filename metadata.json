@@ -1,0 +1,6 @@
+{
+  "name": "Digital Elite Services",
+  "description": "Digital solutions for real growth. Modern digital experiences that help businesses get noticed, trusted and chosen.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
