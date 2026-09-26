@@ -173,6 +173,10 @@ export const TestimonialsSection = ({
                   <img
                     src={item.avatar}
                     alt={item.name}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = rahulAvatar;
+                    }}
                     className="w-full h-full object-cover object-center"
                   />
                 </div>

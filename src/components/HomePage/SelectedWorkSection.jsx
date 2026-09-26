@@ -180,6 +180,10 @@ export const SelectedWorkSection = ({
                     <img
                       src={project.image}
                       alt={project.alt}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = workEcommerceImg;
+                      }}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>

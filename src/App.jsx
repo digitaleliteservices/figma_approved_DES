@@ -101,6 +101,14 @@ export default function App() {
 
             {/* Dedicated Selected Work / Portfolio Route */}
             <Route
+              path="/portfolio"
+              element={
+                <WorkPage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
               path="/work"
               element={
                 <WorkPage
