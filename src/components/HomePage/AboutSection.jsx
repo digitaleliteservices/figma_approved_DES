@@ -1,195 +1,193 @@
 import React from 'react';
-import {
-  ArrowRight,
-  Users,
-  TrendingUp,
-  Lightbulb,
-  ShieldCheck,
-} from 'lucide-react';
-import teamImg from '../../assets/images/team_collaboration_1790002998338.jpg';
+import { ArrowRight, Star } from 'lucide-react';
+import teamCollaboratingImg from '../../assets/images/about_team_collaborating_1790337271848.jpg';
+import { useNavigate } from 'react-router-dom';
 
-export const AboutSection = ({
-  onMoreAboutUs,
-  onPillarClick,
-}) => {
-  const pillars = [
-    {
-      id: 'client-first',
-      title: 'Client First Approach',
-      icon: Users,
-    },
-    {
-      id: 'result-driven',
-      title: 'Result Driven Solutions',
-      icon: TrendingUp,
-    },
-    {
-      id: 'creative-thinking',
-      title: 'Creative Thinking',
-      icon: Lightbulb,
-    },
-    {
-      id: 'long-term',
-      title: 'Long Term Partnership',
-      icon: ShieldCheck,
-    },
-  ];
+export const AboutSection = ({ onMoreAboutUs }) => {
+  const navigate = useNavigate();
+
+  const handleNavigateAbout = () => {
+    if (onMoreAboutUs) {
+      onMoreAboutUs();
+    } else {
+      navigate('/about');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section
       id="about"
-      className="relative isolate overflow-hidden py-16 sm:py-24 bg-white"
+      className="relative w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden select-none"
     >
-      {/* Top-Left Decorative Circle */}
-      {/* ================= TOP-LEFT ORGANIC BLUE BACKGROUND ================= */}
+      {/* ========================================================================= */}
+      {/* 1. EXACT LEFT BACKGROUND CIRCLE                                           */}
+      {/* Sweeping large-radius arc with elevated center that starts widest at top  */}
+      {/* and gracefully curves down and left along the typography edge.           */}
+      {/* ========================================================================= */}
       <div
         className="
           absolute
-          -top-32
-          -left-32
-          w-[620px]
-          h-[620px]
-          sm:w-[500px]
-          sm:h-[500px]
-          lg:w-[450px]
-          lg:h-[450px]
+          -top-[260px] sm:-top-[340px] lg:-top-[420px] xl:-top-[460px]
+          -left-[280px] sm:-left-[380px] lg:-left-[480px] xl:-left-[540px]
+          w-[580px] sm:w-[760px] lg:w-[940px] xl:w-[1020px]
+          h-[580px] sm:h-[760px] lg:h-[940px] xl:h-[1020px]
           rounded-full
           pointer-events-none
-          z-0
+          -z-10
         "
         style={{
-          background:
-            'linear-gradient(135deg, #d8efff 0%, #c6e5ff 45%, #eef8ff 100%)',
+          backgroundColor: '#ddf0fe',
         }}
       />
-      <div
-        className="
-          absolute
-          -right-28
-          w-[270px]
-          h-[270px]
-          sm:w-[280px]
-          sm:h-[280px]
-          lg:w-[280px]
-          lg:h-[280px]
-          rounded-full
-          pointer-events-none
-          z-0
-        "
-        style={{
-          backgroundColor: '#cbefffff',
-        }}
-      />
-      
-      {/* Background Decorative Circles */}
-      <div className="absolute top-1/2 -right-32 w-96 h-96 sm:w-[540px] sm:h-[540px] rounded-full bg-sky-100/60 blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
-      <div className="absolute top-10 -left-20 w-72 h-72 rounded-full bg-blue-50/80 blur-2xl -z-10 pointer-events-none" />
-      
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
-          {/* Left Column: Organic Pebble Shaped Team Photo with Badges */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
-            <div className="relative w-full max-w-lg">
-              {/* Floating Decorative Dot (Top Right) */}
-              <div className="absolute -top-3 right-6 sm:right-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#93c5fd] shadow-md z-10 animate-pulse" />
-
-              {/* Floating Decorative Accent (Left edge) */}
-              <div className="absolute top-1/2 -left-3 sm:-left-5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fde047] opacity-80 z-10" />
-
-              {/* Organic Pebble Container with Team Image */}
-              <div
-                className="relative overflow-hidden shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
-                style={{
-                  borderRadius: '38% 62% 63% 37% / 41% 44% 56% 59%',
-                }}
-              >
-                <img
-                  src={teamImg}
-                  alt="DES professional team collaborating in a modern office"
-                  className="w-full h-80 sm:h-96 md:h-[440px] object-cover object-center"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none" />
-              </div>
-
-              {/* Circular Floating Badge: Plus Jakarta Sans 700 */}
-              <div className="absolute -bottom-6 -left-3 sm:-left-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#0066ff] text-white flex flex-col items-center justify-center text-center shadow-xl z-20 transition-transform duration-300 hover:scale-105 select-none border-2 border-white">
-                <span className="text-xs sm:text-sm font-bold leading-tight">
-                  People
-                </span>
-                <span className="text-xs sm:text-sm font-bold leading-tight">
-                  Ideas
-                </span>
-                <span className="text-xs sm:text-sm font-bold leading-tight">
-                  Growth
-                </span>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Column: About Content & Pillars */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8 relative z-10">
+      {/* Main Content Container */}
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
+          
+          {/* ================= LEFT CONTENT COLUMN ================= */}
+          <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
             
-            {/* Section Eyebrow: Plus Jakarta Sans 700 */}
-            <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0066ff] tracking-wide uppercase">
-              <span>ABOUT DES</span>
-              <ArrowRight className="w-4 h-4" />
+            {/* Eyebrow Link: "ABOUT DIGITAL ELITE SERVICES →" */}
+            <div
+              onClick={handleNavigateAbout}
+              className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.08em] uppercase mb-4 sm:mb-5 cursor-pointer hover:underline w-fit"
+            >
+              <span>ABOUT DIGITAL ELITE SERVICES</span>
+              <ArrowRight className="w-4 h-4 text-[#0066ff] stroke-[2.5]" />
             </div>
 
-            {/* Section H2: Plus Jakarta Sans 800 */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a1e38] tracking-tight leading-[1.12]">
-              A team that turns <br />
-              ideas into <span className="text-[#0066ff]">impact.</span>
+            {/* Exact Display Headline */}
+            <h2 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px] font-extrabold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-5 sm:mb-6">
+              Empowering businesses <br />
+              through digital excellence <br />
+              and <span className="text-[#0066ff]">real growth.</span>
             </h2>
 
-            {/* Body paragraph: Plus Jakarta Sans 500 */}
-            <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed z-10">
-              DES is a digital solutions partner helping businesses transform
-              ideas into powerful digital experiences. We combine strategy,
-              design, technology and marketing to attract customers, build trust
-              and create sustainable growth.
+            {/* Description Paragraph */}
+            <p className="text-[#475569] text-sm sm:text-[15px] xl:text-[16px] font-normal leading-[1.65] max-w-[560px] mb-7 sm:mb-9">
+              DES (Digital Elite Services) is a premier full-service digital solutions agency. We
+              combine strategy, human-centered design, modern engineering, and performance
+              marketing to help ambitious businesses get noticed, trusted, and chosen.
             </p>
 
-            {/* Buttons: Plus Jakarta Sans 700 */}
-            <div>
-              <button
-                id="about-cta-more-about-us"
-                onClick={onMoreAboutUs}
-                className="group inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-slate-900 font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
-              >
-                <span>More About Us</span>
-                <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
-              </button>
-            </div>
+            {/* Thin Horizontal Divider (Exact to Screenshot) */}
+            <div className="pt-6 sm:pt-7 border-t border-slate-200/90 max-w-[560px]">
+              
+              {/* 4 Stats Metrics Row */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
+                
+                {/* Stat 1: 150+ */}
+                <div>
+                  <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    150+
+                  </div>
+                  <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
+                    Projects Completed
+                  </div>
+                </div>
 
-            {/* 4 Pillars Row: Card headings: Plus Jakarta Sans 700 */}
-            <div className="pt-6 sm:pt-8 border-t border-slate-100">
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-0">
-                {pillars.map((pillar, index) => {
-                  const Icon = pillar.icon;
-                  const isNotLast = index < pillars.length - 1;
-                  return (
-                    <div
-                      key={pillar.id}
-                      onClick={() => onPillarClick?.(pillar.title)}
-                      className={`text-center cursor-pointer group px-2 sm:px-3 ${
-                        isNotLast
-                          ? 'sm:border-r sm:border-slate-200'
-                          : ''
-                      }`}
-                    >
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-[#0066ff] flex items-center justify-center mx-auto mb-2.5 sm:mb-3 group-hover:bg-[#0066ff] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <h4 className="text-xs sm:text-[13px] font-bold text-slate-800 leading-tight group-hover:text-[#0066ff] transition-colors">
-                        {pillar.title}
-                      </h4>
-                    </div>
-                  );
-                })}
+                {/* Stat 2: 70+ */}
+                <div>
+                  <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    70+
+                  </div>
+                  <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
+                    Happy Clients
+                  </div>
+                </div>
+
+                {/* Stat 3: 300% */}
+                <div>
+                  <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    300%
+                  </div>
+                  <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
+                    Average ROI Increase
+                  </div>
+                </div>
+
+                {/* Stat 4: 5+ */}
+                <div>
+                  <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    5+
+                  </div>
+                  <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
+                    Years of Innovation
+                  </div>
+                </div>
+
               </div>
             </div>
+
           </div>
+
+          {/* ================= RIGHT PHOTOGRAPHY CARD ================= */}
+          <div className="lg:col-span-5 xl:col-span-5 relative flex items-center justify-center">
+            
+            {/* Wrapper Anchoring Photo Card and Right Background Circle Exactly */}
+            <div className="relative w-full max-w-[450px] lg:max-w-[480px]">
+              
+              {/* ================================================================= */}
+              {/* 2. EXACT RIGHT BACKGROUND CIRCLE                                  */}
+              {/* Anchored to Photo Card: peaks ~75px above and ~80px to the right, */}
+              {/* curving smoothly behind the card exactly matching the UI.         */}
+              {/* ================================================================= */}
+              <div
+                className="
+                  absolute
+                  -top-16 sm:-top-20 lg:-top-24
+                  -right-14 sm:-right-18 lg:-right-24
+                  w-[480px] sm:w-[540px] lg:w-[600px]
+                  h-[480px] sm:h-[540px] lg:h-[600px]
+                  rounded-full
+                  pointer-events-none
+                  -z-10
+                "
+                style={{
+                  backgroundColor: '#ddf0fe',
+                }}
+              />
+
+              {/* Rounded Photo Frame (Exact to Screenshot) */}
+              <div className="relative rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_24px_50px_-12px_rgba(6,42,120,0.18)] border border-slate-100/80 bg-white aspect-square z-10">
+                <img
+                  src={teamCollaboratingImg}
+                  alt="Digital Elite Services team collaborating around conference table with laptops"
+                  className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
+                  loading="eager"
+                />
+                
+                {/* Subtle Bottom Scrim for Badge Contrast */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+
+                {/* Floating Translucent Pill Badge: "Our Passion" */}
+                <div className="absolute bottom-4 sm:bottom-5 left-4 sm:left-5 right-4 sm:right-5 bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-[22px] px-4.5 sm:px-5 py-3.5 sm:py-4 shadow-[0_12px_30px_rgba(0,0,0,0.12)] border border-white/80 flex items-center justify-between z-20">
+                  <div className="pr-2">
+                    <h4 className="text-[14.5px] sm:text-[15.5px] font-bold text-[#062A78] leading-tight">
+                      Our Passion
+                    </h4>
+                    <p className="text-[11.5px] sm:text-[12.5px] text-slate-500 font-medium leading-tight mt-0.5">
+                      Turning ideas into measurable impact
+                    </p>
+                  </div>
+
+                  {/* Circular Golden Yellow Star Accent Button */}
+                  <button
+                    type="button"
+                    onClick={handleNavigateAbout}
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#fec006] hover:bg-[#faa307] text-[#062A78] flex items-center justify-center shadow-xs shrink-0 cursor-pointer transition-transform duration-200 hover:scale-105 active:scale-95"
+                    aria-label="Our Passion & Innovation"
+                  >
+                    <Star className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-[#062A78] text-[#062A78]" />
+                  </button>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

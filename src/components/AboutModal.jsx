@@ -1,6 +1,7 @@
 import React from 'react';
-import { X, Award, Clock, Users2, ArrowRight } from 'lucide-react';
+import { X, Award, Clock, Users2, ArrowRight, ExternalLink } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
 
 export const AboutModal = ({
   isOpen,
@@ -8,7 +9,14 @@ export const AboutModal = ({
   onStartProject,
   highlightedPillar,
 }) => {
+  const navigate = useNavigate();
   if (!isOpen) return null;
+
+  const handleGoToAboutPage = () => {
+    onClose();
+    navigate('/about');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <AnimatePresence>
@@ -101,23 +109,32 @@ export const AboutModal = ({
             </div>
           </div>
 
-          <div className="bg-slate-50 p-6 border-t border-slate-100 flex items-center justify-between">
+          <div className="bg-slate-50 p-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
             <button
-              onClick={onClose}
-              className="text-sm font-semibold text-slate-600 hover:text-slate-900 cursor-pointer"
+              onClick={handleGoToAboutPage}
+              className="text-sm font-semibold text-[#0066ff] hover:text-blue-700 flex items-center gap-1.5 cursor-pointer"
             >
-              Close
+              <span>View Full About Us Page</span>
+              <ExternalLink className="w-3.5 h-3.5" />
             </button>
-            <button
-              onClick={() => {
-                onClose();
-                onStartProject();
-              }}
-              className="inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm shadow-xs transition cursor-pointer"
-            >
-              <span>Work With Us</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={onClose}
+                className="text-sm font-semibold text-slate-600 hover:text-slate-900 cursor-pointer"
+              >
+                Close
+              </button>
+              <button
+                onClick={() => {
+                  onClose();
+                  onStartProject();
+                }}
+                className="inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-6 py-2.5 rounded-full text-sm shadow-xs transition cursor-pointer"
+              >
+                <span>Work With Us</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
           </div>
         </motion.div>
       </div>
