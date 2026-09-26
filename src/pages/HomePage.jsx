@@ -4,3 +4,4 @@ import { HomePage as HomePageComponent } from '../components/HomePage/HomePage.j
 export function HomePage(props) {
   return <HomePageComponent {...props} />;
 }
+
