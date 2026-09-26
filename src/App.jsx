@@ -113,7 +113,7 @@ export default function App() {
             <Route
               path="/contact"
               element={
-                <ContactPage />
+                <ContactPage onStartProject={handleStartProject} />
               }
             />
 
