@@ -157,22 +157,18 @@ export const Hero = ({
             <span>GROWTH</span>
           </div>
 
-          {/* Display Headline: Plus Jakarta Sans 800 */}
           <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6" style={{ lineHeight: '1.1' }}>
             Digital <br />
             Solutions for <br />
             <span className="text-[#0066ff]">Real Growth.</span>
           </h1>
 
-          {/* Subtitle Description: Plus Jakarta Sans 500 */}
           <p className="text-slate-600 text-base sm:text-[17px] font-medium leading-relaxed max-w-[480px] mb-8 sm:mb-9">
             We design, build and grow digital experiences that help businesses
             get noticed, trusted and chosen.
           </p>
 
-          {/* Action Buttons: Plus Jakarta Sans 700 */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-9 sm:mb-11">
-            {/* Primary Yellow Button */}
             <button
               id="hero-cta-start-project"
               onClick={onStartProject}
@@ -182,7 +178,6 @@ export const Hero = ({
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-[#0c2340]" />
             </button>
 
-            {/* Secondary Blue-Bordered Button */}
             <button
               id="hero-cta-explore-services"
               onClick={onExploreServices}
@@ -193,16 +188,12 @@ export const Hero = ({
             </button>
           </div>
 
-          {/* Subtle Horizontal Divider */}
           <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-7 sm:mb-9" />
 
-          {/* Verified Statistics Grid: Plus Jakarta Sans 800 & 600 */}
           <div className="relative max-w-[500px]">
-            {/* Soft pale blue circular aura behind 50+ */}
             <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-4 gap-3 sm:gap-6 items-start">
-              {/* Metric 1 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   50+
@@ -214,7 +205,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 2 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   30+
@@ -226,7 +216,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 3 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   7
@@ -238,7 +227,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 4 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   24/7
@@ -253,7 +241,6 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= MOBILE/TABLET ONLY PHOTO SECTION ================= */}
       <div className="block lg:hidden w-full px-4 pb-12">
         <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden shadow-lg bg-slate-100">
           <img
