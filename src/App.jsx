@@ -6,6 +6,12 @@ import { ScrollToTop } from './components/ScrollToTop.jsx';
 import { HomePage } from './pages/HomePage.jsx';
 import { AboutPage } from './pages/AboutPage.jsx';
 import { ServicesPage } from './pages/ServicesPage.jsx';
+import { DigitalMarketingServicePage } from './pages/DigitalMarketingServicePage.jsx';
+import { SocialMediaMarketingServicePage } from './pages/SocialMediaMarketingServicePage.jsx';
+import { WebDevelopmentServicePage } from './pages/WebDevelopmentServicePage.jsx';
+import { GraphicDesignServicePage } from './pages/GraphicDesignServicePage.jsx';
+import { LeadGenerationServicePage } from './pages/LeadGenerationServicePage.jsx';
+import { SeoOptimizationServicePage } from './pages/SeoOptimizationServicePage.jsx';
 import { ProcessPage } from './pages/ProcessPage.jsx';
 import { WorkPage } from './pages/WorkPage.jsx';
 import { ContactPage } from './pages/ContactPage.jsx';
@@ -89,6 +95,114 @@ export default function App() {
               }
             />
 
+            {/* Dedicated Sub-Service Route: Digital Marketing & SEO */}
+            <Route
+              path="/services/digital-marketing"
+              element={
+                <DigitalMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/digital-marketing"
+              element={
+                <DigitalMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Sub-Service Route: Social Media Marketing */}
+            <Route
+              path="/services/social-media-marketing"
+              element={
+                <SocialMediaMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/social-media-marketing"
+              element={
+                <SocialMediaMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Sub-Service Route: Web Development */}
+            <Route
+              path="/services/web-development"
+              element={
+                <WebDevelopmentServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/web-development"
+              element={
+                <WebDevelopmentServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Sub-Service Route: Graphic Design */}
+            <Route
+              path="/services/graphic-design"
+              element={
+                <GraphicDesignServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/graphic-design"
+              element={
+                <GraphicDesignServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Sub-Service Route: Lead Generation */}
+            <Route
+              path="/services/lead-generation"
+              element={
+                <LeadGenerationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/lead-generation"
+              element={
+                <LeadGenerationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Sub-Service Route: SEO Optimization */}
+            <Route
+              path="/services/seo-optimization"
+              element={
+                <SeoOptimizationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/seo-optimization"
+              element={
+                <SeoOptimizationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
             {/* Dedicated Process / How We Work Route */}
             <Route
               path="/process"
@@ -108,20 +222,12 @@ export default function App() {
                 />
               }
             />
-            <Route
-              path="/work"
-              element={
-                <WorkPage
-                  onStartProject={handleStartProject}
-                />
-              }
-            />
 
             {/* Dedicated Contact Route */}
             <Route
               path="/contact"
               element={
-                <ContactPage onStartProject={handleStartProject} />
+                <ContactPage />
               }
             />
 

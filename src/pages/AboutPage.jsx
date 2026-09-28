@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import teamCollaboratingImg from '../assets/images/about_team_collaborating_1790337271848.jpg';
 import { useNavigate } from 'react-router-dom';
+import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function AboutPage({ onStartProject, onMoreAboutUs }) {
   const navigate = useNavigate();
@@ -239,6 +240,9 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           </div>
         </div>
       </section>
+
+      {/* ================= STATS BANNER BAR ================= */}
+      <StatsBannerBar />
 
       {/* ========================================================================= */}
       {/* 2. PURPOSE & DIRECTION (OUR MISSION & OUR VISION CARDS)                   */}

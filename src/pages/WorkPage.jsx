@@ -10,7 +10,12 @@ import {
   ChevronRight,
   Building2,
   ShieldCheck,
+  Trophy,
+  Users,
+  TrendingUp,
+  Star,
 } from 'lucide-react';
+import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function WorkPage({ onStartProject }) {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -406,96 +411,33 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      <section className="relative w-full bg-[#062A78] text-white py-8 sm:py-10 border-y border-slate-800/50 overflow-hidden z-10 shadow-lg">
-        <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
-            <path
-              d="M 0 70 Q 60 45, 120 70 T 240 65"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 0 85 Q 70 60, 140 85 T 240 80"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 0 55 Q 80 35, 160 55 T 240 50"
-              stroke="#38bdf8"
-              strokeWidth="1.2"
-              fill="none"
-            />
-          </svg>
-        </div>
-
-
-        <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
-            <path
-              d="M 240 70 Q 180 45, 120 70 T 0 65"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 240 85 Q 170 60, 100 85 T 0 80"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 240 55 Q 160 35, 80 55 T 0 50"
-              stroke="#38bdf8"
-              strokeWidth="1.2"
-              fill="none"
-            />
-          </svg>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFB703] tracking-tight">
-                500+
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                SUCCESSFUL PROJECTS DELIVERED
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0878F9] tracking-tight">
-                98%
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                CLIENT RETENTION RATE
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#10B981] tracking-tight">
-                ₹3.8 Cr+
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                REVENUE GENERATED FOR CLIENTS
-              </div>
-            </div>
-
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#38BDF8] tracking-tight">
-                100%
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                ON-TIME DELIVERY RATE
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      {/* ------------------------------------------------------------- */}
+      {/* 2. STATS BANNER BAR (Full Width)                              */}
+      {/* ------------------------------------------------------------- */}
+      <StatsBannerBar
+        stats={[
+          {
+            icon: Trophy,
+            number: '500+',
+            label: 'Successful Projects Delivered',
+          },
+          {
+            icon: Users,
+            number: '98%',
+            label: 'Client Retention Rate',
+          },
+          {
+            icon: TrendingUp,
+            number: '₹3.8 Cr+',
+            label: 'Revenue Generated for Clients',
+          },
+          {
+            icon: Star,
+            number: '100%',
+            label: 'On-Time Delivery Rate',
+          },
+        ]}
+      />
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
 
