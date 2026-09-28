@@ -277,7 +277,7 @@ export function WorkPage({ onStartProject }) {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black leading-tight tracking-[-1.5px] text-[#082D72]">
+              <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6">
                 Architects of <span className="text-[#0878F9]">Digital Distinction</span> — Case Studies
               </h1>
 
@@ -406,11 +406,55 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------- */}
-      {/* 2. DARK BLUE STATS COUNTER BAR (Full Width)                   */}
-      {/* ------------------------------------------------------------- */}
-      <section className="bg-[#081B3E] text-white py-12 border-y border-[#0E2A5E] relative z-10 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative w-full bg-[#062A78] text-white py-8 sm:py-10 border-y border-slate-800/50 overflow-hidden z-10 shadow-lg">
+        <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+            <path
+              d="M 0 70 Q 60 45, 120 70 T 240 65"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 0 85 Q 70 60, 140 85 T 240 80"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 0 55 Q 80 35, 160 55 T 240 50"
+              stroke="#38bdf8"
+              strokeWidth="1.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        {/* Subtle Wave Line Art: Right Side */}
+        <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+            <path
+              d="M 240 70 Q 180 45, 120 70 T 0 65"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 240 85 Q 170 60, 100 85 T 0 80"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 240 55 Q 160 35, 80 55 T 0 50"
+              stroke="#38bdf8"
+              strokeWidth="1.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             
             {/* Stat 1 */}
@@ -586,6 +630,16 @@ export function WorkPage({ onStartProject }) {
       {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
         
+        {/* Background Radial Orbs for Visual Showcase */}
+        <div
+          className="absolute -top-10 -left-28 w-[380px] sm:w-[520px] h-[380px] sm:h-[520px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+        <div
+          className="absolute -bottom-10 -right-28 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
@@ -669,7 +723,9 @@ export function WorkPage({ onStartProject }) {
 
       {/* 6. BOTTOM CTA BANNER (Initiate Your Growth Partnership)       */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden">
+        <div className="rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+          style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+        >
           {/* Ambient background shapes matching ContactPage */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/20 rounded-full filter blur-2xl pointer-events-none" />
