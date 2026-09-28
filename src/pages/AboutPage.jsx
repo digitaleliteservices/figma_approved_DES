@@ -74,13 +74,13 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
         {/* 1. EXACT LEFT BACKGROUND CIRCLE                                           */}
         {/* Visible rounded pale sky-blue circle framing the top-left typography     */}
         {/* ========================================================================= */}
-        <div
+        {/* <div
           className="
             absolute
             -top-12 sm:-top-16 lg:-top-20
             -left-28 sm:-left-36 lg:-left-44 xl:-left-48
-            w-[460px] sm:w-[520px] lg:w-[560px] xl:w-[580px]
-            h-[460px] sm:h-[520px] lg:h-[560px] xl:h-[580px]
+            w-[260px] sm:w-[320px] lg:w-[260px] xl:w-[280px]
+            h-[260px] sm:h-[320px] lg:h-[260px] xl:h-[280px]
             rounded-full
             pointer-events-none
             -z-10
@@ -88,7 +88,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           style={{
             backgroundColor: '#ddf0fe',
           }}
-        />
+        /> */}
 
         {/* Main Content Container with Exact Proportions */}
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
@@ -97,13 +97,13 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             {/* Left Content Column */}
             <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
               {/* Eyebrow Link: "ABOUT DIGITAL ELITE SERVICES →" */}
-              <div className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.08em] uppercase mb-4 sm:mb-5 z-10">
+              <div className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#0066ff] tracking-[0.08em] uppercase mb-4 sm:mb-5 z-10">
                 <span>ABOUT DIGITAL ELITE SERVICES</span>
                 <ArrowRight className="w-4 h-4 text-[#0066ff] stroke-[2.5]" />
               </div>
 
               {/* Exact Display Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px] font-extrabold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-5 sm:mb-6 z-10">
+              <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] xl:text-[48px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.08] mb-5 sm:mb-6 z-10" style={{ lineHeight: '1.1' }}>
                 Empowering businesses <br />
                 through digital excellence <br />
                 and <span className="text-[#0066ff]">real growth.</span>
@@ -122,7 +122,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
                   {/* Stat 1 */}
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
                       150+
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
@@ -132,7 +132,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
 
                   {/* Stat 2 */}
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
                       70+
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
@@ -142,7 +142,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
 
                   {/* Stat 3 */}
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
                       300%
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
@@ -152,7 +152,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
 
                   {/* Stat 4 */}
                   <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-black text-[#062A78] tracking-tight leading-none">
+                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
                       5+
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
@@ -166,14 +166,30 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             {/* Right Photography Card */}
             <div className="lg:col-span-5 xl:col-span-5 relative flex items-center justify-center">
               <div className="relative w-full max-w-[450px] lg:max-w-[480px]">
+
+                 <div
+                  className="
+                    absolute
+                    -top-80
+                    -left-250
+                    w-[220px] sm:w-[280px] lg:w-[460px]
+                    h-[220px] sm:h-[280px] lg:h-[460px]
+                    rounded-full
+                    pointer-events-none
+                    -z-10
+                  "
+                  style={{
+                    backgroundColor: '#ddf0fe',
+                  }}
+                />
                 {/* 2. EXACT RIGHT BACKGROUND CIRCLE */}
                 <div
                   className="
                     absolute
-                    -top-14 sm:-top-18 lg:-top-20
-                    -right-16 sm:-right-24 lg:-right-32 xl:-right-36
-                    w-[520px] sm:w-[580px] lg:w-[640px]
-                    h-[520px] sm:h-[580px] lg:h-[640px]
+                    -top-64 sm:-top-48 lg:-top-40
+                    right-3 sm:right-2 lg:-right-12 xl:-right-15
+                    w-[220px] sm:w-[280px] lg:w-[460px]
+                    h-[220px] sm:h-[280px] lg:h-[460px]
                     rounded-full
                     pointer-events-none
                     -z-10
@@ -232,10 +248,10 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           
           {/* Section Header (Centered) */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.14em] uppercase mb-3">
+            <div className="inline-block text-xs sm:text-[13px] font-semibold text-[#0066ff] tracking-[0.14em] uppercase mb-3">
               PURPOSE & DIRECTION
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] font-extrabold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[36px] lg:text-[38px] font-bold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
               Driven by purpose, guided by vision.
             </h2>
             <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
@@ -251,9 +267,9 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
               className="
                 absolute
                 top-[52%] -translate-y-1/2
-                -left-32 sm:-left-44 md:-left-52 lg:-left-60
-                w-[440px] sm:w-[500px] lg:w-[560px]
-                h-[440px] sm:h-[500px] lg:h-[560px]
+                -left-12 sm:-left-20 md:-left-28 lg:-left-30
+                w-[140px] sm:w-[200px] lg:w-[260px]
+                h-[140px] sm:h-[200px] lg:h-[260px]
                 rounded-full
                 pointer-events-none
                 -z-10
@@ -266,9 +282,9 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
               className="
                 absolute
                 -bottom-16 sm:-bottom-24 lg:-bottom-28
-                -right-32 sm:-right-44 md:-right-52 lg:-right-60
-                w-[460px] sm:w-[520px] lg:w-[580px]
-                h-[460px] sm:h-[520px] lg:h-[580px]
+                -right-32 sm:-right-44 md:-right-35 lg:-right-40
+                w-[280px] sm:w-[300px] lg:w-[320px]
+                h-[280px] sm:h-[300px] lg:h-[320px]
                 rounded-full
                 pointer-events-none
                 -z-10
@@ -280,7 +296,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 relative z-10">
               
               {/* Card 1: Our Mission */}
-              <div className="bg-white rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,102,255,0.12)] transition-all duration-300 min-h-[380px] sm:min-h-[420px] flex flex-col justify-start group">
+              <div className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,102,255,0.12)] transition-all duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group">
                 {/* Header: Icon + Title horizontally aligned */}
                 <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
                   {/* Electric Blue Squircle Icon */}
@@ -295,13 +311,13 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 </div>
 
                 {/* Description */}
-                <p className="text-[#475569] sm:text-[#334155] text-[15px] sm:text-[16px] leading-[1.75] font-normal">
+                <p className="text-[#475569] sm:text-[#0e1a2aff] text-[12px] sm:text-[14px] leading-[1.75] font-normal">
                   To transform ambitious business concepts into category-defining digital experiences. We bridge the gap between creative design, advanced engineering, and revenue growth so our clients can stay ahead in a fast-changing world.
                 </p>
               </div>
 
               {/* Card 2: Our Vision */}
-              <div className="bg-white rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(124,58,237,0.12)] transition-all duration-300 min-h-[380px] sm:min-h-[420px] flex flex-col justify-start group">
+              <div className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(124,58,237,0.12)] transition-all duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group">
                 {/* Header: Icon + Title horizontally aligned */}
                 <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
                   {/* Vibrant Violet/Purple Squircle Icon */}
@@ -316,7 +332,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 </div>
 
                 {/* Description */}
-                <p className="text-[#475569] sm:text-[#334155] text-[15px] sm:text-[16px] leading-[1.75] font-normal">
+                <p className="text-[#475569] sm:text-[#071527ff] text-[12px] sm:text-[14px] leading-[1.75] font-normal">
                   To be recognized globally as the most trusted digital innovation partner—known for technical excellence, creative bravery, and an unwavering commitment to driving scalable, real-world business results.
                 </p>
               </div>
@@ -331,7 +347,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
       {/* ========================================================================= */}
       {/* 3. WHAT DRIVES US (OUR CORE PRINCIPLES)                                   */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-20 sm:py-24 lg:py-28 bg-white overflow-hidden select-none">
+      <section className="relative w-full py-1 sm:py-2 lg:py-4 bg-white overflow-hidden select-none">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
           
           {/* Section Header (Centered) */}
@@ -339,10 +355,10 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.14em] uppercase mb-3">
               WHAT DRIVES US
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[48px] font-extrabold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-[44px] lg:text-[43px] font-semibold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
               Our Core Principles
             </h2>
-            <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-[14px] font-normal max-w-2xl mx-auto leading-relaxed">
               These fundamental values shape our culture, decisions, and how we build lasting relationships.
             </p>
           </div>
@@ -351,7 +367,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           <div className="relative max-w-[1280px] mx-auto">
             
             {/* 1. Upper-Left Accent Circle (Above and to the left of Card 01) */}
-            <div
+            {/* <div
               className="
                 absolute
                 -top-12 lg:-top-16
@@ -363,16 +379,17 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 2. Main Left Large Circle (Framing Card 01 and sweeping behind it) */}
             <div
               className="
                 absolute
+                -bottom-40
                 top-1/2 -translate-y-1/2
                 -left-44 sm:-left-56 lg:-left-64 xl:-left-72
-                w-[460px] sm:w-[520px] lg:w-[580px]
-                h-[460px] sm:h-[520px] lg:h-[580px]
+                w-[260px] sm:w-[220px] lg:w-[320px]
+                h-[260px] sm:h-[220px] lg:h-[320px]
                 rounded-full
                 pointer-events-none
                 -z-10
@@ -385,9 +402,9 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
               className="
                 absolute
                 -bottom-24 sm:-bottom-32 lg:-bottom-36
-                left-[42%] sm:left-[48%] lg:left-[52%]
-                w-[420px] sm:w-[480px] lg:w-[540px]
-                h-[420px] sm:h-[480px] lg:h-[540px]
+                left-[42%] sm:left-[48%] lg:left-[56%]
+                w-[120px] sm:w-[180px] lg:w-[280px]
+                h-[120px] sm:h-[180px] lg:h-[280px]
                 rounded-full
                 pointer-events-none
                 -z-10
@@ -461,20 +478,20 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
       {/* 4. READY TO TURN YOUR VISION INTO DIGITAL IMPACT? (CTA BANNER)           */}
       {/* ========================================================================= */}
       <section
-        className="relative w-full text-white py-20 sm:py-24 lg:py-28 px-6 sm:px-10 lg:px-16 text-center overflow-hidden select-none"
+        className=" mb-10 max-w-6xl  mx-auto rounded-2xl text-white py-10 sm:py-14 lg:py-18 px-6 sm:px-10 lg:px-16 text-center overflow-hidden select-none "
         style={{
           background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
         }}
       >
         <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
           {/* Main Headline */}
-          <h2 className="text-3xl sm:text-4xl md:text-[46px] lg:text-[52px] xl:text-[56px] font-black sm:font-extrabold text-white tracking-[-0.03em] leading-[1.08] mb-4 sm:mb-5">
+          <h2 className="text-3xl sm:text-4xl md:text-[40px] lg:text-[42px] xl:text-[46px] font-semibold text-white tracking-[-0.03em] leading-[1.08] mb-4 sm:mb-5" style={{ lineHeight: 1.1 }}>
             Ready to turn your vision into digital <br />
             impact?
           </h2>
 
           {/* Subtitle */}
-          <p className="text-white/85 text-[15px] sm:text-[16px] md:text-[17px] font-normal leading-[1.65] max-w-[640px] mx-auto mb-8 sm:mb-9">
+          <p className="text-white/85 text-[15px] sm:text-[16px] md:text-[16px] font-normal leading-[1.65] max-w-[640px] mx-auto mb-8 sm:mb-9">
             Let's collaborate to build high-converting websites, powerful applications, and <br className="hidden sm:inline" />
             growth strategies that move your business forward.
           </p>
