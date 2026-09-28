@@ -430,7 +430,7 @@ export function WorkPage({ onStartProject }) {
           </svg>
         </div>
 
-        {/* Subtle Wave Line Art: Right Side */}
+
         <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
           <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
             <path
@@ -457,7 +457,6 @@ export function WorkPage({ onStartProject }) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 
-            {/* Stat 1 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFB703] tracking-tight">
                 500+
@@ -467,7 +466,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 2 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0878F9] tracking-tight">
                 98%
@@ -477,7 +475,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 3 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#10B981] tracking-tight">
                 ₹3.8 Cr+
@@ -487,7 +484,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 4 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#38BDF8] tracking-tight">
                 100%
@@ -503,7 +499,6 @@ export function WorkPage({ onStartProject }) {
 
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
 
-        {/* Header & Filter Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-2 uppercase tracking-[1.2px]">
@@ -517,7 +512,6 @@ export function WorkPage({ onStartProject }) {
             </p>
           </div>
 
-          {/* Filter Pill Buttons */}
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((filter) => (
               <button
