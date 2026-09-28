@@ -1,68 +1,233 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap');
 @import "tailwindcss";
 
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  color: #0c1e3d;
-  overflow-x: hidden;
+/* ==========================================================================
+   GLOBAL DESIGN SYSTEM: TYPOGRAPHY & SPACING TOKENS
+   ========================================================================== */
+
+:root {
+  /* 1. Global Font Family */
+  --font-family-primary: 'Plus Jakarta Sans', 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* 2. Standardized Typography Scale */
+  --font-size-h1: 48px;
+  --line-height-h1: 1.2;
+  --font-weight-h1: 800;
+
+  --font-size-h2: 36px;
+  --line-height-h2: 1.25;
+  --font-weight-h2: 700;
+
+  --font-size-h3: 28px;
+  --line-height-h3: 1.3;
+  --font-weight-h3: 700;
+
+  --font-size-h4: 24px;
+  --line-height-h4: 1.35;
+  --font-weight-h4: 600;
+
+  --font-size-h5: 20px;
+  --line-height-h5: 1.4;
+  --font-weight-h5: 600;
+
+  --font-size-h6: 18px;
+  --line-height-h6: 1.4;
+  --font-weight-h6: 600;
+
+  --font-size-body: 16px;
+  --line-height-body: 1.7;
+  --font-weight-body: 400;
+
+  --font-size-small: 14px;
+  --line-height-small: 1.5;
+  --font-weight-small: 400;
+
+  /* 3. Standardized Spacing Scale */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-48: 48px;
+  --space-64: 64px;
+  --space-96: 96px;
+
+  /* Brand Theme Colors */
+  --color-brand-navy: #082d72;
+  --color-brand-blue: #0878f9;
+  --color-brand-accent: #0066ff;
+  --color-text-dark: #0c1e3d;
 }
+
+/* ==========================================================================
+   BASE & RESET STYLES
+   ========================================================================== */
 
 html {
   scroll-behavior: smooth;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-family-primary);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* User font specification */
+body {
+  font-family: var(--font-family-primary);
+  background-color: #ffffff;
+  color: var(--color-text-dark);
+  overflow-x: hidden;
+  line-height: var(--line-height-body);
+}
+
+/* Enforce Single Consistent Font Family Across All Elements */
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, label,
+input, textarea, select, button {
+  font-family: var(--font-family-primary);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY HIERARCHY CLASSES
+   ========================================================================== */
+
+h1, .h1 {
+  font-size: clamp(32px, 5vw, var(--font-size-h1));
+  line-height: var(--line-height-h1);
+  font-weight: var(--font-weight-h1);
+  letter-spacing: -0.02em;
+}
+
+h2, .h2 {
+  font-size: clamp(26px, 4vw, var(--font-size-h2));
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-h2);
+  letter-spacing: -0.015em;
+}
+
+h3, .h3 {
+  font-size: clamp(22px, 3vw, var(--font-size-h3));
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-h3);
+}
+
+h4, .h4 {
+  font-size: clamp(20px, 2.5vw, var(--font-size-h4));
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-h4);
+}
+
+h5, .h5 {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-h5);
+}
+
+h6, .h6 {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-h6);
+  font-weight: var(--font-weight-h6);
+}
+
+p, .body-text {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  font-weight: var(--font-weight-body);
+}
+
+.small-text, small {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  font-weight: var(--font-weight-small);
+}
+
+.button, button {
+  font-family: var(--font-family-primary);
+  font-weight: 600;
+}
+
+/* Legacy Utility Map */
 .hero-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 56px;
-  font-weight: 700;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
   line-height: 1.15;
 }
 
 .section-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 38px;
+  font-size: clamp(28px, 4vw, var(--font-size-h2));
   font-weight: 700;
-  line-height: 1.2;
+  line-height: var(--line-height-h2);
 }
 
 .section-subtitle {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
+  font-size: var(--font-size-body);
   font-weight: 400;
-  line-height: 1.7;
+  line-height: var(--line-height-body);
 }
 
 .service-title {
-  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   font-weight: 600;
+  line-height: 1.4;
 }
 
-.body-text {
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.7;
+/* ==========================================================================
+   LAYOUT & SPACING UTILITIES
+   ========================================================================== */
+
+.section-spacing {
+  padding-top: var(--space-64);
+  padding-bottom: var(--space-64);
 }
 
-.button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: var(--space-96);
+    padding-bottom: var(--space-96);
+  }
 }
 
-/* Typography defaults fallback to Poppins */
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+.section-spacing-sm {
+  padding-top: var(--space-32);
+  padding-bottom: var(--space-32);
 }
 
-p, span, a, input, textarea, select {
-  font-family: 'Poppins', sans-serif;
+@media (min-width: 1024px) {
+  .section-spacing-sm {
+    padding-top: var(--space-48);
+    padding-bottom: var(--space-48);
+  }
 }
 
-button {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
+.container-custom {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-16);
+  padding-right: var(--space-16);
+}
+
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: var(--space-24);
+    padding-right: var(--space-24);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
+  }
+}
+
+.card-padding {
+  padding: var(--space-24);
+}
+
+@media (min-width: 640px) {
+  .card-padding {
+    padding: var(--space-32);
+  }
 }
