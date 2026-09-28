@@ -368,7 +368,8 @@ export function ContactPage({ onStartProject }) {
                   {/* SUBMIT BUTTON */}
                   <button
                     type="submit"
-                    className="w-full bg-[#0878F9] hover:bg-[#0066ff] text-white font-black text-[14px] leading-[20px] py-4 rounded-[12px] shadow-[0px_6px_20px_rgba(8,120,249,0.3)] transition cursor-pointer flex items-center justify-center gap-2 mt-2"
+                    className="w-full hover:bg-[#0066ff] text-white font-black text-[14px] leading-[20px] py-4 rounded-[12px] shadow-[0px_6px_20px_rgba(8,120,249,0.3)] transition cursor-pointer flex items-center justify-center gap-2 mt-2"
+                     style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
                   >
                     <Zap className="w-4 h-4 fill-white" />
                     <span>Send Message</span>
@@ -519,7 +520,9 @@ export function ContactPage({ onStartProject }) {
 
       {/* 5. SECTION: INITIATE YOUR GROWTH PARTNERSHIP CTA BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden">
+        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+         style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+        >
           {/* Ambient shapes */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/20 rounded-full filter blur-2xl pointer-events-none" />

@@ -264,7 +264,7 @@ export function WorkPage({ onStartProject }) {
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
               {/* Top Pill Tag */}
@@ -277,7 +277,7 @@ export function WorkPage({ onStartProject }) {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black leading-tight tracking-[-1.5px] text-[#082D72]">
+              <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6">
                 Architects of <span className="text-[#0878F9]">Digital Distinction</span> — Case Studies
               </h1>
 
@@ -406,14 +406,57 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------- */}
-      {/* 2. DARK BLUE STATS COUNTER BAR (Full Width)                   */}
-      {/* ------------------------------------------------------------- */}
-      <section className="bg-[#081B3E] text-white py-12 border-y border-[#0E2A5E] relative z-10 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative w-full bg-[#062A78] text-white py-8 sm:py-10 border-y border-slate-800/50 overflow-hidden z-10 shadow-lg">
+        <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+            <path
+              d="M 0 70 Q 60 45, 120 70 T 240 65"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 0 85 Q 70 60, 140 85 T 240 80"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 0 55 Q 80 35, 160 55 T 240 50"
+              stroke="#38bdf8"
+              strokeWidth="1.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+
+        <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
+          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+            <path
+              d="M 240 70 Q 180 45, 120 70 T 0 65"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 240 85 Q 170 60, 100 85 T 0 80"
+              stroke="#38bdf8"
+              strokeWidth="1.5"
+              fill="none"
+            />
+            <path
+              d="M 240 55 Q 160 35, 80 55 T 0 50"
+              stroke="#38bdf8"
+              strokeWidth="1.2"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            
-            {/* Stat 1 */}
+
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFB703] tracking-tight">
                 500+
@@ -423,7 +466,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 2 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0878F9] tracking-tight">
                 98%
@@ -433,7 +475,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 3 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#10B981] tracking-tight">
                 ₹3.8 Cr+
@@ -443,7 +484,6 @@ export function WorkPage({ onStartProject }) {
               </div>
             </div>
 
-            {/* Stat 4 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#38BDF8] tracking-tight">
                 100%
@@ -457,12 +497,8 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------- */}
-      {/* 3. MAIN CASE STUDIES SECTION WITH FILTERS                      */}
-      {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        
-        {/* Header & Filter Controls */}
+
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-2 uppercase tracking-[1.2px]">
@@ -476,17 +512,15 @@ export function WorkPage({ onStartProject }) {
             </p>
           </div>
 
-          {/* Filter Pill Buttons */}
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((filter) => (
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${
-                  activeFilter === filter.id
+                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
                     : 'bg-white/90 border border-[#D5E6FE] text-[#082D72] hover:bg-[#EEF6FF]'
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -585,7 +619,17 @@ export function WorkPage({ onStartProject }) {
       {/* 4. VISUAL SHOWCASE SECTION (4x3 Grid of 12 Projects)          */}
       {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
-        
+
+        {/* Background Radial Orbs for Visual Showcase */}
+        <div
+          className="absolute -top-10 -left-28 w-[380px] sm:w-[520px] h-[380px] sm:h-[520px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+        <div
+          className="absolute -bottom-10 -right-28 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>
@@ -669,7 +713,9 @@ export function WorkPage({ onStartProject }) {
 
       {/* 6. BOTTOM CTA BANNER (Initiate Your Growth Partnership)       */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden">
+        <div className="rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+          style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+        >
           {/* Ambient background shapes matching ContactPage */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/20 rounded-full filter blur-2xl pointer-events-none" />

@@ -58,7 +58,6 @@ export const AboutModal = ({
           </div>
 
           <div className="p-6 sm:p-8 space-y-6 max-h-[65vh] overflow-y-auto">
-            {/* Story */}
             <div className="space-y-3">
               <h4 className="text-lg font-bold text-[#0a1e38]">
                 Built for Ambitious Businesses
@@ -68,7 +67,6 @@ export const AboutModal = ({
               </p>
             </div>
 
-            {/* Core Values */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
               <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-100">
                 <div className="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center mb-2">
@@ -101,7 +99,6 @@ export const AboutModal = ({
               </div>
             </div>
 
-            {/* Quote */}
             <div className="p-4 rounded-xl bg-slate-900 text-white text-center">
               <p className="text-sm italic text-slate-200">
                 "We don't just deliver projects; we build digital growth engines for our clients."
