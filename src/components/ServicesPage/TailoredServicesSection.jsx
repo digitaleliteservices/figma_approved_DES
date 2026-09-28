@@ -1,78 +1,82 @@
-import React from 'react';
-import { ArrowRight, Megaphone, Search, Share2, Code2, Palette, Filter } from 'lucide-react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Volume2, TrendingUp, Users, Code, PenTool, Filter, ArrowRight } from 'lucide-react';
 
 export const TailoredServicesSection = ({ onSelectService }) => {
+  const navigate = useNavigate();
+  const [hoveredCardId, setHoveredCardId] = useState(null);
+
+  const handleCardClick = (service) => {
+    if (service.id === 'digital-marketing') {
+      navigate('/services/digital-marketing');
+    } else if (service.id === 'seo-optimization') {
+      navigate('/services/seo-optimization');
+    } else if (service.id === 'social-media-marketing') {
+      navigate('/services/social-media-marketing');
+    } else if (service.id === 'web-development') {
+      navigate('/services/web-development');
+    } else if (service.id === 'graphic-design') {
+      navigate('/services/graphic-design');
+    } else if (service.id === 'lead-generation') {
+      navigate('/services/lead-generation');
+    } else if (onSelectService) {
+      onSelectService(service.title);
+    }
+  };
+
   const serviceCards = [
     {
       id: 'digital-marketing',
       title: 'Digital Marketing',
       description:
         'Boost your visibility and rank higher on Google search results with our data-driven digital marketing and SEO strategies.',
-      color: '#10b981', // Emerald Green
-      badgeBg: 'bg-[#10b981]',
-      badgeBorder: 'border-[#10b981]/20',
-      btnBg: 'bg-[#10b981] hover:bg-[#059669]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(16,185,129,0.25)]',
-      icon: Megaphone,
+      pillBg: 'bg-[#22c55e]',
+      btnBg: 'bg-[#22c55e] hover:bg-[#16a34a]',
+      icon: Volume2,
     },
     {
       id: 'seo-optimization',
       title: 'SEO Optimization',
       description:
-        'Rank your website higher on Google searches with our data-driven digital marketing and SEO strategies.',
-      color: '#0066ff', // Electric Blue
-      badgeBg: 'bg-[#0066ff]',
-      badgeBorder: 'border-[#0066ff]/20',
+        'Boost your visibility and rank higher on Google search results with our data-driven digital marketing and SEO strategies.',
+      pillBg: 'bg-[#0066ff]',
       btnBg: 'bg-[#0066ff] hover:bg-[#0052cc]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(0,102,255,0.25)]',
-      icon: Search,
+      icon: TrendingUp,
     },
     {
       id: 'social-media-marketing',
       title: 'Social Media Marketing',
       description:
-        'Boost your visibility and viral reach on social platforms with our hyper-targeted content and paid strategies.',
-      color: '#8b5cf6', // Violet Purple
-      badgeBg: 'bg-[#8b5cf6]',
-      badgeBorder: 'border-[#8b5cf6]/20',
+        'Boost your visibility and rank higher on Google search results with our data-driven digital marketing and SEO strategies.',
+      pillBg: 'bg-[#8b5cf6]',
       btnBg: 'bg-[#8b5cf6] hover:bg-[#7c3aed]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(139,92,246,0.25)]',
-      icon: Share2,
+      icon: Users,
     },
     {
       id: 'web-development',
       title: 'Web Development',
       description:
         'High-performance, responsive websites built with the latest technologies to convert visitors into customers.',
-      color: '#ec4899', // Pink / Magenta
-      badgeBg: 'bg-[#ec4899]',
-      badgeBorder: 'border-[#ec4899]/20',
-      btnBg: 'bg-[#ec4899] hover:bg-[#db2777]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(236,72,153,0.25)]',
-      icon: Code2,
+      pillBg: 'bg-[#e11d48]',
+      btnBg: 'bg-[#e11d48] hover:bg-[#be123c]',
+      icon: Code,
     },
     {
       id: 'graphic-design',
       title: 'Graphic Design',
       description:
         'Creative visual solutions that capture attention and communicate your brand message effectively.',
-      color: '#f97316', // Orange
-      badgeBg: 'bg-[#f97316]',
-      badgeBorder: 'border-[#f97316]/20',
-      btnBg: 'bg-[#f97316] hover:bg-[#ea580c]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(249,115,22,0.25)]',
-      icon: Palette,
+      pillBg: 'bg-[#ea580c]',
+      btnBg: 'bg-[#ea580c] hover:bg-[#c2410c]',
+      icon: PenTool,
     },
     {
       id: 'lead-generation',
       title: 'Lead Generation',
       description:
         'Strategic PPC and email campaigns designed to fill your sales pipeline with qualified prospects.',
-      color: '#14b8a6', // Teal
-      badgeBg: 'bg-[#14b8a6]',
-      badgeBorder: 'border-[#14b8a6]/20',
-      btnBg: 'bg-[#14b8a6] hover:bg-[#0d9488]',
-      btnShadow: 'shadow-[0_8px_20px_rgba(20,184,166,0.25)]',
+      pillBg: 'bg-[#059669]',
+      btnBg: 'bg-[#059669] hover:bg-[#047857]',
       icon: Filter,
     },
   ];
@@ -82,7 +86,7 @@ export const TailoredServicesSection = ({ onSelectService }) => {
       id="services-offerings"
       className="relative isolate w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden select-none"
     >
-      {/* ================= EXACT BACKGROUND CIRCLES (MATCHING UI) ================= */}
+      {/* ================= EXACT BACKGROUND CIRCLES ================= */}
       {/* 1. Top-Left Floating Circle */}
       <div
         className="
@@ -119,10 +123,10 @@ export const TailoredServicesSection = ({ onSelectService }) => {
       <div
         className="
           absolute
-          top-1 sm:top-1 lg:top-2
-          -right-28 sm:-right-40 lg:-right-52 xl:-right-11
-          w-[560px] sm:w-[660px] lg:w-[740px] xl:w-[250px]
-          h-[560px] sm:h-[660px] lg:h-[740px] xl:h-[250px]
+          -top-12 sm:-top-16 lg:-top-20
+          -right-28 sm:-right-40 lg:-right-52 xl:-right-60
+          w-[560px] sm:w-[660px] lg:w-[740px] xl:w-[800px]
+          h-[560px] sm:h-[660px] lg:h-[740px] xl:h-[800px]
           rounded-full
           pointer-events-none
           z-0
@@ -150,39 +154,58 @@ export const TailoredServicesSection = ({ onSelectService }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
           {serviceCards.map((service) => {
             const Icon = service.icon;
+            const isHovered = hoveredCardId === service.id;
+
             return (
               <div
                 key={service.id}
-                className="bg-white rounded-[26px] sm:rounded-[28px] p-7 sm:p-8 border border-slate-100 shadow-[0_12px_36px_rgba(6,42,120,0.04)] hover:shadow-[0_20px_45px_rgba(6,42,120,0.08)] transition-all duration-300 flex flex-col justify-between group"
+                onMouseEnter={() => setHoveredCardId(service.id)}
+                onMouseLeave={() => setHoveredCardId(null)}
+                onClick={() => handleCardClick(service)}
+                className={`bg-white rounded-[28px] sm:rounded-[30px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 relative group cursor-pointer border-2 ${
+                  isHovered
+                    ? 'border-[#3b82f6] shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
+                    : 'border-slate-100 hover:border-[#3b82f6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
+                }`}
               >
                 <div>
-                  {/* Top Color Pill Accent / Badge with Icon */}
-                  <div className="flex items-center mb-6">
-                    <div
-                      className={`h-2 sm:h-2.5 w-16 sm:w-20 rounded-full ${service.badgeBg} flex items-center justify-center`}
-                    />
+                  {/* Top Colored Pill Capsule with Centered White Icon */}
+                  <div
+                    className={`w-full h-[26px] sm:h-[28px] rounded-full ${service.pillBg} flex items-center justify-center mb-6 shadow-xs`}
+                  >
+                    <Icon className="w-4 h-4 text-white stroke-[2.2]" />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl sm:text-[22px] font-bold text-[#062A78] tracking-tight leading-snug mb-3 group-hover:text-[#0066ff] transition-colors">
+                  {/* Card Title */}
+                  <h3
+                    className={`text-xl sm:text-[23px] font-black tracking-tight leading-snug mb-3.5 transition-colors duration-200 ${
+                      isHovered ? 'text-[#0066ff]' : 'text-[#062A78] group-hover:text-[#0066ff]'
+                    }`}
+                  >
                     {service.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-[#475569] sm:text-[#334155] text-xs sm:text-[13.5px] leading-[1.68] font-normal mb-8">
+                  {/* Card Description */}
+                  <p className="text-[#334155] text-xs sm:text-[13.5px] leading-[1.65] font-normal min-h-[58px]">
                     {service.description}
                   </p>
                 </div>
 
-                {/* Bottom Color Button: "Learn More →" */}
                 <div>
+                  {/* Subtle Horizontal Divider Line */}
+                  <div className="w-full h-[1px] bg-slate-100 my-6" />
+
+                  {/* Bottom "Learn more →" Pill Button */}
                   <button
                     type="button"
-                    onClick={() => onSelectService?.(service.title)}
-                    className={`inline-flex items-center gap-2 ${service.btnBg} ${service.btnShadow} text-white font-bold text-xs sm:text-[13px] px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 cursor-pointer active:scale-95`}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCardClick(service);
+                    }}
+                    className={`inline-flex items-center gap-1.5 ${service.btnBg} text-white font-bold text-xs sm:text-[13px] px-5 py-2.5 rounded-full transition-all duration-200 cursor-pointer active:scale-95 shadow-xs`}
                   >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3.5 h-3.5 stroke-[2.5]" />
+                    <span>Learn more</span>
+                    <ArrowRight className="w-3.5 h-3.5 stroke-[2.2]" />
                   </button>
                 </div>
               </div>

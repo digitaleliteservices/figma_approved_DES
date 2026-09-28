@@ -10,7 +10,12 @@ import {
   ChevronRight,
   Building2,
   ShieldCheck,
+  Trophy,
+  Users,
+  TrendingUp,
+  Star,
 } from 'lucide-react';
+import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function WorkPage({ onStartProject }) {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -407,55 +412,32 @@ export function WorkPage({ onStartProject }) {
       </section>
 
       {/* ------------------------------------------------------------- */}
-      {/* 2. DARK BLUE STATS COUNTER BAR (Full Width)                   */}
+      {/* 2. STATS BANNER BAR (Full Width)                              */}
       {/* ------------------------------------------------------------- */}
-      <section className="bg-[#081B3E] text-white py-12 border-y border-[#0E2A5E] relative z-10 shadow-lg">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            
-            {/* Stat 1 */}
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFB703] tracking-tight">
-                500+
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                SUCCESSFUL PROJECTS DELIVERED
-              </div>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#0878F9] tracking-tight">
-                98%
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                CLIENT RETENTION RATE
-              </div>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#10B981] tracking-tight">
-                ₹3.8 Cr+
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                REVENUE GENERATED FOR CLIENTS
-              </div>
-            </div>
-
-            {/* Stat 4 */}
-            <div className="space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#38BDF8] tracking-tight">
-                100%
-              </div>
-              <div className="text-xs sm:text-sm font-extrabold text-[#A0B7D5] tracking-wide uppercase">
-                ON-TIME DELIVERY RATE
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section>
+      <StatsBannerBar
+        stats={[
+          {
+            icon: Trophy,
+            number: '500+',
+            label: 'Successful Projects Delivered',
+          },
+          {
+            icon: Users,
+            number: '98%',
+            label: 'Client Retention Rate',
+          },
+          {
+            icon: TrendingUp,
+            number: '₹3.8 Cr+',
+            label: 'Revenue Generated for Clients',
+          },
+          {
+            icon: Star,
+            number: '100%',
+            label: 'On-Time Delivery Rate',
+          },
+        ]}
+      />
 
       {/* ------------------------------------------------------------- */}
       {/* 3. MAIN CASE STUDIES SECTION WITH FILTERS                      */}
