@@ -14,11 +14,82 @@ import {
   Users,
   TrendingUp,
   Star,
+  User,
+  Phone,
+  Mail,
+  Loader2,
+  AlertCircle,
+  PhoneCall,
 } from 'lucide-react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function WorkPage({ onStartProject }) {
   const [activeFilter, setActiveFilter] = useState('all');
+
+  // Portfolio Page Lead Form State
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [lastSubmittedData, setLastSubmittedData] = useState(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const cleanedPhone = formData.phone.replace(/\D/g, '').slice(-10);
+    if (cleanedPhone.length !== 10) {
+      setSubmitError('Phone number must be exactly 10 digits.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    const payload = {
+      name: formData.name.trim(),
+      phone: cleanedPhone,
+      email: formData.email.trim(),
+      service: 'Portfolio Page Lead',
+      company: 'Portfolio Page Lead',
+      source: 'Portfolio Page Lead',
+      website: 'Portfolio Page Lead',
+    };
+
+    try {
+       const response = await fetch('https://server.plumeriaresort.in/digitaleliteservice/sendMail', {
+      //const response = await fetch('http://localhost:5000/digitaleliteservice/sendMail', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data?.success !== false) {
+        setLastSubmittedData(payload);
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+        });
+      } else {
+        setSubmitError(data?.message || 'Failed to submit inquiry. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting portfolio lead:', error);
+      setSubmitError('Unable to send inquiry. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const filters = [
     { id: 'all', label: 'All Projects' },
@@ -649,42 +720,200 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* 6. BOTTOM CTA BANNER (Initiate Your Growth Partnership)       */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden">
-          {/* Ambient background shapes matching ContactPage */}
-          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/20 rounded-full filter blur-2xl pointer-events-none" />
+      {/* 6. PORTFOLIO PAGE LEAD SECTION */}
+      <section id="portfolio-lead" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
+        <div
+          className="rounded-[32px] p-8 sm:p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden"
+          style={{ background: 'linear-gradient(135deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+        >
+          {/* Ambient background shapes matching theme */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/30 rounded-full filter blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
-            <span className="bg-white/10 border border-white/20 text-[#FFC400] text-[12px] font-black px-4 py-1.5 rounded-full inline-block uppercase tracking-[1.2px]">
-              SCHEDULE A STRATEGY CALL
-            </span>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            
+            {/* Left Column: Heading and info */}
+            <div className="lg:col-span-5 flex flex-col items-start gap-5">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xs text-[#FFC400] text-[12px] font-black uppercase tracking-[1.2px]">
+                <Sparkles className="w-3.5 h-3.5 text-[#FFC400]" />
+                <span>PORTFOLIO PAGE LEAD</span>
+              </div>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[48px] lg:leading-[48px] font-black text-white tracking-[-1.2px] max-w-3xl">
-              Initiate Your Growth Partnership With Digital Elite Services.
-            </h2>
+              <h2 className="text-3xl sm:text-4xl lg:text-[42px] lg:leading-[48px] font-black text-white tracking-[-1.2px]">
+                Loved Our Portfolio? Let's Build Yours.
+              </h2>
 
-            <p className="text-[#E2E8F0] max-w-2xl text-[16px] leading-[24px] font-medium">
-              We are ready to design, engineer, and scale your next major web application, brand identity, or growth marketing campaign.
-            </p>
+              <p className="text-[#E2E8F0] text-[15px] leading-[24px] font-medium">
+                Submit your inquiry below. Our strategy and engineering experts will analyze your requirements and get back to you within 2 business hours.
+              </p>
 
-            <div className="flex flex-wrap justify-center items-center gap-4 pt-2">
-              <button
-                onClick={() => onStartProject?.('Growth Partnership CTA')}
-                className="bg-[#FFC400] hover:bg-[#faa307] text-[#082D72] font-black text-[16px] leading-[24px] px-9 py-4 rounded-full shadow-[0px_8px_25px_rgba(255,196,0,0.45)] transition cursor-pointer flex items-center gap-2"
-              >
-                <span>Schedule Free Call</span>
-                <ArrowRight className="w-4 h-4 text-[#082D72]" />
-              </button>
+              {/* Trust highlights */}
+              <div className="space-y-3 pt-2 text-sm text-slate-200">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC400] shrink-0" />
+                  <span>Free Initial Strategy Audit & Quote</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC400] shrink-0" />
+                  <span>2-Hour Guaranteed Response Time</span>
+                </div>
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-[#FFC400] shrink-0" />
+                  <span>End-to-End Design & Technical Execution</span>
+                </div>
+              </div>
 
-              <a
-                href="tel:+919876543210"
-                className="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-[6px] text-white font-bold text-[16px] leading-[24px] px-7 py-4 rounded-full transition cursor-pointer flex items-center gap-2"
-              >
-                <span>Call Us: +91 98765 43210</span>
-              </a>
+              {/* Direct Reach */}
+              <div className="pt-4 border-t border-white/15 w-full flex flex-wrap items-center gap-4 text-xs font-bold text-slate-300">
+                <a
+                  href="tel:+916366930178"
+                  className="hover:text-white transition flex items-center gap-1.5"
+                >
+                  <PhoneCall className="w-3.5 h-3.5 text-[#FFC400]" />
+                  <span>+91 6366930178</span>
+                </a>
+                <span>•</span>
+                <a
+                  href="mailto:hello@digitaleliteservices.com"
+                  className="hover:text-white transition flex items-center gap-1.5"
+                >
+                  <Mail className="w-3.5 h-3.5 text-[#FFC400]" />
+                  <span>hello@digitaleliteservices.com</span>
+                </a>
+              </div>
             </div>
+
+            {/* Right Column: Lead Form */}
+            <div className="lg:col-span-7">
+              <div className="bg-white/95 backdrop-blur-[20px] rounded-[28px] p-7 sm:p-9 border border-[#E2EDF8] shadow-[0px_20px_50px_rgba(0,0,0,0.2)] text-[#0c2340]">
+                
+                {formSubmitted ? (
+                  <div className="text-center py-10">
+                    <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 shadow-sm">
+                      <CheckCircle2 className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-[#082D72] mb-2">
+                      Portfolio Lead Received!
+                    </h3>
+                    <p className="text-sm text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
+                      Thank you{lastSubmittedData?.name ? `, ${lastSubmittedData.name}` : ''}! We've received your project inquiry. Our team will review your requirements and get back to you within 2 business hours{lastSubmittedData?.email ? ` at ${lastSubmittedData.email}` : ''}.
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setFormSubmitted(false);
+                        setSubmitError(null);
+                      }}
+                      className="bg-[#0878F9] hover:bg-[#0066ff] text-white px-6 py-2.5 rounded-full text-xs font-bold cursor-pointer transition shadow-md inline-flex items-center gap-2"
+                    >
+                      <span>Submit Another Inquiry</span>
+                    </button>
+                  </div>
+                ) : (
+                  <div>
+                    <div className="mb-6">
+                      <span className="text-[11px] font-black text-[#0878F9] uppercase tracking-[0.6px] block mb-1">
+                        GET A PROPOSAL
+                      </span>
+                      <h3 className="text-2xl font-black text-[#082D72]">
+                        Start Your Project
+                      </h3>
+                      <p className="text-xs font-medium text-[#587BA5] mt-1">
+                        Fill in your details below and we'll connect with you right away.
+                      </p>
+                    </div>
+
+                    {submitError && (
+                      <div className="mb-5 p-3.5 rounded-[12px] bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-2.5">
+                        <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                        <div>
+                          <div className="font-bold">Submission Failed</div>
+                          <div className="text-red-600 text-xs mt-0.5">{submitError}</div>
+                        </div>
+                      </div>
+                    )}
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      {/* FULL NAME */}
+                      <div>
+                        <label className="block text-[11px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1 flex items-center gap-1.5">
+                          <User className="w-3.5 h-3.5 text-[#0878F9]" />
+                          FULL NAME *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          placeholder="e.g. Rahul Verma"
+                          className="w-full px-4 py-3 rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
+                        />
+                      </div>
+
+                      {/* 2-COL ROW: PHONE & EMAIL */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                          <label className="block text-[11px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1 flex items-center gap-1.5">
+                            <Phone className="w-3.5 h-3.5 text-[#0878F9]" />
+                            PHONE NUMBER *
+                          </label>
+                          <input
+                            type="tel"
+                            required
+                            maxLength={10}
+                            pattern="[0-9]{10}"
+                            value={formData.phone}
+                            onChange={(e) => {
+                              const val = e.target.value.replace(/\D/g, '');
+                              setFormData({ ...formData, phone: val });
+                            }}
+                            placeholder="10-digit number (e.g. 9876543210)"
+                            className="w-full px-4 py-3 rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
+                          />
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1 flex items-center gap-1.5">
+                            <Mail className="w-3.5 h-3.5 text-[#0878F9]" />
+                            EMAIL ADDRESS *
+                          </label>
+                          <input
+                            type="email"
+                            required
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            placeholder="rahul@company.com"
+                            className="w-full px-4 py-3 rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
+                          />
+                        </div>
+                      </div>
+
+                      {/* SUBMIT BUTTON */}
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="w-full hover:opacity-95 text-white font-black text-[14px] leading-[20px] py-3.5 rounded-[12px] shadow-[0px_6px_20px_rgba(8,120,249,0.3)] transition cursor-pointer flex items-center justify-center gap-2 mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                        style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin text-white" />
+                            <span>Submitting Inquiry...</span>
+                          </>
+                        ) : (
+                          <>
+                            <Zap className="w-4 h-4 fill-white" />
+                            <span>Send Project Inquiry</span>
+                          </>
+                        )}
+                      </button>
+                    </form>
+                  </div>
+                )}
+
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

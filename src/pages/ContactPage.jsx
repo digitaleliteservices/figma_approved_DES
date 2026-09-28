@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import {
   Mail,
   Phone,
@@ -17,16 +18,38 @@ import {
   Building2,
   Zap,
   ShieldCheck,
+  Globe,
+  Loader2,
+  AlertCircle,
 } from 'lucide-react';
 
+const SERVICES_LIST = [
+  'Digital Marketing',
+  'Social Media Marketing',
+  'Web Development',
+  'Graphic Design',
+  'Lead Generation',
+  'SEO Optimization',
+  'Other / Custom Solution',
+];
+
 export function ContactPage({ onStartProject }) {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const initialService = location.state?.service || searchParams.get('service') || '';
+
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+  const [lastSubmittedData, setLastSubmittedData] = useState(null);
+
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
-    subject: '',
-    message: '',
+    email: '',
+    company: '',
+    website: '',
+    service: initialService,
   });
 
   const [openFaq, setOpenFaq] = useState(0);
@@ -50,9 +73,53 @@ export function ContactPage({ onStartProject }) {
     },
   ];
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    const cleanedPhone = formData.phone.replace(/\D/g, '').slice(-10);
+    const payload = {
+      name: formData.name.trim(),
+      phone: cleanedPhone || formData.phone.trim(),
+      email: formData.email.trim(),
+      company: formData.company.trim(),
+      website: formData.website.trim(),
+      service: formData.service,
+    };
+
+    try {
+       const response = await fetch('https://server.plumeriaresort.in/digitaleliteservice/sendMail', {
+      //const response = await fetch('http://localhost:5000/digitaleliteservice/sendMail', {
+       method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json().catch(() => null);
+
+      if (response.ok && data?.success !== false) {
+        setLastSubmittedData(payload);
+        setFormSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          company: '',
+          website: '',
+          service: '',
+        });
+      } else {
+        setSubmitError(data?.message || 'Failed to send your inquiry. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setSubmitError('Unable to send inquiry. Please check your internet connection and try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -266,24 +333,41 @@ export function ContactPage({ onStartProject }) {
 
               {formSubmitted ? (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4 shadow-sm">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
                   <h3 className="text-2xl font-bold text-[#082D72] mb-2">
-                    Message Sent Successfully!
+                    Inquiry Received Successfully!
                   </h3>
-                  <p className="text-sm text-slate-600 max-w-md mx-auto mb-6">
-                    Thank you for reaching out to Digital Elite Services. Our team will review your inquiry and get back to you within 2 hours.
+                  <p className="text-sm text-slate-600 max-w-md mx-auto mb-6 leading-relaxed">
+                    Thank you{lastSubmittedData?.name ? `, ${lastSubmittedData.name}` : ''}! We have received your request
+                    {lastSubmittedData?.service ? (
+                      <> for <strong className="text-[#082D72] font-bold">{lastSubmittedData.service}</strong></>
+                    ) : ''}. Our team will review your inquiry and get back to you within 2 business hours{lastSubmittedData?.email ? ` at ${lastSubmittedData.email}` : ''}.
                   </p>
                   <button
-                    onClick={() => setFormSubmitted(false)}
-                    className="bg-[#0878F9] hover:bg-[#0066ff] text-white px-6 py-2.5 rounded-full text-xs font-bold cursor-pointer transition shadow-md"
+                    type="button"
+                    onClick={() => {
+                      setFormSubmitted(false);
+                      setSubmitError(null);
+                    }}
+                    className="bg-[#0878F9] hover:bg-[#0066ff] text-white px-6 py-2.5 rounded-full text-xs font-bold cursor-pointer transition shadow-md inline-flex items-center gap-2"
                   >
-                    Send Another Message
+                    <span>Send Another Inquiry</span>
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
+                  {submitError && (
+                    <div className="p-4 rounded-[12px] bg-red-50 border border-red-200 text-red-700 text-xs sm:text-sm flex items-start gap-3">
+                      <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
+                      <div>
+                        <div className="font-bold">Submission Failed</div>
+                        <div className="text-red-600 mt-0.5">{submitError}</div>
+                      </div>
+                    </div>
+                  )}
+
                   {/* FULL NAME */}
                   <div>
                     <label className="block text-[12px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1.5 flex items-center gap-1.5">
@@ -333,46 +417,85 @@ export function ContactPage({ onStartProject }) {
                     </div>
                   </div>
 
-                  {/* SUBJECT / INQUIRY TYPE */}
-                  <div>
-                    <label className="block text-[12px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1.5 flex items-center gap-1.5">
-                      <Tag className="w-3.5 h-3.5 text-[#0878F9]" />
-                      SUBJECT / INQUIRY TYPE *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      placeholder="e.g. Lead Generation Campaign / Web Development inquiry"
-                      className="w-full px-4 py-[15px] rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
-                    />
+                  {/* 2-COL ROW: COMPANY & WEBSITE */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label className="block text-[12px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1.5 flex items-center gap-1.5">
+                        <Building2 className="w-3.5 h-3.5 text-[#0878F9]" />
+                        COMPANY NAME
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        placeholder="e.g. Acme Corporation"
+                        className="w-full px-4 py-[15px] rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[12px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1.5 flex items-center gap-1.5">
+                        <Globe className="w-3.5 h-3.5 text-[#0878F9]" />
+                        WEBSITE
+                      </label>
+                      <input
+                        type="text"
+                        value={formData.website}
+                        onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                        placeholder="e.g. https://yourcompany.com"
+                        className="w-full px-4 py-[15px] rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
+                      />
+                    </div>
                   </div>
 
-                  {/* YOUR MESSAGE */}
+                  {/* SERVICES DROPDOWN */}
                   <div>
                     <label className="block text-[12px] font-extrabold text-[#082D72] uppercase tracking-[0.6px] mb-1.5 flex items-center gap-1.5">
-                      <MessageSquare className="w-3.5 h-3.5 text-[#0878F9]" />
-                      YOUR MESSAGE *
+                      <Sparkles className="w-3.5 h-3.5 text-[#0878F9]" />
+                      SELECT SERVICE *
                     </label>
-                    <textarea
-                      required
-                      rows={3}
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Write your message or project requirements here..."
-                      className="w-full px-4 py-[14px] rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition resize-none"
-                    />
+                    <div className="relative">
+                      <select
+                        required
+                        value={formData.service}
+                        onChange={(e) => setFormData({ ...formData, service: e.target.value })}
+                        className={`w-full px-4 py-[15px] pr-10 rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm focus:outline-none focus:border-[#0878F9] transition appearance-none cursor-pointer ${
+                          formData.service ? 'text-slate-800 font-medium' : 'text-[#9CA3AF]'
+                        }`}
+                      >
+                        <option value="" disabled className="text-slate-400">
+                          Select a service...
+                        </option>
+                        {SERVICES_LIST.map((srv) => (
+                          <option key={srv} value={srv} className="text-slate-800 py-1 font-normal">
+                            {srv}
+                          </option>
+                        ))}
+                      </select>
+                      <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-[#0878F9]">
+                        <ChevronDown className="w-4 h-4" />
+                      </div>
+                    </div>
                   </div>
 
                   {/* SUBMIT BUTTON */}
                   <button
                     type="submit"
-                    className="w-full hover:bg-[#0066ff] text-white font-black text-[14px] leading-[20px] py-4 rounded-[12px] shadow-[0px_6px_20px_rgba(8,120,249,0.3)] transition cursor-pointer flex items-center justify-center gap-2 mt-2"
-                     style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
+                    disabled={isSubmitting}
+                    className="w-full hover:opacity-95 text-white font-black text-[14px] leading-[20px] py-4 rounded-[12px] shadow-[0px_6px_20px_rgba(8,120,249,0.3)] transition cursor-pointer flex items-center justify-center gap-2 mt-2 disabled:opacity-60 disabled:cursor-not-allowed"
+                    style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
                   >
-                    <Zap className="w-4 h-4 fill-white" />
-                    <span>Send Message</span>
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin text-white" />
+                        <span>Sending Inquiry...</span>
+                      </>
+                    ) : (
+                      <>
+                        <Zap className="w-4 h-4 fill-white" />
+                        <span>Send Message</span>
+                      </>
+                    )}
                   </button>
                 </form>
               )}

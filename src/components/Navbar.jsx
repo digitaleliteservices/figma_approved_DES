@@ -319,7 +319,7 @@ export const Navbar = ({
           <div className="hidden md:flex items-center">
             <button
               id="cta-start-project-nav"
-              onClick={onStartProject}
+              onClick={() => navigate('/contact')}
               className="button group inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0c2340] font-bold px-6 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer text-sm"
             >
               <span>Start a Project</span>
@@ -442,10 +442,7 @@ export const Navbar = ({
 
               <div className="pt-3">
                 <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onStartProject();
-                  }}
+                  onClick={() => navigate('/contact')}
                   className="button w-full inline-flex items-center justify-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-6 py-3 rounded-full shadow-sm text-sm"
                 >
                   <span>Start a Project</span>
