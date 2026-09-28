@@ -264,7 +264,7 @@ export function WorkPage({ onStartProject }) {
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
               {/* Top Pill Tag */}
@@ -456,7 +456,7 @@ export function WorkPage({ onStartProject }) {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            
+
             {/* Stat 1 */}
             <div className="space-y-1">
               <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#FFB703] tracking-tight">
@@ -501,11 +501,8 @@ export function WorkPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ------------------------------------------------------------- */}
-      {/* 3. MAIN CASE STUDIES SECTION WITH FILTERS                      */}
-      {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        
+
         {/* Header & Filter Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
@@ -526,11 +523,10 @@ export function WorkPage({ onStartProject }) {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${
-                  activeFilter === filter.id
+                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
                     : 'bg-white/90 border border-[#D5E6FE] text-[#082D72] hover:bg-[#EEF6FF]'
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -629,7 +625,7 @@ export function WorkPage({ onStartProject }) {
       {/* 4. VISUAL SHOWCASE SECTION (4x3 Grid of 12 Projects)          */}
       {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
-        
+
         {/* Background Radial Orbs for Visual Showcase */}
         <div
           className="absolute -top-10 -left-28 w-[380px] sm:w-[520px] h-[380px] sm:h-[520px] rounded-full pointer-events-none -z-10 opacity-85"
