@@ -26,73 +26,124 @@ export const defaultStatsData = [
 
 export const StatsBannerBar = ({ stats = defaultStatsData, className = '' }) => {
   return (
-    <section
-      className={`relative w-full py-8 sm:py-10 bg-[#022468] text-white overflow-hidden select-none shadow-inner ${className}`}
-      style={{
-        background: 'linear-gradient(90deg, #021e54 0%, #032770 35%, #052f85 70%, #032468 100%)',
-      }}
-    >
-      {/* Background Flowing Wave Graphic (Matching image.png) */}
-      <div className="absolute inset-0 pointer-events-none opacity-30 overflow-hidden">
-        <svg
-          className="absolute w-[200%] h-full -left-1/4 top-0"
-          viewBox="0 0 1440 120"
-          preserveAspectRatio="none"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 60 C 240 10, 480 110, 720 50 C 960 -10, 1200 90, 1440 40"
-            stroke="#1d5bc7"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
-          <path
-            d="M0 90 C 300 30, 600 120, 900 70 C 1200 20, 1350 100, 1440 80"
-            stroke="#38bdf8"
-            strokeWidth="1.5"
-            strokeDasharray="6 6"
-            strokeLinecap="round"
-            opacity="0.6"
-          />
-          <path
-            d="M0 35 C 320 85, 640 15, 960 75 C 1280 15, 1380 65, 1440 45"
-            stroke="rgba(255,255,255,0.18)"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center justify-between">
-          {stats.map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <div
-                key={idx}
-                className="flex items-center gap-3.5 sm:gap-4.5 justify-start sm:justify-center"
-              >
-                {/* Yellow / Golden Icon */}
-                <div className="shrink-0 text-[#FFB703]">
-                  <Icon className="w-8 h-8 sm:w-10 sm:h-10 lg:w-11 lg:h-11 stroke-[2.2]" />
+    <div className="relative w-full bg-[#062A78] py-4 sm:py-6 border-t border-slate-800/50 overflow-hidden">
+            
+            {/* Subtle Wave Line Art: Left Side */}
+            <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
+              <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+                <path
+                  d="M 0 70 Q 60 45, 120 70 T 240 65"
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M 0 85 Q 70 60, 140 85 T 240 80"
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M 0 55 Q 80 35, 160 55 T 240 50"
+                  stroke="#38bdf8"
+                  strokeWidth="1.2"
+                  fill="none"
+                />
+              </svg>
+            </div>
+    
+            {/* Subtle Wave Line Art: Right Side */}
+            <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
+              <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
+                <path
+                  d="M 240 70 Q 180 45, 120 70 T 0 65"
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M 240 85 Q 170 60, 100 85 T 0 80"
+                  stroke="#38bdf8"
+                  strokeWidth="1.5"
+                  fill="none"
+                />
+                <path
+                  d="M 240 55 Q 160 35, 80 55 T 0 50"
+                  stroke="#38bdf8"
+                  strokeWidth="1.2"
+                  fill="none"
+                />
+              </svg>
+            </div>
+    
+            {/* 4 Statistics Metrics */}
+            <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center">
+    
+                {/* Metric 1: 150+ Projects Delivered */}
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <div className="shrink-0 text-[#ffba00]">
+                    <Trophy className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
+                      150+
+                    </div>
+                    <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium  leading-snug">
+                      Projects Delivered
+                    </div>
+                  </div>
                 </div>
-
-                {/* Text Block: Number on Top, Label on Bottom */}
-                <div className="flex flex-col text-left">
-                  <span className="text-2xl sm:text-3xl lg:text-[34px] font-black text-white leading-none tracking-tight">
-                    {item.number}
-                  </span>
-                  <span className="text-xs sm:text-[13px] text-blue-100/90 font-medium leading-snug mt-1">
-                    {item.label}
-                  </span>
+    
+                {/* Metric 2: 70+ Happy Clients */}
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <div className="shrink-0 text-[#ffba00]">
+                    <Users className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
+                      70+
+                    </div>
+                    <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
+                      Happy Clients
+                    </div>
+                  </div>
                 </div>
+    
+                {/* Metric 3: 300% Average ROI Growth */}
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <div className="shrink-0 text-[#ffba00]">
+                    <TrendingUp className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
+                      300%
+                    </div>
+                    <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
+                      Average ROI Growth
+                    </div>
+                  </div>
+                </div>
+    
+                {/* Metric 4: 5+ Years of Experience */}
+                <div className="flex items-center gap-4 sm:gap-5">
+                  <div className="shrink-0 text-[#ffba00]">
+                    <Star className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
+                  </div>
+                  <div>
+                    <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
+                      5+
+                    </div>
+                    <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
+                      Years of Experience
+                    </div>
+                  </div>
+                </div>
+    
               </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+            </div>
+    
+          </div>
   );
 };
 
