@@ -267,7 +267,7 @@ export function ContactPage({ onStartProject }) {
                   <a href="mailto:info@digitaleliteservices.in" className="text-[14px] leading-[20px] font-black text-[#0878F9] hover:underline block mb-0.5">
                     info@digitaleliteservices.in
                   </a>
-                  <div className="text-[12px] leading-[16px] font-bold text-[#475569]">contact@digitaleliteservices.in</div>
+                  {/* <div className="text-[12px] leading-[16px] font-bold text-[#475569]">contact@digitaleliteservices.in</div> */}
                 </div>
               </div>
             </div>
@@ -312,7 +312,7 @@ export function ContactPage({ onStartProject }) {
                   BANGALORE HEADQUARTERS
                 </div>
                 <div className="text-[12px] leading-[20px] font-medium text-[#587BA5]">
-                  Enterprise Tower, Business Hub, Suite 402, Bangalore, Karnataka - 560001
+                  1ˢᵗ Floor, Sathya Heritage, 2574, 8ᵗʰ Cross, 13ᵗʰ Main, E Block, Sahakarnagar, Bengaluru, Karnataka 560092.
                 </div>
               </div>
             </div>

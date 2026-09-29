@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
   Sparkles,
@@ -23,8 +24,9 @@ import {
 } from 'lucide-react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
-export function WorkPage({ onStartProject }) {
+export function WorkPage() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const navigate = useNavigate();
 
   // Portfolio Page Lead Form State
   const [formData, setFormData] = useState({
@@ -423,7 +425,7 @@ export function WorkPage({ onStartProject }) {
                     Proven Tactics
                   </h3>
                   <button
-                    onClick={() => onStartProject?.('Proven Tactics Report')}
+                    onClick={() => navigate("/contact")}
                     className="text-xs font-black text-[#0878F9] hover:underline transition flex items-center gap-1 cursor-pointer uppercase tracking-wider"
                   >
                     <span>VIEW REPORT</span>
@@ -534,7 +536,7 @@ export function WorkPage({ onStartProject }) {
             {filters.map((filter) => (
               <button
                 key={filter.id}
-                onClick={() => setActiveFilter(filter.id)}
+                onClick={() =>navigate("/contact")}
                 className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${
                   activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
@@ -573,7 +575,7 @@ export function WorkPage({ onStartProject }) {
 
                 {/* Bottom Right Banner Action */}
                 <button
-                  onClick={() => onStartProject?.(study.title)}
+                  onClick={()=>navigate("/contact")}
                   className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md"
                 >
                   <span>VIEW CASE STUDY</span>
@@ -615,7 +617,7 @@ export function WorkPage({ onStartProject }) {
                 {/* Footer Action Link */}
                 <div className="pt-4 border-t border-[#EEF6FF] flex items-center justify-between text-xs font-bold text-[#082D72]">
                   <button
-                    onClick={() => onStartProject?.(study.title)}
+                    onClick={() => navigate("/contact")}
                     className="inline-flex items-center gap-1.5 text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
                   >
                     <span>Explore Case Study</span>
