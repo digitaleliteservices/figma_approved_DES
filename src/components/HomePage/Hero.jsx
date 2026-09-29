@@ -12,11 +12,11 @@ export const Hero = ({
       id="home"
       className="relative w-full overflow-hidden bg-white min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center"
     >
-      {/* ================= EXACT SUBTLE TOP-LEFT BLUE CIRCLE BLUR (MATCHING TARGET IMAGE 2) ================= */}
+
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative h-full">
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
-            {/* Discrete top-left blue blurred circle: gently kisses IDEAS × STRATEGY and top of Digital, leaving Real Growth and rest pure white */}
             <div
               className="absolute -top-28 sm:-top-32 lg:-top-36 -left-28 sm:-left-36 lg:-left-44 w-[330px] h-[330px] sm:w-[370px] sm:h-[370px] lg:w-[410px] lg:h-[410px] rounded-full pointer-events-none"
               style={{
@@ -29,7 +29,6 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= RIGHT EXPANSIVE OFFICE PHOTOGRAPHY (EDGE-TO-EDGE) ================= */}
       <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] xl:w-[58%] z-0 select-none pointer-events-auto">
         <img
           src={heroOfficeImg}
@@ -37,14 +36,11 @@ export const Hero = ({
           className="w-full h-full object-cover object-left-top xl:object-center"
         />
 
-        {/* Seamless Soft Left-Side White Fade Gradient */}
         <div className="absolute inset-y-0 left-0 w-44 xl:w-60 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none" />
         
-        {/* Subtle Top & Bottom Gradient Vignette */}
         <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-white/30 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-white/30 to-transparent pointer-events-none" />
 
-        {/* ================= FLOATING SERVICES CARD (TOP RIGHT OVER OFFICE) ================= */}
         <div className="absolute top-6 xl:top-8 right-8 xl:right-14 bg-white/95 backdrop-blur-md rounded-[26px] p-4 sm:p-5 shadow-[0_18px_40px_rgba(0,0,0,0.09),0_2px_6px_rgba(0,0,0,0.04)] border border-slate-100/90 w-48 sm:w-52 z-20 transition-transform duration-300 hover:scale-[1.02]">
           <div className="space-y-3 sm:space-y-3.5">
             {/* 1. Strategy */}
@@ -64,7 +60,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 2. Design */}
             <button
               onClick={() => onSelectService?.('Design')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
