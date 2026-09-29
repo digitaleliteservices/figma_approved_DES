@@ -13,7 +13,6 @@ export const Hero = ({
       className="relative w-full overflow-hidden bg-white min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center"
     >
 
-
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative h-full">
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
@@ -43,7 +42,6 @@ export const Hero = ({
 
         <div className="absolute top-6 xl:top-8 right-8 xl:right-14 bg-white/95 backdrop-blur-md rounded-[26px] p-4 sm:p-5 shadow-[0_18px_40px_rgba(0,0,0,0.09),0_2px_6px_rgba(0,0,0,0.04)] border border-slate-100/90 w-48 sm:w-52 z-20 transition-transform duration-300 hover:scale-[1.02]">
           <div className="space-y-3 sm:space-y-3.5">
-            {/* 1. Strategy */}
             <button
               onClick={() => onSelectService?.('Strategy')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -77,7 +75,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 3. Technology */}
             <button
               onClick={() => onSelectService?.('Technology')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -90,7 +87,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 4. Marketing */}
             <button
               onClick={() => onSelectService?.('Marketing')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -103,7 +99,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 5. Automation */}
             <button
               onClick={() => onSelectService?.('Automation')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -118,7 +113,6 @@ export const Hero = ({
           </div>
         </div>
 
-        {/* ================= FLOATING NAVY BADGE (BOTTOM RIGHT CORNER) ================= */}
         <div
           id="hero-growth-partner-badge"
           onClick={onStartProject}
@@ -137,11 +131,9 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= LEFT CONTENT CONTAINER ================= */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12 pb-12 lg:pb-16">
           
-          {/* Category Eyebrow Banner: Plus Jakarta Sans 700 */}
           <div className="inline-flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs md:text-[13px] font-bold text-[#062A78] tracking-[0.18em] uppercase mb-4 sm:mb-6">
             <span>IDEAS</span>
             <span className="text-[#0088ff] font-extrabold text-sm leading-none">×</span>

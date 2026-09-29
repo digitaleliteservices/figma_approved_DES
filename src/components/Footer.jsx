@@ -60,8 +60,6 @@ export const Footer = ({
   return (
     <footer className="relative w-full bg-[#051c4e] text-white overflow-hidden select-none">
       
-      {/* ================= BACKGROUND WAVE LINE ART ================= */}
-      {/* Subtle Cyan Dotted/Dashed Wave: Bottom-Left */}
       <div className="absolute -bottom-6 -left-10 w-96 h-64 pointer-events-none opacity-25">
         <svg className="w-full h-full" viewBox="0 0 400 240" fill="none">
           <path
@@ -115,13 +113,11 @@ export const Footer = ({
         </svg>
       </div>
 
-      {/* ================= MAIN FOOTER CONTENT ================= */}
       <div className="max-w-[1540px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pt-16 sm:pt-20 pb-12 sm:pb-16 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12">
           
-          {/* COLUMN 1: Brand Logo, Tagline & Social Icons */}
           <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
-            {/* Left-Aligned Brand Logo */}
+
             <div
               id="footer-logo"
               onClick={scrollToTop}
@@ -134,13 +130,11 @@ export const Footer = ({
               </span> */}
             </div>
 
-            {/* Description Text */}
             <p className="text-slate-300 text-[14px] sm:text-[14.5px] leading-[1.65] max-w-[320px] mb-7 font-normal">
               We design, build and grow digital experiences that help businesses get noticed, trusted
               and chosen.
             </p>
 
-            {/* 4 Social Media Icons */}
             <div className="flex items-center gap-4.5 text-white">
               <a
                 href="https://linkedin.com"
