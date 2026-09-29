@@ -213,7 +213,6 @@ export function LeadGenerationServicePage({ onStartProject }) {
       className="min-h-screen bg-white text-[#082D72] selection:bg-blue-100 selection:text-blue-900 relative overflow-hidden"
       style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
       {/* ================= BACKGROUND GRADIENT ORBS (MATCHING SCREENSHOT) ================= */}
       <div
