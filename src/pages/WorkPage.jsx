@@ -305,8 +305,6 @@ export function WorkPage() {
       className="min-h-screen bg-white text-[#082D72] selection:bg-blue-100 selection:text-blue-900 relative overflow-hidden"
       style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      {/* Import Plus Jakarta Sans font to match ContactPage and HomePage design system */}
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
       {/* ------------------------------------------------------------- */}
       {/* EXACT RADIAL GRADIENT ORB BACKGROUND SHAPES (MATCHING CONTACTPAGE) */}
@@ -342,7 +340,7 @@ export function WorkPage() {
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
               {/* Top Pill Tag */}
@@ -355,7 +353,7 @@ export function WorkPage() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-5xl lg:text-[52px] font-black leading-tight tracking-[-1.5px] text-[#082D72]">
+              <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6">
                 Architects of <span className="text-[#0878F9]">Digital Distinction</span> — Case Studies
               </h1>
 
@@ -512,12 +510,8 @@ export function WorkPage() {
         ]}
       />
 
-      {/* ------------------------------------------------------------- */}
-      {/* 3. MAIN CASE STUDIES SECTION WITH FILTERS                      */}
-      {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        
-        {/* Header & Filter Controls */}
+
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
             <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-2 uppercase tracking-[1.2px]">
@@ -531,7 +525,6 @@ export function WorkPage() {
             </p>
           </div>
 
-          {/* Filter Pill Buttons */}
           <div className="flex flex-wrap items-center gap-2">
             {filters.map((filter) => (
               <button
@@ -539,9 +532,11 @@ export function WorkPage() {
                 onClick={() =>navigate("/contact")}
                 className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${
                   activeFilter === filter.id
+                onClick={() => setActiveFilter(filter.id)}
+                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
                     : 'bg-white/90 border border-[#D5E6FE] text-[#082D72] hover:bg-[#EEF6FF]'
-                }`}
+                  }`}
               >
                 {filter.label}
               </button>
@@ -640,7 +635,17 @@ export function WorkPage() {
       {/* 4. VISUAL SHOWCASE SECTION (4x3 Grid of 12 Projects)          */}
       {/* ------------------------------------------------------------- */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
-        
+
+        {/* Background Radial Orbs for Visual Showcase */}
+        <div
+          className="absolute -top-10 -left-28 w-[380px] sm:w-[520px] h-[380px] sm:h-[520px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+        <div
+          className="absolute -bottom-10 -right-28 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none -z-10 opacity-85"
+          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
+        />
+
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
           <div>

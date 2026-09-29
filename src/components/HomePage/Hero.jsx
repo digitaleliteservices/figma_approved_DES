@@ -16,11 +16,10 @@ export const Hero = ({
       id="home"
       className="relative w-full overflow-hidden bg-white min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center"
     >
-      {/* ================= EXACT SUBTLE TOP-LEFT BLUE CIRCLE BLUR (MATCHING TARGET IMAGE 2) ================= */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative h-full">
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
-            {/* Discrete top-left blue blurred circle: gently kisses IDEAS × STRATEGY and top of Digital, leaving Real Growth and rest pure white */}
             <div
               className="absolute -top-28 sm:-top-32 lg:-top-36 -left-28 sm:-left-36 lg:-left-44 w-[330px] h-[330px] sm:w-[370px] sm:h-[370px] lg:w-[410px] lg:h-[410px] rounded-full pointer-events-none"
               style={{
@@ -33,7 +32,6 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= RIGHT EXPANSIVE OFFICE PHOTOGRAPHY (EDGE-TO-EDGE) ================= */}
       <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] xl:w-[58%] z-0 select-none pointer-events-auto">
         <img
           src={heroOfficeImg}
@@ -41,17 +39,13 @@ export const Hero = ({
           className="w-full h-full object-cover object-left-top xl:object-center"
         />
 
-        {/* Seamless Soft Left-Side White Fade Gradient */}
         <div className="absolute inset-y-0 left-0 w-44 xl:w-60 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none" />
         
-        {/* Subtle Top & Bottom Gradient Vignette */}
         <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-white/30 to-transparent pointer-events-none" />
         <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-white/30 to-transparent pointer-events-none" />
 
-        {/* ================= FLOATING SERVICES CARD (TOP RIGHT OVER OFFICE) ================= */}
         <div className="absolute top-6 xl:top-8 right-8 xl:right-14 bg-white/95 backdrop-blur-md rounded-[26px] p-4 sm:p-5 shadow-[0_18px_40px_rgba(0,0,0,0.09),0_2px_6px_rgba(0,0,0,0.04)] border border-slate-100/90 w-48 sm:w-52 z-20 transition-transform duration-300 hover:scale-[1.02]">
           <div className="space-y-3 sm:space-y-3.5">
-            {/* 1. Strategy */}
             <button
               onClick={() => onSelectService?.('Strategy')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -68,7 +62,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 2. Design */}
             <button
               onClick={() => onSelectService?.('Design')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -86,7 +79,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 3. Technology */}
             <button
               onClick={() => onSelectService?.('Technology')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -99,7 +91,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 4. Marketing */}
             <button
               onClick={() => onSelectService?.('Marketing')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -112,7 +103,6 @@ export const Hero = ({
               </span>
             </button>
 
-            {/* 5. Automation */}
             <button
               onClick={() => onSelectService?.('Automation')}
               className="w-full flex items-center gap-3 px-1.5 py-1 rounded-xl hover:bg-sky-50/80 transition-colors text-left group cursor-pointer"
@@ -127,7 +117,6 @@ export const Hero = ({
           </div>
         </div>
 
-        {/* ================= FLOATING NAVY BADGE (BOTTOM RIGHT CORNER) ================= */}
         <div
           id="hero-growth-partner-badge"
           onClick={onStartProject}
@@ -146,11 +135,9 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= LEFT CONTENT CONTAINER ================= */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
         <div className="w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12 pb-12 lg:pb-16">
           
-          {/* Category Eyebrow Banner: Plus Jakarta Sans 700 */}
           <div className="inline-flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs md:text-[13px] font-bold text-[#062A78] tracking-[0.18em] uppercase mb-4 sm:mb-6">
             <span>IDEAS</span>
             <span className="text-[#0088ff] font-extrabold text-sm leading-none">×</span>
@@ -161,22 +148,18 @@ export const Hero = ({
             <span>GROWTH</span>
           </div>
 
-          {/* Display Headline: Plus Jakarta Sans 800 */}
           <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6" style={{ lineHeight: '1.1' }}>
             Digital <br />
             Solutions for <br />
             <span className="text-[#0066ff]">Real Growth.</span>
           </h1>
 
-          {/* Subtitle Description: Plus Jakarta Sans 500 */}
           <p className="text-slate-600 text-base sm:text-[17px] font-medium leading-relaxed max-w-[480px] mb-8 sm:mb-9">
             We design, build and grow digital experiences that help businesses
             get noticed, trusted and chosen.
           </p>
 
-          {/* Action Buttons: Plus Jakarta Sans 700 */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-9 sm:mb-11">
-            {/* Primary Yellow Button */}
             <button
               id="hero-cta-start-project"
               onClick={()=>navigate("/contact")}
@@ -186,7 +169,6 @@ export const Hero = ({
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-[#0c2340]" />
             </button>
 
-            {/* Secondary Blue-Bordered Button */}
             <button
               id="hero-cta-explore-services"
               onClick={()=>navigate("/services")}
@@ -197,16 +179,12 @@ export const Hero = ({
             </button>
           </div>
 
-          {/* Subtle Horizontal Divider */}
           <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-7 sm:mb-9" />
 
-          {/* Verified Statistics Grid: Plus Jakarta Sans 800 & 600 */}
           <div className="relative max-w-[500px]">
-            {/* Soft pale blue circular aura behind 50+ */}
             <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" />
 
             <div className="relative z-10 grid grid-cols-4 gap-3 sm:gap-6 items-start">
-              {/* Metric 1 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   50+
@@ -218,7 +196,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 2 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   30+
@@ -230,7 +207,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 3 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   7
@@ -242,7 +218,6 @@ export const Hero = ({
                 </div>
               </div>
 
-              {/* Metric 4 */}
               <div>
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
                   24/7
@@ -257,7 +232,6 @@ export const Hero = ({
         </div>
       </div>
 
-      {/* ================= MOBILE/TABLET ONLY PHOTO SECTION ================= */}
       <div className="block lg:hidden w-full px-4 pb-12">
         <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden shadow-lg bg-slate-100">
           <img

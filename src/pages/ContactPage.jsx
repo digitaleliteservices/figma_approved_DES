@@ -127,9 +127,6 @@ export function ContactPage({ onStartProject }) {
       className="min-h-screen bg-white text-[#0c2340] selection:bg-blue-100 selection:text-blue-900 relative overflow-hidden"
       style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      {/* Ideally move this into your document <head> (index.html) instead of inline,
-          but it's included here so the component matches the Figma font out of the box. */}
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');`}</style>
 
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 bg-transparent z-10">

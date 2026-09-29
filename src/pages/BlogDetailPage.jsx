@@ -69,37 +69,37 @@ export function BlogDetailPage({ onStartProject }) {
     >
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
-      {/* ================= BACKGROUND GRADIENT ORBS (MATCHING SCREENSHOT) ================= */}
+      {/* ================= BACKGROUND GRADIENT ORBS (REDUCED HERO CIRCLE SIZES) ================= */}
       <div
-        className="absolute -top-16 -left-28 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full pointer-events-none z-0 opacity-80"
+        className="absolute -top-10 -left-20 w-[240px] sm:w-[340px] h-[240px] sm:h-[340px] rounded-full pointer-events-none z-0 opacity-75"
         style={{
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
       />
       <div
-        className="absolute top-10 -right-24 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full pointer-events-none z-0 opacity-80"
+        className="absolute top-6 -right-16 w-[240px] sm:w-[340px] h-[240px] sm:h-[340px] rounded-full pointer-events-none z-0 opacity-75"
         style={{
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
       />
       <div
-        className="absolute top-[600px] -left-36 w-[420px] sm:w-[540px] h-[420px] sm:h-[540px] rounded-full pointer-events-none z-0 opacity-70"
+        className="absolute top-[600px] -left-24 w-[280px] sm:w-[380px] h-[280px] sm:h-[380px] rounded-full pointer-events-none z-0 opacity-65"
         style={{
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
       />
       <div
-        className="absolute top-[1200px] -right-32 w-[420px] sm:w-[540px] h-[420px] sm:h-[540px] rounded-full pointer-events-none z-0 opacity-70"
+        className="absolute top-[1200px] -right-24 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full pointer-events-none z-0 opacity-65"
         style={{
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
       />
       <div
-        className="absolute top-[1800px] -left-32 w-[420px] sm:w-[540px] h-[420px] sm:h-[540px] rounded-full pointer-events-none z-0 opacity-70"
+        className="absolute top-[1800px] -left-24 w-[300px] sm:w-[400px] h-[300px] sm:h-[400px] rounded-full pointer-events-none z-0 opacity-65"
         style={{
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
