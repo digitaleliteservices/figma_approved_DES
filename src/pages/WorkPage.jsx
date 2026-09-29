@@ -232,8 +232,6 @@ export function WorkPage({ onStartProject }) {
       className="min-h-screen bg-white text-[#082D72] selection:bg-blue-100 selection:text-blue-900 relative overflow-hidden"
       style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-      {/* Import Plus Jakarta Sans font to match ContactPage and HomePage design system */}
-      <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
       {/* ------------------------------------------------------------- */}
       {/* EXACT RADIAL GRADIENT ORB BACKGROUND SHAPES (MATCHING CONTACTPAGE) */}
