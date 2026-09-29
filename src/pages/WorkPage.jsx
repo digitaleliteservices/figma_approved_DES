@@ -774,11 +774,11 @@ export function WorkPage({ onStartProject }) {
                 </a>
                 <span>•</span>
                 <a
-                  href="mailto:hello@digitaleliteservices.com"
+                  href="mailto:info@digitaleliteservices.in"
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#FFC400]" />
-                  <span>hello@digitaleliteservices.com</span>
+                  <span>info@digitaleliteservices.in</span>
                 </a>
               </div>
             </div>
