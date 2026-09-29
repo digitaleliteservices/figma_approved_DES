@@ -504,7 +504,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           <div>
             <button
               id="about-cta-connect-today-btn"
-              onClick={() => handleStartProjectClick('General Inquiries')}
+              onClick={() => navigate('/contact')}
               className="group inline-flex items-center gap-2.5 bg-[#ffb703] hover:bg-[#faa307] active:scale-95 text-[#062A78] font-bold px-9 sm:px-10 py-3.5 sm:py-4 rounded-full shadow-[0_12px_28px_rgba(0,0,0,0.32)] hover:shadow-[0_16px_34px_rgba(0,0,0,0.42)] transition-all duration-200 cursor-pointer text-[15px] sm:text-base"
             >
               <span>Connect Us Today</span>

@@ -6,12 +6,16 @@ import {
   Lightbulb,
   ShieldCheck,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import teamImg from '../../assets/images/team_collaboration_1790002998338.jpg';
 
 export const AboutSection = ({
   onMoreAboutUs,
   onPillarClick,
 }) => {
+  
+  const navigate = useNavigate();
+
   const pillars = [
     {
       id: 'client-first',
@@ -154,7 +158,7 @@ export const AboutSection = ({
             <div>
               <button
                 id="about-cta-more-about-us"
-                onClick={onMoreAboutUs}
+                onClick={()=>navigate("/about")}
                 className="group inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-slate-900 font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
               >
                 <span>More About Us</span>

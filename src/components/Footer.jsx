@@ -137,7 +137,7 @@ export const Footer = ({
 
             <div className="flex items-center gap-4.5 text-white">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/digital-elite-service/posts/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -146,7 +146,7 @@ export const Footer = ({
                 <Linkedin className="w-5 h-5" strokeWidth={1.8} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/digital_elite_services"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -155,7 +155,7 @@ export const Footer = ({
                 <Instagram className="w-5 h-5" strokeWidth={1.8} />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/people/Digital-Elite-Service/61578403771896/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -164,7 +164,7 @@ export const Footer = ({
                 <Facebook className="w-5 h-5" strokeWidth={1.8} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@DigitalEliteServices/shorts"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
@@ -240,7 +240,7 @@ export const Footer = ({
             <ul className="space-y-3 sm:space-y-3.5 text-slate-300 text-[14px] sm:text-[14.5px] font-normal">
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={()=>navigate("/services/web-development")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Web Development
@@ -248,7 +248,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/digital-marketing")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Digital Marketing
@@ -256,7 +256,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/seo-optimization")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   SEO
@@ -264,7 +264,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/social-media-marketing")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Social Media Marketing
@@ -272,7 +272,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/graphic-design")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Graphic Design
@@ -280,20 +280,20 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/lead-generation")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Lead Generation
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
-                  onClick={onStartProject}
+                  onClick={() => navigate("/services/whatsapp-automation")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   WhatsApp Automation
                 </button>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -306,21 +306,21 @@ export const Footer = ({
               <li className="flex items-center gap-3">
                 <Mail className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8]" />
                 <a
-                  href="mailto:hello@desdigital.com"
+                  href="mailto:info@digitaleliteservices.in"
                   className="hover:text-white transition-colors"
                 >
-                  hello@desdigital.com
+                  info@digitaleliteservices.in
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8]" />
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                  +91 98765 43210
+                <a href="tel:+916366930178" className="hover:text-white transition-colors">
+                  +91 63669 30178
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8]" />
-                <span>Bangalore, India</span>
+                <span>1ˢᵗ Floor, Sathya Heritage, 2574, 8ᵗʰ Cross, 13ᵗʰ Main, E Block, Sahakarnagar, Bengaluru, Karnataka 560092</span>
               </li>
             </ul>
           </div>

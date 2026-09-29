@@ -17,9 +17,11 @@ import {
   ArrowRight,
   Phone,
 } from 'lucide-react';
+import {useNavigate} from "react-router-dom";
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function SeoOptimizationServicePage({ onStartProject }) {
+  const navigate = useNavigate();
   const handleCta = (serviceName) => {
     if (onStartProject) {
       onStartProject(serviceName || 'SEO Optimization Consultation');
@@ -255,7 +257,7 @@ export function SeoOptimizationServicePage({ onStartProject }) {
               <div className="pt-2 flex flex-wrap items-center gap-5">
                 <button
                   type="button"
-                  onClick={() => handleCta('SEO Optimization - Get Started')}
+                  onClick={() => navigate('/contact')}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Get Started</span>
@@ -394,7 +396,7 @@ export function SeoOptimizationServicePage({ onStartProject }) {
               return (
                 <div
                   key={service.id}
-                  onClick={() => handleCta(service.title)}
+                  onClick={() => navigate('/contact')}
                   className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
@@ -572,7 +574,7 @@ export function SeoOptimizationServicePage({ onStartProject }) {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <button
                 type="button"
-                onClick={() => handleCta('SEO Consultation')}
+                onClick={() => navigate('/contact')}
                 className="inline-flex items-center gap-2 bg-[#001f54] hover:bg-[#002b75] border border-blue-400/40 text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
               >
                 <span>Get Started Today</span>

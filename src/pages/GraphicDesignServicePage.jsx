@@ -20,9 +20,11 @@ import {
   Lightbulb,
   HeartHandshake,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function GraphicDesignServicePage({ onStartProject }) {
+  const navigate = useNavigate();
   const handleCta = (serviceName) => {
     if (onStartProject) {
       onStartProject(serviceName || 'Graphic Design Consultation');
@@ -406,7 +408,7 @@ export function GraphicDesignServicePage({ onStartProject }) {
               return (
                 <div
                   key={service.id}
-                  onClick={() => handleCta(service.title)}
+                  onClick={()=>navigate("/contact")}
                   className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
@@ -509,7 +511,7 @@ export function GraphicDesignServicePage({ onStartProject }) {
             <span className="text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase block mb-3">
               THE POWER OF GREAT DESIGN
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight" style={{lineHeight: "1.22"}}>
               Design That Drives <br className="hidden sm:inline" />
               <span className="text-[#0066ff]">Business Growth.</span>
             </h2>
@@ -550,7 +552,7 @@ export function GraphicDesignServicePage({ onStartProject }) {
             <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase mb-3">
               OUR DESIGN PROCESS
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight" style={{lineHeight: "1.22"}}>
               A Simple & Effective <br className="hidden sm:inline" />
               <span className="text-[#0066ff]">Design Process.</span>
             </h2>
@@ -607,7 +609,7 @@ export function GraphicDesignServicePage({ onStartProject }) {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <button
                 type="button"
-                onClick={() => handleCta('Graphic Design Consultation')}
+                onClick={() => navigate('/contact')}
                 className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
               >
                 <span>Get Started Today</span>

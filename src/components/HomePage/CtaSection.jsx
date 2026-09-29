@@ -1,8 +1,10 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import teamMeetingImg from '../../assets/images/cta_team_meeting_clean.png';
 
-export const CtaSection = ({ onStartProject }) => {
+export const CtaSection = () => {
+  const navigate = useNavigate();
   return (
     <section
       id="contact"
@@ -64,7 +66,7 @@ export const CtaSection = ({ onStartProject }) => {
             <div>
               <button
                 id="cta-start-project-btn"
-                onClick={onStartProject}
+                onClick={()=>navigate("/contact")}
                 className="group inline-flex items-center gap-2.5 bg-[#FDCE31] hover:bg-[#F8C41A] active:scale-98 text-[#082D72] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_10px_25px_-4px_rgba(253,206,49,0.55)] hover:shadow-[0_14px_32px_-4px_rgba(253,206,49,0.7)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
               >
                 <span>Start A Project</span>
