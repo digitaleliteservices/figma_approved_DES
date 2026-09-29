@@ -383,7 +383,7 @@ export function WorkPage() {
               {/* Action Row */}
               <div className="pt-4 flex flex-wrap items-center gap-5">
                 <button
-                  onClick={() => onStartProject?.('Case Studies Consultation')}
+                  onClick={() => navigate('/contact')}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#FAA307] text-[#082D72] px-7 py-3.5 rounded-full font-extrabold text-sm shadow-[0px_4px_14px_rgba(255,183,3,0.3)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Schedule Free Consultation</span>

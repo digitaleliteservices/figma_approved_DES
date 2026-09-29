@@ -478,7 +478,7 @@ export function BlogDetailPage({ onStartProject }) {
           <div>
             <button
               type="button"
-              onClick={handleStartConsultation}
+              onClick={()=>navigate("/contact")}
               className="inline-flex items-center gap-2 bg-[#082D72] hover:bg-blue-900 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:scale-[1.02]"
             >
               <span>Schedule Strategy Call</span>

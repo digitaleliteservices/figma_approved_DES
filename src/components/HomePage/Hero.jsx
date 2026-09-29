@@ -1,4 +1,5 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import { ArrowRight, Code2, Send, Settings } from 'lucide-react';
 import heroOfficeImg from '../../assets/images/hero_office_exact_1790003422960.jpg';
 
@@ -7,6 +8,9 @@ export const Hero = ({
   onExploreServices,
   onSelectService,
 }) => {
+  
+  const navigate = useNavigate();
+
   return (
     <section
       id="home"
@@ -175,7 +179,7 @@ export const Hero = ({
             {/* Primary Yellow Button */}
             <button
               id="hero-cta-start-project"
-              onClick={onStartProject}
+              onClick={()=>navigate("/contact")}
               className="group inline-flex items-center gap-2.5 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0c2340] font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-[0_4px_18px_rgba(255,183,3,0.38)] hover:shadow-[0_6px_24px_rgba(255,183,3,0.52)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
             >
               <span>Start A Project</span>
@@ -185,7 +189,7 @@ export const Hero = ({
             {/* Secondary Blue-Bordered Button */}
             <button
               id="hero-cta-explore-services"
-              onClick={onExploreServices}
+              onClick={()=>navigate("/services")}
               className="group inline-flex items-center gap-2.5 border-[1.5px] border-[#062A78] bg-transparent hover:bg-[#062A78] hover:text-white active:scale-98 text-[#062A78] font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer text-xs sm:text-[13px]"
             >
               <span>EXPLORE SERVICES</span>

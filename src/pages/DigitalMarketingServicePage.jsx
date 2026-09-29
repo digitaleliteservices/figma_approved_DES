@@ -11,9 +11,11 @@ import {
   Award,
   ChevronDown,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
-export function DigitalMarketingServicePage({ onStartProject }) {
+export function DigitalMarketingServicePage() {
+  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -205,7 +207,7 @@ export function DigitalMarketingServicePage({ onStartProject }) {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   type="button"
-                  onClick={handleAuditClick}
+                  onClick={()=>navigate("/contact")}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-7 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Get Free SEO Audit</span>
@@ -460,7 +462,7 @@ export function DigitalMarketingServicePage({ onStartProject }) {
             <div className="pt-2">
               <button
                 type="button"
-                onClick={handleAuditClick}
+                onClick={()=>navigate("/contact")}
                 className="inline-flex items-center gap-2 bg-[#001f54] hover:bg-[#002b75] border border-blue-400/40 text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
               >
                 <span>Schedule Free SEO Audit</span>

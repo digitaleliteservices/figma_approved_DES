@@ -7,6 +7,7 @@ import {
   TrendingUp,
   Star,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 import workEcommerceImg from '../../assets/images/work_ecommerce_laptop_1790060147830.jpg';
 import workBrandingImg from '../../assets/images/work_branding_identity_1790060162943.jpg';
@@ -17,6 +18,7 @@ export const SelectedWorkSection = ({
   onSelectProject,
 }) => {
   const [startIndex, setStartIndex] = useState(0);
+  const navigate = useNavigate();
 
   // All portfolio items for carousel rotation
   const allProjects = [
@@ -157,7 +159,7 @@ export const SelectedWorkSection = ({
               <div>
                 <button
                   id="selected-work-view-all-cta"
-                  onClick={onViewAllWork}
+                  onClick={()=>navigate("/portfolio")}
                   className="group inline-flex items-center gap-2 bg-[#ffba00] hover:bg-[#faa307] active:scale-98 text-[#0a1e38] font-bold px-6 sm:px-7 py-3 sm:py-3.5 rounded-[14px] shadow-[0_8px_22px_rgba(255,186,0,0.42)] hover:shadow-[0_12px_28px_rgba(255,186,0,0.55)] transition-all duration-200 cursor-pointer text-xs sm:text-sm"
                 >
                   <span>View All Work</span>

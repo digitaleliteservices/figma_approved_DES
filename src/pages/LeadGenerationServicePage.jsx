@@ -22,9 +22,11 @@ import {
   ShoppingBag,
   Laptop,
 } from 'lucide-react';
+import {useNavigate} from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function LeadGenerationServicePage({ onStartProject }) {
+  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState(null);
 
   const toggleFaq = (index) => {
@@ -300,7 +302,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
               <div className="pt-2 flex flex-wrap items-center gap-5">
                 <button
                   type="button"
-                  onClick={() => handleCta('Lead Generation - Get Started')}
+                  onClick={() => navigate('/contact')}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Get Started</span>
@@ -439,7 +441,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
               return (
                 <div
                   key={service.id}
-                  onClick={() => handleCta(service.title)}
+                  onClick={() => navigate("/contact")}
                   className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
@@ -565,7 +567,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
               return (
                 <div
                   key={idx}
-                  onClick={() => handleCta(`${ind.title} Strategy`)}
+                  onClick={() => navigate(`/contact`)}
                   className="bg-[#062456] rounded-[24px] p-6 border border-blue-800/60 shadow-lg hover:border-blue-400 transition-all duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
@@ -708,7 +710,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/30 rounded-full filter blur-2xl pointer-events-none" />
 
           <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-5">
-            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-black text-white tracking-[-0.03em] leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-black text-white tracking-[-0.03em] leading-tight" style={{lineHeight:'1.22'}}>
               Ready to Supercharge Your Sales Pipeline?
             </h2>
 
@@ -719,7 +721,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <button
                 type="button"
-                onClick={() => handleCta('Free Lead Audit')}
+                onClick={() => navigate('/contact')}
                 className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
               >
                 <span>Get Free Lead Audit Now</span>
