@@ -14,6 +14,8 @@ import { LeadGenerationServicePage } from './pages/LeadGenerationServicePage.jsx
 import { SeoOptimizationServicePage } from './pages/SeoOptimizationServicePage.jsx';
 import { ProcessPage } from './pages/ProcessPage.jsx';
 import { WorkPage } from './pages/WorkPage.jsx';
+import { BlogPage } from './pages/BlogPage.jsx';
+import { BlogDetailPage } from './pages/BlogDetailPage.jsx';
 import { ContactPage } from './pages/ContactPage.jsx';
 import { NotFoundPage } from './pages/NotFoundPage.jsx';
 import { ProjectModal } from './components/ProjectModal.jsx';
@@ -218,6 +220,40 @@ export default function App() {
               path="/portfolio"
               element={
                 <WorkPage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
+            {/* Dedicated Insights & Blog Routes */}
+            <Route
+              path="/blog"
+              element={
+                <BlogPage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/blog/:slug"
+              element={
+                <BlogDetailPage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/blogs"
+              element={
+                <BlogPage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/blogs/:slug"
+              element={
+                <BlogDetailPage
                   onStartProject={handleStartProject}
                 />
               }

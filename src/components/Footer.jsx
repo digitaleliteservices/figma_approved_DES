@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import LogoImg from "../assets/images/logo(1).png";
 import { useNavigate } from 'react-router-dom';
+import LogoWhite from "../assets/images/white-logo.png";
 
 export const Footer = ({
   onStartProject,
@@ -35,8 +36,8 @@ export const Footer = ({
       about: '/about',
       services: '/services',
       process: '/process',
-      work: '/work',
-      portfolio: '/portfolio',
+      work: '/portfolio',
+      blog: '/blog',
       contact: '/contact',
     };
     if (pathMap[id]) {
@@ -122,11 +123,11 @@ export const Footer = ({
               onClick={scrollToTop}
               className="flex flex-col items-start cursor-pointer group mb-5"
             >
-              <img src={LogoImg} className='w-20 h-17 '/>
+              <img src={LogoWhite} className="w-40 h-19"/>
 
-              <span className="text-[10.5px] sm:text-[11px] tracking-[0.18em] font-semibold text-white/90 uppercase mt-2.5 leading-none">
+              {/* <span className="text-[10.5px] sm:text-[11px] tracking-[0.18em] font-semibold text-white/90 uppercase mt-2.5 leading-none">
                 DIGITAL ELITE SERVICES
-              </span>
+              </span> */}
             </div>
 
             <p className="text-slate-300 text-[14px] sm:text-[14.5px] leading-[1.65] max-w-[320px] mb-7 font-normal">
@@ -210,6 +211,14 @@ export const Footer = ({
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Work
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => scrollTo('blog')}
+                  className="hover:text-white transition-colors cursor-pointer"
+                >
+                  Blog & Insights
                 </button>
               </li>
               <li>
