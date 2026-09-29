@@ -42,6 +42,10 @@
   --line-height-small: 1.5;
   --font-weight-small: 400;
 
+  --font-size-button: 16px;
+  --line-height-button: 1.4;
+  --font-weight-button: 600;
+
   /* 3. Standardized Spacing Scale */
   --space-4: 4px;
   --space-8: 8px;
@@ -143,10 +147,12 @@ p, .body-text {
 
 .button, button {
   font-family: var(--font-family-primary);
-  font-weight: 600;
+  font-size: var(--font-size-button);
+  line-height: var(--line-height-button);
+  font-weight: var(--font-weight-button);
 }
 
-/* Legacy Utility Map */
+/* Specific Section Utility Classes & Legacy Map */
 .hero-title {
   font-size: clamp(36px, 5vw, 56px);
   font-weight: 800;

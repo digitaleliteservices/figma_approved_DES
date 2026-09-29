@@ -12,6 +12,7 @@ export const Hero = ({
       id="home"
       className="relative w-full overflow-hidden bg-white min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center"
     >
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative h-full">
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
