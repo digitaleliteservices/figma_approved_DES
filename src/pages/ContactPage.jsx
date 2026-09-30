@@ -238,7 +238,7 @@ export function ContactPage({ onStartProject }) {
                   <a href="tel:+916366930178" className="text-[20px] leading-[28px] font-black text-[#0878F9] hover:underline block mb-0.5">
                     +91 6366930178
                   </a>
-                  <div className="text-[12px] leading-[16px] font-bold text-[#475569]">+91 98765 43210</div>
+                  <div className="text-[12px] leading-[16px] font-bold text-[#475569]">+91 63669 30178</div>
                 </div>
               </div>
             </div>
@@ -255,16 +255,16 @@ export function ContactPage({ onStartProject }) {
                       EMAIL ADDRESS
                     </span>
                     <button
-                      onClick={() => navigator.clipboard?.writeText('hello@digitaleliteservices.com')}
+                      onClick={() => navigator.clipboard?.writeText('info@digitaleliteservices.in')}
                       className="bg-[#EFF6FF] text-[#0878F9] text-[10px] font-bold px-2.5 py-[2px] rounded-full cursor-pointer hover:bg-blue-100 transition"
                     >
                       Copy
                     </button>
                   </div>
-                  <a href="mailto:hello@digitaleliteservices.com" className="text-[14px] leading-[20px] font-black text-[#0878F9] hover:underline block mb-0.5">
-                    hello@digitaleliteservices.com
+                  <a href="mailto:info@digitaleliteservices.in" className="text-[14px] leading-[20px] font-black text-[#0878F9] hover:underline block mb-0.5">
+                    info@digitaleliteservices.in
                   </a>
-                  <div className="text-[12px] leading-[16px] font-bold text-[#475569]">contact@digitaleliteservices.in</div>
+                  {/* <div className="text-[12px] leading-[16px] font-bold text-[#475569]">contact@digitaleliteservices.in</div> */}
                 </div>
               </div>
             </div>
@@ -309,7 +309,7 @@ export function ContactPage({ onStartProject }) {
                   BANGALORE HEADQUARTERS
                 </div>
                 <div className="text-[12px] leading-[20px] font-medium text-[#587BA5]">
-                  Enterprise Tower, Business Hub, Suite 402, Bangalore, Karnataka - 560001
+                  1ˢᵗ Floor, Sathya Heritage, 2574, 8ᵗʰ Cross, 13ᵗʰ Main, E Block, Sahakarnagar, Bengaluru, Karnataka 560092.
                 </div>
               </div>
             </div>
@@ -408,7 +408,7 @@ export function ContactPage({ onStartProject }) {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 63669 30178"
                         className="w-full px-4 py-[15px] rounded-[12px] bg-[#FBFDFF] border border-[#D5EBFF] text-sm text-slate-800 placeholder-[#9CA3AF] focus:outline-none focus:border-[#0878F9] transition"
                       />
                     </div>
@@ -559,7 +559,7 @@ export function ContactPage({ onStartProject }) {
                     Enterprise Tower, Business Hub, Suite 402, Bangalore, India - 560001
                   </div>
                   <div className="text-[12px] font-normal text-[#CBD5E1] pt-1">
-                    Phone: +91 6366930178 | Email: hello@digitaleliteservices.com
+                    Phone: +91 6366930178 | Email: info@digitaleliteservices.in
                   </div>
                 </div>
 
@@ -568,7 +568,7 @@ export function ContactPage({ onStartProject }) {
                     Visiting Hours: Mon - Sat (9am - 7pm)
                   </span>
                   <a
-                    href="https://maps.google.com/?q=Bangalore"
+                    href="https://maps.app.goo.gl/EBAe4NhosNcx9eoV6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-[#FFC400] hover:underline flex items-center gap-1 transition cursor-pointer"
@@ -670,10 +670,10 @@ export function ContactPage({ onStartProject }) {
               </button>
 
               <a
-                href="mailto:hello@digitaleliteservices.com"
+                href="mailto:info@digitaleliteservices.in"
                 className="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-[6px] text-white font-bold text-[16px] leading-[24px] px-7 py-4 rounded-full transition cursor-pointer"
               >
-                Email: hello@digitaleliteservices.com
+                Email: info@digitaleliteservices.in
               </a>
             </div>
           </div>

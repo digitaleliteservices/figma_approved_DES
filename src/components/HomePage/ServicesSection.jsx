@@ -1,10 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
 export const ServicesSection = ({
   onSelectService,
   onViewAllServices,
 }) => {
+  const navigate = useNavigate();
+  
   const serviceCards = [
     {
       id: 'web-development',
@@ -32,7 +35,7 @@ export const ServicesSection = ({
       ),
     },
     {
-      id: 'seo',
+      id: 'seo-optimization',
       title: 'SEO',
       description: 'Improve visibility and attract high-intent traffic.',
       iconBg: 'bg-[#0096c7]',
@@ -144,7 +147,7 @@ export const ServicesSection = ({
             {/* Buttons / Link: Plus Jakarta Sans 700 */}
             <button
               id="services-view-all-btn"
-              onClick={onViewAllServices}
+              onClick={()=>navigate("/services")}
               className="inline-flex items-center gap-2 text-[15px] sm:text-base font-bold text-[#0a1e38] hover:text-[#0066ff] transition-colors cursor-pointer group"
             >
               <span>View All Services</span>
@@ -159,7 +162,7 @@ export const ServicesSection = ({
             <div
               key={card.id}
               id={`service-card-${card.id}`}
-              onClick={() => onSelectService(card.title)}
+              onClick={() => navigate(`/services/${card.id}`)}
               className="group relative bg-white rounded-[22px] p-4 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[265px] cursor-pointer"
             >
               <div>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   ArrowRight,
   Sparkles,
@@ -23,8 +24,9 @@ import {
 } from 'lucide-react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
-export function WorkPage({ onStartProject }) {
+export function WorkPage() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const navigate = useNavigate();
 
   // Portfolio Page Lead Form State
   const [formData, setFormData] = useState({
@@ -379,7 +381,7 @@ export function WorkPage({ onStartProject }) {
               {/* Action Row */}
               <div className="pt-4 flex flex-wrap items-center gap-5">
                 <button
-                  onClick={() => onStartProject?.('Case Studies Consultation')}
+                  onClick={() => navigate('/contact')}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#FAA307] text-[#082D72] px-7 py-3.5 rounded-full font-extrabold text-sm shadow-[0px_4px_14px_rgba(255,183,3,0.3)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Schedule Free Consultation</span>
@@ -421,7 +423,7 @@ export function WorkPage({ onStartProject }) {
                     Proven Tactics
                   </h3>
                   <button
-                    onClick={() => onStartProject?.('Proven Tactics Report')}
+                    onClick={() => navigate("/contact")}
                     className="text-xs font-black text-[#0878F9] hover:underline transition flex items-center gap-1 cursor-pointer uppercase tracking-wider"
                   >
                     <span>VIEW REPORT</span>
@@ -565,7 +567,7 @@ export function WorkPage({ onStartProject }) {
 
                 {/* Bottom Right Banner Action */}
                 <button
-                  onClick={() => onStartProject?.(study.title)}
+                  onClick={()=>navigate("/contact")}
                   className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md"
                 >
                   <span>VIEW CASE STUDY</span>
@@ -607,7 +609,7 @@ export function WorkPage({ onStartProject }) {
                 {/* Footer Action Link */}
                 <div className="pt-4 border-t border-[#EEF6FF] flex items-center justify-between text-xs font-bold text-[#082D72]">
                   <button
-                    onClick={() => onStartProject?.(study.title)}
+                    onClick={() => navigate("/contact")}
                     className="inline-flex items-center gap-1.5 text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
                   >
                     <span>Explore Case Study</span>
@@ -776,11 +778,11 @@ export function WorkPage({ onStartProject }) {
                 </a>
                 <span>•</span>
                 <a
-                  href="mailto:hello@digitaleliteservices.com"
+                  href="mailto:info@digitaleliteservices.in"
                   className="hover:text-white transition flex items-center gap-1.5"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#FFC400]" />
-                  <span>hello@digitaleliteservices.com</span>
+                  <span>info@digitaleliteservices.in</span>
                 </a>
               </div>
             </div>

@@ -6,11 +6,13 @@ import {
   Settings,
   BarChart2,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export const HowWeWorkSection = ({
   onExploreProcess,
   onSelectStep,
 }) => {
+  const navigate = useNavigate();
   return (
     <section
       id="process"
@@ -130,7 +132,7 @@ export const HowWeWorkSection = ({
               {/* Golden Yellow Button with Soft Amber Drop Shadow */}
               <button
                 id="how-we-work-cta"
-                onClick={onExploreProcess}
+                onClick={()=>navigate("/contact")}
                 className="group inline-flex items-center gap-2.5 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0a1e38] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_12px_28px_rgba(255,183,3,0.48)] hover:shadow-[0_16px_34px_rgba(255,183,3,0.6)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px] shrink-0"
               >
                 <span>Our Process</span>

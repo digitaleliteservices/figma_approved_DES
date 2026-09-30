@@ -37,7 +37,7 @@ export const ServicesCtaSection = ({ onContactClick }) => {
           <button
             type="button"
             id="services-cta-contact-btn"
-            onClick={handleAction}
+            onClick={()=>navigate("/contact")}
             className="group inline-flex items-center gap-2.5 px-8 sm:px-9 py-3 sm:py-3.5 rounded-full border border-white/40 bg-white/10 hover:bg-white hover:text-[#062A78] active:scale-95 text-white font-bold text-sm sm:text-[15px] transition-all duration-200 cursor-pointer shadow-lg shadow-black/20"
           >
             <span>Contact Us</span>

@@ -13,9 +13,11 @@ import {
   ArrowRight,
   Phone,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 
 export function WebDevelopmentServicePage({ onStartProject }) {
+  const navigate = useNavigate();
   const handleCta = (serviceName) => {
     if (onStartProject) {
       onStartProject(serviceName || 'Web Development & UI/UX Consultation');
@@ -205,7 +207,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
               <div className="pt-2 flex flex-wrap items-center gap-5">
                 <button
                   type="button"
-                  onClick={() => handleCta('Web Development - Get Started')}
+                  onClick={() => navigate('/contact')}
                   className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
                 >
                   <span>Get Started</span>
@@ -518,7 +520,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <button
                 type="button"
-                onClick={() => handleCta('Web Development Consultation')}
+                onClick={() => navigate('/contact')}
                 className="inline-flex items-center gap-2 bg-[#001f54] hover:bg-[#002b75] border border-blue-400/40 text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
               >
                 <span>Get Started Today</span>
