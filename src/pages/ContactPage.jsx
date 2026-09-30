@@ -568,7 +568,7 @@ export function ContactPage({ onStartProject }) {
                     Visiting Hours: Mon - Sat (9am - 7pm)
                   </span>
                   <a
-                    href="https://maps.google.com/?q=Bangalore"
+                    href="https://maps.app.goo.gl/EBAe4NhosNcx9eoV6"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-bold text-[#FFC400] hover:underline flex items-center gap-1 transition cursor-pointer"

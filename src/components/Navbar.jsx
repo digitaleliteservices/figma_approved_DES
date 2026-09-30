@@ -223,7 +223,7 @@ export const Navbar = ({
                               </div>
                               <button
                                 onClick={() => handleNavClick({ path: '/services', id: 'services' })}
-                                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0066ff] hover:text-blue-700 bg-blue-50/80 hover:bg-blue-100 px-3 py-1.5 rounded-full transition-colors cursor-pointer"
+                                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0066ff] hover:text-blue-700 bg-blue-50/80 hover:bg-blue-100 px-3 py-1.5 rounded-sm transition-colors cursor-pointer"
                               >
                                 <LayoutGrid className="w-3.5 h-3.5" />
                                 <span>All Services</span>
@@ -240,7 +240,7 @@ export const Navbar = ({
                                     key={sub.name}
                                     type="button"
                                     onClick={() => handleSubServiceClick(sub.path)}
-                                    className={`group flex items-start gap-3 p-3 rounded-2xl text-left transition-all duration-150 cursor-pointer ${
+                                    className={`group flex items-start gap-3 p-3 rounded-sm text-left transition-all duration-150 cursor-pointer ${
                                       isSubActive
                                         ? 'bg-blue-50/70 border border-blue-200/80'
                                         : 'hover:bg-slate-50 border border-transparent'
