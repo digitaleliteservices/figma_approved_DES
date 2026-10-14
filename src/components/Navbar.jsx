@@ -272,10 +272,7 @@ export const Navbar = ({
                           <div className=" border-t border-slate-100 flex items-center justify-end px-4  -mx-5 -mb-5  rounded-b-[24px]">
                               <button
                                 type="button"
-                                onClick={() => {
-                                  setServicesDropdownOpen(false);
-                                  if (onStartProject) onStartProject('Free Consultation');
-                                }}
+                                onClick={() => navigate('/contact')}
                                 className="inline-flex items-center bg-[#0066ff] gap-1.5 active:scale-95 p-15 mr-2 text-white font-bold text-sm px-7 py-2  shadow-sm hover:shadow  hover:bg-blue-900 hover:underline decoration-white transition-all cursor-pointer"
                               >
                                 <span>Free Consultation</span>
