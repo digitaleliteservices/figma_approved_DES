@@ -529,9 +529,6 @@ export function WorkPage() {
             {filters.map((filter) => (
               <button
                 key={filter.id}
-                onClick={() =>navigate("/contact")}
-                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${
-                  activeFilter === filter.id
                 onClick={() => setActiveFilter(filter.id)}
                 className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
