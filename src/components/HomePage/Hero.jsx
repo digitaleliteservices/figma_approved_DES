@@ -22,11 +22,11 @@ export const Hero = ({
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
             <div
               className="absolute -top-28 sm:-top-32 lg:-top-36 -left-28 sm:-left-36 lg:-left-44 w-[330px] h-[330px] sm:w-[370px] sm:h-[370px] lg:w-[410px] lg:h-[410px] rounded-full pointer-events-none"
-              style={{
-                background:
-                  'radial-gradient(circle at 50% 50%, rgba(196, 226, 254, 0.95) 0%, rgba(206, 233, 255, 0.82) 30%, rgba(216, 238, 255, 0.5) 50%, rgba(228, 244, 255, 0.18) 68%, rgba(255, 255, 255, 0) 82%)',
-                filter: 'blur(16px)',
-              }}
+              // style={{
+              //   background:
+              //     'radial-gradient(circle at 50% 50%, rgba(196, 226, 254, 0.95) 0%, rgba(206, 233, 255, 0.82) 30%, rgba(216, 238, 255, 0.5) 50%, rgba(228, 244, 255, 0.18) 68%, rgba(255, 255, 255, 0) 82%)',
+              //   filter: 'blur(16px)',
+              // }}
             />
           </div>
         </div>

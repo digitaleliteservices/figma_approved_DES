@@ -87,7 +87,7 @@ export const SelectedWorkSection = ({
     <section id="work" className="relative w-full bg-white overflow-hidden select-none">
       
       <div className="relative pt-10 sm:pt-12 lg:pt-10 pb-10 sm:pb-12 lg:pb-16">
-        
+{/*         
         <svg
           id="selected-work-bg-circle"
           className="absolute top-0 left-0 w-[520px] lg:w-[360px] h-[480px] pointer-events-none z-0"
@@ -99,7 +99,7 @@ export const SelectedWorkSection = ({
             d="M 0,0 L 360,0 C 425,90 435,210 395,330 C 370,410 340,480 285,550 C 230,610 140,650 0,665 Z"
             fill="#daf0ff"
           />
-        </svg>
+        </svg> */}
 
         <div className="max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">
           

@@ -46,7 +46,7 @@ export const AboutSection = ({
     >
       {/* Top-Left Decorative Circle */}
       {/* ================= TOP-LEFT ORGANIC BLUE BACKGROUND ================= */}
-      <div
+      {/* <div
         className="
           absolute
           -top-32
@@ -83,12 +83,12 @@ export const AboutSection = ({
         style={{
           backgroundColor: '#cbefffff',
         }}
-      />
+      /> */}
       
       {/* Background Decorative Circles */}
-      <div className="absolute top-1/2 -right-32 w-96 h-96 sm:w-[540px] sm:h-[540px] rounded-full bg-sky-100/60 blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
+      {/* <div className="absolute top-1/2 -right-32 w-96 h-96 sm:w-[540px] sm:h-[540px] rounded-full bg-sky-100/60 blur-3xl -translate-y-1/2 -z-10 pointer-events-none" />
       <div className="absolute top-10 -left-20 w-72 h-72 rounded-full bg-blue-50/80 blur-2xl -z-10 pointer-events-none" />
-      
+       */}
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">

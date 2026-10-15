@@ -75,7 +75,7 @@ export const TestimonialsSection = ({
     >
       {/* ================= LEFT BACKGROUND CIRCULAR DOME ================= */}
       {/* Matches reference screenshot: light sky-blue circular arc entering from top-left */}
-      <svg
+      {/* <svg
         id="testimonials-left-bg-circle"
         className="absolute top-0 left-0 w-[320px] sm:w-[300px] lg:w-[320px] h-[380px] pointer-events-none z-0"
         viewBox="0 0 520 580"
@@ -86,17 +86,17 @@ export const TestimonialsSection = ({
           d="M 0,0 L 260,0 C 330,80 340,190 300,290 C 270,360 220,430 140,480 C 80,515 30,535 0,545 Z"
           fill="#daf0ff"
         />
-      </svg>
+      </svg> */}
 
       {/* ================= RIGHT BACKGROUND CIRCULAR DOME ================= */}
       {/* Matches reference screenshot: soft light-blue dome rising from bottom-right corner */}
-      <div
+      {/* <div
         id="testimonials-right-bg-circle"
         className="absolute -bottom-28 -right-20 sm:-bottom-32 sm:-right-24 w-[260px] sm:w-[320px] lg:w-[380px] h-[260px] sm:h-[320px] lg:h-[380px] rounded-full pointer-events-none z-0"
         style={{
           backgroundColor: '#daf0ff',
         }}
-      />
+      /> */}
 
       {/* Content Container */}
       <div className="max-w-[1540px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 relative z-10">

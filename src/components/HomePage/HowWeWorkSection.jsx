@@ -53,12 +53,12 @@ export const HowWeWorkSection = ({
           {/* ================= LEFT COLUMN: EXACT TO DESIGN ================= */}
           <div className="lg:col-span-5 relative z-10">
             {/* EXACT LARGE LIGHT-BLUE BACKGROUND CIRCLE */}
-            <div
+            {/* <div
               className="absolute -left-[180px] sm:-left-[140px] lg:-left-[110px] -top-4 sm:-top-6 lg:-top-10 w-[220px] sm:w-[280px] lg:w-[320px] h-[220px] sm:h-[280px] lg:h-[320px] rounded-full pointer-events-none -z-10"
               style={{
                 backgroundColor: '#cbe4ff',
               }}
-            />
+            /> */}
 
             {/* Eyebrow: Plus Jakarta Sans 700 */}
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.08em] uppercase mb-4 sm:mb-5">

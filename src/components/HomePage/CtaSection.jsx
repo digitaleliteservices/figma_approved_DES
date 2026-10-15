@@ -21,7 +21,7 @@ export const CtaSection = () => {
       /> */}
 
       {/* Subtle Mobile Glow */}
-    <div
+    {/* <div
   className="
     lg:hidden
     absolute
@@ -37,7 +37,7 @@ export const CtaSection = () => {
     backgroundColor: "#C2E7FA",
     borderRadius: "50% 50% 50% 50% / 35% 35% 35% 35%",
   }}
-/>
+/> */}
 
       {/* Main Container */}
       <div className="w-full max-w-[1440px]  mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10 py-14 lg:py-16">
