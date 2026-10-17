@@ -237,3 +237,28 @@ p, .body-text {
     padding: var(--space-32);
   }
 }
+
+/* ==========================================================================
+   MARQUEE TICKER ANIMATION (RIGHT-TO-LEFT)
+   ========================================================================== */
+
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-scroll-left 80s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee-left {
+    animation-play-state: paused;
+  }
+}
+

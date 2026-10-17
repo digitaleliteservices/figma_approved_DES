@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import { blogArticles } from '../data/blogArticles.js';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
 import { BlogReaderModal } from '../components/BlogReaderModal.jsx';
+import { motion } from 'motion/react';
 
 export function BlogPage({ onStartProject }) {
   const navigate = useNavigate();
@@ -94,7 +95,7 @@ export function BlogPage({ onStartProject }) {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
       {/* ================= BACKGROUND GRADIENT ORBS (REDUCED HERO CIRCLE SIZES) ================= */}
-      <div
+      {/* <div
         className="absolute -top-10 -left-20 w-[240px] sm:w-[340px] h-[240px] sm:h-[340px] rounded-full pointer-events-none z-0 opacity-75"
         style={{
           background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
@@ -117,7 +118,7 @@ export function BlogPage({ onStartProject }) {
         style={{
           background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
-      />
+      /> */}
 
       {/* ================= 1. HERO HEADER SECTION ================= */}
       <section className="relative pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20 lg:pb-12 z-10">
@@ -199,7 +200,13 @@ export function BlogPage({ onStartProject }) {
             className="group bg-white rounded-[32px] p-6 sm:p-8 lg:p-10 border border-slate-200/80 shadow-[0_12px_40px_rgba(8,45,114,0.06)] hover:shadow-[0_20px_50px_rgba(8,45,114,0.12)] hover:border-[#93c5fd] transition-all duration-300 cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
           >
             {/* Left Image with FEATURED POST Badge */}
-            <div className="lg:col-span-7 relative rounded-[24px] overflow-hidden aspect-video sm:aspect-16/10 bg-slate-100 shadow-sm">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 relative rounded-[24px] overflow-hidden aspect-video sm:aspect-16/10 bg-slate-100 shadow-sm"
+            >
               <img
                 src={featuredArticle.image}
                 alt={featuredArticle.title}
@@ -208,10 +215,16 @@ export function BlogPage({ onStartProject }) {
               <div className="absolute top-4 left-4 bg-[#082D72] text-white text-[10px] font-black tracking-widest px-3 py-1.5 rounded-full uppercase shadow-md">
                 FEATURED POST
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Meta & Content */}
-            <div className="lg:col-span-5 flex flex-col justify-between space-y-4">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex flex-col justify-between space-y-4"
+            >
               <div>
                 {/* Tag Row: Category + Date + Read Time */}
                 <div className="flex flex-wrap items-center gap-3 text-xs mb-3 font-semibold">
@@ -275,7 +288,7 @@ export function BlogPage({ onStartProject }) {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
           </div>
         </section>
       )}
@@ -320,90 +333,97 @@ export function BlogPage({ onStartProject }) {
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
-            {gridArticles.map((article) => (
-              <div
-                key={article.id}
-                onClick={() => navigate(`/blog/${article.slug}`)}
-                className="group bg-white rounded-[26px] overflow-hidden border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between cursor-pointer"
-              >
-                <div>
-                  {/* Top Image with Category Badge */}
-                  <div className="relative aspect-16/10 bg-slate-100 overflow-hidden">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md text-[#082D72] text-[10px] font-black tracking-wider px-3 py-1 rounded-full uppercase shadow-xs border border-white/60">
-                      {article.category}
-                    </div>
-                  </div>
-
-                  {/* Body Content */}
-                  <div className="p-6">
-                    {/* Meta Row: Date & Read Time */}
-                    <div className="flex items-center gap-3 text-[11px] font-semibold text-slate-400 mb-2.5">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="w-3 h-3 text-blue-600" />
-                        <span>{article.date}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center gap-1">
-                        <Clock className="w-3 h-3 text-blue-600" />
-                        <span>{article.readTime}</span>
+            {gridArticles.map((article, index) => {
+              const isLeft = index % 2 === 0;
+              return (
+                <motion.div
+                  key={article.id}
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => navigate(`/blog/${article.slug}`)}
+                  className="group bg-white rounded-[26px] overflow-hidden border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-shadow duration-300 flex flex-col justify-between cursor-pointer"
+                >
+                  <div>
+                    {/* Top Image with Category Badge */}
+                    <div className="relative aspect-16/10 bg-slate-100 overflow-hidden">
+                      <img
+                        src={article.image}
+                        alt={article.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                      <div className="absolute top-3.5 left-3.5 bg-white/95 backdrop-blur-md text-[#082D72] text-[10px] font-black tracking-wider px-3 py-1 rounded-full uppercase shadow-xs border border-white/60">
+                        {article.category}
                       </div>
                     </div>
 
-                    {/* Article Title */}
-                    <h3 className="text-base sm:text-lg font-black text-[#082D72] tracking-tight leading-snug group-hover:text-[#0066ff] transition-colors mb-2.5 line-clamp-2">
-                      {article.title}
-                    </h3>
-
-                    {/* Excerpt */}
-                    <p className="text-slate-600 text-xs leading-relaxed mb-4 line-clamp-3 font-normal">
-                      {article.summary}
-                    </p>
-
-                    {/* Tags */}
-                    <div className="flex flex-wrap items-center gap-1 mb-2">
-                      {article.tags.map((tag, tIdx) => (
-                        <span
-                          key={tIdx}
-                          className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Author Bar Bottom */}
-                <div className="p-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
-                  <div className="flex items-center gap-2.5 min-w-0">
-                    <img
-                      src={article.author.avatar}
-                      alt={article.author.name}
-                      className="w-8 h-8 rounded-full object-cover shrink-0 ring-1 ring-blue-50"
-                    />
-                    <div className="min-w-0">
-                      <div className="text-xs font-black text-[#082D72] truncate">
-                        {article.author.name}
+                    {/* Body Content */}
+                    <div className="p-6">
+                      {/* Meta Row: Date & Read Time */}
+                      <div className="flex items-center gap-3 text-[11px] font-semibold text-slate-400 mb-2.5">
+                        <div className="flex items-center gap-1">
+                          <Calendar className="w-3 3-3 text-blue-600" />
+                          <span>{article.date}</span>
+                        </div>
+                        <span>•</span>
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-3 h-3 text-blue-600" />
+                          <span>{article.readTime}</span>
+                        </div>
                       </div>
-                      <div className="text-[10.5px] text-slate-400 font-medium truncate">
-                        {article.author.role}
+
+                      {/* Article Title */}
+                      <h3 className="text-base sm:text-lg font-black text-[#082D72] tracking-tight leading-snug group-hover:text-[#0066ff] transition-colors mb-2.5 line-clamp-2">
+                        {article.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-slate-600 text-xs leading-relaxed mb-4 line-clamp-3 font-normal">
+                        {article.summary}
+                      </p>
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap items-center gap-1 mb-2">
+                        {article.tags.map((tag, tIdx) => (
+                          <span
+                            key={tIdx}
+                            className="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                       </div>
                     </div>
                   </div>
 
-                  <div className="inline-flex items-center gap-1 text-xs font-extrabold text-[#0066ff] shrink-0 group-hover:translate-x-0.5 transition-transform ml-2">
-                    <span>Read</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </div>
-                </div>
+                  {/* Author Bar Bottom */}
+                  <div className="p-5 pt-3.5 border-t border-slate-100 flex items-center justify-between">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <img
+                        src={article.author.avatar}
+                        alt={article.author.name}
+                        className="w-8 h-8 rounded-full object-cover shrink-0 ring-1 ring-blue-50"
+                      />
+                      <div className="min-w-0">
+                        <div className="text-xs font-black text-[#082D72] truncate">
+                          {article.author.name}
+                        </div>
+                        <div className="text-[10.5px] text-slate-400 font-medium truncate">
+                          {article.author.role}
+                        </div>
+                      </div>
+                    </div>
 
-              </div>
-            ))}
+                    <div className="inline-flex items-center gap-1 text-xs font-extrabold text-[#0066ff] shrink-0 group-hover:translate-x-0.5 transition-transform ml-2">
+                      <span>Read</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+
+                </motion.div>
+              );
+            })}
           </div>
         )}
 
@@ -424,7 +444,13 @@ export function BlogPage({ onStartProject }) {
           <div className="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-3.5">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 space-y-3.5"
+            >
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/20 backdrop-blur-md">
                 <span className="text-amber-400 text-xs">⚡</span>
                 <span className="font-extrabold text-[11px] leading-none tracking-[0.5px] uppercase text-blue-200">
@@ -439,10 +465,16 @@ export function BlogPage({ onStartProject }) {
               <p className="text-blue-100 text-xs sm:text-sm font-normal max-w-xl leading-relaxed">
                 Join over 12,000+ founders, marketers, and technology executives receiving our bi-weekly strategy breakdowns. Zero spam.
               </p>
-            </div>
+            </motion.div>
 
             {/* Right Subscription Form */}
-            <div className="lg:col-span-5 space-y-2.5">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 space-y-2.5"
+            >
               {newsletterSubscribed ? (
                 <div className="bg-emerald-500/20 border border-emerald-400/40 rounded-2xl p-4 text-emerald-200 text-xs font-bold flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -475,7 +507,7 @@ export function BlogPage({ onStartProject }) {
                   </p>
                 </form>
               )}
-            </div>
+            </motion.div>
 
           </div>
         </div>

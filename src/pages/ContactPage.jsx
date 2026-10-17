@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import { motion } from 'motion/react';
 import {
   Mail,
   Phone,
@@ -131,7 +132,7 @@ export function ContactPage({ onStartProject }) {
       {/* 1. HERO SECTION */}
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 bg-transparent z-10">
         {/* Section Decorative Background Shapes */}
-        <div
+        {/* <div
           className="absolute -top-10 -left-28 w-[320px] sm:w-[365px] h-[320px] sm:h-[365px] rounded-[182.5px_182.5px_0px_182.5px] pointer-events-none z-0 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
         />
@@ -142,7 +143,7 @@ export function ContactPage({ onStartProject }) {
         <div
           className="absolute top-44 sm:top-[220px] left-1/2 -translate-x-1/2 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-full pointer-events-none z-0 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
+        /> */}
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center gap-[20px]">
           {/* Top Pill Tag */}
@@ -195,19 +196,25 @@ export function ContactPage({ onStartProject }) {
       {/* 2. MAIN 2-COLUMN SECTION (DIRECT CONTACT INFO & FORM) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
         {/* Section Background Shapes */}
-        <div
+        {/* <div
           className="absolute top-1/4 -left-24 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-full pointer-events-none z-0 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
         />
         <div
           className="absolute bottom-6 -right-20 w-[300px] sm:w-[387px] h-[300px] sm:h-[374px] rounded-full pointer-events-none z-0 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
+        /> */}
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
           
           {/* LEFT COLUMN: DIRECT CONTACT INFO */}
-          <div className="lg:col-span-5 space-y-5">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 space-y-5"
+          >
             <div>
               <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-3 uppercase tracking-[1.2px]">
                 DIRECT CONTACT INFO
@@ -313,10 +320,16 @@ export function ContactPage({ onStartProject }) {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* RIGHT COLUMN: SEND A MESSAGE FORM */}
-          <div className="lg:col-span-7">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7"
+          >
             <div className="bg-white/95 backdrop-blur-[20px] rounded-[32px] p-8 sm:p-10 border border-[#E2EDF8] shadow-[0px_25px_60px_rgba(8,120,249,0.12)] relative">
               <span className="text-[12px] font-black text-[#0878F9] uppercase tracking-[0.6px] block mb-1">
                 SEND A MESSAGE
@@ -497,7 +510,7 @@ export function ContactPage({ onStartProject }) {
                 </form>
               )}
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </section>
@@ -505,16 +518,22 @@ export function ContactPage({ onStartProject }) {
       {/* 3. SECTION: LOCAL BANGALORE PRESENCE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
         {/* Section Background Shape */}
-        <div
+        {/* <div
           className="absolute -top-12 -left-20 w-[300px] sm:w-[387px] h-[300px] sm:h-[374px] rounded-full pointer-events-none z-0 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
+        /> */}
 
         <div className="bg-white/95 backdrop-blur-[12px] rounded-[28px] p-8 lg:p-12 border border-[#E2EDF8] shadow-[0px_12px_36px_rgba(8,45,114,0.06)] relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7"
+            >
               <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-1 rounded-full inline-block mb-4 uppercase tracking-[1.2px]">
                 LOCAL BANGALORE PRESENCE
               </span>
@@ -533,10 +552,16 @@ export function ContactPage({ onStartProject }) {
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Card: Dark Hub Card */}
-            <div className="lg:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5"
+            >
               <div
                 className="rounded-[16px] p-7 text-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] relative overflow-hidden"
                 style={{ background: 'linear-gradient(135deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
@@ -578,7 +603,7 @@ export function ContactPage({ onStartProject }) {
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -587,14 +612,14 @@ export function ContactPage({ onStartProject }) {
       {/* 4. SECTION: FREQUENTLY ASKED QUESTIONS */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
         {/* Section Background Shapes */}
-        <div
+        {/* <div
           className="absolute top-0 -left-24 w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] rounded-full pointer-events-none z-0 opacity-75"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
         />
         <div
           className="absolute top-1/3 -right-20 w-[200px] sm:w-[260px] h-[200px] sm:h-[260px] rounded-full pointer-events-none z-0 opacity-75"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
+        /> */}
 
         <div className="text-center mb-10 relative z-10">
           <span className="bg-white border border-[#D5EBFF] text-[#0878F9] text-[12px] font-extrabold px-3.5 py-1 rounded-full inline-block mb-3 uppercase tracking-[1.2px]">

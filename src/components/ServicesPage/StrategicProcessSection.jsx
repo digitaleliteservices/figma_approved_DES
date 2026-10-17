@@ -1,5 +1,6 @@
 import React from 'react';
 import { Search, Compass, Rocket, BarChart3 } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const StrategicProcessSection = () => {
   const steps = [
@@ -36,7 +37,7 @@ export const StrategicProcessSection = () => {
   return (
     <section className="relative isolate w-full py-16 sm:py-20 lg:py-24 bg-white overflow-hidden select-none">
       {/* Background Decorative Soft Sky-Blue Circle */}
-      <div
+      {/* <div
         className="
           absolute
           top-1/3
@@ -61,7 +62,7 @@ export const StrategicProcessSection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
         
@@ -81,12 +82,17 @@ export const StrategicProcessSection = () => {
 
         {/* 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1240px] mx-auto">
-          {steps.map((item) => {
+          {steps.map((item, index) => {
             const Icon = item.icon;
+            const isLeft = index % 2 === 0;
             return (
-              <div
+              <motion.div
                 key={item.step}
-                className="bg-white rounded-[26px] p-7 sm:p-8 border border-slate-100 shadow-[0_12px_36px_rgba(6,42,120,0.04)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.08)] transition-all duration-300 flex flex-col justify-start group"
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.75, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-white rounded-[26px] p-7 sm:p-8 border border-slate-100 shadow-[0_12px_36px_rgba(6,42,120,0.04)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.08)] transition-shadow duration-300 flex flex-col justify-start group"
               >
                 {/* Top Row: Blue Icon on Left, Orange Step Number Badge on Right */}
                 <div className="flex items-center justify-between mb-7">
@@ -107,7 +113,7 @@ export const StrategicProcessSection = () => {
                 <p className="text-[#475569] sm:text-[#334155] text-xs sm:text-[13px] leading-[1.68] font-normal">
                   {item.description}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

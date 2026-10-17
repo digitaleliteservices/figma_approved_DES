@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Volume2, TrendingUp, Users, Code, PenTool, Filter, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const TailoredServicesSection = ({ onSelectService }) => {
   const navigate = useNavigate();
@@ -88,7 +89,7 @@ export const TailoredServicesSection = ({ onSelectService }) => {
     >
       {/* ================= EXACT BACKGROUND CIRCLES ================= */}
       {/* 1. Top-Left Floating Circle */}
-      <div
+      {/* <div
         className="
           absolute
           top-4 sm:top-6 lg:top-8
@@ -100,10 +101,10 @@ export const TailoredServicesSection = ({ onSelectService }) => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 2. Middle-Left Soft Blurred Dot */}
-      <div
+      {/* <div
         className="
           absolute
           top-28 sm:top-32 lg:top-36
@@ -117,10 +118,10 @@ export const TailoredServicesSection = ({ onSelectService }) => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 3. Giant Right Sweeping Circle */}
-      <div
+      {/* <div
         className="
           absolute
           -top-12 sm:-top-16 lg:-top-20
@@ -132,7 +133,7 @@ export const TailoredServicesSection = ({ onSelectService }) => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
         
@@ -152,17 +153,22 @@ export const TailoredServicesSection = ({ onSelectService }) => {
 
         {/* 6 Cards Grid (2 rows x 3 columns) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
-          {serviceCards.map((service) => {
+          {serviceCards.map((service, index) => {
             const Icon = service.icon;
             const isHovered = hoveredCardId === service.id;
+            const isLeft = index % 2 === 0;
 
             return (
-              <div
+              <motion.div
                 key={service.id}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHoveredCardId(service.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
                 onClick={() => handleCardClick(service)}
-                className={`bg-white rounded-[28px] sm:rounded-[30px] p-6 sm:p-7 flex flex-col justify-between transition-all duration-200 relative group cursor-pointer border-2 ${
+                className={`bg-white rounded-[28px] sm:rounded-[30px] p-6 sm:p-7 flex flex-col justify-between transition-colors duration-200 relative group cursor-pointer border-2 ${
                   isHovered
                     ? 'border-[#3b82f6] shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
                     : 'border-slate-100 hover:border-[#3b82f6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
@@ -208,7 +214,7 @@ export const TailoredServicesSection = ({ onSelectService }) => {
                     <ArrowRight className="w-3.5 h-3.5 stroke-[2.2]" />
                   </button>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

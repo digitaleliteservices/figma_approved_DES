@@ -7,6 +7,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 import teamImg from '../../assets/images/team_collaboration_1790002998338.jpg';
 
 export const AboutSection = ({
@@ -93,7 +94,13 @@ export const AboutSection = ({
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           {/* Left Column: Organic Pebble Shaped Team Photo with Badges */}
-          <div className="lg:col-span-6 relative flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 relative flex items-center justify-center"
+          >
             <div className="relative w-full max-w-lg">
               {/* Floating Decorative Dot (Top Right) */}
               <div className="absolute -top-3 right-6 sm:right-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#93c5fd] shadow-md z-10 animate-pulse" />
@@ -129,10 +136,16 @@ export const AboutSection = ({
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: About Content & Pillars */}
-          <div className="lg:col-span-6 space-y-6 sm:space-y-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 space-y-6 sm:space-y-8 relative z-10"
+          >
             
             {/* Section Eyebrow: Plus Jakarta Sans 700 */}
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0066ff] tracking-wide uppercase">
@@ -193,7 +206,7 @@ export const AboutSection = ({
                 })}
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

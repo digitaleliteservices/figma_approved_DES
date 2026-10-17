@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export const ServicesCtaSection = ({ onContactClick }) => {
   const navigate = useNavigate();
@@ -15,7 +16,11 @@ export const ServicesCtaSection = ({ onContactClick }) => {
   };
 
   return (
-    <section
+    <motion.section
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: false, amount: 0.2 }}
+      transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
       className="relative w-full max-w-6xl mx-auto mb-4 sm:mb-6 md:mb-8 rounded-3xl text-white py-16 sm:py-20 lg:py-24 px-6 sm:px-10 lg:px-16 text-center overflow-hidden select-none"
       style={{
         background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
@@ -45,6 +50,6 @@ export const ServicesCtaSection = ({ onContactClick }) => {
           </button>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

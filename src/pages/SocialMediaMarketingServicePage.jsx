@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
+import { motion } from 'motion/react';
 
 export function SocialMediaMarketingServicePage({ onStartProject }) {
   const navigate = useNavigate();
@@ -172,7 +173,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
     >
 
       {/* ================= BACKGROUND GRADIENT ORBS (MATCHING SCREENSHOT) ================= */}
-      <div
+      {/* <div
         className="absolute -top-10 -left-28 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-full pointer-events-none z-0 opacity-85"
         style={{
           background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
@@ -207,7 +208,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
         style={{
           background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
-      />
+      /> */}
 
       {/* ================= 1. HERO SECTION ================= */}
       <section className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
@@ -215,7 +216,13 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 space-y-6"
+            >
               
               {/* Eyebrow Pill Tag */}
               <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md">
@@ -286,10 +293,16 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
                 </div>
               </div>
 
-            </div>
+            </motion.div>
 
             {/* Right Column: Floating "Why Choose DES?" Card */}
-            <div className="lg:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5"
+            >
               <div className="bg-white/95 backdrop-blur-md rounded-[28px] p-6 sm:p-8 border border-slate-200/80 shadow-[0_20px_50px_rgba(8,45,114,0.08)] relative">
                 
                 {/* Header */}
@@ -362,7 +375,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -390,13 +403,18 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
           {/* 6 Core Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
-            {coreServices.map((service) => {
+            {coreServices.map((service, index) => {
               const Icon = service.icon;
+              const isLeft = index % 2 === 0;
               return (
-                <div
+                <motion.div
                   key={service.id}
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => navigate("/contact")}
-                  className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                  className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-shadow duration-300 flex flex-col justify-between group cursor-pointer"
                 >
                   <div>
                     {/* Top Row: Icon + Number Badge */}
@@ -425,7 +443,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
                     <span>Get Started</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
-                </div>
+                </motion.div>
               );
             })}
           </div>
@@ -451,10 +469,15 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1240px] mx-auto">
             {whyChooseUs.map((item, index) => {
               const Icon = item.icon;
+              const isLeft = index % 2 === 0;
               return (
-                <div
+                <motion.div
                   key={index}
-                  className="bg-white rounded-[24px] p-6 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-all duration-200 flex flex-col justify-start"
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: (index % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white rounded-[24px] p-6 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow duration-200 flex flex-col justify-start"
                 >
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066ff] flex items-center justify-center mb-4">
                     <Icon className="w-5 h-5" />
@@ -465,7 +488,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
                   <p className="text-xs text-slate-600 leading-relaxed font-normal">
                     {item.description}
                   </p>
-                </div>
+                </motion.div>
               );
             })}
           </div>

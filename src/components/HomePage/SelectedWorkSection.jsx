@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import {
   ArrowLeft,
   ArrowRight,
-  Trophy,
-  Users,
-  TrendingUp,
-  Star,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
+import { StatsBannerBar } from '../StatsBannerBar.jsx';
 
 import workEcommerceImg from '../../assets/images/work_ecommerce_laptop_1790060147830.jpg';
 import workBrandingImg from '../../assets/images/work_branding_identity_1790060162943.jpg';
@@ -125,7 +123,13 @@ export const SelectedWorkSection = ({
 
           <div className="flex flex-col lg:flex-row items-start gap-6 lg:gap-6 xl:gap-8">
             
-            <div className="w-full lg:w-[280px] xl:w-[320px] shrink-0 flex flex-col justify-between pt-1">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full lg:w-[280px] xl:w-[320px] shrink-0 flex flex-col justify-between pt-1"
+            >
               <div>
                 <div className="inline-flex items-center text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.08em] uppercase mb-3 sm:mb-4">
                   <span>SELECTED WORK</span>
@@ -153,7 +157,7 @@ export const SelectedWorkSection = ({
                   <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform duration-200 group-hover:translate-x-1 text-[#0a1e38]" />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             <div className="flex-1 min-w-0 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3.5 sm:gap-4 xl:gap-5">
               {visibleProjects.map((project) => (
@@ -202,119 +206,7 @@ export const SelectedWorkSection = ({
       </div>
 
       {/* ================= ZONE 2: DARK NAVY STATISTICS BANNER ================= */}
-      <div className="relative w-full bg-[#062A78] py-4 sm:py-6 border-t border-slate-800/50 overflow-hidden">
-        
-        <div className="absolute inset-y-0 left-0 w-64 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
-            <path
-              d="M 0 70 Q 60 45, 120 70 T 240 65"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 0 85 Q 70 60, 140 85 T 240 80"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 0 55 Q 80 35, 160 55 T 240 50"
-              stroke="#38bdf8"
-              strokeWidth="1.2"
-              fill="none"
-            />
-          </svg>
-        </div>
-
-        <div className="absolute inset-y-0 right-0 w-64 pointer-events-none opacity-20">
-          <svg className="w-full h-full" viewBox="0 0 240 100" fill="none" preserveAspectRatio="none">
-            <path
-              d="M 240 70 Q 180 45, 120 70 T 0 65"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 240 85 Q 170 60, 100 85 T 0 80"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              fill="none"
-            />
-            <path
-              d="M 240 55 Q 160 35, 80 55 T 0 50"
-              stroke="#38bdf8"
-              strokeWidth="1.2"
-              fill="none"
-            />
-          </svg>
-        </div>
-
-        <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center">
-
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="shrink-0 text-[#ffba00]">
-                <Trophy className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
-                  150+
-                </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium  leading-snug">
-                  Projects Delivered
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="shrink-0 text-[#ffba00]">
-                <Users className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
-                  70+
-                </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
-                  Happy Clients
-                </div>
-              </div>
-            </div>
-
-            {/* Metric 3: 300% Average ROI Growth */}
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="shrink-0 text-[#ffba00]">
-                <TrendingUp className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
-                  300%
-                </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
-                  Average ROI Growth
-                </div>
-              </div>
-            </div>
-
-            {/* Metric 4: 5+ Years of Experience */}
-            <div className="flex items-center gap-4 sm:gap-5">
-              <div className="shrink-0 text-[#ffba00]">
-                <Star className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
-              </div>
-              <div>
-                <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
-                  5+
-                </div>
-                <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug">
-                  Years of Experience
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
+      <StatsBannerBar />
     </section>
   );
 };

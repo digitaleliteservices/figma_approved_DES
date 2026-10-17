@@ -1,38 +1,91 @@
-import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Code2, Send, Settings } from 'lucide-react';
+import { motion } from 'motion/react';
 import heroOfficeImg from '../../assets/images/hero_office_exact_1790003422960.jpg';
+import { AnimatedStatNumber } from '../AnimatedStatNumber.jsx';
+import { HeroMarqueeBar } from './HeroMarqueeBar.jsx';
 
 export const Hero = ({
   onStartProject,
   onExploreServices,
   onSelectService,
 }) => {
-  
   const navigate = useNavigate();
+  const [areStatsVisible, setAreStatsVisible] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.scrollY < 400;
+    }
+    return true;
+  });
+  const statsContainerRef = useRef(null);
+
+  useEffect(() => {
+    const el = statsContainerRef.current;
+    if (!el) return;
+
+    // Check visibility on mount ("while open")
+    const checkVisibility = () => {
+      const rect = el.getBoundingClientRect();
+      const inView = rect.top < window.innerHeight && rect.bottom > 0;
+      setAreStatsVisible(inView);
+    };
+
+    checkVisibility();
+
+    // IntersectionObserver to detect when scrolled into/out of view ("while scrolling")
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAreStatsVisible(true);
+        } else {
+          // Reset when scrolled out of view so it re-triggers when scrolled back
+          setAreStatsVisible(false);
+        }
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -20px 0px',
+      }
+    );
+
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <section
       id="home"
-      className="relative w-full overflow-hidden bg-white min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center"
+      className="relative w-full overflow-hidden bg-white flex flex-col justify-between"
     >
+      {/* Main Hero Content & Visual Area */}
+      <div className="relative w-full min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center">
 
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative h-full">
           <div className="relative w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12">
-            <div
+            {/* <div
               className="absolute -top-28 sm:-top-32 lg:-top-36 -left-28 sm:-left-36 lg:-left-44 w-[330px] h-[330px] sm:w-[370px] sm:h-[370px] lg:w-[410px] lg:h-[410px] rounded-full pointer-events-none"
               // style={{
               //   background:
               //     'radial-gradient(circle at 50% 50%, rgba(196, 226, 254, 0.95) 0%, rgba(206, 233, 255, 0.82) 30%, rgba(216, 238, 255, 0.5) 50%, rgba(228, 244, 255, 0.18) 68%, rgba(255, 255, 255, 0) 82%)',
               //   filter: 'blur(16px)',
               // }}
-            />
+            /> */}
           </div>
         </div>
       </div>
 
-      <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] xl:w-[58%] z-0 select-none pointer-events-auto">
+      <motion.div
+        initial={{ opacity: 0, x: 70 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+        className="hidden lg:block absolute right-0 top-0 bottom-0 w-[55%] xl:w-[58%] z-0 select-none pointer-events-auto"
+      >
         <img
           src={heroOfficeImg}
           alt="Modern bright corner office overlooking city skyline with laptop, notebook and ergonomic chair"
@@ -133,10 +186,16 @@ export const Hero = ({
             <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-1" />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
-        <div className="w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12 pb-12 lg:pb-16">
+        <motion.div
+          initial={{ opacity: 0, x: -70 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12 pb-12 lg:pb-16"
+        >
           
           <div className="inline-flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs md:text-[13px] font-bold text-[#062A78] tracking-[0.18em] uppercase mb-4 sm:mb-6">
             <span>IDEAS</span>
@@ -182,12 +241,20 @@ export const Hero = ({
           <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-7 sm:mb-9" />
 
           <div className="relative max-w-[500px]">
-            <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" />
+            {/* <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" /> */}
 
-            <div className="relative z-10 grid grid-cols-4 gap-3 sm:gap-6 items-start">
-              <div>
+            <div
+              ref={statsContainerRef}
+              className="relative z-10 grid grid-cols-4 gap-3 sm:gap-6 items-start"
+            >
+              <div className="group transition-transform duration-200 hover:-translate-y-0.5 cursor-default">
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
-                  50+
+                  <AnimatedStatNumber
+                    target={50}
+                    suffix="+"
+                    duration={1800}
+                    isVisible={areStatsVisible}
+                  />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
                   Businesses
@@ -196,9 +263,14 @@ export const Hero = ({
                 </div>
               </div>
 
-              <div>
+              <div className="group transition-transform duration-200 hover:-translate-y-0.5 cursor-default">
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
-                  30+
+                  <AnimatedStatNumber
+                    target={30}
+                    suffix="+"
+                    duration={1600}
+                    isVisible={areStatsVisible}
+                  />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
                   Happy
@@ -207,9 +279,14 @@ export const Hero = ({
                 </div>
               </div>
 
-              <div>
+              <div className="group transition-transform duration-200 hover:-translate-y-0.5 cursor-default">
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
-                  7
+                  <AnimatedStatNumber
+                    target={7}
+                    suffix=""
+                    duration={1200}
+                    isVisible={areStatsVisible}
+                  />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
                   Digital
@@ -218,9 +295,14 @@ export const Hero = ({
                 </div>
               </div>
 
-              <div>
+              <div className="group transition-transform duration-200 hover:-translate-y-0.5 cursor-default">
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
-                  24/7
+                  <AnimatedStatNumber
+                    target={24}
+                    suffix="/7"
+                    duration={1500}
+                    isVisible={areStatsVisible}
+                  />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
                   Support
@@ -229,10 +311,12 @@ export const Hero = ({
             </div>
           </div>
 
-        </div>
+        </motion.div>
+      </div>
       </div>
 
-      <div className="block lg:hidden w-full px-4 pb-12">
+      {/* Mobile Visual Office Card */}
+      <div className="block lg:hidden w-full px-4 pb-8 sm:pb-10">
         <div className="relative w-full h-[320px] sm:h-[400px] rounded-2xl overflow-hidden shadow-lg bg-slate-100">
           <img
             src={heroOfficeImg}
@@ -249,6 +333,9 @@ export const Hero = ({
           </div>
         </div>
       </div>
+
+      {/* Continuous Right-to-Left Moving Marquee Ticker Bar at Bottom of Hero */}
+      <HeroMarqueeBar />
     </section>
   );
 };

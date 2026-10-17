@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, CheckCircle2, Clock, FileCode, Layers, Rocket, ShieldCheck, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export function ProcessPage({ onStartProject }) {
   const steps = [
@@ -75,9 +76,13 @@ export function ProcessPage({ onStartProject }) {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="space-y-12">
           {steps.map((step, idx) => (
-            <div
+            <motion.div
               key={step.number}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-all duration-300 relative group"
+              initial={{ opacity: 0, x: idx % 2 === 0 ? -70 : 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-shadow duration-300 relative group"
             >
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
                 <div className="flex items-start gap-4">
@@ -119,14 +124,20 @@ export function ProcessPage({ onStartProject }) {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </section>
 
       {/* Assurance banner */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
-        <div className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+          className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+        >
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
               <ShieldCheck className="w-6 h-6" />
@@ -146,7 +157,7 @@ export function ProcessPage({ onStartProject }) {
           >
             Start Your Project
           </button>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

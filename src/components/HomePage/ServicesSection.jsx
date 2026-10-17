@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 export const ServicesSection = ({
   onSelectService,
@@ -108,12 +109,12 @@ export const ServicesSection = ({
       <div className="absolute top-0 right-0 w-[520px] h-[460px] bg-gradient-to-bl from-sky-100/70 via-blue-50/40 to-transparent blur-3xl pointer-events-none -z-10" />
 
       {/* 2. Large Light-Blue Circle in Bottom-Right Corner (Exact match to reference) */}
-      <div
+      {/* <div
         className="absolute -bottom-24 -right-24 sm:-bottom-32 sm:-right-32 md:-bottom-36 md:-right-36 lg:-bottom-44 lg:-right-44 w-[380px] sm:w-[460px] lg:w-[540px] h-[380px] sm:h-[460px] lg:h-[540px] rounded-full pointer-events-none -z-10"
         style={{
           backgroundColor: '#badcff',
         }}
-      />
+      /> */}
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 relative z-10">
         
@@ -121,7 +122,13 @@ export const ServicesSection = ({
         <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 sm:gap-10 mb-12 sm:mb-16">
           
           {/* Left Column: Eyebrow + 3-line Headline */}
-          <div className="max-w-xl xl:max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="max-w-xl xl:max-w-2xl"
+          >
             {/* Eyebrows / Labels: Plus Jakarta Sans 700 */}
             <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.06em] uppercase mb-3.5 sm:mb-4">
               <span>OUR SERVICES</span>
@@ -134,10 +141,16 @@ export const ServicesSection = ({
               business <br />
               needs in <span className="text-[#0066ff]">one place.</span>
             </h2>
-          </div>
+          </motion.div>
 
           {/* Right Column: Left-aligned Description & Link Button */}
-          <div className="lg:max-w-[440px] xl:max-w-[480px] lg:pt-6 flex flex-col items-start text-left">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:max-w-[440px] xl:max-w-[480px] lg:pt-6 flex flex-col items-start text-left"
+          >
             {/* Body paragraphs: Plus Jakarta Sans 500 */}
             <p className="text-[15px] sm:text-base text-[#051330ff] font-medium leading-[1.65] mb-4 sm:mb-5">
               From building your digital presence to generating leads and growing your audience,
@@ -153,7 +166,7 @@ export const ServicesSection = ({
               <span>View All Services</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </button>
-          </div>
+          </motion.div>
         </div>
 
         {/* ================= 7 HORIZONTAL CARDS GRID ================= */}

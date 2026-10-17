@@ -8,6 +8,7 @@ import {
   ShieldCheck,
   BarChart3,
 } from 'lucide-react';
+import { motion } from 'motion/react';
 import avatarRahul from '../../assets/images/avatar_rahul_mehta_1790061709561.jpg';
 import avatarSneha from '../../assets/images/avatar_sneha_iyer_1790061727449.jpg';
 
@@ -25,7 +26,7 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
     <section className="relative isolate w-full pt-10 sm:pt-14 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 bg-white overflow-hidden select-none">
       {/* ================= EXACT TOP-LEFT BACKGROUND CIRCLE ================= */}
       {/* Positioned on section with z-0, completely behind the relative z-10 content */}
-      <div
+      {/* <div
         className="
           absolute
           -top-16 sm:-top-20 lg:-top-28
@@ -37,13 +38,19 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
           
           {/* ================= LEFT CONTENT COLUMN WITH ANCHORED BACKGROUND CIRCLE ================= */}
-          <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center relative z-10"
+          >
             {/* Eyebrow Pill: Ice-blue pill with flame icon and electric blue text */}
             <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-[#eef7ff] border border-blue-200/80 text-[#0066ff] text-xs sm:text-[12.5px] font-bold tracking-wide uppercase mb-5 w-fit shadow-2xs relative z-10">
               <Flame className="w-3.5 h-3.5 text-[#ff7700] fill-[#ff9900]" />
@@ -126,10 +133,16 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
               </div>
             </div>
 
-          </div>
+          </motion.div>
 
           {/* ================= RIGHT CARD: "Why Choose DES?" ================= */}
-          <div className="lg:col-span-5 xl:col-span-5 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 xl:col-span-5 flex items-center justify-center"
+          >
             <div className="w-full max-w-[450px] bg-white rounded-[32px] p-7 sm:p-8 lg:p-9 border border-slate-100 shadow-[0_24px_60px_rgba(6,42,120,0.06)] hover:shadow-[0_28px_70px_rgba(0,102,255,0.08)] transition-all duration-300">
               
               {/* Card Header: "Why Choose DES?" + "OUR PROMISE" */}
@@ -208,7 +221,7 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

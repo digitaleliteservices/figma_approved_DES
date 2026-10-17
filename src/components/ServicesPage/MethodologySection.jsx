@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'motion/react';
 
 export const MethodologySection = () => {
   const steps = [
@@ -58,7 +59,7 @@ export const MethodologySection = () => {
       
       {/* ================= EXACT BACKGROUND CIRCLES (MATCHING UI) ================= */}
       {/* 1. Top-Right Large Circle (Upper right behind header) */}
-      <div
+      {/* <div
         className="
           absolute
           -top-16 lg:-top-24
@@ -70,10 +71,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 2. Top-Left Giant Circle (Opposite Steps 1 & 2) */}
-      <div
+      {/* <div
         className="
           absolute
           top-20 sm:top-28 lg:top-32
@@ -85,10 +86,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 3. Middle-Left Soft Circle (Positioned right below Step 4) */}
-      <div
+      {/* <div
         className="
           absolute
           top-[50%] sm:top-[52%]
@@ -101,10 +102,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 4. Middle-Right Accent Dot (Right of Timeline, around Step 4/5) */}
-      <div
+      {/* <div
         className="
           absolute
           top-[56%] sm:top-[58%]
@@ -118,10 +119,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 5. Lower-Left Small Accent Circle (Far left margin level with Step 6) */}
-      <div
+      {/* <div
         className="
           absolute
           top-[74%] sm:top-[76%]
@@ -135,10 +136,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 6. Bottom-Right Huge Circle (Spanning opposite Steps 6 & 7) */}
-      <div
+      {/* <div
         className="
           absolute
           bottom-16 sm:bottom-24 lg:bottom-28
@@ -150,10 +151,10 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       {/* 7. Bottom-Left Medium/Large Circle (Grounding the bottom) */}
-      <div
+      {/* <div
         className="
           absolute
           -bottom-2 sm:-bottom-8 lg:-bottom-2
@@ -165,7 +166,7 @@ export const MethodologySection = () => {
           z-0
         "
         style={{ backgroundColor: '#ddf0fe' }}
-      />
+      /> */}
 
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
         
@@ -219,20 +220,30 @@ export const MethodologySection = () => {
                   {/* Desktop Left Side Column: Text sits to the left of the node and is left-aligned */}
                   <div className="hidden md:flex justify-end pr-10 lg:pr-14">
                     {!isRight ? (
-                      <div className="max-w-[340px] text-left">
+                      <motion.div
+                        initial={{ opacity: 0, x: -60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="max-w-[340px] text-left"
+                      >
                         <h3 className="text-[17px] lg:text-[18px] font-extrabold text-[#062A78] tracking-tight mb-1.5 uppercase">
                           {item.title}
                         </h3>
                         <p className="text-xs sm:text-[13px] text-[#64748b] leading-relaxed">
                           {item.description}
                         </p>
-                      </div>
+                      </motion.div>
                     ) : null}
                   </div>
 
                   {/* Center Column: Exactly 64px wide, mathematically locked to the center line */}
                   <div className="flex items-center justify-center relative z-20">
-                    <div
+                    <motion.div
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      whileInView={{ scale: 1, opacity: 1 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       className="
                         w-[44px] h-[52px]
                         rounded-[14px]
@@ -245,32 +256,44 @@ export const MethodologySection = () => {
                       "
                     >
                       {item.number}
-                    </div>
+                    </motion.div>
                   </div>
 
                   {/* Desktop Right Side Column / Mobile Text Column */}
                   <div className="pl-6 md:pl-10 lg:pl-14 flex justify-start">
                     {/* On Desktop: Only render if step belongs on the right */}
                     {isRight && (
-                      <div className="hidden md:block max-w-[340px] text-left">
+                      <motion.div
+                        initial={{ opacity: 0, x: 60 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.2 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                        className="hidden md:block max-w-[340px] text-left"
+                      >
                         <h3 className="text-[17px] lg:text-[18px] font-extrabold text-[#062A78] tracking-tight mb-1.5 uppercase">
                           {item.title}
                         </h3>
                         <p className="text-xs sm:text-[13px] text-[#64748b] leading-relaxed">
                           {item.description}
                         </p>
-                      </div>
+                      </motion.div>
                     )}
 
                     {/* On Mobile: Render all steps here */}
-                    <div className="block md:hidden max-w-[340px] text-left">
+                    <motion.div
+                      initial={{ opacity: 0, x: 40 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: false, amount: 0.2 }}
+                      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                      className="block md:hidden max-w-[340px] text-left"
+                    >
                       <h3 className="text-[17px] lg:text-[18px] font-extrabold text-[#062A78] tracking-tight mb-1.5 uppercase">
                         {item.title}
                       </h3>
                       <p className="text-xs sm:text-[13px] text-[#64748b] leading-relaxed">
                         {item.description}
                       </p>
-                    </div>
+                    </motion.div>
                   </div>
                 </div>
               );

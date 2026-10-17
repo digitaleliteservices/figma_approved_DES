@@ -70,7 +70,7 @@ export function BlogDetailPage({ onStartProject }) {
       <style>{`@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');`}</style>
 
       {/* ================= BACKGROUND GRADIENT ORBS (REDUCED HERO CIRCLE SIZES) ================= */}
-      <div
+      {/* <div
         className="absolute -top-10 -left-20 w-[240px] sm:w-[340px] h-[240px] sm:h-[340px] rounded-full pointer-events-none z-0 opacity-75"
         style={{
           background:
@@ -104,7 +104,7 @@ export function BlogDetailPage({ onStartProject }) {
           background:
             'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
         }}
-      />
+      /> */}
 
       {/* ================= 1. TOP BREADCRUMB & BACK NAVIGATION ================= */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 relative z-10">

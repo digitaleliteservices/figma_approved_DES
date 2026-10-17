@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowLeft, ArrowRight, Star } from 'lucide-react';
+import { motion } from 'motion/react';
 import rahulAvatar from '../../assets/images/avatar_rahul_mehta_1790061709561.jpg';
 import snehaAvatar from '../../assets/images/avatar_sneha_iyer_1790061727449.jpg';
 
@@ -128,7 +129,13 @@ export const TestimonialsSection = ({
         <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-8 xl:gap-12">
           
           {/* ================= LEFT HEADING BLOCK ================= */}
-          <div className="w-full lg:w-[280px] xl:w-[320px] shrink-0 flex flex-col justify-between pt-1">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full lg:w-[280px] xl:w-[320px] shrink-0 flex flex-col justify-between pt-1"
+          >
             <div>
               {/* Eyebrow: Dark Navy with Blue Arrow */}
               <div
@@ -158,7 +165,7 @@ export const TestimonialsSection = ({
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
               </svg>
             </div>
-          </div>
+          </motion.div>
 
           {/* ================= RIGHT 2 TESTIMONIAL CARDS ================= */}
           <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4.5 sm:gap-5 xl:gap-6 w-full">

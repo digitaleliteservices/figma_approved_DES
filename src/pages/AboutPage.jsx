@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import {
   ArrowRight,
   Target,
@@ -11,10 +11,48 @@ import {
 } from 'lucide-react';
 import teamCollaboratingImg from '../assets/images/about_team_collaborating_1790337271848.jpg';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
+import { AnimatedStatNumber } from '../components/AnimatedStatNumber.jsx';
+import AnoutHeroImg from "../assets/images/about-hero-img.png"
 
 export function AboutPage({ onStartProject, onMoreAboutUs }) {
   const navigate = useNavigate();
+  const [isStatsRowVisible, setIsStatsRowVisible] = useState(false);
+  const statsRowRef = useRef(null);
+
+  useEffect(() => {
+    const el = statsRowRef.current;
+    if (!el) return;
+
+    const checkVisibility = () => {
+      const rect = el.getBoundingClientRect();
+      const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+      const inView = rect.top < windowHeight - 30 && rect.bottom > 30;
+      setIsStatsRowVisible(inView);
+    };
+
+    checkVisibility();
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsStatsRowVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+
+    observer.observe(el);
+    window.addEventListener('scroll', checkVisibility, { passive: true });
+    window.addEventListener('resize', checkVisibility, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', checkVisibility);
+      window.removeEventListener('resize', checkVisibility);
+    };
+  }, []);
 
   const handleStartProjectClick = (service = 'Digital Solutions') => {
     if (onStartProject) {
@@ -96,7 +134,13 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
             
             {/* Left Content Column */}
-            <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center"
+            >
               {/* Eyebrow Link: "ABOUT DIGITAL ELITE SERVICES →" */}
               <div className="inline-flex items-center gap-2 text-xs sm:text-[13px] font-semibold text-[#0066ff] tracking-[0.08em] uppercase mb-4 sm:mb-5 z-10">
                 <span>ABOUT DIGITAL ELITE SERVICES</span>
@@ -120,11 +164,11 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
               {/* Thin Horizontal Divider (Exact to Screenshot) */}
               <div className="pt-6 sm:pt-7 border-t border-slate-200/90 max-w-[560px] z-10">
                 {/* 4 Stats Metrics Row */}
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
+                <div ref={statsRowRef} className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
                   {/* Stat 1 */}
                   <div>
                     <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      150+
+                      <AnimatedStatNumber target={150} suffix="+" isVisible={isStatsRowVisible} duration={1600} />
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
                       Projects Completed
@@ -134,7 +178,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                   {/* Stat 2 */}
                   <div>
                     <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      70+
+                      <AnimatedStatNumber target={70} suffix="+" isVisible={isStatsRowVisible} duration={1600} />
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
                       Happy Clients
@@ -144,7 +188,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                   {/* Stat 3 */}
                   <div>
                     <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      300%
+                      <AnimatedStatNumber target={300} suffix="%" isVisible={isStatsRowVisible} duration={1800} />
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
                       Average ROI Increase
@@ -154,7 +198,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                   {/* Stat 4 */}
                   <div>
                     <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      5+
+                      <AnimatedStatNumber target={5} suffix="+" isVisible={isStatsRowVisible} duration={1400} />
                     </div>
                     <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
                       Years of Innovation
@@ -162,48 +206,21 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Photography Card */}
-            <div className="lg:col-span-5 xl:col-span-5 relative flex items-center justify-center">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 xl:col-span-5 relative flex items-center justify-center"
+            >
               <div className="relative w-full max-w-[450px] lg:max-w-[480px]">
-
-                 <div
-                  className="
-                    absolute
-                    -top-80
-                    -left-250
-                    w-[220px] sm:w-[280px] lg:w-[460px]
-                    h-[220px] sm:h-[280px] lg:h-[460px]
-                    rounded-full
-                    pointer-events-none
-                    -z-10
-                  "
-                  style={{
-                    backgroundColor: '#ddf0fe',
-                  }}
-                />
-                {/* 2. EXACT RIGHT BACKGROUND CIRCLE */}
-                <div
-                  className="
-                    absolute
-                    -top-64 sm:-top-48 lg:-top-40
-                    right-3 sm:right-2 lg:-right-12 xl:-right-15
-                    w-[220px] sm:w-[280px] lg:w-[460px]
-                    h-[220px] sm:h-[280px] lg:h-[460px]
-                    rounded-full
-                    pointer-events-none
-                    -z-10
-                  "
-                  style={{
-                    backgroundColor: '#ddf0fe',
-                  }}
-                />
-
                 {/* Rounded Photo Frame (Exact to Screenshot) */}
                 <div className="relative rounded-[28px] sm:rounded-[34px] overflow-hidden shadow-[0_24px_50px_-12px_rgba(6,42,120,0.18)] border border-slate-100/80 bg-white aspect-square z-10">
                   <img
-                    src={teamCollaboratingImg}
+                    src={AnoutHeroImg}
                     alt="Digital Elite Services team collaborating around conference table with laptops"
                     className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-[1.02]"
                     loading="eager"
@@ -235,7 +252,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -267,7 +284,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
           <div className="relative max-w-[1040px] mx-auto">
             
             {/* 1. Left Pale Sky-Blue Circle (Anchored behind the left edge of Our Mission card) */}
-            <div
+            {/* <div
               className="
                 absolute
                 top-[52%] -translate-y-1/2
@@ -279,10 +296,10 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 2. Right Pale Sky-Blue Circle (Anchored behind the lower-right of Our Vision card) */}
-            <div
+            {/* <div
               className="
                 absolute
                 -bottom-16 sm:-bottom-24 lg:-bottom-28
@@ -294,13 +311,19 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 2 Large Purpose Cards (Our Mission & Our Vision) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 relative z-10">
               
-              {/* Card 1: Our Mission */}
-              <div className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,102,255,0.12)] transition-all duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group">
+              {/* Card 1: Our Mission (Left to Right animation) */}
+              <motion.div
+                initial={{ opacity: 0, x: -70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(0,102,255,0.12)] transition-shadow duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group"
+              >
                 {/* Header: Icon + Title horizontally aligned */}
                 <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
                   {/* Electric Blue Squircle Icon */}
@@ -318,10 +341,16 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 <p className="text-[#475569] sm:text-[#0e1a2aff] text-[12px] sm:text-[14px] leading-[1.75] font-normal">
                   To transform ambitious business concepts into category-defining digital experiences. We bridge the gap between creative design, advanced engineering, and revenue growth so our clients can stay ahead in a fast-changing world.
                 </p>
-              </div>
+              </motion.div>
 
-              {/* Card 2: Our Vision */}
-              <div className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(124,58,237,0.12)] transition-all duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group">
+              {/* Card 2: Our Vision (Right to Left animation) */}
+              <motion.div
+                initial={{ opacity: 0, x: 70 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-[#f5f9fbff] rounded-[28px] sm:rounded-[34px] p-8 sm:p-10 lg:p-12 border border-slate-100 shadow-[0_20px_50px_-15px_rgba(6,42,120,0.06)] hover:shadow-[0_25px_60px_-15px_rgba(124,58,237,0.12)] transition-shadow duration-300 min-h-[280px] sm:min-h-[360px] flex flex-col justify-start group"
+              >
                 {/* Header: Icon + Title horizontally aligned */}
                 <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
                   {/* Vibrant Violet/Purple Squircle Icon */}
@@ -339,7 +368,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 <p className="text-[#475569] sm:text-[#071527ff] text-[12px] sm:text-[14px] leading-[1.75] font-normal">
                   To be recognized globally as the most trusted digital innovation partner—known for technical excellence, creative bravery, and an unwavering commitment to driving scalable, real-world business results.
                 </p>
-              </div>
+              </motion.div>
 
             </div>
 
@@ -386,7 +415,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             /> */}
 
             {/* 2. Main Left Large Circle (Framing Card 01 and sweeping behind it) */}
-            <div
+            {/* <div
               className="
                 absolute
                 -bottom-40
@@ -399,10 +428,10 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 3. Bottom Circle (Underneath Card 03 & Card 04) */}
-            <div
+            {/* <div
               className="
                 absolute
                 -bottom-24 sm:-bottom-32 lg:-bottom-36
@@ -414,10 +443,10 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 4. Top-Right Floating Circle (Floating cleanly in upper-right space) */}
-            <div
+            {/* <div
               className="
                 hidden sm:block
                 absolute
@@ -430,17 +459,22 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                 -z-10
               "
               style={{ backgroundColor: '#ddf0fe' }}
-            />
+            /> */}
 
             {/* 4 Core Principles Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-              {principles.map((item) => {
+              {principles.map((item, idx) => {
                 const Icon = item.icon;
+                const isLeft = idx % 2 === 0;
                 return (
-                  <div
+                  <motion.div
                     key={item.id}
+                    initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: false, amount: 0.2 }}
+                    transition={{ duration: 0.75, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => onMoreAboutUs?.(item.title)}
-                    className="bg-white rounded-[28px] sm:rounded-[30px] p-7 sm:p-8 lg:p-8 border border-slate-100/90 shadow-[0_12px_36px_rgba(6,42,120,0.05)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.1)] transition-all duration-300 min-h-[380px] sm:min-h-[400px] flex flex-col justify-start group cursor-pointer"
+                    className="bg-white rounded-[28px] sm:rounded-[30px] p-7 sm:p-8 lg:p-8 border border-slate-100/90 shadow-[0_12px_36px_rgba(6,42,120,0.05)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.1)] transition-shadow duration-300 min-h-[380px] sm:min-h-[400px] flex flex-col justify-start group cursor-pointer"
                   >
                     {/* Top Row: Squircle Icon on Left, 01/02/03/04 Number on Right */}
                     <div className="flex items-center justify-between mb-7 sm:mb-8">
@@ -468,7 +502,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                     <p className="text-[#475569] sm:text-[#334155] text-[13.5px] sm:text-[14px] font-normal leading-[1.68]">
                       {item.description}
                     </p>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
@@ -481,7 +515,11 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
       {/* ========================================================================= */}
       {/* 4. READY TO TURN YOUR VISION INTO DIGITAL IMPACT? (CTA BANNER)           */}
       {/* ========================================================================= */}
-      <section
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false, amount: 0.2 }}
+        transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
         className=" mb-10 max-w-6xl  mx-auto rounded-2xl text-white py-10 sm:py-14 lg:py-18 px-6 sm:px-10 lg:px-16 text-center overflow-hidden select-none "
         style={{
           background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
@@ -512,7 +550,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
             </button>
           </div>
         </div>
-      </section>
+      </motion.section>
     </div>
   );
 }

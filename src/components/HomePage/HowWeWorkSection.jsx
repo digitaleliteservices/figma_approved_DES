@@ -7,6 +7,7 @@ import {
   BarChart2,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 
 export const HowWeWorkSection = ({
   onExploreProcess,
@@ -21,37 +22,43 @@ export const HowWeWorkSection = ({
       {/* ================= BACKGROUND ELEMENTS ================= */}
 
       {/* 1. Large Light-Blue Dome on Far Right Edge (Exact Match to Reference) */}
-      <div
+      {/* <div
         className="absolute top-1/2 -translate-y-1/2 -right-[260px] sm:-right-[200px] md:-right-[160px] lg:-right-[120px] xl:-right-[90px] w-[460px] sm:w-[540px] lg:w-[600px] h-[460px] sm:h-[540px] lg:h-[600px] rounded-full pointer-events-none -z-10"
         style={{
           backgroundColor: '#cbe4ff',
         }}
-      />
+      /> */}
 
       {/* 2. Floating Tilted Light-Blue Pill: Top Right near Strategize */}
-      <div
+      {/* <div
         className="absolute top-10 sm:top-14 right-[23%] sm:right-[25%] lg:right-[26%] w-3 sm:w-3.5 h-5 sm:h-5.5 rounded-full pointer-events-none -z-10"
         style={{
           backgroundColor: '#badcff',
           transform: 'rotate(-25deg)',
         }}
-      />
+      /> */}
 
       {/* 3. Floating Tilted Light-Blue Pill: Far Right near Grow */}
-      <div
+      {/* <div
         className="absolute top-1/2 translate-y-8 right-5 sm:right-8 lg:right-10 w-3 sm:w-3.5 h-5 sm:h-5.5 rounded-full pointer-events-none -z-10"
         style={{
           backgroundColor: '#badcff',
           transform: 'rotate(-20deg)',
         }}
-      />
+      /> */}
 
       {/* ================= CONTENT CONTAINER ================= */}
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-6 items-center">
 
           {/* ================= LEFT COLUMN: EXACT TO DESIGN ================= */}
-          <div className="lg:col-span-5 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-5 relative z-10"
+          >
             {/* EXACT LARGE LIGHT-BLUE BACKGROUND CIRCLE */}
             {/* <div
               className="absolute -left-[180px] sm:-left-[140px] lg:-left-[110px] -top-4 sm:-top-6 lg:-top-10 w-[220px] sm:w-[280px] lg:w-[320px] h-[220px] sm:h-[280px] lg:h-[320px] rounded-full pointer-events-none -z-10"
@@ -139,7 +146,7 @@ export const HowWeWorkSection = ({
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-[#0a1e38]" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* ================= RIGHT COLUMN: EXACT ORBITAL DIAGRAM ================= */}
           <div className="lg:col-span-7 flex items-center justify-center relative overflow-visible pt-4 lg:pt-0">
@@ -151,7 +158,7 @@ export const HowWeWorkSection = ({
                 viewBox="0 0 640 560"
               >
                 {/* 1. Outer Dashed Orbit Ring (passes directly through the 4 nodes) */}
-                <circle
+                <motion.circle
                   cx="320"
                   cy="280"
                   r="195"
@@ -159,19 +166,45 @@ export const HowWeWorkSection = ({
                   stroke="#cbd5e1"
                   strokeWidth="1.2"
                   strokeDasharray="4 5"
+                  animate={{
+                    strokeDashoffset: [0, -72],
+                  }}
+                  transition={{
+                    duration: 24,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
                 />
 
-                {/* 2. Inner Dashed Orbit Ring */}
-                <circle
-                  cx="320"
-                  cy="280"
-                  r="130"
-                  fill="none"
-                  stroke="#93c5fd"
-                  strokeWidth="1.3"
-                  strokeDasharray="4 4"
-                  opacity="0.85"
-                />
+                {/* 2. Inner Dashed Orbit Ring & Dots: Slowly Rotating Orbital Waves */}
+                <motion.g
+                  animate={{ rotate: 360 }}
+                  transition={{
+                    duration: 50,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  style={{ transformOrigin: '320px 280px' }}
+                >
+                  <circle
+                    cx="320"
+                    cy="280"
+                    r="130"
+                    fill="none"
+                    stroke="#93c5fd"
+                    strokeWidth="1.3"
+                    strokeDasharray="4 4"
+                    opacity="0.85"
+                  />
+
+                  {/* Yellow Dots on Inner Ring at 9 o'clock and 3 o'clock */}
+                  <circle cx="190" cy="280" r="4.5" fill="#ffb703" />
+                  <circle cx="450" cy="280" r="4.5" fill="#ffb703" />
+
+                  {/* Blue Dots on Inner Ring at 12 o'clock and 6 o'clock */}
+                  <circle cx="320" cy="150" r="3.5" fill="#0066ff" />
+                  <circle cx="320" cy="410" r="3.5" fill="#0066ff" />
+                </motion.g>
 
                 {/* 3. Radial Spoke Lines from Inner Ring outward through each Node */}
                 {/* Top-Left Spoke (Discover - 135°) */}
@@ -218,29 +251,108 @@ export const HowWeWorkSection = ({
                   strokeDasharray="3 3"
                 />
 
-                {/* 4. Accent Dots on Inner & Outer Rings (Exact to Reference) */}
-                {/* Yellow Dots on Inner Ring at 9 o'clock and 3 o'clock */}
-                <circle cx="190" cy="280" r="4.5" fill="#ffb703" />
-                <circle cx="450" cy="280" r="4.5" fill="#ffb703" />
-
-                {/* Blue Dots on Inner Ring at 12 o'clock and 6 o'clock */}
-                <circle cx="320" cy="150" r="3.5" fill="#0066ff" />
-                <circle cx="320" cy="410" r="3.5" fill="#0066ff" />
-
-                {/* Blue Dots on Outer Ring */}
-                <circle cx="485" cy="200" r="3.5" fill="#0066ff" />
-                <circle cx="485" cy="360" r="3.5" fill="#0066ff" />
-                <circle cx="320" cy="85" r="3.2" fill="#0066ff" />
-                <circle cx="295" cy="88" r="2.4" fill="#0066ff" />
-                <circle cx="345" cy="88" r="2.4" fill="#0066ff" />
+                {/* 4. Outer Ring Accent Dots: Gently Rotating in Counter-Direction */}
+                <motion.g
+                  animate={{ rotate: -360 }}
+                  transition={{
+                    duration: 75,
+                    repeat: Infinity,
+                    ease: 'linear',
+                  }}
+                  style={{ transformOrigin: '320px 280px' }}
+                >
+                  <circle cx="485" cy="200" r="3.5" fill="#0066ff" />
+                  <circle cx="485" cy="360" r="3.5" fill="#0066ff" />
+                  <circle cx="320" cy="85" r="3.2" fill="#0066ff" />
+                  <circle cx="295" cy="88" r="2.4" fill="#0066ff" />
+                  <circle cx="345" cy="88" r="2.4" fill="#0066ff" />
+                </motion.g>
               </svg>
 
+              {/* ================= RADIATING WAVES SURROUNDING THE SPHERE ================= */}
+              {/* Wave 1 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1 }}
+                className="absolute z-10 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full pointer-events-none border border-sky-400/40 shadow-[0_0_24px_rgba(56,189,248,0.25)] bg-sky-400/10"
+                animate={{
+                  scale: [1, 1.45, 2.25, 3.1],
+                  opacity: [0, 0.5, 0.22, 0],
+                }}
+                transition={{
+                  duration: 4.6,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                  times: [0, 0.15, 0.6, 1],
+                }}
+              />
+              {/* Wave 2 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1 }}
+                className="absolute z-10 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full pointer-events-none border border-blue-400/35 shadow-[0_0_20px_rgba(0,102,255,0.2)] bg-blue-400/8"
+                animate={{
+                  scale: [1, 1.45, 2.25, 3.1],
+                  opacity: [0, 0.48, 0.2, 0],
+                }}
+                transition={{
+                  duration: 4.6,
+                  delay: 1.15,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                  times: [0, 0.15, 0.6, 1],
+                }}
+              />
+              {/* Wave 3 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1 }}
+                className="absolute z-10 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full pointer-events-none border border-sky-300/30 shadow-[0_0_16px_rgba(56,189,248,0.18)] bg-sky-300/5"
+                animate={{
+                  scale: [1, 1.45, 2.25, 3.1],
+                  opacity: [0, 0.45, 0.18, 0],
+                }}
+                transition={{
+                  duration: 4.6,
+                  delay: 2.3,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                  times: [0, 0.15, 0.6, 1],
+                }}
+              />
+              {/* Wave 4 */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1 }}
+                className="absolute z-10 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full pointer-events-none border border-blue-300/25 bg-blue-300/5"
+                animate={{
+                  scale: [1, 1.45, 2.25, 3.1],
+                  opacity: [0, 0.42, 0.15, 0],
+                }}
+                transition={{
+                  duration: 4.6,
+                  delay: 3.45,
+                  repeat: Infinity,
+                  ease: 'easeOut',
+                  times: [0, 0.15, 0.6, 1],
+                }}
+              />
+
               {/* ================= CENTER 3D SPHERE ================= */}
-              <div
-                className="absolute z-20 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full text-white flex flex-col items-center justify-center p-3 text-center transition-transform duration-300 hover:scale-105 select-none"
+              <motion.div
+                animate={{
+                  scale: [1, 1.06, 1],
+                  boxShadow: [
+                    '0 20px 48px -4px rgba(0, 102, 255, 0.44), 0 6px 16px rgba(0, 78, 204, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.35)',
+                    '0 26px 56px -2px rgba(0, 102, 255, 0.6), 0 8px 22px rgba(0, 78, 204, 0.36), inset 0 2px 6px rgba(255, 255, 255, 0.45)',
+                    '0 20px 48px -4px rgba(0, 102, 255, 0.44), 0 6px 16px rgba(0, 78, 204, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.35)',
+                  ],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: 'easeInOut',
+                }}
+                whileHover={{ scale: 1.1 }}
+                className="absolute z-20 w-40 h-40 sm:w-44 sm:h-44 md:w-48 md:h-48 rounded-full text-white flex flex-col items-center justify-center p-3 text-center select-none cursor-pointer"
                 style={{
                   background: 'radial-gradient(circle at 35% 28%, #2f8dff 0%, #0066ff 48%, #004ecc 82%, #003ca6 100%)',
-                  boxShadow: '0 20px 48px -4px rgba(0, 102, 255, 0.44), 0 6px 16px rgba(0, 78, 204, 0.28), inset 0 2px 4px rgba(255, 255, 255, 0.35)',
                 }}
               >
                 <span className="text-white text-sm sm:text-base font-semibold tracking-tight">
@@ -263,7 +375,7 @@ export const HowWeWorkSection = ({
                     strokeLinecap="round"
                   />
                 </svg>
-              </div>
+              </motion.div>
 
               {/* ================= SATELLITE 01: DISCOVER (Top-Left) ================= */}
               <div

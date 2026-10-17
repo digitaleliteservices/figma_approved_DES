@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'motion/react';
 import teamMeetingImg from '../../assets/images/cta_team_meeting_clean.png';
 
 export const CtaSection = () => {
@@ -44,7 +45,13 @@ export const CtaSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center ">
           
           {/* ================= LEFT CONTENT COLUMN ================= */}
-          <div className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center ">
+          <motion.div
+            initial={{ opacity: 0, x: -70 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+            className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center "
+          >
             {/* Eyebrow: Electric Blue uppercase */}
             <div className="inline-flex items-center text-xs sm:text-[13px] font-bold text-[#0878F9] tracking-[0.12em] uppercase mb-4 sm:mb-5">
               <span>LET'S WORK TOGETHER</span>
@@ -73,7 +80,7 @@ export const CtaSection = () => {
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5 text-[#082D72]" />
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* ================= RIGHT BOARDROOM TEAM PHOTO (MOBILE / TABLET VIEW) ================= */}
           <div className="lg:hidden relative w-full rounded-2xl overflow-hidden shadow-lg mt-2">

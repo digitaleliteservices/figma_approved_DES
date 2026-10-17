@@ -23,6 +23,7 @@ import {
   PhoneCall,
 } from 'lucide-react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
+import { motion } from 'motion/react';
 
 export function WorkPage() {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -309,7 +310,7 @@ export function WorkPage() {
       {/* ------------------------------------------------------------- */}
       {/* EXACT RADIAL GRADIENT ORB BACKGROUND SHAPES (MATCHING CONTACTPAGE) */}
       {/* ------------------------------------------------------------- */}
-      <div
+      {/* <div
         className="absolute -top-10 -left-28 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-[182.5px_182.5px_0px_182.5px] pointer-events-none z-0 opacity-85"
         style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
       />
@@ -332,7 +333,7 @@ export function WorkPage() {
       <div
         className="absolute bottom-20 -right-24 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none z-0 opacity-85"
         style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-      />
+      /> */}
 
       {/* ------------------------------------------------------------- */}
       {/* 1. HERO SECTION & PROVEN TACTICS CARD                          */}
@@ -342,7 +343,13 @@ export function WorkPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
 
             {/* Left Hero Content */}
-            <div className="lg:col-span-7 space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7 space-y-6"
+            >
               {/* Top Pill Tag */}
               <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/90 border border-[#D5E6FE] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] backdrop-blur-[6px]">
                 <span className="w-[8px] h-[8px] rounded-full bg-[#10B981] shrink-0" />
@@ -413,10 +420,16 @@ export function WorkPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Floating Tactics Card */}
-            <div className="lg:col-span-5">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5"
+            >
               <div className="bg-white/90 backdrop-blur-[12px] rounded-[24px] p-6 sm:p-7 border border-[#E2EDF8] shadow-[0px_8px_32px_rgba(8,45,114,0.06)] relative">
                 <div className="flex items-center justify-between border-b border-[#EEF6FF] pb-4 mb-5">
                   <h3 className="font-extrabold text-[#082D72] text-base sm:text-lg">
@@ -476,7 +489,7 @@ export function WorkPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
@@ -543,88 +556,95 @@ export function WorkPage() {
 
         {/* 8 Case Study Cards Grid (3 Columns on Desktop) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredCaseStudies.map((study) => (
-            <div
-              key={study.id}
-              className="bg-white/90 backdrop-blur-[12px] rounded-[24px] overflow-hidden border border-[#E2EDF8] shadow-[0px_6px_24px_rgba(8,45,114,0.06)] hover:shadow-[0px_16px_40px_rgba(8,45,114,0.12)] transition-all duration-300 flex flex-col group"
-            >
-              {/* Card Image Container */}
-              <div className="relative h-56 overflow-hidden bg-slate-100">
-                <img
-                  src={study.image}
-                  alt={study.title}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
-                  }}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
+          {filteredCaseStudies.map((study, index) => {
+            const isLeft = index % 2 === 0;
+            return (
+              <motion.div
+                key={study.id}
+                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: false, amount: 0.2 }}
+                transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-white/90 backdrop-blur-[12px] rounded-[24px] overflow-hidden border border-[#E2EDF8] shadow-[0px_6px_24px_rgba(8,45,114,0.06)] hover:shadow-[0px_16px_40px_rgba(8,45,114,0.12)] transition-shadow duration-300 flex flex-col group"
+              >
+                {/* Card Image Container */}
+                <div className="relative h-56 overflow-hidden bg-slate-100">
+                  <img
+                    src={study.image}
+                    alt={study.title}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
+                    }}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
 
-                {/* Top Left Tag Badge */}
-                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-[6px] border border-[#D5E6FE] px-3 py-1 rounded-full text-[10px] font-black text-[#082D72] tracking-wider uppercase">
-                  {study.tagBadge}
-                </div>
-
-                {/* Bottom Right Banner Action */}
-                <button
-                  onClick={()=>navigate("/contact")}
-                  className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md"
-                >
-                  <span>VIEW CASE STUDY</span>
-                  <ArrowRight className="w-3 h-3" />
-                </button>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6 flex-1 flex flex-col justify-between bg-white">
-                <div>
-                  {/* Category Subtitle */}
-                  <span className="text-[11px] font-black text-[#0878F9] tracking-[0.8px] uppercase block mb-1">
-                    {study.subtitle}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="text-lg font-black text-[#082D72] mb-2 group-hover:text-[#0878F9] transition-colors">
-                    {study.title}
-                  </h3>
-
-                  {/* Summary */}
-                  <p className="text-xs font-medium text-[#587BA5] leading-relaxed mb-4 line-clamp-3">
-                    {study.summary}
-                  </p>
-
-                  {/* Tech Stack Tags */}
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {study.tags.map((tag, tIdx) => (
-                      <span
-                        key={tIdx}
-                        className="text-[10px] font-bold bg-[#EEF6FF] text-[#0878F9] px-2.5 py-1 rounded-md border border-[#D5EBFF]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Top Left Tag Badge */}
+                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-[6px] border border-[#D5E6FE] px-3 py-1 rounded-full text-[10px] font-black text-[#082D72] tracking-wider uppercase">
+                    {study.tagBadge}
                   </div>
-                </div>
 
-                {/* Footer Action Link */}
-                <div className="pt-4 border-t border-[#EEF6FF] flex items-center justify-between text-xs font-bold text-[#082D72]">
+                  {/* Bottom Right Banner Action */}
                   <button
-                    onClick={() => navigate("/contact")}
-                    className="inline-flex items-center gap-1.5 text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
+                    onClick={()=>navigate("/contact")}
+                    className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md"
                   >
-                    <span>Explore Case Study</span>
-                    {study.actionType === 'plus' ? (
-                      <span className="w-4 h-4 rounded-full bg-[#EEF6FF] text-[#0878F9] flex items-center justify-center font-bold text-xs">
-                        +
-                      </span>
-                    ) : (
-                      <Info className="w-3.5 h-3.5 text-[#0878F9]" />
-                    )}
+                    <span>VIEW CASE STUDY</span>
+                    <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
-              </div>
-            </div>
-          ))}
+
+                {/* Card Body */}
+                <div className="p-6 flex-1 flex flex-col justify-between bg-white">
+                  <div>
+                    {/* Category Subtitle */}
+                    <span className="text-[11px] font-black text-[#0878F9] tracking-[0.8px] uppercase block mb-1">
+                      {study.subtitle}
+                    </span>
+
+                    {/* Title */}
+                    <h3 className="text-lg font-black text-[#082D72] mb-2 group-hover:text-[#0878F9] transition-colors">
+                      {study.title}
+                    </h3>
+
+                    {/* Summary */}
+                    <p className="text-xs font-medium text-[#587BA5] leading-relaxed mb-4 line-clamp-3">
+                      {study.summary}
+                    </p>
+
+                    {/* Tech Stack Tags */}
+                    <div className="flex flex-wrap gap-1.5 mb-6">
+                      {study.tags.map((tag, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="text-[10px] font-bold bg-[#EEF6FF] text-[#0878F9] px-2.5 py-1 rounded-md border border-[#D5EBFF]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Footer Action Link */}
+                  <div className="pt-4 border-t border-[#EEF6FF] flex items-center justify-between text-xs font-bold text-[#082D72]">
+                    <button
+                      onClick={() => navigate("/contact")}
+                      className="inline-flex items-center gap-1.5 text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
+                    >
+                      <span>Explore Case Study</span>
+                      {study.actionType === 'plus' ? (
+                        <span className="w-4 h-4 rounded-full bg-[#EEF6FF] text-[#0878F9] flex items-center justify-center font-bold text-xs">
+                          +
+                        </span>
+                      ) : (
+                        <Info className="w-3.5 h-3.5 text-[#0878F9]" />
+                      )}
+                    </button>
+                  </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </section>
 
@@ -634,14 +654,14 @@ export function WorkPage() {
       <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
 
         {/* Background Radial Orbs for Visual Showcase */}
-        <div
+        {/* <div
           className="absolute -top-10 -left-28 w-[380px] sm:w-[520px] h-[380px] sm:h-[520px] rounded-full pointer-events-none -z-10 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
         />
         <div
           className="absolute -bottom-10 -right-28 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none -z-10 opacity-85"
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
+        /> */}
 
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
@@ -737,7 +757,13 @@ export function WorkPage() {
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
             
             {/* Left Column: Heading and info */}
-            <div className="lg:col-span-5 flex flex-col items-start gap-5">
+            <motion.div
+              initial={{ opacity: 0, x: -70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-5 flex flex-col items-start gap-5"
+            >
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xs text-[#FFC400] text-[12px] font-black uppercase tracking-[1.2px]">
                 <Sparkles className="w-3.5 h-3.5 text-[#FFC400]" />
                 <span>PORTFOLIO PAGE LEAD</span>
@@ -785,10 +811,16 @@ export function WorkPage() {
                   <span>info@digitaleliteservices.in</span>
                 </a>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column: Lead Form */}
-            <div className="lg:col-span-7">
+            <motion.div
+              initial={{ opacity: 0, x: 70 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false, amount: 0.2 }}
+              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
+              className="lg:col-span-7"
+            >
               <div className="bg-white/95 backdrop-blur-[20px] rounded-[28px] p-7 sm:p-9 border border-[#E2EDF8] shadow-[0px_20px_50px_rgba(0,0,0,0.2)] text-[#0c2340]">
                 
                 {formSubmitted ? (
@@ -916,7 +948,7 @@ export function WorkPage() {
                 )}
 
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
