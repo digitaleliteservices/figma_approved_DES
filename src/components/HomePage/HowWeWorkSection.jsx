@@ -384,7 +384,7 @@ export const HowWeWorkSection = ({
                   left: '2%',
                   top: '18%',
                 }}
-                onClick={() => onSelectStep?.('01', 'Discover')}
+                
               >
                 <div className="text-right">
                   <span className="text-xs font-bold text-[#0066ff]">01</span>
@@ -410,7 +410,7 @@ export const HowWeWorkSection = ({
                   right: '2%',
                   top: '18%',
                 }}
-                onClick={() => onSelectStep?.('02', 'Strategize')}
+                
               >
                 <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-white shadow-[0_8px_25px_rgba(0,0,0,0.06)] border border-slate-100/90 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:shadow-[0_12px_28px_rgba(0,102,255,0.22)] transition-all duration-300">
                   <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-[#0066ff]" strokeWidth={2.4} />
@@ -436,7 +436,7 @@ export const HowWeWorkSection = ({
                   left: '2%',
                   bottom: '16%',
                 }}
-                onClick={() => onSelectStep?.('03', 'Build')}
+                
               >
                 <div className="text-right">
                   <span className="text-xs font-bold text-[#0066ff]">03</span>
@@ -462,7 +462,7 @@ export const HowWeWorkSection = ({
                   right: '2%',
                   bottom: '16%',
                 }}
-                onClick={() => onSelectStep?.('04', 'Grow')}
+                
               >
                 <div className="w-13 h-13 sm:w-15 sm:h-15 rounded-full bg-white shadow-[0_8px_25px_rgba(0,0,0,0.06)] border border-slate-100/90 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:shadow-[0_12px_28px_rgba(0,102,255,0.22)] transition-all duration-300">
                   <BarChart2 className="w-5 h-5 sm:w-6 sm:h-6 text-[#0066ff]" strokeWidth={2.4} />
