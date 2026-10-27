@@ -47,45 +47,45 @@ export const Navbar = ({
   const subServices = [
     {
       name: 'Digital Marketing',
-      path: '/services/digital-marketing',
+      path: '/services/Digital-marketing-agency-in-bangalore',
       description: 'Strategy, PPC & Organic Scaling',
       icon: Megaphone,
       color: 'bg-blue-50 text-[#0066ff]',
     },
     {
+      name: 'SEO Optimization',
+      path: '/services/seo-services-in-bangalore',
+      description: 'Rank #1 on Google & Local Map Packs',
+      icon: Search,
+      color: 'bg-cyan-50 text-cyan-600',
+    },
+    {
       name: 'Social Media Marketing',
-      path: '/services/social-media-marketing',
+      path: '/services/social-media-marketing-company-bangalore',
       description: 'Content, Paid Ads & Brand Growth',
       icon: Share2,
       color: 'bg-purple-50 text-purple-600',
     },
     {
       name: 'Web Development',
-      path: '/services/web-development',
+      path: '/services/web-development-company-bangalore',
       description: 'UI/UX & High-Performance Websites',
       icon: Code2,
       color: 'bg-emerald-50 text-emerald-600',
     },
     {
       name: 'Graphic Design',
-      path: '/services/graphic-design',
+      path: '/services/graphic-design-company-bangalore',
       description: 'Logos, Identity & Packaging',
       icon: Palette,
       color: 'bg-pink-50 text-pink-600',
     },
     {
       name: 'Lead Generation',
-      path: '/services/lead-generation',
+      path: '/services/lead-generation-companies-in-bangalore',
       description: 'Targeted PPC & High-Converting Funnels',
       icon: Target,
       color: 'bg-amber-50 text-amber-600',
-    },
-    {
-      name: 'SEO Optimization',
-      path: '/services/seo-optimization',
-      description: 'Rank #1 on Google & Local Map Packs',
-      icon: Search,
-      color: 'bg-cyan-50 text-cyan-600',
     },
   ];
 

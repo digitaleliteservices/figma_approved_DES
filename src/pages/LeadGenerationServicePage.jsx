@@ -660,59 +660,7 @@ export function LeadGenerationServicePage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 7. FREQUENTLY ASKED QUESTIONS (ACCORDION) ================= */}
-      <section className="py-16 sm:py-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <span className="text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase block mb-3">
-            GOT QUESTIONS?
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-[36px] font-black text-[#082D72] tracking-tight mb-3">
-            Frequently Asked Questions
-          </h2>
-          <p className="text-slate-600 text-xs sm:text-sm font-normal max-w-xl mx-auto leading-relaxed">
-            Everything you need to know about our lead generation and PPC services in Bangalore.
-          </p>
-        </div>
-
-        {/* Accordion Container */}
-        <div className="space-y-3.5">
-          {faqs.map((faq, index) => {
-            const isOpen = openFaq === index;
-            return (
-              <div
-                key={index}
-                className="bg-white/95 rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs transition-all duration-200"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggleFaq(index)}
-                  className="w-full flex items-center justify-between p-5 sm:p-6 text-left hover:bg-slate-50/70 transition cursor-pointer"
-                >
-                  <span className="font-extrabold text-sm sm:text-[15px] text-[#082D72] pr-4">
-                    {faq.q}
-                  </span>
-                  <div
-                    className={`w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 bg-[#0066ff] text-white' : 'text-[#0066ff]'
-                    }`}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 sm:px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-600 leading-relaxed border-t border-slate-100 bg-slate-50/40">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-      </section>
+    
 
       {/* ================= 8. BOTTOM GRADIENT CTA BANNER ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 mb-8">

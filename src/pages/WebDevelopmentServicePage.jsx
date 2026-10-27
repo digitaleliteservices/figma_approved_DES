@@ -12,6 +12,9 @@ import {
   BarChart3,
   ArrowRight,
   Phone,
+  Layout,
+  ShoppingCart,
+  Layers,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
@@ -24,6 +27,57 @@ export function WebDevelopmentServicePage({ onStartProject }) {
       onStartProject(serviceName || 'Web Development & UI/UX Consultation');
     }
   };
+
+  const coreServices = [
+    {
+      id: '01',
+      title: 'UI/UX Design Services',
+      description:
+        'User experience is the foundation of any successful digital product. We focus on designing interfaces that are intuitive, engaging, and user-friendly, providing user research, wireframing, prototyping, and mobile-responsive interface design.',
+      icon: Layout,
+      color: 'bg-blue-100 text-[#0066ff]',
+    },
+    {
+      id: '02',
+      title: 'Custom Web Development',
+      description:
+        'A strong online presence needs a powerful backend. We use modern technologies to develop fast, secure, and scalable websites, including corporate websites, custom web applications, and CMS-based development.',
+      icon: Code2,
+      color: 'bg-amber-100 text-amber-600',
+    },
+    {
+      id: '03',
+      title: 'E-commerce Solutions',
+      description:
+        'We build robust e-commerce platforms designed to maximize conversions, featuring seamless payment gateways, product management, and optimized user journeys.',
+      icon: ShoppingCart,
+      color: 'bg-purple-100 text-purple-600',
+    },
+    {
+      id: '04',
+      title: 'Creative Web Design',
+      description:
+        'Design plays a crucial role in capturing attention. Our creative design process ensures that every element is aligned with your brand identity, delivering responsive and visually appealing web platforms.',
+      icon: Sparkles,
+      color: 'bg-orange-100 text-orange-600',
+    },
+    {
+      id: '05',
+      title: 'API & Integrations',
+      description:
+        "Extend your website's capabilities with custom API development and seamless third-party integrations, ensuring your platform connects flawlessly with essential tools.",
+      icon: Cpu,
+      color: 'bg-cyan-100 text-cyan-600',
+    },
+    {
+      id: '06',
+      title: 'Maintenance & Support',
+      description:
+        'After a successful launch, we provide ongoing website maintenance, UX audits, performance optimization, and reliable support to ensure your long-term business growth.',
+      icon: ShieldCheck,
+      color: 'bg-emerald-100 text-emerald-600',
+    },
+  ];
 
   const whyChooseUsCards = [
     {
@@ -50,6 +104,12 @@ export function WebDevelopmentServicePage({ onStartProject }) {
         'Our websites are optimized for speed, SEO, and user experience, helping you rank better and convert more visitors.',
       icon: BarChart3,
     },
+    {
+      title: 'End-to-End Services',
+      description:
+        'From concept to deployment, we handle every aspect of your digital project.',
+      icon: Layers,
+    },
   ];
 
   const designPillars = [
@@ -57,7 +117,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
       pillar: 'PILLAR 01',
       title: 'Measurable Results',
       description:
-        'Whether you’re a startup or an established company, we provide solutions that deliver measurable results.',
+        "Whether you're a startup or an established company, we provide solutions that deliver measurable results.",
     },
     {
       pillar: 'PILLAR 02',
@@ -81,36 +141,36 @@ export function WebDevelopmentServicePage({ onStartProject }) {
 
   const processSteps = [
     {
-      step: 1,
-      title: 'Step 1: Understanding Your Business',
+      step: '01',
+      title: 'Understanding Your Business',
       description:
         'We begin by analyzing your business goals, target audience, and competitors to create a clear strategy.',
       position: 'top',
     },
     {
-      step: 2,
-      title: 'Step 2: Planning & Design',
+      step: '02',
+      title: 'Planning & Design',
       description:
         'Our UI/UX experts create wireframes and prototypes to visualize the structure and user journey.',
       position: 'bottom',
     },
     {
-      step: 3,
-      title: 'Step 3: Development',
+      step: '03',
+      title: 'Development',
       description:
         'Our developers bring the design to life using advanced technologies and coding standards.',
       position: 'top',
     },
     {
-      step: 4,
-      title: 'Step 4: Testing & Optimization',
+      step: '04',
+      title: 'Testing & Optimization',
       description:
         'We rigorously test your website for performance, usability, and responsiveness.',
       position: 'bottom',
     },
     {
-      step: 5,
-      title: 'Step 5: Launch & Support',
+      step: '05',
+      title: 'Launch & Support',
       description:
         'After a successful launch, we provide ongoing support and updates to ensure optimal performance.',
       position: 'top',
@@ -122,44 +182,6 @@ export function WebDevelopmentServicePage({ onStartProject }) {
       className="min-h-screen bg-white text-[#082D72] selection:bg-blue-100 selection:text-blue-900 relative overflow-hidden"
       style={{ fontFamily: "'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif" }}
     >
-
-      {/* ================= BACKGROUND GRADIENT ORBS (MATCHING SCREENSHOT) ================= */}
-      {/* <div
-        className="absolute -top-10 -left-28 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      />
-      <div
-        className="absolute top-10 -right-24 w-[340px] sm:w-[460px] h-[360px] sm:h-[440px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      />
-      <div
-        className="absolute top-[520px] -left-32 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      />
-      <div
-        className="absolute top-[1250px] -right-28 w-[380px] sm:w-[500px] h-[380px] sm:h-[500px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      />
-      <div
-        className="absolute top-[1850px] -left-28 w-[360px] sm:w-[480px] h-[360px] sm:h-[480px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      />
-      <div
-        className="absolute bottom-16 -right-24 w-[400px] sm:w-[520px] h-[400px] sm:h-[520px] rounded-full pointer-events-none z-0 opacity-85"
-        style={{
-          background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)',
-        }}
-      /> */}
 
       {/* ================= 1. HERO SECTION ================= */}
       <section className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
@@ -185,13 +207,14 @@ export function WebDevelopmentServicePage({ onStartProject }) {
 
               {/* Display Headline */}
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-black text-[#082D72] tracking-[-0.035em] leading-[1.12]">
-                Design That Tells Your <br className="hidden sm:inline" />
-                Story. <span className="text-[#0066ff]">Builds Your Brand.</span>
+                Design That <br />
+                Tells Your Story. <br className="hidden sm:inline" />
+                <span className="text-[#0066ff]">Builds Your Brand.</span>
               </h1>
 
               {/* Description */}
               <p className="text-slate-600 text-sm sm:text-base leading-relaxed max-w-xl">
-                In today's fast-paced digital world, your website is often the first interaction customers have with your brand. A well-designed and high-performing website can significantly influence how users perceive your business. As a trusted UI/UX Design Company in Bangalore and Web Development company in Bangalore, we specialize in creating impactful digital experiences that combine creativity, functionality, and performance. We help businesses establish a strong and lasting online presence.
+                In today's fast-paced digital world, your website is often the first interaction customers have with your brand. A well-designed and high-performing website can significantly influence how users perceive your business. At Digital Elite Services, we specialize in creating impactful digital experiences that combine creativity, functionality, and performance. As a trusted UI/UX Design Company in Bangalore and Web Development company in Bangalore, we help businesses establish a strong and lasting online presence.
               </p>
 
               {/* 3 Checklist Feature Badges */}
@@ -335,7 +358,75 @@ export function WebDevelopmentServicePage({ onStartProject }) {
       {/* ================= 2. STATS COUNTER BAR ================= */}
       <StatsBannerBar />
 
-      {/* ================= 3. WHY BUSINESSES CHOOSE DIGITAL ELITE SERVICES? ================= */}
+      {/* ================= 3. OUR CORE SERVICES (6 NUMBERED CARDS) ================= */}
+      <section className="py-16 sm:py-20 lg:py-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+            <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase mb-3">
+              <Code2 className="w-3.5 h-3.5" />
+              <span>OUR CORE SERVICES</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight mb-4">
+              Professional Web Development Services
+            </h2>
+            <p className="text-slate-600 text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+              Comprehensive solutions tailored to meet the diverse needs of businesses across industries.
+            </p>
+          </div>
+
+          {/* 6 Core Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
+            {coreServices.map((service, index) => {
+              const Icon = service.icon;
+              const isLeft = index % 2 === 0;
+              return (
+                <motion.div
+                  key={service.id}
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  onClick={() => navigate('/contact')}
+                  className="bg-white rounded-[26px] p-7 border border-slate-200/80 shadow-[0_8px_30px_rgba(8,45,114,0.04)] hover:shadow-[0_16px_40px_rgba(8,45,114,0.08)] hover:border-[#93c5fd] transition-all duration-300 flex flex-col justify-between group cursor-pointer"
+                >
+                  <div>
+                    {/* Top Row: Icon + Number Badge */}
+                    <div className="flex items-center justify-between mb-5">
+                      <div className={`w-11 h-11 rounded-2xl ${service.color} flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shadow-xs`}>
+                        <Icon className="w-5 h-5 stroke-[2.2]" />
+                      </div>
+                      <span className="text-[11px] font-extrabold text-[#0066ff] bg-blue-50 px-2.5 py-0.5 rounded-full">
+                        {service.id}
+                      </span>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-[19px] font-black text-[#082D72] tracking-tight leading-snug mb-3 group-hover:text-[#0066ff] transition-colors">
+                      {service.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed font-normal">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom subtle link */}
+                  <div className="pt-6 mt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-[#0066ff] group-hover:translate-x-1 transition-transform">
+                    <span>Learn More</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ================= 4. WHY BUSINESSES CHOOSE DIGITAL ELITE SERVICES? ================= */}
       <section className="py-16 sm:py-20 relative z-10 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -345,13 +436,14 @@ export function WebDevelopmentServicePage({ onStartProject }) {
               WHY CHOOSE US?
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight">
-              Why Businesses Choose Digital Elite Services?
+              Why Businesses Choose <br className="hidden sm:inline" />
+              <span className="text-[#0066ff]">Digital Elite Services?</span>
             </h2>
           </div>
 
-          {/* 4 Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1240px] mx-auto">
-            {whyChooseUsCards.map((item, index) => {
+          {/* 5 Cards Grid: 3 in row 1, 2 in row 2 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1240px] mx-auto mb-6">
+            {whyChooseUsCards.slice(0, 3).map((item, index) => {
               const Icon = item.icon;
               const isLeft = index % 2 === 0;
               return (
@@ -360,7 +452,34 @@ export function WebDevelopmentServicePage({ onStartProject }) {
                   initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 0.75, delay: (index % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  className="bg-white rounded-[24px] p-6 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow duration-200 flex flex-col justify-start"
+                >
+                  <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066ff] flex items-center justify-center mb-4">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-black text-[#082D72] mb-2 leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="text-xs text-slate-600 leading-relaxed font-normal">
+                    {item.description}
+                  </p>
+                </motion.div>
+              );
+            })}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-[820px] mx-auto">
+            {whyChooseUsCards.slice(3, 5).map((item, index) => {
+              const Icon = item.icon;
+              const isLeft = index % 2 === 0;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: false, amount: 0.2 }}
+                  transition={{ duration: 0.75, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                   className="bg-white rounded-[24px] p-6 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow duration-200 flex flex-col justify-start"
                 >
                   <div className="w-10 h-10 rounded-xl bg-blue-50 text-[#0066ff] flex items-center justify-center mb-4">
@@ -380,7 +499,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 4. THE POWER OF GREAT DESIGN -> DESIGN THAT DRIVES BUSINESS GROWTH ================= */}
+      {/* ================= 5. THE POWER OF GREAT DESIGN -> DESIGN THAT DRIVES BUSINESS GROWTH ================= */}
       <section className="py-16 sm:py-20 relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -423,21 +542,23 @@ export function WebDevelopmentServicePage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 5. OUR DESIGN PROCESS -> A SIMPLE & EFFECTIVE DESIGN PROCESS ================= */}
+      {/* ================= 6. GROWTH • OUR DESIGN PROCESS -> A SIMPLE & EFFECTIVE DESIGN PROCESS ================= */}
       <section className="py-16 sm:py-24 relative z-10 bg-slate-50/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-            <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase mb-3">
-              OUR DESIGN PROCESS
+            <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase mb-3">
+              <span>GROWTH</span>
+              <span className="text-slate-300">•</span>
+              <span>OUR DESIGN PROCESS</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-[38px] font-black text-[#082D72] tracking-tight leading-tight">
               A Simple & Effective Design Process
             </h2>
           </div>
 
-          {/* Desktop Horizontal Timeline (Matches UI image: Steps 1, 3, 5 on top, Steps 2, 4 on bottom, connected by continuous gradient bar with squircle badges 1-5) */}
+          {/* Desktop Horizontal Timeline (Matches UI image: Steps 1, 3, 5 on top, Steps 2, 4 on bottom, connected by continuous gradient bar with squircle badges 01-05) */}
           <div className="hidden lg:block relative max-w-[1100px] mx-auto py-8">
             
             {/* Continuous Multi-stop Horizontal Gradient Timeline Track */}
@@ -456,7 +577,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
                 return (
                   <div key={step.step} className="flex flex-col items-center justify-between min-h-[290px]">
                     
-                    {/* Top Content Slot (Steps 1, 3, 5) */}
+                    {/* Top Content Slot (Steps 01, 03, 05) */}
                     <div className="h-[110px] flex flex-col justify-end text-center px-1">
                       {isTop && (
                         <div>
@@ -470,12 +591,12 @@ export function WebDevelopmentServicePage({ onStartProject }) {
                       )}
                     </div>
 
-                    {/* Centered Squircle Badge 1-5 */}
-                    <div className="w-[44px] h-[50px] rounded-[14px] bg-white border-[1.5px] border-[#3b82f6] shadow-[0_4px_14px_rgba(0,102,255,0.14)] flex items-center justify-center text-[17px] font-black text-[#0066ff] z-20 my-2">
+                    {/* Centered Squircle Badge 01-05 */}
+                    <div className="w-[48px] h-[50px] rounded-[14px] bg-white border-[1.5px] border-[#3b82f6] shadow-[0_4px_14px_rgba(0,102,255,0.14)] flex items-center justify-center text-[15px] font-black text-[#0066ff] z-20 my-2">
                       {step.step}
                     </div>
 
-                    {/* Bottom Content Slot (Steps 2, 4) */}
+                    {/* Bottom Content Slot (Steps 02, 04) */}
                     <div className="h-[110px] flex flex-col justify-start text-center px-1">
                       {!isTop && (
                         <div>
@@ -503,7 +624,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
                 key={step.step}
                 className="bg-white rounded-[20px] p-5 border border-slate-200/80 shadow-xs flex items-start gap-4"
               >
-                <div className="w-[42px] h-[48px] rounded-[14px] bg-white border-[1.5px] border-[#3b82f6] shadow-xs flex items-center justify-center text-[16px] font-black text-[#0066ff] shrink-0">
+                <div className="w-[44px] h-[48px] rounded-[14px] bg-white border-[1.5px] border-[#3b82f6] shadow-xs flex items-center justify-center text-[15px] font-black text-[#0066ff] shrink-0">
                   {step.step}
                 </div>
                 <div>
@@ -521,7 +642,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 6. BOTTOM GRADIENT CTA BANNER ================= */}
+      {/* ================= 7. BOTTOM GRADIENT CTA BANNER ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 mb-8">
         <div
           className="rounded-[32px] p-10 sm:p-14 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"

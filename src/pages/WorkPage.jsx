@@ -21,12 +21,21 @@ import {
   Loader2,
   AlertCircle,
   PhoneCall,
+  X,
+  Maximize2,
 } from 'lucide-react';
 import { StatsBannerBar } from '../components/StatsBannerBar.jsx';
+import { ClientsSection } from '../components/ClientsSection.jsx';
 import { motion } from 'motion/react';
+import {
+  PORTFOLIO_FILTERS,
+  PORTFOLIO_CASE_STUDIES,
+  PORTFOLIO_SHOWCASE_ITEMS,
+} from '../data/portfolioData.js';
 
 export function WorkPage() {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedArtwork, setSelectedArtwork] = useState(null);
   const navigate = useNavigate();
 
   // Portfolio Page Lead Form State
@@ -94,212 +103,25 @@ export function WorkPage() {
     }
   };
 
-  const filters = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'brand', label: 'Brand Strategy' },
-    { id: 'engineering', label: 'Custom Engineering' },
-  ];
-
-  // 8 Main Client Case Studies matching reference image cards
-  const caseStudies = [
-    {
-      id: 1,
-      category: 'web',
-      tagBadge: 'ECOMMERCE & RETAIL',
-      subtitle: 'FRONTEND & HEADLESS',
-      title: 'Return to Headless Platform',
-      summary: 'Migrated an omnichannel luxury retailer from legacy monolith to a headless React storefront, eliminating cart friction and boosting mobile conversions by 180%.',
-      tags: ['Next.js', 'Shopify API', 'Tailwind CSS'],
-      image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 2,
-      category: 'engineering',
-      tagBadge: 'FINTECH & ANALYTICS',
-      subtitle: 'PREDICTIVE DATA & AI ENGINE',
-      title: 'Predictive Growth Engine',
-      summary: 'Built real-time financial dashboards handling thousands of live concurrent telemetry events with zero client-side latency and automated forecasting.',
-      tags: ['React', 'TypeScript', 'PostgreSQL'],
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 3,
-      category: 'brand',
-      tagBadge: 'LUXURY REAL ESTATE',
-      subtitle: 'LUXURY REAL ESTATE BRAND',
-      title: 'Real Estate Poster Design',
-      summary: 'Architectural branding and high-converting promotional campaign for a multi-million luxury residential development project.',
-      tags: ['Figma', 'Branding', '3D Render', 'Print'],
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 4,
-      category: 'web',
-      tagBadge: 'PROPTECH & LANDING',
-      subtitle: 'B2B BRANDING & LANDING PAGE',
-      title: 'TaskCrate Landing Page',
-      summary: 'Redesigned core conversion funnels for a high-growth PropTech startup, resulting in 4.2x increase in demo bookings within 30 days.',
-      tags: ['Next.js', 'Tailwind', 'Framer', 'SEO'],
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 5,
-      category: 'engineering',
-      tagBadge: 'SAAS & GROWTH',
-      subtitle: 'OMNICHANNEL GROWTH',
-      title: 'Omni-Channel Growth Strategy',
-      summary: 'Multi-channel acquisition pipeline and analytics architecture integrated across digital ad platforms and custom web portals.',
-      tags: ['Analytics', 'Growth', 'Google Ads', 'HubSpot'],
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 6,
-      category: 'web',
-      tagBadge: 'CORPORATE & ENTERPRISE',
-      subtitle: 'HIGH-PERFORMANCE REAL ESTATE',
-      title: 'High-Performance Real Estate Website',
-      summary: 'Built an ultra-fast corporate web portal featuring interactive property searching, virtual tours, and CRM integration.',
-      tags: ['React', 'Node.js', 'GraphQL', 'Mapbox'],
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
-      actionType: 'info',
-    },
-    {
-      id: 7,
-      category: 'brand',
-      tagBadge: 'BRAND & CREATIVE',
-      subtitle: 'PROMOTIONAL CAMPAIGN',
-      title: 'Promotional Poster Design & Branding',
-      summary: 'Comprehensive brand identity overhaul, workshop collateral, and physical-to-digital promotional campaign for global tech summits.',
-      tags: ['Poster', 'Branding', 'Typography', 'Print'],
-      image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=800&q=80',
-      actionType: 'plus',
-    },
-    {
-      id: 8,
-      category: 'engineering',
-      tagBadge: 'CLEANTECH & DATA',
-      subtitle: 'CLEANTECH & DATA',
-      title: 'Sustainability Data Story & Campaign',
-      summary: 'Interactive data storytelling dashboard and sustainability report portal showcasing real-time renewable energy metrics.',
-      tags: ['Campaign', 'Data Viz', 'React', 'Interactive'],
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&q=80',
-      actionType: 'plus',
-    },
-  ];
-
-  // 12 Visual Showcase Items matching lower 4x3 grid in reference image
-  const showcaseItems = [
-    {
-      id: 'sc-1',
-      category: 'web',
-      badge: 'WEB DEVELOPMENT',
-      title: 'Headless Storefront — E-Commerce',
-      image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-2',
-      category: 'engineering',
-      badge: 'DATA & AI ENGINE',
-      title: 'Predictive Growth & Analytics Pipeline',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-3',
-      category: 'brand',
-      badge: 'LUXURY REAL ESTATE',
-      title: 'Architectural Real Estate Showcase',
-      image: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-4',
-      category: 'web',
-      badge: 'PROPTECH SAAS',
-      title: 'PropTech SaaS Landing Page — TaskCrate',
-      image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-5',
-      category: 'engineering',
-      badge: 'SAAS DASHBOARD',
-      title: 'SaaS Dashboard & Analytics Platform',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-6',
-      category: 'web',
-      badge: 'CORPORATE REAL ESTATE',
-      title: 'High-Performance Real Estate Portal',
-      image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-7',
-      category: 'brand',
-      badge: 'BRANDING WORKSHOP',
-      title: 'Promotional Poster & Workshop Branding',
-      image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-8',
-      category: 'engineering',
-      badge: 'CLEANTECH DATA',
-      title: 'Sustainability Data Story & Campaign',
-      image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-9',
-      category: 'brand',
-      badge: 'DTC BRANDING',
-      title: 'PetCare Direct-to-Consumer Apparel',
-      image: 'https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-10',
-      category: 'brand',
-      badge: 'EXECUTIVE BRAND',
-      title: 'Executive Leadership & Brand Identity',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-11',
-      category: 'engineering',
-      badge: 'AGRITECH DATA',
-      title: 'AgriTech & Environmental Analytics',
-      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=600&q=80',
-    },
-    {
-      id: 'sc-12',
-      category: 'web',
-      badge: 'SOFTWARE TEAM',
-      title: 'Agile Software Engineering Delivery',
-      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80',
-    },
-  ];
-
-  // 8 Partner Badges
-  const partnerLogos = [
-    { name: 'Apex Global Architecture', icon: '⚡' },
-    { name: 'Pulse Analytics', icon: '🌐' },
-    { name: 'Verve Studio', icon: '🏢' },
-    { name: 'EcoVolt Energy', icon: '🔷' },
-    { name: 'Lumina Cloud', icon: '🛡️' },
-    { name: 'NextGen SaaS', icon: '📈' },
-    { name: 'ZenTech Labs', icon: '🌿' },
-    { name: 'TaskCrate App', icon: '🚀' },
-  ];
+  const filters = PORTFOLIO_FILTERS;
+  const caseStudies = PORTFOLIO_CASE_STUDIES;
+  const showcaseItems = PORTFOLIO_SHOWCASE_ITEMS;
 
   const filteredCaseStudies = activeFilter === 'all'
     ? caseStudies
-    : caseStudies.filter((item) => item.category === activeFilter);
+    : caseStudies.filter((item) =>
+        Array.isArray(item.category)
+          ? item.category.includes(activeFilter)
+          : item.category === activeFilter
+      );
 
   const filteredShowcase = activeFilter === 'all'
     ? showcaseItems
-    : showcaseItems.filter((item) => item.category === activeFilter);
+    : showcaseItems.filter((item) =>
+        Array.isArray(item.category)
+          ? item.category.includes(activeFilter)
+          : item.category === activeFilter
+      );
 
   return (
     <div
@@ -568,26 +390,36 @@ export function WorkPage() {
                 className="bg-white/90 backdrop-blur-[12px] rounded-[24px] overflow-hidden border border-[#E2EDF8] shadow-[0px_6px_24px_rgba(8,45,114,0.06)] hover:shadow-[0px_16px_40px_rgba(8,45,114,0.12)] transition-shadow duration-300 flex flex-col group"
               >
                 {/* Card Image Container */}
-                <div className="relative h-56 overflow-hidden bg-slate-100">
+                <div
+                  onClick={() => setSelectedArtwork(study)}
+                  className="relative h-60 overflow-hidden bg-slate-100 cursor-pointer group/img"
+                >
                   <img
                     src={study.image}
                     alt={study.title}
-                    onError={(e) => {
-                      e.target.onerror = null;
-                      e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';
-                    }}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover/img:scale-105 transition-transform duration-500"
                   />
 
                   {/* Top Left Tag Badge */}
-                  <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-[6px] border border-[#D5E6FE] px-3 py-1 rounded-full text-[10px] font-black text-[#082D72] tracking-wider uppercase">
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-[6px] border border-[#D5E6FE] px-3 py-1 rounded-full text-[10px] font-black text-[#082D72] tracking-wider uppercase shadow-xs">
                     {study.tagBadge}
+                  </div>
+
+                  {/* Hover Overlay with Preview */}
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/img:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-white text-[#082D72] px-3.5 py-1.5 rounded-full text-xs font-extrabold flex items-center gap-1.5 shadow-md">
+                      <Maximize2 className="w-3.5 h-3.5 text-[#0878F9]" />
+                      <span>Preview Artwork</span>
+                    </span>
                   </div>
 
                   {/* Bottom Right Banner Action */}
                   <button
-                    onClick={()=>navigate("/contact")}
-                    className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedArtwork(study);
+                    }}
+                    className="absolute bottom-3 right-3 bg-[#082D72] text-white px-3.5 py-1.5 rounded-full text-[11px] font-extrabold flex items-center gap-1.5 hover:bg-[#0878F9] transition-colors cursor-pointer shadow-md z-10"
                   >
                     <span>VIEW CASE STUDY</span>
                     <ArrowRight className="w-3 h-3" />
@@ -597,13 +429,23 @@ export function WorkPage() {
                 {/* Card Body */}
                 <div className="p-6 flex-1 flex flex-col justify-between bg-white">
                   <div>
-                    {/* Category Subtitle */}
-                    <span className="text-[11px] font-black text-[#0878F9] tracking-[0.8px] uppercase block mb-1">
-                      {study.subtitle}
-                    </span>
+                    {/* Category & Client Subtitle */}
+                    <div className="flex items-center justify-between mb-1.5 gap-2">
+                      <span className="text-[11px] font-black text-[#0878F9] tracking-[0.8px] uppercase">
+                        {study.subtitle}
+                      </span>
+                      {study.client && (
+                        <span className="text-[10px] font-bold text-slate-500 truncate max-w-[130px]">
+                          {study.client}
+                        </span>
+                      )}
+                    </div>
 
                     {/* Title */}
-                    <h3 className="text-lg font-black text-[#082D72] mb-2 group-hover:text-[#0878F9] transition-colors">
+                    <h3
+                      onClick={() => setSelectedArtwork(study)}
+                      className="text-lg font-black text-[#082D72] mb-2 group-hover:text-[#0878F9] transition-colors cursor-pointer"
+                    >
                       {study.title}
                     </h3>
 
@@ -628,17 +470,11 @@ export function WorkPage() {
                   {/* Footer Action Link */}
                   <div className="pt-4 border-t border-[#EEF6FF] flex items-center justify-between text-xs font-bold text-[#082D72]">
                     <button
-                      onClick={() => navigate("/contact")}
+                      onClick={() => setSelectedArtwork(study)}
                       className="inline-flex items-center gap-1.5 text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
                     >
                       <span>Explore Case Study</span>
-                      {study.actionType === 'plus' ? (
-                        <span className="w-4 h-4 rounded-full bg-[#EEF6FF] text-[#0878F9] flex items-center justify-center font-bold text-xs">
-                          +
-                        </span>
-                      ) : (
-                        <Info className="w-3.5 h-3.5 text-[#0878F9]" />
-                      )}
+                      <Info className="w-3.5 h-3.5 text-[#0878F9]" />
                     </button>
                   </div>
                 </div>
@@ -682,38 +518,48 @@ export function WorkPage() {
           </span>
         </div>
 
-        {/* 12 Grid Items (4 columns) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Visual Showcase Grid Items (4 columns) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredShowcase.map((item) => (
             <div
               key={item.id}
-              onClick={() => onStartProject?.(item.title)}
-              className="bg-white rounded-[18px] overflow-hidden border border-[#E2EDF8] shadow-[0px_4px_16px_rgba(8,45,114,0.05)] hover:shadow-[0px_12px_28px_rgba(8,45,114,0.12)] transition-all duration-300 group cursor-pointer"
+              onClick={() => setSelectedArtwork(item)}
+              className="bg-white rounded-[22px] overflow-hidden border border-[#E2EDF8] shadow-[0px_4px_16px_rgba(8,45,114,0.05)] hover:shadow-[0px_14px_32px_rgba(8,45,114,0.12)] transition-all duration-300 group cursor-pointer flex flex-col"
             >
-              {/* Image Container */}
-              <div className="relative h-44 overflow-hidden bg-slate-100">
+              {/* Image Container with portrait poster aspect ratio */}
+              <div className="relative h-64 sm:h-72 overflow-hidden bg-slate-900/5">
                 <img
                   src={item.image}
                   alt={item.title}
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80';
-                  }}
-                  className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-2.5 left-2.5 bg-white/90 backdrop-blur-[6px] border border-[#D5E6FE] px-2.5 py-0.5 rounded-full text-[9px] font-black text-[#082D72] uppercase tracking-wider">
+                <div className="absolute top-2.5 left-2.5 bg-white/95 backdrop-blur-[6px] border border-[#D5E6FE] px-2.5 py-0.5 rounded-full text-[9px] font-black text-[#082D72] uppercase tracking-wider shadow-xs">
                   {item.badge}
+                </div>
+                {/* Hover overlay with zoom hint */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#031535]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-3.5">
+                  <span className="text-white text-xs font-bold flex items-center gap-1.5">
+                    <Maximize2 className="w-3.5 h-3.5 text-[#00d2ff]" />
+                    <span>View Full Creative</span>
+                  </span>
                 </div>
               </div>
 
               {/* Title Content */}
-              <div className="p-4 bg-white">
-                <h4 className="text-xs font-extrabold text-[#082D72] group-hover:text-[#0878F9] transition-colors line-clamp-1">
-                  {item.title}
-                </h4>
-                <p className="text-[11px] text-[#0878F9] font-bold mt-1 flex items-center gap-1">
-                  <span>Explore Project</span>
-                  <ChevronRight className="w-3 h-3" />
+              <div className="p-4 bg-white flex-1 flex flex-col justify-between">
+                <div>
+                  {item.client && (
+                    <span className="text-[10px] font-extrabold text-[#587BA5] block mb-1 uppercase tracking-wider truncate">
+                      {item.client}
+                    </span>
+                  )}
+                  <h4 className="text-xs sm:text-[13px] font-extrabold text-[#082D72] group-hover:text-[#0878F9] transition-colors line-clamp-2 leading-snug">
+                    {item.title}
+                  </h4>
+                </div>
+                <p className="text-[11px] text-[#0878F9] font-bold mt-2.5 flex items-center gap-1">
+                  <span>View Details</span>
+                  <ChevronRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                 </p>
               </div>
             </div>
@@ -722,27 +568,9 @@ export function WorkPage() {
       </section>
 
       {/* ------------------------------------------------------------- */}
-      {/* 5. TRUSTED BY OUR PARTNERS (Client Logo Pills)                */}
+      {/* 5. OUR CLIENTS (Opposing Continuous Logo Marquees)             */}
       {/* ------------------------------------------------------------- */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-8">
-          <span className="text-xs font-black text-[#587BA5] uppercase tracking-[1.5px]">
-            TRUSTED BY OUR PARTNERS
-          </span>
-        </div>
-
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-          {partnerLogos.map((partner, idx) => (
-            <div
-              key={idx}
-              className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-4 border border-[#E2EDF8] shadow-[0px_4px_16px_rgba(8,45,114,0.04)] hover:shadow-md transition-all duration-200 flex items-center justify-center gap-2 text-center"
-            >
-              <span className="text-lg">{partner.icon}</span>
-              <span className="text-xs font-extrabold text-[#082D72]">{partner.name}</span>
-            </div>
-          ))}
-        </div>
-      </section>
+      <ClientsSection />
 
       {/* 6. PORTFOLIO PAGE LEAD SECTION */}
       <section id="portfolio-lead" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
@@ -953,6 +781,94 @@ export function WorkPage() {
           </div>
         </div>
       </section>
+
+      {/* ------------------------------------------------------------- */}
+      {/* INTERACTIVE ARTWORK LIGHTBOX MODAL                            */}
+      {/* ------------------------------------------------------------- */}
+      {selectedArtwork && (
+        <div
+          className="fixed inset-0 z-50 bg-[#031535]/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+          onClick={() => setSelectedArtwork(null)}
+        >
+          <div
+            className="relative bg-white rounded-3xl overflow-hidden max-w-4xl w-full max-h-[92vh] flex flex-col md:flex-row shadow-2xl border border-white/20 animate-in fade-in zoom-in-95 duration-200"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Close button */}
+            <button
+              onClick={() => setSelectedArtwork(null)}
+              className="absolute top-3.5 right-3.5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition cursor-pointer"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5" />
+            </button>
+
+            {/* Left: High-Res Image Container */}
+            <div className="md:w-3/5 bg-slate-950 flex items-center justify-center p-3 sm:p-5 max-h-[50vh] md:max-h-[85vh] overflow-hidden">
+              <img
+                src={selectedArtwork.image}
+                alt={selectedArtwork.title}
+                className="max-h-[46vh] md:max-h-[80vh] w-auto max-w-full object-contain rounded-xl shadow-lg"
+              />
+            </div>
+
+            {/* Right: Info and Inquire Action */}
+            <div className="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between bg-white overflow-y-auto">
+              <div>
+                <span className="text-[10px] font-extrabold text-[#0878F9] tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100 inline-block mb-3">
+                  {selectedArtwork.tagBadge || selectedArtwork.badge || 'CLIENT WORK'}
+                </span>
+
+                <h3 className="text-xl sm:text-2xl font-black text-[#082D72] leading-snug mb-2">
+                  {selectedArtwork.title}
+                </h3>
+
+                {selectedArtwork.client && (
+                  <p className="text-xs font-bold text-slate-500 mb-4">
+                    Client: <span className="text-[#0878F9]">{selectedArtwork.client}</span>
+                  </p>
+                )}
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
+                  {selectedArtwork.summary || 'Custom creative campaign designed, art-directed, and deployed by Digital Elite Services for brand positioning, local acquisition, and high-performance lead generation.'}
+                </p>
+
+                {selectedArtwork.tags && (
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {selectedArtwork.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="text-[10px] font-bold bg-[#EEF6FF] text-[#0878F9] px-2.5 py-1 rounded-md border border-[#D5EBFF]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <div className="pt-5 border-t border-slate-100 flex flex-col gap-2.5">
+                <button
+                  onClick={() => {
+                    setSelectedArtwork(null);
+                    navigate('/contact');
+                  }}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#FFB703] hover:bg-[#FAA307] text-[#082D72] font-black text-sm py-3.5 rounded-full shadow-[0px_4px_14px_rgba(255,183,3,0.3)] transition cursor-pointer"
+                >
+                  <span>Inquire for Similar Project</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => setSelectedArtwork(null)}
+                  className="w-full text-center text-xs font-bold text-slate-400 hover:text-slate-600 py-1 transition cursor-pointer"
+                >
+                  Back to Portfolio
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

@@ -609,59 +609,7 @@ export function ContactPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* 4. SECTION: FREQUENTLY ASKED QUESTIONS */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
-        {/* Section Background Shapes */}
-        {/* <div
-          className="absolute top-0 -left-24 w-[280px] sm:w-[350px] h-[280px] sm:h-[350px] rounded-full pointer-events-none z-0 opacity-75"
-          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
-        <div
-          className="absolute top-1/3 -right-20 w-[200px] sm:w-[260px] h-[200px] sm:h-[260px] rounded-full pointer-events-none z-0 opacity-75"
-          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        /> */}
-
-        <div className="text-center mb-10 relative z-10">
-          <span className="bg-white border border-[#D5EBFF] text-[#0878F9] text-[12px] font-extrabold px-3.5 py-1 rounded-full inline-block mb-3 uppercase tracking-[1.2px]">
-            FREQUENTLY ASKED QUESTIONS
-          </span>
-          <h2 className="text-[30px] leading-[36px] font-black text-[#082D72] tracking-tight">
-            Got Questions Before Contacting Us?
-          </h2>
-        </div>
-
-        <div className="space-y-4 relative z-10">
-          {faqs.map((faq, index) => {
-            const isOpen = openFaq === index;
-            return (
-              <div
-                key={index}
-                className="bg-white/90 backdrop-blur-[6px] rounded-[16px] border border-[#E2EDF8] overflow-hidden transition-all duration-200"
-              >
-                <button
-                  type="button"
-                  onClick={() => setOpenFaq(isOpen ? -1 : index)}
-                  className="w-full flex items-center justify-between p-6 text-left font-extrabold text-[16px] leading-[24px] text-[#082D72] hover:text-[#0878F9] transition cursor-pointer"
-                >
-                  <span className="pr-4">{faq.q}</span>
-                  <div
-                    className={`w-8 h-8 rounded-full bg-[#EEF6FF] flex items-center justify-center shrink-0 transition-all duration-200 ${
-                      isOpen ? 'bg-[#0878F9] text-white rotate-180' : 'text-[#0878F9]'
-                    }`}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-                {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-sm text-slate-600 bg-white/50 leading-relaxed border-t border-slate-100">
-                    {faq.a}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </section>
+     
 
       {/* 5. SECTION: INITIATE YOUR GROWTH PARTNERSHIP CTA BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">

@@ -61,6 +61,14 @@ export const Hero = ({
       id="home"
       className="relative w-full overflow-hidden bg-white flex flex-col justify-between"
     >
+      {/* Top Sky Blue Theme Ambient Accent across the top of Hero section */}
+      <div
+        className="absolute top-0 inset-x-0 h-28 sm:h-36 lg:h-44 pointer-events-none z-0"
+        style={{
+          background:
+            'linear-gradient(to bottom, rgba(224, 242, 254, 0.5) 0%, rgba(240, 249, 255, 0.2) 50%, transparent 100%)',
+        }}
+      />
       {/* Main Hero Content & Visual Area */}
       <div className="relative w-full min-h-[420px] lg:min-h-[450px] xl:min-h-[500px] flex items-center">
 
@@ -92,10 +100,26 @@ export const Hero = ({
           className="w-full h-full object-cover object-left-top xl:object-center"
         />
 
-        <div className="absolute inset-y-0 left-0 w-44 xl:w-60 bg-gradient-to-r from-white via-white/50 to-transparent pointer-events-none" />
+        {/* Left-edge smooth fade into hero text column */}
+        <div
+          className="absolute inset-y-0 left-0 w-44 xl:w-64 pointer-events-none z-10"
+          style={{
+            background:
+              'linear-gradient(to right, #ffffff 0%, rgba(255,255,255,0.92) 20%, rgba(255,255,255,0.55) 55%, rgba(255,255,255,0.15) 80%, rgba(255,255,255,0) 100%)',
+          }}
+        />
         
-        <div className="absolute top-0 inset-x-0 h-10 bg-gradient-to-b from-white/30 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 inset-x-0 h-10 bg-gradient-to-t from-white/30 to-transparent pointer-events-none" />
+        {/* Top-edge Sky Blue Theme Fade transition into hero image */}
+        <div
+          className="absolute top-0 inset-x-0 h-32 lg:h-44 xl:h-52 pointer-events-none z-10"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(186, 230, 253, 0.92) 0%, rgba(196, 226, 254, 0.72) 25%, rgba(216, 238, 255, 0.42) 55%, rgba(228, 244, 255, 0.15) 80%, rgba(255, 255, 255, 0) 100%)',
+          }}
+        />
+
+        {/* Bottom-edge subtle fade towards marquee ticker */}
+        <div className="absolute bottom-0 inset-x-0 h-14 bg-gradient-to-t from-white via-white/50 to-transparent pointer-events-none z-10" />
 
         <div className="absolute top-6 xl:top-8 right-8 xl:right-14 bg-white/95 backdrop-blur-md rounded-[26px] p-4 sm:p-5 shadow-[0_18px_40px_rgba(0,0,0,0.09),0_2px_6px_rgba(0,0,0,0.04)] border border-slate-100/90 w-48 sm:w-52 z-20 transition-transform duration-300 hover:scale-[1.02]">
           <div className="space-y-3 sm:space-y-3.5">
@@ -188,7 +212,7 @@ export const Hero = ({
         </div>
       </motion.div>
 
-      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
         <motion.div
           initial={{ opacity: 0, x: -70 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -323,7 +347,15 @@ export const Hero = ({
             alt="Modern bright corner office overlooking city skyline"
             className="w-full h-full object-cover object-center"
           />
-          <div className="absolute bottom-0 right-0 bg-[#091e3a] text-white rounded-tl-xl px-4 py-2.5 shadow-lg">
+          {/* Top sky blue theme fade for mobile card */}
+          <div
+            className="absolute top-0 inset-x-0 h-20 sm:h-24 pointer-events-none z-10"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(186, 230, 253, 0.92) 0%, rgba(224, 242, 254, 0.6) 45%, transparent 100%)',
+            }}
+          />
+          <div className="absolute bottom-0 right-0 bg-[#091e3a] text-white rounded-tl-xl px-4 py-2.5 shadow-lg z-20">
             <div className="text-[10px] text-slate-300">Your</div>
             <div className="text-xs font-bold text-white">Digital Growth</div>
             <div className="text-xs font-bold text-[#ffb703] flex items-center gap-1">

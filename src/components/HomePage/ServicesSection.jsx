@@ -12,6 +12,7 @@ export const ServicesSection = ({
   const serviceCards = [
     {
       id: 'web-development',
+      path: '/services/web-development-company-bangalore',
       title: 'Web Development',
       description: 'High-performance websites and web applications.',
       iconBg: 'bg-[#0066ff]',
@@ -24,6 +25,7 @@ export const ServicesSection = ({
     },
     {
       id: 'digital-marketing',
+      path: '/services/Digital-marketing-agency-in-bangalore',
       title: 'Digital Marketing',
       description: 'Data-driven marketing strategies to reach your audience.',
       iconBg: 'bg-[#7c3aed]',
@@ -37,6 +39,7 @@ export const ServicesSection = ({
     },
     {
       id: 'seo-optimization',
+      path: '/services/seo-services-in-bangalore',
       title: 'SEO',
       description: 'Improve visibility and attract high-intent traffic.',
       iconBg: 'bg-[#0096c7]',
@@ -51,6 +54,7 @@ export const ServicesSection = ({
     },
     {
       id: 'social-media-marketing',
+      path: '/services/social-media-marketing-company-bangalore',
       title: 'Social Media Marketing',
       description: 'Build brand awareness and engagement across platforms.',
       iconBg: 'bg-[#2563eb]',
@@ -65,6 +69,7 @@ export const ServicesSection = ({
     },
     {
       id: 'graphic-design',
+      path: '/services/graphic-design-company-bangalore',
       title: 'Graphic Design',
       description: 'Creative designs that make your brand stand out.',
       iconBg: 'bg-[#0284c7]',
@@ -79,6 +84,7 @@ export const ServicesSection = ({
     },
     {
       id: 'lead-generation',
+      path: '/services/lead-generation-companies-in-bangalore',
       title: 'Lead Generation',
       description: 'Turn digital traffic into qualified opportunities.',
       iconBg: 'bg-[#f97316]',
@@ -90,6 +96,7 @@ export const ServicesSection = ({
     },
     {
       id: 'whatsapp-automation',
+      path: '/contact',
       title: 'WhatsApp Automation',
       description: 'Automate conversations and follow-ups.',
       iconBg: 'bg-[#22c55e]',
@@ -175,7 +182,7 @@ export const ServicesSection = ({
             <div
               key={card.id}
               id={`service-card-${card.id}`}
-              onClick={() => navigate(`/services/${card.id}`)}
+              onClick={() => navigate(card.path || `/services/${card.id}`)}
               className="group relative bg-white rounded-[22px] p-4 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[265px] cursor-pointer"
             >
               <div>

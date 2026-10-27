@@ -240,7 +240,7 @@ export const Footer = ({
             <ul className="space-y-3 sm:space-y-3.5 text-slate-300 text-[14px] sm:text-[14.5px] font-normal">
               <li>
                 <button
-                  onClick={()=>navigate("/services/web-development")}
+                  onClick={() => navigate("/services/web-development-company-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Web Development
@@ -248,7 +248,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/services/digital-marketing")}
+                  onClick={() => navigate("/services/Digital-marketing-agency-in-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Digital Marketing
@@ -256,7 +256,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/services/seo-optimization")}
+                  onClick={() => navigate("/services/seo-services-in-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   SEO
@@ -264,7 +264,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/services/social-media-marketing")}
+                  onClick={() => navigate("/services/social-media-marketing-company-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Social Media Marketing
@@ -272,7 +272,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/services/graphic-design")}
+                  onClick={() => navigate("/services/graphic-design-company-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Graphic Design
@@ -280,7 +280,7 @@ export const Footer = ({
               </li>
               <li>
                 <button
-                  onClick={() => navigate("/services/lead-generation")}
+                  onClick={() => navigate("/services/lead-generation-companies-in-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Lead Generation

@@ -97,7 +97,23 @@ export default function App() {
               }
             />
 
-            {/* Dedicated Sub-Service Route: Digital Marketing & SEO */}
+            {/* Dedicated Sub-Service Route: Digital Marketing */}
+            <Route
+              path="/services/Digital-marketing-agency-in-bangalore"
+              element={
+                <DigitalMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/services/digital-marketing-agency-in-bangalore"
+              element={
+                <DigitalMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
             <Route
               path="/services/digital-marketing"
               element={
@@ -115,7 +131,41 @@ export default function App() {
               }
             />
 
+            {/* Dedicated Sub-Service Route: SEO Services */}
+            <Route
+              path="/services/seo-services-in-bangalore"
+              element={
+                <SeoOptimizationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/services/seo-optimization"
+              element={
+                <SeoOptimizationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
+              path="/seo-optimization"
+              element={
+                <SeoOptimizationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+
             {/* Dedicated Sub-Service Route: Social Media Marketing */}
+            <Route
+              path="/services/social-media-marketing-company-bangalore"
+              element={
+                <SocialMediaMarketingServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
             <Route
               path="/services/social-media-marketing"
               element={
@@ -135,6 +185,14 @@ export default function App() {
 
             {/* Dedicated Sub-Service Route: Web Development */}
             <Route
+              path="/services/web-development-company-bangalore"
+              element={
+                <WebDevelopmentServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
               path="/services/web-development"
               element={
                 <WebDevelopmentServicePage
@@ -152,6 +210,14 @@ export default function App() {
             />
 
             {/* Dedicated Sub-Service Route: Graphic Design */}
+            <Route
+              path="/services/graphic-design-company-bangalore"
+              element={
+                <GraphicDesignServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
             <Route
               path="/services/graphic-design"
               element={
@@ -171,6 +237,14 @@ export default function App() {
 
             {/* Dedicated Sub-Service Route: Lead Generation */}
             <Route
+              path="/services/lead-generation-companies-in-bangalore"
+              element={
+                <LeadGenerationServicePage
+                  onStartProject={handleStartProject}
+                />
+              }
+            />
+            <Route
               path="/services/lead-generation"
               element={
                 <LeadGenerationServicePage
@@ -182,24 +256,6 @@ export default function App() {
               path="/lead-generation"
               element={
                 <LeadGenerationServicePage
-                  onStartProject={handleStartProject}
-                />
-              }
-            />
-
-            {/* Dedicated Sub-Service Route: SEO Optimization */}
-            <Route
-              path="/services/seo-optimization"
-              element={
-                <SeoOptimizationServicePage
-                  onStartProject={handleStartProject}
-                />
-              }
-            />
-            <Route
-              path="/seo-optimization"
-              element={
-                <SeoOptimizationServicePage
                   onStartProject={handleStartProject}
                 />
               }

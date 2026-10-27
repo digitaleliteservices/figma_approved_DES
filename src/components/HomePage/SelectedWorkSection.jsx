@@ -7,9 +7,12 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { StatsBannerBar } from '../StatsBannerBar.jsx';
 
-import workEcommerceImg from '../../assets/images/work_ecommerce_laptop_1790060147830.jpg';
-import workBrandingImg from '../../assets/images/work_branding_identity_1790060162943.jpg';
-import workMarketingImg from '../../assets/images/work_marketing_dashboard_1790060176379.jpg';
+import desWebDevImg from '../../assets/images/portfolio-assets/DES_6.jpg';
+import mrclVillasLuxuryImg from '../../assets/images/portfolio-assets/MRCL_13.png';
+import dhsBillboardImg from '../../assets/images/portfolio-assets/2.jpg';
+import samrudhiFarmlandImg from '../../assets/images/portfolio-assets/Creative 03_10.png';
+import neelAzureCloudImg from '../../assets/images/portfolio-assets/May_Azure_7.png';
+import hyderabadHouseBiriyaniImg from '../../assets/images/portfolio-assets/HHB- 2.png';
 
 export const SelectedWorkSection = ({
   onViewAllWork,
@@ -18,48 +21,56 @@ export const SelectedWorkSection = ({
   const [startIndex, setStartIndex] = useState(0);
   const navigate = useNavigate();
 
-  // All portfolio items for carousel rotation
+  // All real client portfolio items for carousel rotation
   const allProjects = [
     {
-      id: 'ecommerce',
-      title: 'E–Commerce Platform',
+      id: 'web-dev-des',
+      title: 'High-Performance Web Portal',
       category: 'Web Development • UI/UX',
-      image: workEcommerceImg,
-      alt: 'Modern laptop showing e-commerce catalog store on wooden desk with green plant',
+      image: desWebDevImg,
+      alt: 'Digital Elite Services modern high-speed website development platform',
       twoLineTitle: false,
     },
     {
-      id: 'branding',
-      title: 'Brand Identity Redesign',
-      category: 'Branding • Graphic Design',
-      image: workBrandingImg,
-      alt: 'Luxury corporate brand stationery mockup with notebooks and cards on executive desk',
+      id: 'mrcl-luxury-villas',
+      title: 'Unicon Sugarland Luxury Villas',
+      category: 'Branding • Luxury Real Estate',
+      image: mrclVillasLuxuryImg,
+      alt: 'MRCL Infrastructure luxury 4BHK villas promotional campaign',
       twoLineTitle: false,
     },
     {
-      id: 'lead-generation',
-      title: 'Lead Generation Campaign',
-      titleLine1: 'Lead Generation',
-      titleLine2: 'Campaign',
-      category: 'Digital Marketing • SEO',
-      image: workMarketingImg,
-      alt: 'Marketing performance analytics dashboard with charts on laptop screen',
+      id: 'dhs-billboard-campaign',
+      title: 'Defence Habitat Tapasihalli',
+      titleLine1: 'Defence Habitat',
+      titleLine2: 'Highway Billboard',
+      category: 'Digital Marketing • OOH & PPC',
+      image: dhsBillboardImg,
+      alt: 'Defence Habitat Housing highway billboard marketing in North Bangalore',
       twoLineTitle: true,
     },
     {
-      id: 'fintech-app',
-      title: 'Fintech Banking Portal',
-      category: 'Web Development • Security',
-      image: workEcommerceImg,
-      alt: 'Modern banking web application with real-time analytics',
+      id: 'samrudhi-farmland',
+      title: 'Samrudhi Sylvan Retreat',
+      category: 'Brand Identity • Farmland Living',
+      image: samrudhiFarmlandImg,
+      alt: 'Samrudhi premium farmland living brand identity campaign',
       twoLineTitle: false,
     },
     {
-      id: 'creative-studio',
-      title: 'Creative Studio Rebrand',
-      category: 'Branding • Art Direction',
-      image: workBrandingImg,
-      alt: 'Studio corporate identity stationery set mockup',
+      id: 'neel-azure-cloud',
+      title: 'Azure Cloud Career Platform',
+      category: 'EdTech • Growth Marketing',
+      image: neelAzureCloudImg,
+      alt: 'Neel Technologies Azure Cloud career upskilling campaign',
+      twoLineTitle: false,
+    },
+    {
+      id: 'hyderabad-house-biriyani',
+      title: 'Hyderabad House F&B Campaign',
+      category: 'Food & Hospitality • Social Creatives',
+      image: hyderabadHouseBiriyaniImg,
+      alt: 'Hyderabad House authentic Shahi Biriyani social marketing campaign',
       twoLineTitle: false,
     },
   ];
@@ -164,7 +175,7 @@ export const SelectedWorkSection = ({
                 <div
                   key={project.id}
                   id={`work-card-${project.id}`}
-                  onClick={() => onSelectProject?.(project.title)}
+                  onClick={() => navigate("/portfolio")}
                   className="group relative bg-white rounded-[20px] overflow-hidden border border-slate-100 shadow-[0_6px_24px_rgba(0,0,0,0.05)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-200 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div className="relative w-full aspect-[16/11] overflow-hidden bg-slate-100">

@@ -4,8 +4,10 @@ import { AboutSection } from './AboutSection.jsx';
 import { ServicesSection } from './ServicesSection.jsx';
 import { HowWeWorkSection } from './HowWeWorkSection.jsx';
 import { SelectedWorkSection } from './SelectedWorkSection.jsx';
+import { ShowcaseSection } from './ShowcaseSection.jsx';
 import { TestimonialsSection } from './TestimonialsSection.jsx';
 import { CtaSection } from './CtaSection.jsx';
+import { ClientsSection } from '../ClientsSection.jsx';
 
 export function HomePage({
   onStartProject,
@@ -20,6 +22,9 @@ export function HomePage({
         onExploreServices={() => onExploreServices && onExploreServices()}
         onSelectService={(serviceName) => onExploreServices && onExploreServices(serviceName)}
       />
+
+      {/* Clients Section */}
+      <ClientsSection />
 
       {/* About Section */}
       <AboutSection
@@ -44,6 +49,9 @@ export function HomePage({
         onViewAllWork={() => onStartProject && onStartProject('All Work Portfolio')}
         onSelectProject={(title) => onStartProject && onStartProject(title)}
       />
+
+      {/* Showcasing Our Work Continuous Marquee Section */}
+      <ShowcaseSection />
 
       {/* Testimonials Section */}
       <TestimonialsSection

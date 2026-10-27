@@ -239,7 +239,7 @@ p, .body-text {
 }
 
 /* ==========================================================================
-   MARQUEE TICKER ANIMATION (RIGHT-TO-LEFT)
+   MARQUEE TICKER ANIMATION (RIGHT-TO-LEFT & LEFT-TO-RIGHT)
    ========================================================================== */
 
 @keyframes marquee-scroll-left {
@@ -251,14 +251,42 @@ p, .body-text {
   }
 }
 
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 .animate-marquee-left {
-  animation: marquee-scroll-left 80s linear infinite;
+  animation: marquee-scroll-left 50s linear infinite;
   will-change: transform;
 }
 
+.animate-marquee-right {
+  animation: marquee-scroll-right 50s linear infinite;
+  will-change: transform;
+}
+
+.marquee-pause:hover .animate-marquee-left,
+.marquee-pause:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* Ensure showcase marquee keeps scrolling continuously even when hovered */
+#showcase .animate-marquee-left,
+#showcase:hover .animate-marquee-left,
+#showcase .animate-marquee-left:hover {
+  animation-play-state: running !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee-left {
+  .animate-marquee-left,
+  .animate-marquee-right {
     animation-play-state: paused;
   }
 }
+
 
