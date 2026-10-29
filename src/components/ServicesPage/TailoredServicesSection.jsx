@@ -135,24 +135,24 @@ export const TailoredServicesSection = ({ onSelectService }) => {
         style={{ backgroundColor: '#ddf0fe' }}
       /> */}
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16">
           <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.14em] uppercase mb-3">
             WHAT WE OFFER
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] font-extrabold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-[42px] lg:text-[44px] font-extrabold text-[#062A78] tracking-[-0.03em] leading-tight mb-3 sm:mb-4">
             Tailored Services Built For Scale
           </h2>
-          <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#475569] sm:text-[#334155] text-xs sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
             Explore our core digital service offerings, engineered to transform your online presence and
             accelerate business performance.
           </p>
         </div>
 
         {/* 6 Cards Grid (2 rows x 3 columns) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
           {serviceCards.map((service, index) => {
             const Icon = service.icon;
             const isHovered = hoveredCardId === service.id;
@@ -161,14 +161,14 @@ export const TailoredServicesSection = ({ onSelectService }) => {
             return (
               <motion.div
                 key={service.id}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 onMouseEnter={() => setHoveredCardId(service.id)}
                 onMouseLeave={() => setHoveredCardId(null)}
                 onClick={() => handleCardClick(service)}
-                className={`bg-white rounded-[28px] sm:rounded-[30px] p-6 sm:p-7 flex flex-col justify-between transition-colors duration-200 relative group cursor-pointer border-2 ${
+                className={`bg-white rounded-[24px] sm:rounded-[30px] p-5 sm:p-7 flex flex-col justify-between transition-colors duration-200 relative group cursor-pointer border-2 ${
                   isHovered
                     ? 'border-[#3b82f6] shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
                     : 'border-slate-100 hover:border-[#3b82f6] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_16px_36px_rgba(0,102,255,0.08)]'
@@ -177,14 +177,14 @@ export const TailoredServicesSection = ({ onSelectService }) => {
                 <div>
                   {/* Top Colored Pill Capsule with Centered White Icon */}
                   <div
-                    className={`w-full h-[26px] sm:h-[28px] rounded-full ${service.pillBg} flex items-center justify-center mb-6 shadow-xs`}
+                    className={`w-full h-[26px] sm:h-[28px] rounded-full ${service.pillBg} flex items-center justify-center mb-5 sm:mb-6 shadow-xs`}
                   >
                     <Icon className="w-4 h-4 text-white stroke-[2.2]" />
                   </div>
 
                   {/* Card Title */}
                   <h3
-                    className={`text-xl sm:text-[23px] font-black tracking-tight leading-snug mb-3.5 transition-colors duration-200 ${
+                    className={`text-lg sm:text-[23px] font-black tracking-tight leading-snug mb-2.5 sm:mb-3.5 transition-colors duration-200 ${
                       isHovered ? 'text-[#0066ff]' : 'text-[#062A78] group-hover:text-[#0066ff]'
                     }`}
                   >
@@ -192,7 +192,7 @@ export const TailoredServicesSection = ({ onSelectService }) => {
                   </h3>
 
                   {/* Card Description */}
-                  <p className="text-[#334155] text-xs sm:text-[13.5px] leading-[1.65] font-normal min-h-[58px]">
+                  <p className="text-[#334155] text-xs sm:text-[13.5px] leading-[1.65] font-normal min-h-0 sm:min-h-[58px]">
                     {service.description}
                   </p>
                 </div>

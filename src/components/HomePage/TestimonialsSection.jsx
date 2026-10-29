@@ -52,16 +52,12 @@ export const TestimonialsSection = ({
     },
   ];
 
-  const visibleCount = 2;
-
   const handlePrev = () => {
-    setStartIndex((prev) => (prev === 0 ? testimonials.length - visibleCount : prev - 1));
+    setStartIndex((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setStartIndex((prev) =>
-      prev >= testimonials.length - visibleCount ? 0 : prev + 1
-    );
+    setStartIndex((prev) => (prev + 1) % testimonials.length);
   };
 
   const visibleTestimonials = [
@@ -168,15 +164,15 @@ export const TestimonialsSection = ({
           </motion.div>
 
           {/* ================= RIGHT 2 TESTIMONIAL CARDS ================= */}
-          <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4.5 sm:gap-5 xl:gap-6 w-full">
+          <div className="flex-1 min-w-0 grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 xl:gap-6 w-full">
             {visibleTestimonials.map((item) => (
               <div
                 key={item.id}
                 id={`testimonial-card-${item.id}`}
-                className="relative bg-white rounded-[24px] sm:rounded-[26px] p-5 sm:p-6 lg:p-7 border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,102,255,0.08)] hover:border-blue-100 transition-all duration-300 flex items-start gap-4 sm:gap-5"
+                className="relative bg-white rounded-[24px] sm:rounded-[26px] p-4.5 sm:p-6 lg:p-7 border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_36px_rgba(0,102,255,0.08)] hover:border-blue-100 transition-all duration-300 flex flex-col xs:flex-row items-start gap-3.5 sm:gap-5"
               >
                 {/* Client Avatar Circular Photo */}
-                <div className="shrink-0 w-16 h-16 sm:w-[72px] sm:h-[72px] xl:w-20 xl:h-20 rounded-full overflow-hidden bg-slate-100 border-2 border-white shadow-2xs">
+                <div className="shrink-0 w-13 h-13 sm:w-16 sm:h-16 xl:w-20 xl:h-20 rounded-full overflow-hidden bg-slate-100 border-2 border-white shadow-2xs">
                   <img
                     src={item.avatar}
                     alt={item.name}
@@ -185,20 +181,20 @@ export const TestimonialsSection = ({
                 </div>
 
                 {/* Testimonial Content: Quote, Author Info & Stars */}
-                <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch">
+                <div className="flex-1 min-w-0 flex flex-col justify-between self-stretch w-full">
                   {/* Quote Paragraph */}
-                  <p className="text-slate-800 text-[13.5px] sm:text-[14px] xl:text-[15px] font-normal leading-[1.6] mb-4 sm:mb-5">
+                  <p className="text-slate-800 text-[13px] sm:text-[14px] xl:text-[15px] font-normal leading-[1.6] mb-3.5 sm:mb-5">
                     {item.quote}
                   </p>
 
                   {/* Bottom Meta Row: Author Name, Role and 5-Star Rating */}
-                  <div className="flex items-end justify-between gap-3 pt-1 mt-auto">
+                  <div className="flex flex-wrap items-center justify-between gap-2 pt-1 mt-auto border-t border-slate-50 xs:border-none">
                     {/* Author Name and Role */}
                     <div className="min-w-0">
-                      <h4 className="text-[14.5px] sm:text-[15.5px] xl:text-[16px] font-bold text-[#0a1e38] tracking-tight leading-snug truncate">
+                      <h4 className="text-[13.5px] sm:text-[15px] xl:text-[16px] font-bold text-[#0a1e38] tracking-tight leading-snug truncate">
                         {item.name}
                       </h4>
-                      <p className="text-[11.5px] sm:text-[12px] xl:text-[12.5px] text-slate-500 font-medium mt-0.5 truncate">
+                      <p className="text-[11px] sm:text-[12px] xl:text-[12.5px] text-slate-500 font-medium mt-0.5 truncate">
                         {item.role}, {item.company}
                       </p>
                     </div>

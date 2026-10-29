@@ -145,72 +145,62 @@ export function ContactPage({ onStartProject }) {
           style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
         /> */}
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center gap-[20px]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 text-center flex flex-col items-center gap-[20px]">
           {/* Top Pill Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/90 border border-[#D5E6FE] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] backdrop-blur-[6px]">
-            <span className="w-[10px] h-[10px] rounded-full bg-[#10B981] shrink-0" />
-            <Sparkles className="w-4 h-4 text-[#0878F9]" />
-            <span className="font-extrabold text-[13px] leading-[16px] tracking-[0.65px] uppercase text-[#0878F9]">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-[6px] rounded-full bg-white/90 border border-[#D5E6FE] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] backdrop-blur-[6px] max-w-full">
+            <span className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] rounded-full bg-[#10B981] shrink-0" />
+            <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0878F9] shrink-0" />
+            <span className="font-extrabold text-[11px] sm:text-[13px] leading-tight tracking-[0.4px] sm:tracking-[0.65px] uppercase text-[#0878F9]">
               GET IN TOUCH WITH US • 2-HOUR RESPONSE GUARANTEE
             </span>
           </div>
 
           {/* Main Title */}
-          <h1 className="flex flex-wrap justify-center items-center gap-x-2.5 text-3xl sm:text-5xl lg:text-[56px] font-black leading-tight lg:leading-[56px] tracking-[-1.8px] text-center">
+          <h1 className="flex flex-wrap justify-center items-center gap-x-2.5 text-3xl sm:text-5xl lg:text-[56px] font-black leading-tight lg:leading-[56px] tracking-tight sm:tracking-[-1.8px] text-center">
             <span className="text-[#082D72]">Contact</span>
             <span className="text-[#0878F9]">Digital Elite</span>
             <span className="text-[#082D72]">Services</span>
           </h1>
 
           {/* Subtitle */}
-          <p className="max-w-[672px] mx-auto text-[17px] leading-[27px] font-medium text-[#1E3B68] text-center">
+          <p className="max-w-[672px] mx-auto text-sm sm:text-[17px] leading-relaxed sm:leading-[27px] font-medium text-[#1E3B68] text-center">
             Have a question or want to discuss a new project? Drop us a message below or connect directly with our Bangalore team.
           </p>
 
-          {/* 3 Feature Badges (Stacked 2-row layout matching Image 1) */}
-          <div className="flex flex-col items-center gap-3">
+          {/* 3 Feature Badges (Stacked 2-row layout) */}
+          <div className="flex flex-col items-center gap-2.5 sm:gap-3 w-full">
             {/* Row 1: Badges 1 & 2 */}
-            <div className="flex flex-wrap justify-center items-center gap-3">
-              <div className="bg-white/90 backdrop-blur-[6px] px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-2">
-                <Zap className="w-4 h-4 text-[#0878F9]" />
-                <span className="font-bold text-[12px] leading-[16px] text-[#082D72]">2-Hour SLA</span>
-                <span className="font-medium text-[12px] leading-[16px] text-[#587BA5]">(Quick Response)</span>
+            <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-3 w-full">
+              <div className="bg-white/90 backdrop-blur-[6px] px-3.5 sm:px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-1.5 sm:gap-2">
+                <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0878F9] shrink-0" />
+                <span className="font-bold text-[11.5px] sm:text-[12px] leading-none text-[#082D72]">2-Hour SLA</span>
+                <span className="font-medium text-[11px] sm:text-[12px] leading-none text-[#587BA5]">(Quick Response)</span>
               </div>
-              <div className="bg-white/90 backdrop-blur-[6px] px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#0878F9]" />
-                <span className="font-bold text-[12px] leading-[16px] text-[#082D72]">Free Consultation</span>
-                <span className="font-medium text-[12px] leading-[16px] text-[#587BA5]">(No Obligation)</span>
+              <div className="bg-white/90 backdrop-blur-[6px] px-3.5 sm:px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-1.5 sm:gap-2">
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0878F9] shrink-0" />
+                <span className="font-bold text-[11.5px] sm:text-[12px] leading-none text-[#082D72]">Free Consultation</span>
+                <span className="font-medium text-[11px] sm:text-[12px] leading-none text-[#587BA5]">(No Obligation)</span>
               </div>
             </div>
 
             {/* Row 2: Badge 3 (Centered below) */}
-            <div className="bg-white/90 backdrop-blur-[6px] px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-2">
-              <Building2 className="w-4 h-4 text-[#0878F9]" />
-              <span className="font-bold text-[12px] leading-[16px] text-[#082D72]">Bangalore HQ</span>
-              <span className="font-medium text-[12px] leading-[16px] text-[#587BA5]">(In-Person Meetings)</span>
+            <div className="bg-white/90 backdrop-blur-[6px] px-3.5 sm:px-4 py-2 rounded-full border border-[#D5EBFF] flex items-center gap-1.5 sm:gap-2">
+              <Building2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0878F9] shrink-0" />
+              <span className="font-bold text-[11.5px] sm:text-[12px] leading-none text-[#082D72]">Bangalore HQ</span>
+              <span className="font-medium text-[11px] sm:text-[12px] leading-none text-[#587BA5]">(In-Person Meetings)</span>
             </div>
           </div>
         </div>
       </section>
 
       {/* 2. MAIN 2-COLUMN SECTION (DIRECT CONTACT INFO & FORM) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
-        {/* Section Background Shapes */}
-        {/* <div
-          className="absolute top-1/4 -left-24 w-[340px] sm:w-[460px] h-[340px] sm:h-[460px] rounded-full pointer-events-none z-0 opacity-85"
-          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        />
-        <div
-          className="absolute bottom-6 -right-20 w-[300px] sm:w-[387px] h-[300px] sm:h-[374px] rounded-full pointer-events-none z-0 opacity-85"
-          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        /> */}
-
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start relative z-10">
           
           {/* LEFT COLUMN: DIRECT CONTACT INFO */}
           <motion.div
-            initial={{ opacity: 0, x: -70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 space-y-5"
@@ -219,7 +209,7 @@ export function ContactPage({ onStartProject }) {
               <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-3 uppercase tracking-[1.2px]">
                 DIRECT CONTACT INFO
               </span>
-              <h2 className="text-[30px] leading-[36px] font-black text-[#082D72] tracking-tight mb-2">
+              <h2 className="text-2xl sm:text-[30px] sm:leading-[36px] font-black text-[#082D72] tracking-tight mb-2">
                 Reach Us Directly
               </h2>
               <p className="text-[12px] leading-[20px] font-medium text-[#587BA5]">
@@ -228,13 +218,13 @@ export function ContactPage({ onStartProject }) {
             </div>
 
             {/* CARD 1: PHONE / HOTLINE */}
-            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-6 border border-[#E2EDF8] shadow-[0px_8px_24px_rgba(8,45,114,0.06)] flex items-start justify-between">
-              <div className="flex items-start gap-4">
-                <div className="w-[48px] h-[48px] rounded-[12px] bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] flex items-center justify-center shrink-0">
-                  <PhoneCall className="w-6 h-6" />
+            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-5 sm:p-6 border border-[#E2EDF8] shadow-[0px_8px_24px_rgba(8,45,114,0.06)] flex items-start justify-between">
+              <div className="flex items-start gap-3.5 sm:gap-4 w-full">
+                <div className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-[12px] bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] flex items-center justify-center shrink-0">
+                  <PhoneCall className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-1">
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
                     <span className="text-[12px] font-black text-[#082D72] tracking-[0.6px] uppercase">
                       PHONE / HOTLINE
                     </span>
@@ -242,7 +232,7 @@ export function ContactPage({ onStartProject }) {
                       Mon - Sat (9am - 7pm)
                     </span>
                   </div>
-                  <a href="tel:+916366930178" className="text-[20px] leading-[28px] font-black text-[#0878F9] hover:underline block mb-0.5">
+                  <a href="tel:+916366930178" className="text-lg sm:text-[20px] sm:leading-[28px] font-black text-[#0878F9] hover:underline block mb-0.5">
                     +91 6366930178
                   </a>
                   <div className="text-[12px] leading-[16px] font-bold text-[#475569]">+91 63669 30178</div>
@@ -251,13 +241,13 @@ export function ContactPage({ onStartProject }) {
             </div>
 
             {/* CARD 2: EMAIL ADDRESS */}
-            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-6 border border-[#E2EDF8] shadow-[0px_8px_24px_rgba(8,45,114,0.06)] flex items-start justify-between">
-              <div className="flex items-start gap-4">
-                <div className="w-[48px] h-[48px] rounded-[12px] bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] flex items-center justify-center shrink-0">
-                  <Mail className="w-6 h-6" />
+            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-5 sm:p-6 border border-[#E2EDF8] shadow-[0px_8px_24px_rgba(8,45,114,0.06)] flex items-start justify-between">
+              <div className="flex items-start gap-3.5 sm:gap-4 w-full">
+                <div className="w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] rounded-[12px] bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] flex items-center justify-center shrink-0">
+                  <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <div className="flex items-center gap-3 mb-1">
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2 mb-1">
                     <span className="text-[12px] font-black text-[#082D72] tracking-[0.6px] uppercase">
                       EMAIL ADDRESS
                     </span>
@@ -268,20 +258,19 @@ export function ContactPage({ onStartProject }) {
                       Copy
                     </button>
                   </div>
-                  <a href="mailto:info@digitaleliteservices.in" className="text-[14px] leading-[20px] font-black text-[#0878F9] hover:underline block mb-0.5">
+                  <a href="mailto:info@digitaleliteservices.in" className="text-xs sm:text-[14px] sm:leading-[20px] font-black text-[#0878F9] hover:underline block mb-0.5 break-all xs:break-normal">
                     info@digitaleliteservices.in
                   </a>
-                  {/* <div className="text-[12px] leading-[16px] font-bold text-[#475569]">contact@digitaleliteservices.in</div> */}
                 </div>
               </div>
             </div>
 
             {/* CARD 3: INSTANT WHATSAPP (GRADIENT CARD) */}
             <div
-              className="rounded-[16px] p-6 text-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] relative overflow-hidden"
+              className="rounded-[16px] p-5 sm:p-6 text-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] relative overflow-hidden"
               style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
             >
-              <div className="flex items-center justify-between mb-3">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <span className="text-[12px] font-extrabold tracking-[0.6px] text-[#FFC400] uppercase flex items-center gap-1.5">
                   <Zap className="w-4 h-4 text-[#FFC400] fill-[#FFC400]" /> INSTANT WHATSAPP
                 </span>
@@ -289,7 +278,7 @@ export function ContactPage({ onStartProject }) {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#34D399] animate-pulse" /> Online
                 </span>
               </div>
-              <h3 className="text-[18px] leading-[25px] font-black text-white mb-1">
+              <h3 className="text-base sm:text-[18px] sm:leading-[25px] font-black text-white mb-1">
                 Need a quick response?
               </h3>
               <p className="text-[12px] leading-[16px] font-medium text-[#E2E8F0] mb-5">
@@ -299,7 +288,7 @@ export function ContactPage({ onStartProject }) {
                 href="https://wa.me/916366930178"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-[12px] py-[11px] px-5 rounded-full inline-flex items-center gap-2 transition shadow-md cursor-pointer"
+                className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-black text-[12px] py-[11px] px-5 rounded-full inline-flex items-center justify-center gap-2 transition shadow-md cursor-pointer"
               >
                 <span>Chat on WhatsApp</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -307,7 +296,7 @@ export function ContactPage({ onStartProject }) {
             </div>
 
             {/* CARD 4: BANGALORE HEADQUARTERS */}
-            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-6 border border-[#E2EDF8] flex items-start gap-4">
+            <div className="bg-white/90 backdrop-blur-[12px] rounded-[16px] p-5 sm:p-6 border border-[#E2EDF8] flex items-start gap-3.5 sm:gap-4">
               <div className="w-[40px] h-[40px] rounded-[12px] bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] flex items-center justify-center shrink-0 mt-0.5">
                 <MapPin className="w-5 h-5" />
               </div>
@@ -324,17 +313,17 @@ export function ContactPage({ onStartProject }) {
 
           {/* RIGHT COLUMN: SEND A MESSAGE FORM */}
           <motion.div
-            initial={{ opacity: 0, x: 70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7"
           >
-            <div className="bg-white/95 backdrop-blur-[20px] rounded-[32px] p-8 sm:p-10 border border-[#E2EDF8] shadow-[0px_25px_60px_rgba(8,120,249,0.12)] relative">
+            <div className="bg-white/95 backdrop-blur-[20px] rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 md:p-10 border border-[#E2EDF8] shadow-[0px_25px_60px_rgba(8,120,249,0.12)] relative">
               <span className="text-[12px] font-black text-[#0878F9] uppercase tracking-[0.6px] block mb-1">
                 SEND A MESSAGE
               </span>
-              <h2 className="text-[30px] leading-[36px] font-black text-[#082D72] mb-1">
+              <h2 className="text-2xl sm:text-[30px] sm:leading-[36px] font-black text-[#082D72] mb-1">
                 Get in Touch
               </h2>
               <p className="text-[12px] leading-[16px] font-medium text-[#587BA5] mb-8">
@@ -516,20 +505,14 @@ export function ContactPage({ onStartProject }) {
       </section>
 
       {/* 3. SECTION: LOCAL BANGALORE PRESENCE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        {/* Section Background Shape */}
-        {/* <div
-          className="absolute -top-12 -left-20 w-[300px] sm:w-[387px] h-[300px] sm:h-[374px] rounded-full pointer-events-none z-0 opacity-85"
-          style={{ background: 'radial-gradient(84.85% 84.85% at 40% 40%, #BFE2FF 0%, #DDF0FF 50%, rgba(221, 240, 255, 0) 75%)' }}
-        /> */}
-
-        <div className="bg-white/95 backdrop-blur-[12px] rounded-[28px] p-8 lg:p-12 border border-[#E2EDF8] shadow-[0px_12px_36px_rgba(8,45,114,0.06)] relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 relative z-10">
+        <div className="bg-white/95 backdrop-blur-[12px] rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-12 border border-[#E2EDF8] shadow-[0px_12px_36px_rgba(8,45,114,0.06)] relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
@@ -537,7 +520,7 @@ export function ContactPage({ onStartProject }) {
               <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-1 rounded-full inline-block mb-4 uppercase tracking-[1.2px]">
                 LOCAL BANGALORE PRESENCE
               </span>
-              <h2 className="text-[24px] leading-[32px] font-black text-[#082D72] mb-3 tracking-tight">
+              <h2 className="text-2xl sm:text-[24px] sm:leading-[32px] font-black text-[#082D72] mb-3 tracking-tight">
                 Based in India's Premier Tech Hub
               </h2>
               <p className="text-[12px] leading-[20px] font-medium text-[#587BA5] mb-6 max-w-xl">
@@ -556,22 +539,22 @@ export function ContactPage({ onStartProject }) {
 
             {/* Right Card: Dark Hub Card */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5"
             >
               <div
-                className="rounded-[16px] p-7 text-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] relative overflow-hidden"
+                className="rounded-[16px] p-5 sm:p-7 text-white shadow-[0px_20px_25px_-5px_rgba(0,0,0,0.1),0px_8px_10px_-6px_rgba(0,0,0,0.1)] relative overflow-hidden"
                 style={{ background: 'linear-gradient(135deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
               >
-                <div className="flex items-center justify-between mb-4">
-                  <span className="text-[14px] font-extrabold text-white uppercase tracking-[0.7px] flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-[#FFC400]" />
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
+                  <span className="text-[13px] sm:text-[14px] font-extrabold text-white uppercase tracking-[0.7px] flex items-center gap-2">
+                    <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-[#FFC400]" />
                     ENTERPRISE HUB SUITE 402
                   </span>
-                  <span className="bg-[rgba(16,185,129,0.2)] border border-[rgba(52,211,153,0.3)] text-[#6EE7B7] text-[12px] font-bold px-3 py-1 rounded-full flex items-center gap-1.5">
+                  <span className="bg-[rgba(16,185,129,0.2)] border border-[rgba(52,211,153,0.3)] text-[#6EE7B7] text-[11px] sm:text-[12px] font-bold px-2.5 sm:px-3 py-1 rounded-full flex items-center gap-1.5">
                     <span className="w-2 h-2 rounded-full bg-[#34D399]" /> Open Today
                   </span>
                 </div>
@@ -588,7 +571,7 @@ export function ContactPage({ onStartProject }) {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-white/15 flex items-center justify-between text-[12px]">
+                <div className="pt-3 border-t border-white/15 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 text-[12px]">
                   <span className="font-bold text-[#CBD5E1]">
                     Visiting Hours: Mon - Sat (9am - 7pm)
                   </span>
@@ -609,34 +592,32 @@ export function ContactPage({ onStartProject }) {
         </div>
       </section>
 
-     
-
       {/* 5. SECTION: INITIATE YOUR GROWTH PARTNERSHIP CTA BANNER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 relative z-10">
-        <div className="bg-[#0878F9] rounded-[32px] p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 relative z-10 mb-8">
+        <div className="rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
          style={{ background: 'linear-gradient(90deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
         >
           {/* Ambient shapes */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/20 rounded-full filter blur-2xl pointer-events-none" />
 
-          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-6">
-            <span className="bg-white/10 border border-white/20 text-[#FFC400] text-[12px] font-black px-4 py-1.5 rounded-full inline-block uppercase tracking-[1.2px]">
+          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center gap-5 sm:gap-6">
+            <span className="bg-white/10 border border-white/20 text-[#FFC400] text-[11px] sm:text-[12px] font-black px-3.5 sm:px-4 py-1.5 rounded-full inline-block uppercase tracking-[1.2px]">
               READY TO SCALE REVENUE?
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-[48px] lg:leading-[48px] font-black text-white tracking-[-1.2px] max-w-3xl">
+            <h2 className="text-2xl sm:text-4xl lg:text-[48px] lg:leading-[48px] font-black text-white tracking-tight sm:tracking-[-1.2px] max-w-3xl">
               Initiate Your Growth Partnership With Digital Elite Services.
             </h2>
 
-            <p className="text-[#E2E8F0] max-w-2xl text-[16px] leading-[24px] font-medium">
+            <p className="text-[#E2E8F0] max-w-2xl text-xs sm:text-[16px] leading-relaxed sm:leading-[24px] font-medium">
               Contact Digital Elite Services today for a free custom audit and strategy roadmap tailored to your business goals.
             </p>
 
-            <div className="flex flex-wrap justify-center items-center gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 pt-2 w-full sm:w-auto">
               <button
                 onClick={() => onStartProject?.()}
-                className="bg-[#FFC400] hover:bg-[#faa307] text-[#082D72] font-black text-[16px] leading-[24px] px-9 py-4 rounded-full shadow-[0px_8px_25px_rgba(255,196,0,0.45)] transition cursor-pointer flex items-center gap-2"
+                className="w-full sm:w-auto bg-[#FFC400] hover:bg-[#faa307] text-[#082D72] font-black text-sm sm:text-[16px] leading-[24px] px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0px_8px_25px_rgba(255,196,0,0.45)] transition cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>Call Us Now: +91 6366930178</span>
                 <ArrowRight className="w-4 h-4 text-[#082D72]" />
@@ -644,7 +625,7 @@ export function ContactPage({ onStartProject }) {
 
               <a
                 href="mailto:info@digitaleliteservices.in"
-                className="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-[6px] text-white font-bold text-[16px] leading-[24px] px-7 py-4 rounded-full transition cursor-pointer"
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-[6px] text-white font-bold text-sm sm:text-[16px] leading-[24px] px-6 sm:px-7 py-3.5 sm:py-4 rounded-full transition cursor-pointer flex items-center justify-center text-center"
               >
                 Email: info@digitaleliteservices.in
               </a>

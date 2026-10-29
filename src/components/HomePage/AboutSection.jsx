@@ -91,22 +91,22 @@ export const AboutSection = ({
       <div className="absolute top-10 -left-20 w-72 h-72 rounded-full bg-blue-50/80 blur-2xl -z-10 pointer-events-none" />
        */}
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left Column: Organic Pebble Shaped Team Photo with Badges */}
           <motion.div
-            initial={{ opacity: 0, x: -70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 relative flex items-center justify-center"
           >
             <div className="relative w-full max-w-lg">
               {/* Floating Decorative Dot (Top Right) */}
-              <div className="absolute -top-3 right-6 sm:right-10 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#93c5fd] shadow-md z-10 animate-pulse" />
+              <div className="absolute -top-3 right-6 sm:right-10 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-[#93c5fd] shadow-md z-10 animate-pulse" />
 
               {/* Floating Decorative Accent (Left edge) */}
-              <div className="absolute top-1/2 -left-3 sm:-left-5 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fde047] opacity-80 z-10" />
+              <div className="absolute top-1/2 -left-2 sm:-left-5 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#fde047] opacity-80 z-10" />
 
               {/* Organic Pebble Container with Team Image */}
               <div
@@ -118,20 +118,20 @@ export const AboutSection = ({
                 <img
                   src={teamImg}
                   alt="DES professional team collaborating in a modern office"
-                  className="w-full h-80 sm:h-96 md:h-[440px] object-cover object-center"
+                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[440px] object-cover object-center"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/10 via-transparent to-transparent pointer-events-none" />
               </div>
 
               {/* Circular Floating Badge: Plus Jakarta Sans 700 */}
-              <div className="absolute -bottom-6 -left-3 sm:-left-6 w-24 h-24 sm:w-28 sm:h-28 rounded-full bg-[#0066ff] text-white flex flex-col items-center justify-center text-center shadow-xl z-20 transition-transform duration-300 hover:scale-105 select-none border-2 border-white">
-                <span className="text-xs sm:text-sm font-bold leading-tight">
+              <div className="absolute -bottom-4 left-2 sm:-bottom-6 sm:-left-6 w-20 h-20 xs:w-24 xs:h-24 sm:w-28 sm:h-28 rounded-full bg-[#0066ff] text-white flex flex-col items-center justify-center text-center shadow-xl z-20 transition-transform duration-300 hover:scale-105 select-none border-2 border-white">
+                <span className="text-[11px] xs:text-xs sm:text-sm font-bold leading-tight">
                   People
                 </span>
-                <span className="text-xs sm:text-sm font-bold leading-tight">
+                <span className="text-[11px] xs:text-xs sm:text-sm font-bold leading-tight">
                   Ideas
                 </span>
-                <span className="text-xs sm:text-sm font-bold leading-tight">
+                <span className="text-[11px] xs:text-xs sm:text-sm font-bold leading-tight">
                   Growth
                 </span>
               </div>
@@ -140,8 +140,8 @@ export const AboutSection = ({
 
           {/* Right Column: About Content & Pillars */}
           <motion.div
-            initial={{ opacity: 0, x: 70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-6 space-y-6 sm:space-y-8 relative z-10"
@@ -154,13 +154,13 @@ export const AboutSection = ({
             </div>
 
             {/* Section H2: Plus Jakarta Sans 800 */}
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a1e38] tracking-tight leading-[1.12]">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0a1e38] tracking-tight leading-[1.15]">
               A team that turns <br />
               ideas into <span className="text-[#0066ff]">impact.</span>
             </h2>
 
             {/* Body paragraph: Plus Jakarta Sans 500 */}
-            <p className="text-base sm:text-lg text-slate-600 font-medium leading-relaxed z-10">
+            <p className="text-sm sm:text-base md:text-lg text-slate-600 font-medium leading-relaxed z-10">
               DES is a digital solutions partner helping businesses transform
               ideas into powerful digital experiences. We combine strategy,
               design, technology and marketing to attract customers, build trust
@@ -172,7 +172,7 @@ export const AboutSection = ({
               <button
                 id="about-cta-more-about-us"
                 onClick={()=>navigate("/about")}
-                className="group inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-slate-900 font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-slate-900 font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
               >
                 <span>More About Us</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -189,14 +189,14 @@ export const AboutSection = ({
                     <div
                       key={pillar.id}
                       onClick={() => onPillarClick?.(pillar.title)}
-                      className={`text-center cursor-pointer group px-2 sm:px-3 ${
+                      className={`text-center cursor-pointer group px-1.5 sm:px-3 ${
                         isNotLast
                           ? 'sm:border-r sm:border-slate-200'
                           : ''
                       }`}
                     >
-                      <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-[#0066ff] flex items-center justify-center mx-auto mb-2.5 sm:mb-3 group-hover:bg-[#0066ff] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
-                        <Icon className="w-5 h-5" />
+                      <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-blue-50 text-[#0066ff] flex items-center justify-center mx-auto mb-2 sm:mb-3 group-hover:bg-[#0066ff] group-hover:text-white group-hover:scale-110 transition-all duration-300 shadow-xs">
+                        <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                       </div>
                       <h4 className="text-xs sm:text-[13px] font-bold text-slate-800 leading-tight group-hover:text-[#0066ff] transition-colors">
                         {pillar.title}

@@ -75,14 +75,12 @@ export const SelectedWorkSection = ({
     },
   ];
 
-  const visibleCount = 3;
-
   const handlePrev = () => {
-    setStartIndex((prev) => (prev === 0 ? allProjects.length - visibleCount : prev - 1));
+    setStartIndex((prev) => (prev === 0 ? allProjects.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
-    setStartIndex((prev) => (prev >= allProjects.length - visibleCount ? 0 : prev + 1));
+    setStartIndex((prev) => (prev + 1) % allProjects.length);
   };
 
   // 3 currently visible projects in order

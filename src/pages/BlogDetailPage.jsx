@@ -107,8 +107,8 @@ export function BlogDetailPage({ onStartProject }) {
       /> */}
 
       {/* ================= 1. TOP BREADCRUMB & BACK NAVIGATION ================= */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 relative z-10">
-        <div className="flex flex-wrap items-center justify-between gap-4">
+      <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-8 pb-4 relative z-10">
+        <div className="flex flex-wrap items-center justify-between gap-3 sm:gap-4">
           
           {/* Back to Articles Button */}
           <button
@@ -139,7 +139,7 @@ export function BlogDetailPage({ onStartProject }) {
       </div>
 
       {/* ================= 2. ARTICLE HEADER & META ================= */}
-      <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-6 relative z-10">
+      <header className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-6 pb-6 relative z-10">
         
         {/* Eyebrow Pill Tag */}
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200/70 text-[#0066ff] text-[11px] font-black uppercase tracking-wider mb-5">
@@ -148,30 +148,30 @@ export function BlogDetailPage({ onStartProject }) {
         </div>
 
         {/* Main Article Title */}
-        <h1 className="text-3xl sm:text-4xl md:text-[44px] font-black text-[#082D72] tracking-tight leading-[1.16] mb-4">
+        <h1 className="text-2xl sm:text-4xl md:text-[44px] font-black text-[#082D72] tracking-tight leading-[1.16] mb-4">
           {article.title}
         </h1>
 
         {/* Subtitle / Dek */}
-        <p className="text-slate-600 text-sm sm:text-base md:text-[17px] leading-relaxed mb-6 font-normal">
+        <p className="text-slate-600 text-xs sm:text-base md:text-[17px] leading-relaxed mb-6 font-normal">
           {article.subtitle || article.summary}
         </p>
 
         {/* Author & Action Meta Row */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-100">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3.5 sm:gap-4 pt-4 border-t border-slate-100">
           
           {/* Author Block + Action Icons */}
           <div className="flex items-center gap-3">
             <img
               src={article.author.avatar}
               alt={article.author.name}
-              className="w-11 h-11 rounded-full object-cover ring-2 ring-blue-100 shadow-xs"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full object-cover ring-2 ring-blue-100 shadow-xs"
             />
             <div>
-              <div className="text-sm font-black text-[#082D72]">
+              <div className="text-xs sm:text-sm font-black text-[#082D72]">
                 {article.author.name}
               </div>
-              <div className="text-xs text-slate-400 font-medium">
+              <div className="text-[11px] sm:text-xs text-slate-400 font-medium">
                 {article.author.role}
               </div>
             </div>
@@ -220,17 +220,17 @@ export function BlogDetailPage({ onStartProject }) {
 
       </header>
 
-      {/* ================= 3. HERO IMAGE CARD (MATCHING SCREENSHOT) ================= */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-2 relative z-10">
-        <div className="rounded-[28px] overflow-hidden shadow-[0_16px_50px_rgba(8,45,114,0.08)] border border-slate-200/80 bg-slate-100 relative group aspect-16/10 max-h-[480px]">
+      {/* ================= 3. HERO IMAGE CARD ================= */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-2 relative z-10">
+        <div className="rounded-[20px] sm:rounded-[28px] overflow-hidden shadow-[0_16px_50px_rgba(8,45,114,0.08)] border border-slate-200/80 bg-slate-100 relative group aspect-16/10 max-h-[480px]">
           <img
             src={article.image}
             alt={article.title}
             className="w-full h-full object-cover"
           />
           {/* Bottom Caption Overlay */}
-          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#082D72]/85 via-[#082D72]/40 to-transparent p-4 sm:p-5 flex items-center justify-between text-white">
-            <span className="text-[11.5px] sm:text-xs font-medium text-blue-100">
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#082D72]/85 via-[#082D72]/40 to-transparent p-3 sm:p-5 flex items-center justify-between text-white">
+            <span className="text-[11px] sm:text-xs font-medium text-blue-100 line-clamp-1">
               {article.caption ||
                 'Digital Elite Services Insights • Scalable Technology Infrastructure & Strategy'}
             </span>
@@ -238,18 +238,18 @@ export function BlogDetailPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 4. KEY STRATEGIC TAKEAWAYS BOX (MATCHING SCREENSHOT) ================= */}
+      {/* ================= 4. KEY STRATEGIC TAKEAWAYS BOX ================= */}
       {article.takeaways && article.takeaways.length > 0 && (
-        <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-4 relative z-10">
-          <div className="bg-blue-50/60 rounded-2xl sm:rounded-[22px] p-6 sm:p-8 border border-blue-200/70 shadow-xs">
+        <section className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-8 pb-4 relative z-10">
+          <div className="bg-blue-50/60 rounded-2xl sm:rounded-[22px] p-5 sm:p-8 border border-blue-200/70 shadow-xs">
             <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-[#0066ff] mb-4">
               <span className="text-amber-500">⚡</span>
               <span>KEY STRATEGIC TAKEAWAYS</span>
             </div>
 
-            <div className="space-y-3.5">
+            <div className="space-y-3 sm:space-y-3.5">
               {article.takeaways.map((takeaway, idx) => (
-                <div key={idx} className="flex items-start gap-3">
+                <div key={idx} className="flex items-start gap-2.5 sm:gap-3">
                   <CheckCircle2 className="w-4 h-4 text-[#0066ff] shrink-0 mt-0.5" />
                   <p className="text-xs sm:text-[13.5px] text-[#082D72] font-semibold leading-relaxed">
                     {takeaway}
@@ -262,7 +262,7 @@ export function BlogDetailPage({ onStartProject }) {
       )}
 
       {/* ================= 5. MAIN ARTICLE CONTENT BODY ================= */}
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10 space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base font-normal">
+      <article className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-6 relative z-10 space-y-6 sm:space-y-8 text-slate-700 leading-relaxed text-sm sm:text-base font-normal">
         
         {/* Intro Paragraph */}
         {article.intro && (
@@ -271,7 +271,7 @@ export function BlogDetailPage({ onStartProject }) {
           </p>
         )}
 
-        {/* 3 Metric Highlight Stat Cards (Matching Screenshot) */}
+        {/* 3 Metric Highlight Stat Cards */}
         {article.metrics && article.metrics.length > 0 && (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5 my-8">
             {article.metrics.map((metric, idx) => (
@@ -293,23 +293,23 @@ export function BlogDetailPage({ onStartProject }) {
         {/* Structured Sections */}
         {article.sections &&
           article.sections.map((section, idx) => (
-            <div key={idx} className="space-y-3">
-              <h2 className="text-xl sm:text-2xl font-black text-[#082D72] tracking-tight">
+            <div key={idx} className="space-y-2.5 sm:space-y-3">
+              <h2 className="text-lg sm:text-2xl font-black text-[#082D72] tracking-tight">
                 {section.heading}
               </h2>
-              <p className="text-slate-600 leading-relaxed font-normal">
+              <p className="text-slate-600 text-xs sm:text-base leading-relaxed font-normal">
                 {section.body}
               </p>
             </div>
           ))}
 
-        {/* Pull Quote Box (Matching Screenshot) */}
+        {/* Pull Quote Box */}
         {article.quote && (
-          <div className="my-10 rounded-[28px] sm:rounded-[32px] bg-[#082D72] text-white p-8 sm:p-10 lg:p-12 relative overflow-hidden shadow-xl">
+          <div className="my-8 sm:my-10 rounded-[22px] sm:rounded-[32px] bg-[#082D72] text-white p-6 sm:p-10 lg:p-12 relative overflow-hidden shadow-xl">
             {/* Outlined Double Quote Icon on top right */}
             <div className="absolute top-6 sm:top-8 right-6 sm:right-10 pointer-events-none select-none text-white/15">
               <svg
-                className="w-16 h-16 sm:w-20 sm:h-20"
+                className="w-12 h-12 sm:w-20 sm:h-20"
                 viewBox="0 0 24 24"
                 fill="currentColor"
                 fillOpacity="0.08"
@@ -324,16 +324,16 @@ export function BlogDetailPage({ onStartProject }) {
             </div>
 
             {/* Quote Body */}
-            <p className="text-lg sm:text-xl lg:text-[22px] font-bold italic leading-relaxed text-white relative z-10 pr-12 sm:pr-20">
+            <p className="text-base sm:text-xl lg:text-[22px] font-bold italic leading-relaxed text-white relative z-10 pr-6 sm:pr-20">
               "{article.quote.text}"
             </p>
 
             {/* Divider Line */}
-            <div className="border-t border-white/10 my-6 sm:my-7 relative z-10" />
+            <div className="border-t border-white/10 my-5 sm:my-7 relative z-10" />
 
             {/* Author Profile Footer */}
             <div className="flex items-center gap-3.5 relative z-10">
-              <div className="w-11 h-11 rounded-full bg-[#0066ff] text-white font-black flex items-center justify-center text-sm shrink-0 shadow-sm">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-[#0066ff] text-white font-black flex items-center justify-center text-sm shrink-0 shadow-sm">
                 {article.quote.initial || 'E'}
               </div>
               <div>
@@ -348,9 +348,9 @@ export function BlogDetailPage({ onStartProject }) {
           </div>
         )}
 
-        {/* Conclusion / Next Steps Callout Box (Matching Screenshot) */}
+        {/* Conclusion / Next Steps Callout Box */}
         {article.conclusion && (
-          <div className="my-8 rounded-2xl bg-blue-50/50 border-l-4 border-[#0066ff] p-6 sm:p-7 space-y-2">
+          <div className="my-8 rounded-2xl bg-blue-50/50 border-l-4 border-[#0066ff] p-5 sm:p-7 space-y-2">
             <h3 className="text-base sm:text-lg font-black text-[#082D72]">
               {article.conclusion.heading}
             </h3>
@@ -377,12 +377,12 @@ export function BlogDetailPage({ onStartProject }) {
 
       </article>
 
-      {/* ================= 6. RECOMMENDED ARTICLES SECTION (MATCHING SCREENSHOT) ================= */}
-      <section className="bg-slate-50/70 border-t border-slate-100 py-16 sm:py-20 relative z-10 mt-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ================= 6. RECOMMENDED ARTICLES SECTION ================= */}
+      <section className="bg-slate-50/70 border-t border-slate-100 py-14 sm:py-20 relative z-10 mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Section Header */}
-          <div className="flex items-end justify-between mb-10">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 sm:mb-10 gap-3">
             <div>
               <span className="text-xs font-black uppercase tracking-wider text-[#0066ff] block mb-1">
                 CONTINUE READING
@@ -452,9 +452,9 @@ export function BlogDetailPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 7. BOTTOM STRATEGY CTA SECTION (MATCHING SCREENSHOT) ================= */}
-      <section className="py-16 sm:py-20 lg:py-24 relative z-10 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ================= 7. BOTTOM STRATEGY CTA SECTION ================= */}
+      <section className="py-14 sm:py-20 lg:py-24 relative z-10 text-center">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Eyebrow Pill Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md mb-4">
@@ -465,21 +465,21 @@ export function BlogDetailPage({ onStartProject }) {
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#082D72] tracking-tight leading-[1.15] mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#082D72] tracking-tight leading-[1.15] mb-4">
             Ready to Execute These Strategies on Your Project?
           </h2>
 
           {/* Subtitle */}
-          <p className="text-slate-600 text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-slate-600 text-xs sm:text-base font-normal max-w-2xl mx-auto leading-relaxed mb-8">
             Schedule a free technical strategy call with our digital engineering and performance growth experts.
           </p>
 
           {/* Button */}
-          <div>
+          <div className="flex justify-center">
             <button
               type="button"
               onClick={()=>navigate("/contact")}
-              className="inline-flex items-center gap-2 bg-[#082D72] hover:bg-blue-900 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#082D72] hover:bg-blue-900 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:scale-[1.02]"
             >
               <span>Schedule Strategy Call</span>
               <ArrowRight className="w-4 h-4" />

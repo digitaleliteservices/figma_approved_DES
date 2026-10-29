@@ -40,13 +40,13 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
         style={{ backgroundColor: '#ddf0fe' }}
       /> */}
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 xl:gap-16 items-center">
           
           {/* ================= LEFT CONTENT COLUMN WITH ANCHORED BACKGROUND CIRCLE ================= */}
           <motion.div
-            initial={{ opacity: 0, x: -70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center relative z-10"
@@ -74,13 +74,13 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
             <div className="flex flex-col gap-2.5 max-w-[580px] mb-8 sm:mb-9">
               {/* Row 1: Data-Driven + Proven Growth */}
               <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
+                <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
                   <Check className="w-3.5 h-3.5 text-[#0066ff] stroke-[3]" />
                   <span className="font-bold text-[#062A78]">Data–Driven</span>
                   <span className="text-[#64748b]">(Smart strategies)</span>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
+                <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
                   <Check className="w-3.5 h-3.5 text-[#0066ff] stroke-[3]" />
                   <span className="font-bold text-[#062A78]">Proven Growth</span>
                   <span className="text-[#64748b]">(Real & measurable)</span>
@@ -89,7 +89,7 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
 
               {/* Row 2: 24/7 Support */}
               <div>
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
+                <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
                   <Check className="w-3.5 h-3.5 text-[#0066ff] stroke-[3]" />
                   <span className="font-bold text-[#062A78]">24/7 Support</span>
                   <span className="text-[#64748b]">(Always by your side)</span>
@@ -98,20 +98,20 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
             </div>
 
             {/* Action Bar: Yellow Pill Button + Avatars Capsule */}
-            <div className="flex flex-wrap items-center gap-5 sm:gap-6">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 w-full sm:w-auto">
               {/* Golden Yellow Button */}
               <button
                 type="button"
                 id="hero-explore-services-btn"
                 onClick={handleScrollToOfferings}
-                className="group inline-flex items-center gap-2.5 bg-[#fec006] hover:bg-[#faa307] active:scale-95 text-[#062A78] font-bold px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0_12px_28px_rgba(254,192,6,0.42)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
+                className="w-full sm:w-auto group inline-flex items-center justify-center gap-2.5 bg-[#fec006] hover:bg-[#faa307] active:scale-95 text-[#062A78] font-bold px-8 sm:px-9 py-3.5 sm:py-4 rounded-full shadow-[0_12px_28px_rgba(254,192,6,0.42)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px] text-center"
               >
                 <span>Explore All Services</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 stroke-[2.8]" />
               </button>
 
               {/* Overlapping Avatars Capsule */}
-              <div className="inline-flex items-center gap-3 px-3.5 py-2 rounded-full border border-slate-200/80 bg-white shadow-2xs">
+              <div className="inline-flex items-center justify-center gap-3 px-3.5 py-2 rounded-full border border-slate-200/80 bg-white shadow-2xs">
                 <div className="flex -space-x-2 overflow-hidden">
                   <img
                     src={avatarRahul}
@@ -137,13 +137,13 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
 
           {/* ================= RIGHT CARD: "Why Choose DES?" ================= */}
           <motion.div
-            initial={{ opacity: 0, x: 70 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-5 xl:col-span-5 flex items-center justify-center"
           >
-            <div className="w-full max-w-[450px] bg-white rounded-[32px] p-7 sm:p-8 lg:p-9 border border-slate-100 shadow-[0_24px_60px_rgba(6,42,120,0.06)] hover:shadow-[0_28px_70px_rgba(0,102,255,0.08)] transition-all duration-300">
+            <div className="w-full max-w-[450px] bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-9 border border-slate-100 shadow-[0_24px_60px_rgba(6,42,120,0.06)] hover:shadow-[0_28px_70px_rgba(0,102,255,0.08)] transition-all duration-300">
               
               {/* Card Header: "Why Choose DES?" + "OUR PROMISE" */}
               <div className="flex items-center justify-between pb-6 mb-6 border-b border-slate-100/90">

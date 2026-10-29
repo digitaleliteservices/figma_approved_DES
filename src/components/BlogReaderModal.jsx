@@ -19,18 +19,18 @@ export function BlogReaderModal({ article, onClose, onStartProject }) {
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 md:p-8">
+      <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-md flex items-center justify-center p-2.5 xs:p-4 sm:p-6 md:p-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.96, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 20 }}
           transition={{ duration: 0.22, ease: 'easeOut' }}
-          className="relative w-full max-w-4xl bg-white rounded-[28px] sm:rounded-[36px] shadow-2xl border border-slate-100 overflow-hidden my-auto max-h-[92vh] flex flex-col"
+          className="relative w-full max-w-4xl bg-white rounded-2xl sm:rounded-[36px] shadow-2xl border border-slate-100 overflow-hidden my-auto max-h-[92vh] flex flex-col"
         >
           {/* Top Sticky Bar */}
-          <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+          <div className="sticky top-0 z-20 bg-white/95 backdrop-blur-md px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100 flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black uppercase tracking-wider text-[#0066ff] bg-blue-50 px-3 py-1 rounded-full">
+              <span className="text-[10px] xs:text-[11px] font-black uppercase tracking-wider text-[#0066ff] bg-blue-50 px-2.5 xs:px-3 py-1 rounded-full">
                 {article.category}
               </span>
               <span className="text-xs text-slate-400 font-medium hidden sm:inline">
@@ -38,11 +38,11 @@ export function BlogReaderModal({ article, onClose, onStartProject }) {
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-1 sm:gap-2">
               <button
                 type="button"
                 onClick={handleShare}
-                className="p-2 rounded-full text-slate-500 hover:text-[#0066ff] hover:bg-blue-50 transition cursor-pointer"
+                className="p-1.5 sm:p-2 rounded-full text-slate-500 hover:text-[#0066ff] hover:bg-blue-50 transition cursor-pointer"
                 title="Share article"
               >
                 <Share2 className="w-4 h-4" />
@@ -50,7 +50,7 @@ export function BlogReaderModal({ article, onClose, onStartProject }) {
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition cursor-pointer"
+                className="p-1.5 sm:p-2 rounded-full text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition cursor-pointer"
                 aria-label="Close article modal"
               >
                 <X className="w-5 h-5" />
@@ -59,7 +59,7 @@ export function BlogReaderModal({ article, onClose, onStartProject }) {
           </div>
 
           {/* Scrollable Content Body */}
-          <div className="overflow-y-auto p-6 sm:p-8 md:p-10 space-y-7">
+          <div className="overflow-y-auto p-4 xs:p-6 sm:p-8 md:p-10 space-y-6 sm:space-y-7">
             {/* Meta Row */}
             <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-slate-500">
               <div className="flex items-center gap-1.5">
@@ -156,7 +156,7 @@ export function BlogReaderModal({ article, onClose, onStartProject }) {
                   onClose();
                   if (onStartProject) onStartProject(article.title);
                 }}
-                className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-xs px-5 py-3 rounded-full transition-all shrink-0 cursor-pointer shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-xs px-5 py-3 rounded-full transition-all shrink-0 cursor-pointer shadow-md"
               >
                 <span>Schedule Strategy Call</span>
                 <ArrowRight className="w-3.5 h-3.5" />

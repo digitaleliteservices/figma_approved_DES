@@ -138,20 +138,20 @@ export const StatsBannerBar = ({ stats = defaultStatsData, className = '' }) => 
 
       {/* 4 Statistics Metrics */}
       <div className="max-w-[1520px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6 lg:gap-10 items-center">
           {stats.map((item, index) => {
             const Icon = item.icon;
             const parsed = parseStatNumber(item.number);
             return (
               <div
                 key={index}
-                className="flex items-center gap-4 sm:gap-5 group transition-transform duration-200 hover:-translate-y-0.5 cursor-default"
+                className="flex items-center gap-2.5 sm:gap-4 group transition-transform duration-200 hover:-translate-y-0.5 cursor-default min-w-0"
               >
                 <div className="shrink-0 text-[#ffba00] group-hover:scale-105 transition-transform duration-200">
-                  <Icon className="w-9 h-9 sm:w-11 sm:h-11" strokeWidth={2.2} />
+                  <Icon className="w-7 h-7 sm:w-10 sm:h-10 lg:w-11 lg:h-11" strokeWidth={2.2} />
                 </div>
-                <div>
-                  <div className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
+                <div className="min-w-0">
+                  <div className="text-2xl sm:text-3xl lg:text-[32px] font-bold text-white tracking-tight leading-none">
                     <AnimatedStatNumber
                       target={parsed.target}
                       prefix={parsed.prefix}
@@ -160,7 +160,7 @@ export const StatsBannerBar = ({ stats = defaultStatsData, className = '' }) => 
                       isVisible={isVisible}
                     />
                   </div>
-                  <div className="text-xs sm:text-[13.5px] text-slate-300 font-medium leading-snug mt-1">
+                  <div className="text-[11px] sm:text-xs lg:text-[13.5px] text-slate-300 font-medium leading-snug mt-1">
                     {item.label}
                   </div>
                 </div>

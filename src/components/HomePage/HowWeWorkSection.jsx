@@ -148,9 +148,106 @@ export const HowWeWorkSection = ({
             </div>
           </motion.div>
 
-          {/* ================= RIGHT COLUMN: EXACT ORBITAL DIAGRAM ================= */}
-          <div className="lg:col-span-7 flex items-center justify-center relative overflow-visible pt-4 lg:pt-0">
-            <div className="relative w-full max-w-[640px] h-[520px] sm:h-[560px] flex items-center justify-center">
+          {/* ================= MOBILE & TABLET RESPONSIVE PROCESS VIEW (< lg) ================= */}
+          <div className="lg:hidden w-full mt-4 sm:mt-6 space-y-6">
+            {/* Center 3D Sphere Badge */}
+            <div className="flex justify-center relative py-3">
+              <div className="relative z-10 w-32 h-32 sm:w-36 sm:h-36 rounded-full text-white flex flex-col items-center justify-center p-3 text-center shadow-[0_16px_36px_rgba(0,102,255,0.4)]"
+                style={{
+                  background: 'radial-gradient(circle at 35% 28%, #2f8dff 0%, #0066ff 48%, #004ecc 82%, #003ca6 100%)',
+                }}
+              >
+                <span className="text-white text-xs sm:text-sm font-semibold tracking-tight">
+                  From Ideas
+                </span>
+                <div className="flex items-center gap-1 mt-0.5">
+                  <span className="text-white/95 text-[11px] sm:text-xs font-medium">to</span>
+                  <span className="text-[#ffd000] text-sm sm:text-base font-extrabold tracking-tight">
+                    Impact
+                  </span>
+                </div>
+                <svg width="36" height="8" viewBox="0 0 46 10" fill="none" className="mt-1">
+                  <path
+                    d="M 4 3 Q 23 10 42 3"
+                    stroke="#ffd000"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            {/* 4 Process Cards */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-3.5">
+              {/* 01: Discover */}
+              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-start gap-3.5 hover:border-blue-300 transition-colors">
+                <div className="w-11 h-11 rounded-full bg-blue-50 border border-blue-100/90 flex items-center justify-center shrink-0 shadow-2xs">
+                  <Search className="w-5 h-5 text-[#0066ff]" strokeWidth={2.4} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0a1e38]">Discover</h3>
+                    <span className="text-xs font-bold text-[#0066ff] bg-blue-50 border border-blue-100/80 px-2 py-0.5 rounded-full">01</span>
+                  </div>
+                  <p className="text-xs sm:text-[12.5px] text-slate-500 leading-relaxed font-medium">
+                    Understand your business, audience and goals.
+                  </p>
+                </div>
+              </div>
+
+              {/* 02: Strategize */}
+              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-start gap-3.5 hover:border-amber-300 transition-colors">
+                <div className="w-11 h-11 rounded-full bg-amber-50 border border-amber-100/90 flex items-center justify-center shrink-0 shadow-2xs">
+                  <Lightbulb className="w-5 h-5 text-[#ffb703]" strokeWidth={2.4} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0a1e38]">Strategize</h3>
+                    <span className="text-xs font-bold text-[#ffb703] bg-amber-50 border border-amber-100/80 px-2 py-0.5 rounded-full">02</span>
+                  </div>
+                  <p className="text-xs sm:text-[12.5px] text-slate-500 leading-relaxed font-medium">
+                    Build a tailored strategy for your brand.
+                  </p>
+                </div>
+              </div>
+
+              {/* 03: Build */}
+              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-start gap-3.5 hover:border-indigo-300 transition-colors">
+                <div className="w-11 h-11 rounded-full bg-indigo-50 border border-indigo-100/90 flex items-center justify-center shrink-0 shadow-2xs">
+                  <Settings className="w-5 h-5 text-indigo-600" strokeWidth={2.4} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0a1e38]">Build</h3>
+                    <span className="text-xs font-bold text-indigo-600 bg-indigo-50 border border-indigo-100/80 px-2 py-0.5 rounded-full">03</span>
+                  </div>
+                  <p className="text-xs sm:text-[12.5px] text-slate-500 leading-relaxed font-medium">
+                    Design, develop and launch your solution.
+                  </p>
+                </div>
+              </div>
+
+              {/* 04: Grow */}
+              <div className="bg-white rounded-2xl p-4 border border-slate-200/90 shadow-xs flex items-start gap-3.5 hover:border-emerald-300 transition-colors">
+                <div className="w-11 h-11 rounded-full bg-emerald-50 border border-emerald-100/90 flex items-center justify-center shrink-0 shadow-2xs">
+                  <BarChart2 className="w-5 h-5 text-emerald-600" strokeWidth={2.4} />
+                </div>
+                <div className="flex-1">
+                  <div className="flex items-center justify-between mb-1">
+                    <h3 className="text-sm sm:text-base font-bold text-[#0a1e38]">Grow</h3>
+                    <span className="text-xs font-bold text-emerald-600 bg-emerald-50 border border-emerald-100/80 px-2 py-0.5 rounded-full">04</span>
+                  </div>
+                  <p className="text-xs sm:text-[12.5px] text-slate-500 leading-relaxed font-medium">
+                    Optimize, market and scale for better results.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ================= DESKTOP ORBITAL DIAGRAM (>= lg only) ================= */}
+          <div className="hidden lg:flex lg:col-span-7 items-center justify-center relative overflow-hidden w-full h-[560px]">
+            <div className="relative w-[640px] h-[560px] shrink-0 flex items-center justify-center">
 
               {/* SVG Dashed Orbit Rings, Radial Spokes, and Accent Dots */}
               <svg

@@ -130,7 +130,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
         /> */}
 
         {/* Main Content Container with Exact Proportions */}
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-16 items-center">
             
             {/* Left Content Column */}
@@ -264,8 +264,8 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
       {/* ========================================================================= */}
       {/* 2. PURPOSE & DIRECTION (OUR MISSION & OUR VISION CARDS)                   */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-16 sm:py-20 lg:py-28 bg-white overflow-hidden select-none">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+      <section className="relative w-full py-12 sm:py-16 lg:py-24 bg-white overflow-hidden select-none">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
           
           {/* Section Header (Centered) */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
@@ -380,8 +380,8 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
       {/* ========================================================================= */}
       {/* 3. WHAT DRIVES US (OUR CORE PRINCIPLES)                                   */}
       {/* ========================================================================= */}
-      <section className="relative w-full py-1 sm:py-2 lg:py-4 bg-white overflow-hidden select-none">
-        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+      <section className="relative w-full py-8 sm:py-12 lg:py-16 bg-white overflow-hidden select-none">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
           
           {/* Section Header (Centered) */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
@@ -474,7 +474,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
                     viewport={{ once: false, amount: 0.2 }}
                     transition={{ duration: 0.75, delay: idx * 0.08, ease: [0.16, 1, 0.3, 1] }}
                     onClick={() => onMoreAboutUs?.(item.title)}
-                    className="bg-white rounded-[28px] sm:rounded-[30px] p-7 sm:p-8 lg:p-8 border border-slate-100/90 shadow-[0_12px_36px_rgba(6,42,120,0.05)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.1)] transition-shadow duration-300 min-h-[380px] sm:min-h-[400px] flex flex-col justify-start group cursor-pointer"
+                    className="bg-white rounded-[24px] sm:rounded-[30px] p-5 sm:p-7 lg:p-8 border border-slate-100/90 shadow-[0_12px_36px_rgba(6,42,120,0.05)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.1)] transition-shadow duration-300 min-h-0 sm:min-h-[380px] flex flex-col justify-start group cursor-pointer"
                   >
                     {/* Top Row: Squircle Icon on Left, 01/02/03/04 Number on Right */}
                     <div className="flex items-center justify-between mb-7 sm:mb-8">
@@ -520,7 +520,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-        className=" mb-10 max-w-6xl  mx-auto rounded-2xl text-white py-10 sm:py-14 lg:py-18 px-6 sm:px-10 lg:px-16 text-center overflow-hidden select-none "
+        className="mb-10 max-w-6xl mx-4 sm:mx-auto rounded-2xl sm:rounded-3xl text-white py-10 sm:py-14 lg:py-16 px-4 sm:px-10 lg:px-16 text-center overflow-hidden select-none"
         style={{
           background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
         }}

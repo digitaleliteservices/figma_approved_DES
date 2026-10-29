@@ -221,7 +221,7 @@ export const Hero = ({
           className="w-full lg:max-w-[540px] xl:max-w-[620px] pt-6 sm:pt-10 lg:pt-12 pb-12 lg:pb-16"
         >
           
-          <div className="inline-flex items-center gap-2 sm:gap-2.5 text-[11px] sm:text-xs md:text-[13px] font-bold text-[#062A78] tracking-[0.18em] uppercase mb-4 sm:mb-6">
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[10.5px] sm:text-xs md:text-[13px] font-bold text-[#062A78] tracking-[0.1em] sm:tracking-[0.18em] uppercase mb-4 sm:mb-6">
             <span>IDEAS</span>
             <span className="text-[#0088ff] font-extrabold text-sm leading-none">×</span>
             <span>STRATEGY</span>
@@ -231,22 +231,22 @@ export const Hero = ({
             <span>GROWTH</span>
           </div>
 
-          <h1 className="text-2xl sm:text-3xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-5 sm:mb-6" style={{ lineHeight: '1.1' }}>
+          <h1 className="text-3xl sm:text-4xl md:text-[38px] xl:text-[46px] font-bold text-[#062A78] tracking-[-0.035em] mb-4 sm:mb-6" style={{ lineHeight: '1.1' }}>
             Digital <br />
             Solutions for <br />
             <span className="text-[#0066ff]">Real Growth.</span>
           </h1>
 
-          <p className="text-slate-600 text-base sm:text-[17px] font-medium leading-relaxed max-w-[480px] mb-8 sm:mb-9">
+          <p className="text-slate-600 text-sm sm:text-base xl:text-[17px] font-medium leading-relaxed max-w-[480px] mb-7 sm:mb-9">
             We design, build and grow digital experiences that help businesses
             get noticed, trusted and chosen.
           </p>
 
-          <div className="flex flex-wrap items-center gap-4 sm:gap-5 mb-9 sm:mb-11">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-5 mb-8 sm:mb-11 w-full sm:w-auto">
             <button
               id="hero-cta-start-project"
               onClick={()=>navigate("/contact")}
-              className="group inline-flex items-center gap-2.5 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0c2340] font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-[0_4px_18px_rgba(255,183,3,0.38)] hover:shadow-[0_6px_24px_rgba(255,183,3,0.52)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0c2340] font-bold px-7 sm:px-8 py-3.5 rounded-full shadow-[0_4px_18px_rgba(255,183,3,0.38)] hover:shadow-[0_6px_24px_rgba(255,183,3,0.52)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
             >
               <span>Start A Project</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 text-[#0c2340]" />
@@ -255,21 +255,21 @@ export const Hero = ({
             <button
               id="hero-cta-explore-services"
               onClick={()=>navigate("/services")}
-              className="group inline-flex items-center gap-2.5 border-[1.5px] border-[#062A78] bg-transparent hover:bg-[#062A78] hover:text-white active:scale-98 text-[#062A78] font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer text-xs sm:text-[13px]"
+              className="group inline-flex items-center justify-center gap-2.5 border-[1.5px] border-[#062A78] bg-transparent hover:bg-[#062A78] hover:text-white active:scale-98 text-[#062A78] font-bold tracking-wider uppercase px-6 sm:px-7 py-3.5 rounded-full transition-all duration-200 cursor-pointer text-xs sm:text-[13px]"
             >
               <span>EXPLORE SERVICES</span>
               <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1 " />
             </button>
           </div>
 
-          <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-7 sm:mb-9" />
+          <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-6 sm:mb-9" />
 
           <div className="relative max-w-[500px]">
             {/* <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" /> */}
 
             <div
               ref={statsContainerRef}
-              className="relative z-10 grid grid-cols-4 gap-3 sm:gap-6 items-start"
+              className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 items-start"
             >
               <div className="group transition-transform duration-200 hover:-translate-y-0.5 cursor-default">
                 <div className="text-2xl sm:text-3xl lg:text-[34px] xl:text-[36px] font-bold text-[#062A78] tracking-tight">
@@ -281,9 +281,7 @@ export const Hero = ({
                   />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
-                  Businesses
-                  <br />
-                  Supported
+                  Businesses Supported
                 </div>
               </div>
 
@@ -297,9 +295,7 @@ export const Hero = ({
                   />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
-                  Happy
-                  <br />
-                  Clients
+                  Happy Clients
                 </div>
               </div>
 
@@ -313,9 +309,7 @@ export const Hero = ({
                   />
                 </div>
                 <div className="text-[11px] sm:text-xs text-slate-500 font-semibold mt-1 leading-snug">
-                  Digital
-                  <br />
-                  Services
+                  Digital Services
                 </div>
               </div>
 

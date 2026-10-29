@@ -79,22 +79,23 @@ export const ClientsSection = () => {
       <div className="relative w-full overflow-hidden marquee-pause py-2">
         
         {/* Left & Right Gradient Edge Fades */}
-       
+        <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-8 sm:w-20 z-10 bg-gradient-to-r from-white to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-8 sm:w-20 z-10 bg-gradient-to-l from-white to-transparent" />
 
         {/* Row 1: Right-to-Left (entering right, scrolling left) */}
-        <div className="flex overflow-hidden mb-4 sm:mb-6">
+        <div className="flex overflow-hidden mb-3 sm:mb-6">
           <div className="flex w-max animate-marquee-left">
             {row1List.map((client, index) => (
               <div
                 key={`row1-${client.name}-${index}`}
-                className="group/card mx-2 sm:mx-3 px-4 py-3 transition-all duration-300 flex items-center justify-center shrink-0 cursor-pointer"
+                className="group/card mx-1.5 sm:mx-3 px-3 sm:px-4 py-2 sm:py-3 transition-all duration-300 flex items-center justify-center shrink-0 cursor-pointer"
                 title={client.name}
               >
                 <img
                   src={client.src}
                   alt={`${client.name} Client Logo`}
                   loading="lazy"
-                  className="max-h-20 sm:max-h-24 max-w-[180px] w-auto object-contain transition-all duration-300 filter group-hover/card:scale-105"
+                  className="max-h-12 xs:max-h-14 sm:max-h-20 max-w-[120px] sm:max-w-[180px] w-auto object-contain transition-all duration-300 filter group-hover/card:scale-105"
                 />
               </div>
             ))}
@@ -107,14 +108,14 @@ export const ClientsSection = () => {
             {row2List.map((client, index) => (
               <div
                 key={`row2-${client.name}-${index}`}
-                className="group/card mx-2 sm:mx-3 px-4 py-3 transition-all duration-300 flex items-center justify-center shrink-0 cursor-pointer"
+                className="group/card mx-1.5 sm:mx-3 px-3 sm:px-4 py-2 sm:py-3 transition-all duration-300 flex items-center justify-center shrink-0 cursor-pointer"
                 title={client.name}
               >
                 <img
                   src={client.src}
                   alt={`${client.name} Client Logo`}
                   loading="lazy"
-                  className="max-h-20 sm:max-h-24 max-w-[180px] w-auto object-contain transition-all duration-300 filter group-hover/card:scale-105"
+                  className="max-h-12 xs:max-h-14 sm:max-h-20 max-w-[120px] sm:max-w-[180px] w-auto object-contain transition-all duration-300 filter group-hover/card:scale-105"
                 />
               </div>
             ))}

@@ -122,12 +122,12 @@ export function BlogPage({ onStartProject }) {
 
       {/* ================= 1. HERO HEADER SECTION ================= */}
       <section className="relative pt-12 pb-8 sm:pt-16 sm:pb-10 lg:pt-20 lg:pb-12 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
           
           {/* Eyebrow Pill Tag */}
-          <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md mb-5">
-            <span className="w-2 h-2 rounded-full bg-[#0066ff] animate-pulse" />
-            <span className="font-extrabold text-[11.5px] leading-none tracking-[0.6px] uppercase text-[#0066ff]">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md mb-5 max-w-full">
+            <span className="w-2 h-2 rounded-full bg-[#0066ff] animate-pulse shrink-0" />
+            <span className="font-extrabold text-[11px] sm:text-[11.5px] leading-tight tracking-[0.4px] sm:tracking-[0.6px] uppercase text-[#0066ff]">
               INSIGHTS & STRATEGIES • DIGITAL ELITE BLOG
             </span>
           </div>
@@ -177,7 +177,7 @@ export function BlogPage({ onStartProject }) {
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
-                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
+                  className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 cursor-pointer ${
                     isSelected
                       ? 'bg-[#082D72] text-white shadow-md'
                       : 'bg-white text-slate-600 border border-slate-200/80 hover:bg-slate-50 hover:text-[#082D72]'
@@ -192,20 +192,20 @@ export function BlogPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 2. FEATURED POST CARD (MATCHING SCREENSHOT) ================= */}
+      {/* ================= 2. FEATURED POST CARD ================= */}
       {featuredArticle && (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 relative z-10">
+        <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-6 relative z-10">
           <div
             onClick={() => navigate(`/blog/${featuredArticle.slug}`)}
-            className="group bg-white rounded-[32px] p-6 sm:p-8 lg:p-10 border border-slate-200/80 shadow-[0_12px_40px_rgba(8,45,114,0.06)] hover:shadow-[0_20px_50px_rgba(8,45,114,0.12)] hover:border-[#93c5fd] transition-all duration-300 cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+            className="group bg-white rounded-[24px] sm:rounded-[32px] p-5 sm:p-8 lg:p-10 border border-slate-200/80 shadow-[0_12px_40px_rgba(8,45,114,0.06)] hover:shadow-[0_20px_50px_rgba(8,45,114,0.12)] hover:border-[#93c5fd] transition-all duration-300 cursor-pointer grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center"
           >
             {/* Left Image with FEATURED POST Badge */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-7 relative rounded-[24px] overflow-hidden aspect-video sm:aspect-16/10 bg-slate-100 shadow-sm"
+              className="lg:col-span-7 relative rounded-[20px] sm:rounded-[24px] overflow-hidden aspect-video sm:aspect-16/10 bg-slate-100 shadow-sm"
             >
               <img
                 src={featuredArticle.image}
@@ -219,8 +219,8 @@ export function BlogPage({ onStartProject }) {
 
             {/* Right Meta & Content */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5 flex flex-col justify-between space-y-4"
@@ -294,7 +294,7 @@ export function BlogPage({ onStartProject }) {
       )}
 
       {/* ================= 3. ALL LATEST INSIGHTS SECTION HEADER & GRID ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-12 relative z-10">
         
         {/* Section Header */}
         <div className="mb-8 flex items-baseline justify-between">
@@ -312,7 +312,7 @@ export function BlogPage({ onStartProject }) {
 
         {/* 6 Grid Cards */}
         {filteredArticles.length === 0 ? (
-          <div className="bg-white rounded-3xl p-12 text-center border border-slate-200/80 shadow-xs max-w-md mx-auto my-12">
+          <div className="bg-white rounded-3xl p-8 sm:p-12 text-center border border-slate-200/80 shadow-xs max-w-md mx-auto my-12">
             <Search className="w-10 h-10 text-slate-300 mx-auto mb-3" />
             <h3 className="text-lg font-black text-[#082D72] mb-1">
               No matching articles found
@@ -332,14 +332,13 @@ export function BlogPage({ onStartProject }) {
             </button>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {gridArticles.map((article, index) => {
-              const isLeft = index % 2 === 0;
               return (
                 <motion.div
                   key={article.id}
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => navigate(`/blog/${article.slug}`)}
@@ -363,7 +362,7 @@ export function BlogPage({ onStartProject }) {
                       {/* Meta Row: Date & Read Time */}
                       <div className="flex items-center gap-3 text-[11px] font-semibold text-slate-400 mb-2.5">
                         <div className="flex items-center gap-1">
-                          <Calendar className="w-3 3-3 text-blue-600" />
+                          <Calendar className="w-3 h-3 text-blue-600" />
                           <span>{article.date}</span>
                         </div>
                         <span>•</span>
@@ -429,10 +428,10 @@ export function BlogPage({ onStartProject }) {
 
       </section>
 
-      {/* ================= 4. EXECUTIVE GROWTH DIGEST NEWSLETTER (MATCHING SCREENSHOT) ================= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 relative z-10">
+      {/* ================= 4. EXECUTIVE GROWTH DIGEST NEWSLETTER ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-14 relative z-10">
         <div
-          className="rounded-[32px] p-8 sm:p-12 lg:p-14 text-white shadow-[0_20px_60px_rgba(8,45,114,0.18)] relative overflow-hidden"
+          className="rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 lg:p-14 text-white shadow-[0_20px_60px_rgba(8,45,114,0.18)] relative overflow-hidden"
           style={{
             background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
           }}
@@ -445,8 +444,8 @@ export function BlogPage({ onStartProject }) {
             
             {/* Left Content */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 space-y-3.5"
@@ -469,8 +468,8 @@ export function BlogPage({ onStartProject }) {
 
             {/* Right Subscription Form */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5 space-y-2.5"
@@ -496,7 +495,7 @@ export function BlogPage({ onStartProject }) {
                     </div>
                     <button
                       type="submit"
-                      className="h-12 sm:h-[52px] inline-flex items-center justify-center gap-2 bg-[#0066ff] hover:bg-blue-600 active:scale-95 text-white font-bold text-sm px-7 rounded-full transition-all shadow-md shrink-0 cursor-pointer"
+                      className="w-full sm:w-auto h-12 sm:h-[52px] inline-flex items-center justify-center gap-2 bg-[#0066ff] hover:bg-blue-600 active:scale-95 text-white font-bold text-sm px-7 rounded-full transition-all shadow-md shrink-0 cursor-pointer"
                     >
                       <span>Subscribe</span>
                       <ArrowRight className="w-4 h-4" />
@@ -513,12 +512,12 @@ export function BlogPage({ onStartProject }) {
         </div>
       </section>
 
-      {/* ================= 5. STANDARDIZED STATS BANNER BAR (MATCHING SCREENSHOT) ================= */}
+      {/* ================= 5. STANDARDIZED STATS BANNER BAR ================= */}
       <StatsBannerBar />
 
       {/* ================= 6. BOTTOM STRATEGIC CTA SECTION ================= */}
       <section className="py-16 sm:py-20 lg:py-24 relative z-10 text-center">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Eyebrow Pill Tag */}
           <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md mb-4">
@@ -529,22 +528,22 @@ export function BlogPage({ onStartProject }) {
           </div>
 
           {/* Headline */}
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#082D72] tracking-tight leading-[1.15] mb-4">
-            Turn These Strategic Insights <br />
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-[#082D72] tracking-tight leading-[1.15] mb-4">
+            Turn These Strategic Insights <br className="hidden sm:inline" />
             Into <span className="text-[#0066ff]">Measurable Business Revenue</span>
           </h2>
 
           {/* Subtitle */}
-          <p className="text-slate-600 text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed mb-8">
+          <p className="text-slate-600 text-xs sm:text-base font-normal max-w-2xl mx-auto leading-relaxed mb-8">
             Partner with Digital Elite Services to implement custom web applications, performance marketing campaigns, and high-converting sales funnels.
           </p>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
             <button
               type="button"
               onClick={handleDiscoveryCall}
-              className="inline-flex items-center gap-2 bg-[#082D72] hover:bg-blue-900 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:scale-[1.02]"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#082D72] hover:bg-blue-900 text-white font-extrabold text-sm px-8 py-3.5 rounded-full shadow-lg hover:shadow-xl transition-all cursor-pointer transform hover:scale-[1.02]"
             >
               <span>Schedule Free Discovery Call</span>
               <ArrowRight className="w-4 h-4" />
@@ -552,8 +551,8 @@ export function BlogPage({ onStartProject }) {
 
             <button
               type="button"
-              onClick={() => navigate('/portfolio')}
-              className="inline-flex items-center gap-2 bg-white hover:bg-slate-50 text-[#082D72] border border-slate-300 font-extrabold text-sm px-7 py-3.5 rounded-full shadow-xs hover:shadow transition-all cursor-pointer"
+              onClick={() => navigate('/work')}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-slate-50 text-[#082D72] border border-slate-300 font-extrabold text-sm px-7 py-3.5 rounded-full shadow-xs hover:shadow transition-all cursor-pointer"
             >
               <span>View Case Studies</span>
             </button>

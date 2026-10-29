@@ -64,35 +64,34 @@ export const StrategicProcessSection = () => {
         style={{ backgroundColor: '#ddf0fe' }}
       /> */}
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
-          <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.14em] uppercase mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 lg:mb-16">
+          <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.14em] uppercase mb-2.5 sm:mb-3">
             STRATEGIC PROCESS
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[44px] font-bold text-[#062A78] tracking-[-0.03em] leading-tight mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-[42px] lg:text-[44px] font-bold text-[#062A78] tracking-[-0.03em] leading-tight mb-3 sm:mb-4">
             Simple Solutions!
           </h2>
-          <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#475569] sm:text-[#334155] text-xs sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
             We understand that no technical issues are alike. That's why we take the time to audit,
             define, and personalize your creative workflows.
           </p>
         </div>
 
         {/* 4 Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1240px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4.5 sm:gap-6 max-w-[1240px] mx-auto">
           {steps.map((item, index) => {
             const Icon = item.icon;
-            const isLeft = index % 2 === 0;
             return (
               <motion.div
                 key={item.step}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
-                transition={{ duration: 0.75, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white rounded-[26px] p-7 sm:p-8 border border-slate-100 shadow-[0_12px_36px_rgba(6,42,120,0.04)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.08)] transition-shadow duration-300 flex flex-col justify-start group"
+                transition={{ duration: 0.6, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                className="bg-white rounded-[24px] sm:rounded-[26px] p-5 sm:p-7 border border-slate-100 shadow-[0_12px_36px_rgba(6,42,120,0.04)] hover:shadow-[0_20px_45px_rgba(0,102,255,0.08)] transition-shadow duration-300 flex flex-col justify-start group"
               >
                 {/* Top Row: Blue Icon on Left, Orange Step Number Badge on Right */}
                 <div className="flex items-center justify-between mb-7">

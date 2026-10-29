@@ -113,7 +113,7 @@ export const Footer = ({
         </svg>
       </div>
 
-      <div className="max-w-[1540px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 pt-16 sm:pt-20 pb-12 sm:pb-16 relative z-10">
+      <div className="max-w-[1540px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-12 sm:pt-16 lg:pt-20 pb-10 sm:pb-14 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 xl:gap-12">
           
           <div className="lg:col-span-4 flex flex-col items-start pr-0 lg:pr-6">
@@ -318,9 +318,9 @@ export const Footer = ({
                   +91 63669 30178
                 </a>
               </li>
-              <li className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8]" />
-                <span>1ˢᵗ Floor, Sathya Heritage, 2574, 8ᵗʰ Cross, 13ᵗʰ Main, E Block, Sahakarnagar, Bengaluru, Karnataka 560092</span>
+              <li className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8] mt-0.5" />
+                <span className="leading-relaxed">1ˢᵗ Floor, Sathya Heritage, 2574, 8ᵗʰ Cross, 13ᵗʰ Main, E Block, Sahakarnagar, Bengaluru, Karnataka 560092</span>
               </li>
             </ul>
           </div>
@@ -330,7 +330,7 @@ export const Footer = ({
 
       {/* ================= BOTTOM BAR WITH COPYRIGHT & BACK TO TOP ================= */}
       <div className="w-full border-t border-blue-900/60 py-5 sm:py-6 relative z-10">
-        <div className="max-w-[1540px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 flex items-center justify-between">
+        <div className="max-w-[1540px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 flex flex-col sm:flex-row gap-3.5 sm:gap-0 items-center justify-between text-center sm:text-left">
           
           {/* Copyright Notice */}
           <div className="text-slate-400 text-xs sm:text-[13.5px] font-normal">

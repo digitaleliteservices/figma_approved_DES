@@ -161,22 +161,22 @@ export function WorkPage() {
       {/* 1. HERO SECTION & PROVEN TACTICS CARD                          */}
       {/* ------------------------------------------------------------- */}
       <section className="relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
 
             {/* Left Hero Content */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 space-y-6"
             >
               {/* Top Pill Tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/90 border border-[#D5E6FE] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] backdrop-blur-[6px]">
+              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-[6px] rounded-full bg-white/90 border border-[#D5E6FE] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] backdrop-blur-[6px] max-w-full">
                 <span className="w-[8px] h-[8px] rounded-full bg-[#10B981] shrink-0" />
-                <Sparkles className="w-4 h-4 text-[#0878F9]" />
-                <span className="font-extrabold text-[12px] leading-[16px] tracking-[0.65px] uppercase text-[#0878F9]">
+                <Sparkles className="w-4 h-4 text-[#0878F9] shrink-0" />
+                <span className="font-extrabold text-[11px] sm:text-[12px] leading-tight tracking-[0.4px] sm:tracking-[0.65px] uppercase text-[#0878F9]">
                   CASE STUDIES & SUCCESS STORIES
                 </span>
               </div>
@@ -187,12 +187,12 @@ export function WorkPage() {
               </h1>
 
               {/* Subtitle */}
-              <p className="text-[16px] leading-[26px] font-medium text-[#1E3B68] max-w-2xl">
+              <p className="text-sm sm:text-[16px] leading-relaxed sm:leading-[26px] font-medium text-[#1E3B68] max-w-2xl">
                 Transforming ambitious visions into high-impact digital products through design excellence, performance engineering, and scalable growth strategies for fast-growing enterprise & high-growth brands.
               </p>
 
               {/* Checklist */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 pt-1">
                 <div className="flex items-center gap-2.5 text-xs sm:text-sm font-bold text-[#082D72]">
                   <CheckCircle2 className="w-4 h-4 text-[#0878F9] shrink-0" />
                   <span>Custom Architected & Scalable Solutions</span>
@@ -208,10 +208,10 @@ export function WorkPage() {
               </div>
 
               {/* Action Row */}
-              <div className="pt-4 flex flex-wrap items-center gap-5">
+              <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 w-full sm:w-auto">
                 <button
                   onClick={() => navigate('/contact')}
-                  className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#FAA307] text-[#082D72] px-7 py-3.5 rounded-full font-extrabold text-sm shadow-[0px_4px_14px_rgba(255,183,3,0.3)] transition-all transform hover:scale-[1.02] cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFB703] hover:bg-[#FAA307] text-[#082D72] px-7 py-3.5 rounded-full font-extrabold text-sm shadow-[0px_4px_14px_rgba(255,183,3,0.3)] transition-all transform hover:scale-[1.02] cursor-pointer text-center"
                 >
                   <span>Schedule Free Consultation</span>
                   <ArrowRight className="w-4 h-4" />
@@ -221,17 +221,17 @@ export function WorkPage() {
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2 overflow-hidden">
                     <img
-                      className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                      className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover"
                       src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
                       alt="Client avatar"
                     />
                     <img
-                      className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                      className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover"
                       src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
                       alt="Client avatar"
                     />
                     <img
-                      className="inline-block h-9 w-9 rounded-full ring-2 ring-white object-cover"
+                      className="inline-block h-8 w-8 sm:h-9 sm:w-9 rounded-full ring-2 ring-white object-cover"
                       src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80"
                       alt="Client avatar"
                     />
@@ -246,8 +246,8 @@ export function WorkPage() {
 
             {/* Right Floating Tactics Card */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5"
@@ -345,9 +345,9 @@ export function WorkPage() {
         ]}
       />
 
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto relative z-10">
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-6">
           <div>
             <span className="bg-[#EEF6FF] border border-[#D5EBFF] text-[#0878F9] text-[12px] font-black px-3.5 py-[6px] rounded-full inline-block mb-2 uppercase tracking-[1.2px]">
               PORTFOLIO & WORK
@@ -355,7 +355,7 @@ export function WorkPage() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#082D72]">
               Client Case Studies
             </h2>
-            <p className="text-[#587BA5] text-sm font-medium max-w-xl mt-2">
+            <p className="text-[#587BA5] text-xs sm:text-sm font-medium max-w-xl mt-2">
               Explore our latest client work across custom Web Apps, SaaS platforms, Brand Identity, and Growth Engineering.
             </p>
           </div>
@@ -365,7 +365,7 @@ export function WorkPage() {
               <button
                 key={filter.id}
                 onClick={() => setActiveFilter(filter.id)}
-                className={`px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
+                className={`px-4 sm:px-5 py-2 rounded-full text-xs font-extrabold transition-all duration-200 cursor-pointer ${activeFilter === filter.id
                     ? 'bg-[#0878F9] text-white shadow-[0px_4px_14px_rgba(8,120,249,0.3)]'
                     : 'bg-white/90 border border-[#D5E6FE] text-[#082D72] hover:bg-[#EEF6FF]'
                   }`}
@@ -377,14 +377,13 @@ export function WorkPage() {
         </div>
 
         {/* 8 Case Study Cards Grid (3 Columns on Desktop) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredCaseStudies.map((study, index) => {
-            const isLeft = index % 2 === 0;
             return (
               <motion.div
                 key={study.id}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: false, amount: 0.2 }}
                 transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-white/90 backdrop-blur-[12px] rounded-[24px] overflow-hidden border border-[#E2EDF8] shadow-[0px_6px_24px_rgba(8,45,114,0.06)] hover:shadow-[0px_16px_40px_rgba(8,45,114,0.12)] transition-shadow duration-300 flex flex-col group"
@@ -487,7 +486,7 @@ export function WorkPage() {
       {/* ------------------------------------------------------------- */}
       {/* 4. VISUAL SHOWCASE SECTION (4x3 Grid of 12 Projects)          */}
       {/* ------------------------------------------------------------- */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative z-10 my-8">
+      <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-12 xl:px-16 max-w-7xl mx-auto relative z-10 my-6 sm:my-8">
 
         {/* Background Radial Orbs for Visual Showcase */}
         {/* <div
@@ -573,40 +572,40 @@ export function WorkPage() {
       <ClientsSection />
 
       {/* 6. PORTFOLIO PAGE LEAD SECTION */}
-      <section id="portfolio-lead" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
+      <section id="portfolio-lead" className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-14 relative z-10">
         <div
-          className="rounded-[32px] p-8 sm:p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden"
+          className="rounded-[24px] sm:rounded-[32px] p-6 sm:p-10 lg:p-14 text-white shadow-2xl relative overflow-hidden"
           style={{ background: 'linear-gradient(135deg, #031535 0%, #062D73 50%, #0878F9 100%)' }}
         >
           {/* Ambient background shapes matching theme */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full filter blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/30 rounded-full filter blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             
             {/* Left Column: Heading and info */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="lg:col-span-5 flex flex-col items-start gap-5"
+              className="lg:col-span-5 flex flex-col items-start gap-4 sm:gap-5"
             >
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xs text-[#FFC400] text-[12px] font-black uppercase tracking-[1.2px]">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-xs text-[#FFC400] text-[11px] sm:text-[12px] font-black uppercase tracking-[1.2px]">
                 <Sparkles className="w-3.5 h-3.5 text-[#FFC400]" />
                 <span>PORTFOLIO PAGE LEAD</span>
               </div>
 
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] lg:leading-[48px] font-black text-white tracking-[-1.2px]">
+              <h2 className="text-2xl sm:text-4xl lg:text-[42px] lg:leading-[48px] font-black text-white tracking-tight sm:tracking-[-1.2px]">
                 Loved Our Portfolio? Let's Build Yours.
               </h2>
 
-              <p className="text-[#E2E8F0] text-[15px] leading-[24px] font-medium">
+              <p className="text-[#E2E8F0] text-xs sm:text-[15px] leading-relaxed sm:leading-[24px] font-medium">
                 Submit your inquiry below. Our strategy and engineering experts will analyze your requirements and get back to you within 2 business hours.
               </p>
 
               {/* Trust highlights */}
-              <div className="space-y-3 pt-2 text-sm text-slate-200">
+              <div className="space-y-2.5 sm:space-y-3 pt-1 sm:pt-2 text-xs sm:text-sm text-slate-200">
                 <div className="flex items-center gap-2.5">
                   <CheckCircle2 className="w-4 h-4 text-[#FFC400] shrink-0" />
                   <span>Free Initial Strategy Audit & Quote</span>
@@ -622,7 +621,7 @@ export function WorkPage() {
               </div>
 
               {/* Direct Reach */}
-              <div className="pt-4 border-t border-white/15 w-full flex flex-wrap items-center gap-4 text-xs font-bold text-slate-300">
+              <div className="pt-4 border-t border-white/15 w-full flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-bold text-slate-300">
                 <a
                   href="tel:+916366930178"
                   className="hover:text-white transition flex items-center gap-1.5"
@@ -633,7 +632,7 @@ export function WorkPage() {
                 <span>•</span>
                 <a
                   href="mailto:info@digitaleliteservices.in"
-                  className="hover:text-white transition flex items-center gap-1.5"
+                  className="hover:text-white transition flex items-center gap-1.5 break-all xs:break-normal"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#FFC400]" />
                   <span>info@digitaleliteservices.in</span>
@@ -643,13 +642,13 @@ export function WorkPage() {
 
             {/* Right Column: Lead Form */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7"
             >
-              <div className="bg-white/95 backdrop-blur-[20px] rounded-[28px] p-7 sm:p-9 border border-[#E2EDF8] shadow-[0px_20px_50px_rgba(0,0,0,0.2)] text-[#0c2340]">
+              <div className="bg-white/95 backdrop-blur-[20px] rounded-[20px] sm:rounded-[28px] p-5 sm:p-7 md:p-9 border border-[#E2EDF8] shadow-[0px_20px_50px_rgba(0,0,0,0.2)] text-[#0c2340]">
                 
                 {formSubmitted ? (
                   <div className="text-center py-10">
@@ -791,29 +790,29 @@ export function WorkPage() {
           onClick={() => setSelectedArtwork(null)}
         >
           <div
-            className="relative bg-white rounded-3xl overflow-hidden max-w-4xl w-full max-h-[92vh] flex flex-col md:flex-row shadow-2xl border border-white/20 animate-in fade-in zoom-in-95 duration-200"
+            className="relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden max-w-4xl w-full max-h-[92vh] flex flex-col md:flex-row shadow-2xl border border-white/20 animate-in fade-in zoom-in-95 duration-200"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
             <button
               onClick={() => setSelectedArtwork(null)}
-              className="absolute top-3.5 right-3.5 z-20 w-9 h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition cursor-pointer"
+              className="absolute top-3 right-3 sm:top-3.5 sm:right-3.5 z-20 w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-black/60 hover:bg-black text-white flex items-center justify-center transition cursor-pointer"
               aria-label="Close modal"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
             {/* Left: High-Res Image Container */}
-            <div className="md:w-3/5 bg-slate-950 flex items-center justify-center p-3 sm:p-5 max-h-[50vh] md:max-h-[85vh] overflow-hidden">
+            <div className="md:w-3/5 bg-slate-950 flex items-center justify-center p-3 sm:p-5 max-h-[36vh] sm:max-h-[46vh] md:max-h-[85vh] shrink-0 overflow-hidden">
               <img
                 src={selectedArtwork.image}
                 alt={selectedArtwork.title}
-                className="max-h-[46vh] md:max-h-[80vh] w-auto max-w-full object-contain rounded-xl shadow-lg"
+                className="max-h-[34vh] sm:max-h-[42vh] md:max-h-[80vh] w-auto max-w-full object-contain rounded-xl shadow-lg"
               />
             </div>
 
             {/* Right: Info and Inquire Action */}
-            <div className="md:w-2/5 p-6 sm:p-8 flex flex-col justify-between bg-white overflow-y-auto">
+            <div className="md:w-2/5 p-5 sm:p-7 md:p-8 flex flex-col justify-between bg-white overflow-y-auto max-h-[56vh] md:max-h-[85vh]">
               <div>
                 <span className="text-[10px] font-extrabold text-[#0878F9] tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full border border-blue-100 inline-block mb-3">
                   {selectedArtwork.tagBadge || selectedArtwork.badge || 'CLIENT WORK'}

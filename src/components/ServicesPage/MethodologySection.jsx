@@ -168,18 +168,18 @@ export const MethodologySection = () => {
         style={{ backgroundColor: '#ddf0fe' }}
       /> */}
 
-      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20 sm:mb-24 lg:mb-28">
+        <div className="text-center max-w-4xl mx-auto mb-16 sm:mb-20 lg:mb-28">
           <div className="inline-block text-xs sm:text-[13px] font-bold text-[#0066ff] tracking-[0.16em] uppercase mb-3">
             METHODOLOGY
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-[24px] lg:text-[38px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.12] mb-4 uppercase">
+          <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-bold text-[#062A78] tracking-[-0.035em] leading-[1.12] mb-4 uppercase">
             ALWAYS GIVING YOU EXACTLY WHAT <br className="hidden sm:inline" />
             YOU NEED
           </h2>
-          <p className="text-[#475569] sm:text-[#334155] text-sm sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#475569] sm:text-[#334155] text-xs sm:text-base font-normal max-w-2xl mx-auto leading-relaxed">
             No more scattered details or convoluted tasks. We line everything up so nothing gets missed.
           </p>
         </div>
@@ -188,14 +188,13 @@ export const MethodologySection = () => {
         <div className="relative max-w-[1080px] mx-auto py-8">
           
           {/* Continuous Multi-Stop Gradient Vertical Timeline Bar */}
-          {/* Mobile: centered at 32px (exact center of the 64px badge column) */}
-          {/* Desktop: centered at 50% (exact center of the 64px center grid column) */}
+          {/* Mobile: centered at 24px (small screens) / 32px (sm) / 50% (desktop) */}
           <div
             className="
               absolute
-              left-[32px] md:left-1/2
+              left-[24px] sm:left-[32px] md:left-1/2
               top-[-20px] bottom-[-28px]
-              w-[6px]
+              w-[5px] sm:w-[6px]
               -translate-x-1/2
               rounded-full
               pointer-events-none
@@ -208,16 +207,16 @@ export const MethodologySection = () => {
           />
 
           {/* Timeline Step Items */}
-          <div className="space-y-16 sm:space-y-20 lg:space-y-24 relative z-10">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-24 relative z-10">
             {steps.map((item) => {
               const isRight = item.side === 'right';
 
               return (
                 <div
                   key={item.number}
-                  className="grid grid-cols-[64px_1fr] md:grid-cols-[1fr_64px_1fr] items-center group min-h-[54px]"
+                  className="grid grid-cols-[48px_1fr] sm:grid-cols-[64px_1fr] md:grid-cols-[1fr_64px_1fr] items-center group min-h-[50px] sm:min-h-[54px]"
                 >
-                  {/* Desktop Left Side Column: Text sits to the left of the node and is left-aligned */}
+                  {/* Desktop Left Side Column */}
                   <div className="hidden md:flex justify-end pr-10 lg:pr-14">
                     {!isRight ? (
                       <motion.div
@@ -237,7 +236,7 @@ export const MethodologySection = () => {
                     ) : null}
                   </div>
 
-                  {/* Center Column: Exactly 64px wide, mathematically locked to the center line */}
+                  {/* Center Column: Locked to the timeline line */}
                   <div className="flex items-center justify-center relative z-20">
                     <motion.div
                       initial={{ scale: 0.8, opacity: 0 }}
@@ -245,13 +244,13 @@ export const MethodologySection = () => {
                       viewport={{ once: false, amount: 0.2 }}
                       transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                       className="
-                        w-[44px] h-[52px]
-                        rounded-[14px]
+                        w-[38px] h-[46px] sm:w-[44px] sm:h-[52px]
+                        rounded-[12px] sm:rounded-[14px]
                         bg-white
                         border-[1.5px] border-[#3b82f6]
                         shadow-[0_4px_14px_rgba(0,102,255,0.14)]
                         flex items-center justify-center
-                        text-[17px] font-black text-[#0066ff]
+                        text-sm sm:text-[17px] font-black text-[#0066ff]
                         transition-transform duration-200 group-hover:scale-105
                       "
                     >
@@ -260,7 +259,7 @@ export const MethodologySection = () => {
                   </div>
 
                   {/* Desktop Right Side Column / Mobile Text Column */}
-                  <div className="pl-6 md:pl-10 lg:pl-14 flex justify-start">
+                  <div className="pl-4 sm:pl-6 md:pl-10 lg:pl-14 flex justify-start">
                     {/* On Desktop: Only render if step belongs on the right */}
                     {isRight && (
                       <motion.div
@@ -281,16 +280,16 @@ export const MethodologySection = () => {
 
                     {/* On Mobile: Render all steps here */}
                     <motion.div
-                      initial={{ opacity: 0, x: 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
+                      initial={{ opacity: 0, y: 15 }}
+                      whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: false, amount: 0.2 }}
                       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                       className="block md:hidden max-w-[340px] text-left"
                     >
-                      <h3 className="text-[17px] lg:text-[18px] font-extrabold text-[#062A78] tracking-tight mb-1.5 uppercase">
+                      <h3 className="text-sm sm:text-[17px] font-extrabold text-[#062A78] tracking-tight mb-1 uppercase">
                         {item.title}
                       </h3>
-                      <p className="text-xs sm:text-[13px] text-[#64748b] leading-relaxed">
+                      <p className="text-[11.5px] sm:text-[13px] text-[#64748b] leading-relaxed">
                         {item.description}
                       </p>
                     </motion.div>

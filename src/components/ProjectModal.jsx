@@ -49,7 +49,7 @@ export const ProjectModal = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 overflow-y-auto">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -64,41 +64,41 @@ export const ProjectModal = ({
           initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 10 }}
-          className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 z-10"
+          className="relative w-full max-w-xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-slate-100 z-10 my-auto max-h-[92vh] flex flex-col"
         >
           {/* Header Banner */}
-          <div className="bg-[#0a1e38] text-white p-6 sm:p-7 relative">
+          <div className="bg-[#0a1e38] text-white p-5 sm:p-7 relative shrink-0">
             <button
               onClick={handleClose}
-              className="absolute top-5 right-5 p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition"
+              className="absolute top-4 sm:top-5 right-4 sm:right-5 p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition cursor-pointer"
               aria-label="Close dialog"
             >
               <X className="w-5 h-5" />
             </button>
-            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ffb703] uppercase tracking-wider mb-2">
+            <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#ffb703] uppercase tracking-wider mb-1.5">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Let's Build Something Great</span>
             </div>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
               Start Your Project
             </h3>
-            <p className="text-slate-300 text-sm mt-1">
+            <p className="text-slate-300 text-xs sm:text-sm mt-1 pr-6">
               Tell us about your digital goals. We'll respond with a roadmap in 24 hours.
             </p>
           </div>
 
           {submitted ? (
-            <div className="p-8 sm:p-10 text-center space-y-4">
-              <div className="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
-                <CheckCircle2 className="w-9 h-9" />
+            <div className="p-6 sm:p-10 text-center space-y-4 overflow-y-auto">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                <CheckCircle2 className="w-8 h-8 sm:w-9 sm:h-9" />
               </div>
-              <h4 className="text-2xl font-bold text-slate-900">
+              <h4 className="text-xl sm:text-2xl font-bold text-slate-900">
                 Thank you, {name}!
               </h4>
-              <p className="text-slate-600 text-sm sm:text-base max-w-md mx-auto">
+              <p className="text-slate-600 text-xs sm:text-sm md:text-base max-w-md mx-auto">
                 We've received your request for <strong>{selectedService}</strong>. Our lead strategist will reach out to <strong>{email}</strong> shortly.
               </p>
-              <div className="pt-4">
+              <div className="pt-3">
                 <button
                   onClick={handleClose}
                   className="bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-8 py-3 rounded-full text-sm transition shadow-sm cursor-pointer"
@@ -108,7 +108,7 @@ export const ProjectModal = ({
               </div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="p-6 sm:p-8 space-y-5">
+            <form onSubmit={handleSubmit} className="p-4 xs:p-6 sm:p-8 space-y-4 sm:space-y-5 overflow-y-auto">
               {/* Service Selection */}
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">

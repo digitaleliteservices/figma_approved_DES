@@ -645,7 +645,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
       {/* ================= 7. BOTTOM GRADIENT CTA BANNER ================= */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 relative z-10 mb-8">
         <div
-          className="rounded-[32px] p-10 sm:p-14 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+          className="rounded-[24px] sm:rounded-[32px] p-6 sm:p-12 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
           style={{
             background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
           }}
@@ -663,11 +663,11 @@ export function WebDevelopmentServicePage({ onStartProject }) {
               Let's create stunning designs that leave a lasting impression and drive your business forward.
             </p>
 
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               <button
                 type="button"
                 onClick={() => navigate('/contact')}
-                className="inline-flex items-center gap-2 bg-[#001f54] hover:bg-[#002b75] border border-blue-400/40 text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-[#001f54] hover:bg-[#002b75] border border-blue-400/40 text-white font-black text-sm px-8 py-3.5 rounded-full shadow-lg transition-all transform hover:scale-[1.02] cursor-pointer w-full sm:w-auto"
               >
                 <span>Get Started Today</span>
                 <ArrowRight className="w-4 h-4 text-white" />
@@ -675,7 +675,7 @@ export function WebDevelopmentServicePage({ onStartProject }) {
 
               <a
                 href="tel:+916366930178"
-                className="inline-flex items-center gap-2 bg-white text-[#082D72] hover:bg-slate-100 font-extrabold text-sm px-7 py-3.5 rounded-full shadow-md transition cursor-pointer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-[#082D72] hover:bg-slate-100 font-extrabold text-sm px-7 py-3.5 rounded-full shadow-md transition cursor-pointer w-full sm:w-auto"
               >
                 <Phone className="w-4 h-4 text-[#0066ff]" />
                 <span>Talk to Our Expert: +91 6366930178</span>

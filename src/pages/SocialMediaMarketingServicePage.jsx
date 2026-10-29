@@ -212,22 +212,22 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
       {/* ================= 1. HERO SECTION ================= */}
       <section className="relative pt-12 pb-16 lg:pt-16 lg:pb-20 z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
             {/* Left Hero Content */}
             <motion.div
-              initial={{ opacity: 0, x: -70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-7 space-y-6"
             >
               
               {/* Eyebrow Pill Tag */}
-              <div className="inline-flex items-center gap-2 px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md">
-                <span className="text-amber-500 text-xs">⚡</span>
-                <span className="font-extrabold text-[12px] leading-none tracking-[0.6px] uppercase text-[#0066ff]">
+              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-[6px] rounded-full bg-white/95 border border-[#D5E6FE] shadow-xs backdrop-blur-md max-w-full">
+                <span className="text-amber-500 text-xs shrink-0">⚡</span>
+                <span className="font-extrabold text-[11px] xs:text-[12px] leading-tight tracking-[0.4px] uppercase text-[#0066ff]">
                   POWERFUL SOCIAL MEDIA MARKETING SOLUTIONS
                 </span>
               </div>
@@ -260,11 +260,11 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
               </div>
 
               {/* CTA Button & Happy Clients */}
-              <div className="pt-2 flex flex-wrap items-center gap-5">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5 w-full sm:w-auto">
                 <button
                   type="button"
                   onClick={()=>navigate("/contact")}
-                  className="inline-flex items-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer text-center"
                 >
                   <span>Get Started</span>
                   <ArrowRight className="w-4 h-4 text-[#082D72]" />
@@ -297,8 +297,8 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
             {/* Right Column: Floating "Why Choose DES?" Card */}
             <motion.div
-              initial={{ opacity: 0, x: 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
               className="lg:col-span-5"
@@ -386,7 +386,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
       {/* ================= 3. OUR CORE SERVICES (6 NUMBERED CARDS) ================= */}
       <section className="py-16 sm:py-20 lg:py-24 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
@@ -405,12 +405,11 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 max-w-[1240px] mx-auto">
             {coreServices.map((service, index) => {
               const Icon = service.icon;
-              const isLeft = index % 2 === 0;
               return (
                 <motion.div
                   key={service.id}
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.75, delay: (index % 3) * 0.1, ease: [0.16, 1, 0.3, 1] }}
                   onClick={() => navigate("/contact")}
@@ -453,7 +452,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
       {/* ================= 4. WHY CHOOSE US? (4 VALUE CARDS) ================= */}
       <section className="py-16 sm:py-20 relative z-10 bg-slate-50/50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -469,12 +468,11 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-[1240px] mx-auto">
             {whyChooseUs.map((item, index) => {
               const Icon = item.icon;
-              const isLeft = index % 2 === 0;
               return (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: false, amount: 0.2 }}
                   transition={{ duration: 0.75, delay: (index % 4) * 0.08, ease: [0.16, 1, 0.3, 1] }}
                   className="bg-white rounded-[24px] p-6 border border-slate-200/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-md transition-shadow duration-200 flex flex-col justify-start"
@@ -498,7 +496,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
       {/* ================= 5. THE POWER OF GREAT DESIGN (4 PILLARS) ================= */}
       <section className="py-16 sm:py-20 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           <div className="text-center mb-12">
             <span className="text-xs sm:text-[18px] font-extrabold text-[#082D72] tracking-[0.16em] uppercase block">
@@ -531,7 +529,7 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
 
       {/* ================= 6. OUR DESIGN PROCESS (5-STEP WORKFLOW) ================= */}
       <section className="py-16 sm:py-20 lg:py-24 relative z-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
@@ -566,6 +564,49 @@ export function SocialMediaMarketingServicePage({ onStartProject }) {
             ))}
           </div>
 
+        </div>
+      </section>
+
+      {/* ================= 7. BOTTOM GRADIENT CTA BANNER ================= */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 sm:py-16 relative z-10 mb-8">
+        <div
+          className="rounded-[24px] sm:rounded-[32px] p-6 sm:p-12 lg:p-16 text-white text-center shadow-2xl relative overflow-hidden"
+          style={{
+            background: 'linear-gradient(90deg, #00153f 0%, #022475 35%, #0144aa 70%, #0062f5 100%)',
+          }}
+        >
+          {/* Ambient Glows */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-white/10 rounded-full filter blur-2xl pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-900/30 rounded-full filter blur-2xl pointer-events-none" />
+
+          <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center gap-5">
+            <h2 className="text-2xl sm:text-3xl md:text-[42px] font-black text-white tracking-[-0.03em] leading-tight">
+              Ready to Accelerate <br className="hidden sm:inline" />
+              <span className="text-[#FFB703]">Your Social Growth?</span>
+            </h2>
+
+            <p className="text-blue-100 text-xs sm:text-sm sm:leading-relaxed max-w-xl font-normal">
+              Let's create high-converting social campaigns that expand your reach, captivate your audience, and drive real business revenue.
+            </p>
+
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
+              <button
+                type="button"
+                onClick={() => navigate('/contact')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#FFB703] hover:bg-[#faa307] text-[#082D72] font-black text-sm px-8 py-3.5 rounded-full shadow-[0_4px_16px_rgba(255,183,3,0.35)] transition-all transform hover:scale-[1.02] cursor-pointer"
+              >
+                <span>Get Free Proposal</span>
+                <ArrowRight className="w-4 h-4 text-[#082D72]" />
+              </button>
+              <button
+                type="button"
+                onClick={() => navigate('/work')}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm px-7 py-3.5 rounded-full transition-all cursor-pointer"
+              >
+                <span>View Portfolio</span>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
 

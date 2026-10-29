@@ -50,21 +50,21 @@ export function ProcessPage({ onStartProject }) {
   return (
     <div className="min-h-screen bg-white pt-8 pb-20">
       {/* Header Banner */}
-      <section className="relative overflow-hidden py-16 lg:py-20 bg-gradient-to-b from-blue-50/70 via-white to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
+      <section className="relative overflow-hidden py-14 lg:py-20 bg-gradient-to-b from-blue-50/70 via-white to-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
           <span className="inline-block py-1 px-3.5 rounded-full bg-blue-100 text-[#0066ff] text-xs font-bold uppercase tracking-wider mb-4">
             TRANSPARENT & PREDICTABLE EXECUTION
           </span>
-          <h1 className="section-title text-[#0c2340] mb-5">
+          <h1 className="text-2xl sm:text-4xl lg:text-[44px] font-black leading-tight text-[#0c2340] mb-5 tracking-tight">
             How We Turn Ideas Into Market-Leading Products
           </h1>
-          <p className="section-subtitle text-slate-600 max-w-2xl mx-auto mb-8">
+          <p className="text-sm sm:text-base text-slate-600 max-w-2xl mx-auto mb-8 leading-relaxed">
             No guesswork. No hidden bottlenecks. Our proven 5-step engineering framework guarantees transparency, on-time delivery, and compounding digital ROI.
           </p>
 
           <button
             onClick={() => onStartProject?.('Process Consultation')}
-            className="button inline-flex items-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-[#0c2340] px-7 py-3 rounded-full shadow-md transition cursor-pointer"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-[#0c2340] font-black text-sm px-7 py-3.5 rounded-full shadow-md transition cursor-pointer"
           >
             <span>Schedule a Discovery Call</span>
             <ArrowRight className="w-4 h-4" />
@@ -73,25 +73,25 @@ export function ProcessPage({ onStartProject }) {
       </section>
 
       {/* Step by Step Timeline */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="space-y-12">
-          {steps.map((step, idx) => (
+      <section className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-10 sm:py-12">
+        <div className="space-y-8 sm:space-y-12">
+          {steps.map((step) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, x: idx % 2 === 0 ? -70 : 70 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-shadow duration-300 relative group"
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-slate-200/90 shadow-xs hover:shadow-xl transition-shadow duration-300 relative group"
             >
-              <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-xl shrink-0 group-hover:bg-[#0066ff] transition-colors">
+              <div className="flex flex-col md:flex-row md:items-start justify-between gap-5 sm:gap-6">
+                <div className="flex items-start gap-3.5 sm:gap-4">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#0c2340] text-white flex items-center justify-center font-extrabold text-lg sm:text-xl shrink-0 group-hover:bg-[#0066ff] transition-colors shadow-xs">
                     {step.number}
                   </div>
                   <div>
-                    <div className="flex flex-wrap items-center gap-3 mb-1.5">
-                      <h3 className="section-title text-xl sm:text-2xl text-[#0c2340]">
+                    <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 mb-1.5">
+                      <h3 className="text-lg sm:text-2xl font-black text-[#0c2340]">
                         {step.title}
                       </h3>
                       <span className="text-xs font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full flex items-center gap-1">
@@ -99,10 +99,10 @@ export function ProcessPage({ onStartProject }) {
                         {step.duration}
                       </span>
                     </div>
-                    <p className="text-xs font-semibold text-[#0066ff] uppercase tracking-wider mb-3">
+                    <p className="text-xs font-semibold text-[#0066ff] uppercase tracking-wider mb-2 sm:mb-3">
                       {step.tagline}
                     </p>
-                    <p className="body-text text-slate-600 text-sm mb-6">
+                    <p className="text-slate-600 text-xs sm:text-sm mb-5 leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -110,12 +110,12 @@ export function ProcessPage({ onStartProject }) {
               </div>
 
               {/* Deliverables Box */}
-              <div className="bg-slate-50/80 rounded-2xl p-4 sm:p-5 mt-2 border border-slate-100">
+              <div className="bg-slate-50/80 rounded-2xl p-4 sm:p-5 mt-1 border border-slate-100">
                 <div className="text-xs font-bold text-[#0c2340] uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
                   <Layers className="w-3.5 h-3.5 text-blue-600" />
                   <span>Key Deliverables</span>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs text-slate-700">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 text-xs text-slate-700">
                   {step.deliverables.map((item, dIdx) => (
                     <div key={dIdx} className="flex items-center gap-2">
                       <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
@@ -130,30 +130,30 @@ export function ProcessPage({ onStartProject }) {
       </section>
 
       {/* Assurance banner */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
+      <section className="max-w-5xl mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 mt-6 mb-8">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+          className="bg-emerald-50 border border-emerald-200/80 rounded-2xl p-5 sm:p-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-5 sm:gap-6"
         >
-          <div className="flex items-center gap-4">
-            <div className="w-12 h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
-              <ShieldCheck className="w-6 h-6" />
+          <div className="flex items-start sm:items-center gap-3.5 sm:gap-4">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 mt-0.5 sm:mt-0">
+              <ShieldCheck className="w-5 h-5 sm:w-6 sm:h-6" />
             </div>
             <div>
-              <h4 className="service-title text-[#0c2340] text-base mb-1">
+              <h4 className="font-extrabold text-[#0c2340] text-sm sm:text-base mb-1">
                 Zero Surprise Guarantee
               </h4>
-              <p className="text-xs text-slate-600">
+              <p className="text-xs text-slate-600 leading-relaxed">
                 Fixed milestone agreements, direct Slack / WhatsApp communication, and full intellectual property ownership handed to you on day one.
               </p>
             </div>
           </div>
           <button
             onClick={() => onStartProject?.()}
-            className="button bg-[#0c2340] hover:bg-slate-900 text-white px-6 py-2.5 rounded-full text-xs shrink-0 cursor-pointer shadow-sm"
+            className="w-full sm:w-auto bg-[#0c2340] hover:bg-slate-900 text-white font-black px-6 py-3 sm:py-2.5 rounded-full text-xs shrink-0 cursor-pointer shadow-sm text-center"
           >
             Start Your Project
           </button>

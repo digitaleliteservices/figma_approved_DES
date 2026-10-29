@@ -74,7 +74,7 @@ export const ServicesModal = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+      <div className="fixed inset-0 z-50 flex items-center justify-center p-3 xs:p-4 sm:p-6 overflow-y-auto">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -87,32 +87,32 @@ export const ServicesModal = ({
           initial={{ opacity: 0, scale: 0.96, y: 15 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.96, y: 15 }}
-          className="relative w-full max-w-3xl bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100 z-10 my-8"
+          className="relative w-full max-w-3xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden border border-slate-100 z-10 my-auto max-h-[92vh] flex flex-col"
         >
           {/* Top Bar */}
-          <div className="bg-[#0a1e38] text-white p-6 sm:p-8 flex items-center justify-between">
+          <div className="bg-[#0a1e38] text-white p-5 sm:p-8 flex items-start sm:items-center justify-between gap-3 shrink-0">
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-[#ffb703]">
                 Full-Service Capabilities
               </span>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl font-extrabold text-white mt-1">
                 Explore Our Digital Services
               </h3>
-              <p className="text-slate-300 text-sm mt-1 max-w-lg">
+              <p className="text-slate-300 text-xs sm:text-sm mt-1 max-w-lg">
                 End-to-end capabilities tailored to propel brands to industry leadership.
               </p>
             </div>
             <button
               onClick={onClose}
-              className="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition"
+              className="p-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition cursor-pointer shrink-0"
               aria-label="Close modal"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
           </div>
 
           {/* Service Cards Grid */}
-          <div className="p-6 sm:p-8 space-y-4 max-h-[60vh] overflow-y-auto">
+          <div className="p-4 xs:p-6 sm:p-8 space-y-3.5 sm:space-y-4 overflow-y-auto">
             {services.map((service) => {
               const Icon = service.icon;
               const isHighlight =
@@ -122,20 +122,20 @@ export const ServicesModal = ({
               return (
                 <div
                   key={service.name}
-                  className={`p-5 rounded-2xl border transition-all ${
+                  className={`p-4 sm:p-5 rounded-xl sm:rounded-2xl border transition-all ${
                     isHighlight
                       ? 'border-[#0066ff] bg-blue-50/40 shadow-sm'
                       : 'border-slate-200 hover:border-blue-200 hover:bg-slate-50/70'
                   }`}
                 >
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex items-start gap-4">
-                      <div className="w-11 h-11 rounded-xl bg-blue-100 text-[#0066ff] flex items-center justify-center shrink-0 mt-0.5">
-                        <Icon className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
+                    <div className="flex items-start gap-3 sm:gap-4">
+                      <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-blue-100 text-[#0066ff] flex items-center justify-center shrink-0 mt-0.5">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
                       <div>
                         <div className="flex items-center gap-2">
-                          <h4 className="text-lg font-bold text-[#0a1e38]">
+                          <h4 className="text-base sm:text-lg font-bold text-[#0a1e38]">
                             {service.name}
                           </h4>
                           {isHighlight && (
@@ -144,14 +144,14 @@ export const ServicesModal = ({
                             </span>
                           )}
                         </div>
-                        <p className="text-slate-600 text-sm font-medium mt-0.5">
+                        <p className="text-slate-600 text-xs sm:text-sm font-medium mt-0.5">
                           {service.tagline}
                         </p>
-                        <ul className="mt-2.5 space-y-1.5">
+                        <ul className="mt-2 space-y-1 sm:space-y-1.5">
                           {service.points.map((pt, i) => (
                             <li
                               key={i}
-                              className="text-xs text-slate-500 flex items-center gap-2"
+                              className="text-[11px] sm:text-xs text-slate-500 flex items-center gap-2"
                             >
                               <CheckCircle2 className="w-3.5 h-3.5 text-blue-500 shrink-0" />
                               <span>{pt}</span>
@@ -163,7 +163,7 @@ export const ServicesModal = ({
 
                     <button
                       onClick={() => onSelectServiceToQuote(service.name)}
-                      className="self-start sm:self-center shrink-0 inline-flex items-center gap-1.5 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-4 py-2 rounded-full text-xs shadow-xs transition cursor-pointer"
+                      className="self-stretch sm:self-center shrink-0 inline-flex items-center justify-center gap-1.5 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-4 py-2 rounded-full text-xs shadow-xs transition cursor-pointer mt-2 sm:mt-0"
                     >
                       <span>Inquire</span>
                       <ArrowRight className="w-3 h-3" />
@@ -175,7 +175,7 @@ export const ServicesModal = ({
           </div>
 
           {/* Footer Bar */}
-          <div className="bg-slate-50 px-6 sm:px-8 py-4 border-t border-slate-100 flex items-center justify-between">
+          <div className="bg-slate-50 px-4 xs:px-6 sm:px-8 py-3.5 sm:py-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2 shrink-0">
             <span className="text-xs text-slate-500">
               Need a custom multi-discipline scope?
             </span>

@@ -41,8 +41,8 @@ export const CtaSection = () => {
 /> */}
 
       {/* Main Container */}
-      <div className="w-full max-w-[1440px]  mx-auto px-6 sm:px-10 lg:px-16 xl:px-20 relative z-10 py-14 lg:py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center ">
+      <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10 py-12 sm:py-14 lg:py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-8 items-center">
           
           {/* ================= LEFT CONTENT COLUMN ================= */}
           <motion.div
@@ -50,21 +50,21 @@ export const CtaSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.2 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center "
+            className="lg:col-span-6 xl:col-span-5 flex flex-col justify-center"
           >
             {/* Eyebrow: Electric Blue uppercase */}
-            <div className="inline-flex items-center text-xs sm:text-[13px] font-bold text-[#0878F9] tracking-[0.12em] uppercase mb-4 sm:mb-5">
+            <div className="inline-flex items-center text-xs sm:text-[13px] font-bold text-[#0878F9] tracking-[0.12em] uppercase mb-3 sm:mb-5">
               <span>LET'S WORK TOGETHER</span>
             </div>
 
             {/* Headline: "Let's turn it into" / "impact." */}
-            <h2 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[42px] font-bold text-[#082D72] tracking-[-0.03em] leading-[1.08] mb-5 sm:mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[44px] font-bold text-[#082D72] tracking-[-0.03em] leading-[1.08] mb-4 sm:mb-6">
               Let's turn it <span className="text-[#0878F9]">into</span> <br />
               <span className="text-[#0878F9]">impact.</span>
             </h2>
 
             {/* Description Paragraph */}
-            <p className="text-[#4A607A] text-sm sm:text-[15px] xl:text-[16px] font-normal leading-[1.65] max-w-[450px] mb-8 sm:mb-10">
+            <p className="text-[#4A607A] text-sm sm:text-[15px] xl:text-[16px] font-normal leading-[1.65] max-w-[450px] mb-7 sm:mb-10">
               Tell us what you're building, what you're trying to solve, or where you want to grow. We'll
               help you find the right digital solution.
             </p>
@@ -74,7 +74,7 @@ export const CtaSection = () => {
               <button
                 id="cta-start-project-btn"
                 onClick={()=>navigate("/contact")}
-                className="group inline-flex items-center gap-2.5 bg-[#FDCE31] hover:bg-[#F8C41A] active:scale-98 text-[#082D72] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_10px_25px_-4px_rgba(253,206,49,0.55)] hover:shadow-[0_14px_32px_-4px_rgba(253,206,49,0.7)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px]"
+                className="group inline-flex items-center justify-center gap-2.5 bg-[#FDCE31] hover:bg-[#F8C41A] active:scale-98 text-[#082D72] font-bold px-7 sm:px-8 py-3.5 sm:py-4 rounded-full shadow-[0_10px_25px_-4px_rgba(253,206,49,0.55)] hover:shadow-[0_14px_32px_-4px_rgba(253,206,49,0.7)] transition-all duration-200 cursor-pointer text-sm sm:text-[15px] w-full sm:w-auto"
               >
                 <span>Start A Project</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1.5 text-[#082D72]" />
