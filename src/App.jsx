@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar.jsx';
 import { Footer } from './components/Footer.jsx';
 import { ScrollToTop } from './components/ScrollToTop.jsx';
+import { BackToTop } from './components/BackToTop.jsx';
 import { HomePage } from './pages/HomePage.jsx';
 import { AboutPage } from './pages/AboutPage.jsx';
 import { ServicesPage } from './pages/ServicesPage.jsx';
@@ -338,6 +339,9 @@ export default function App() {
           onStartProject={() => handleStartProject()}
           setActiveSection={setActiveSection}
         />
+
+        {/* Floating Back to Top Button */}
+        <BackToTop />
 
         {/* Interactive Modals */}
         <ProjectModal
