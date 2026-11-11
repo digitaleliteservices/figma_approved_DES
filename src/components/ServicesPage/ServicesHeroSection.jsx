@@ -91,7 +91,7 @@ export const ServicesHeroSection = ({ onExploreServices, onStartProject }) => {
               <div>
                 <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full border border-blue-100/90 bg-white shadow-2xs text-xs sm:text-[13px]">
                   <Check className="w-3.5 h-3.5 text-[#0066ff] stroke-[3]" />
-                  <span className="font-bold text-[#062A78]">24/7 Support</span>
+                  {/* <span className="font-bold text-[#062A78]">24/7 Support</span> */}
                   <span className="text-[#64748b]">(Always by your side)</span>
                 </div>
               </div>

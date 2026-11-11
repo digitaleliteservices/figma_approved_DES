@@ -45,13 +45,13 @@ export const Navbar = ({
   }, [location.pathname]);
 
   const subServices = [
-    {
-      name: 'Digital Marketing',
-      path: '/services/Digital-marketing-agency-in-bangalore',
-      description: 'Strategy, PPC & Organic Scaling',
-      icon: Megaphone,
-      color: 'bg-blue-50 text-[#0066ff]',
-    },
+    // {
+    //   name: 'Digital Marketing',
+    //   path: '/services/Digital-marketing-agency-in-bangalore',
+    //   description: 'Strategy, PPC & Organic Scaling',
+    //   icon: Megaphone,
+    //   color: 'bg-blue-50 text-[#0066ff]',
+    // },
     {
       name: 'SEO Optimization',
       path: '/services/seo-services-in-bangalore',
@@ -319,7 +319,7 @@ export const Navbar = ({
               onClick={() => navigate('/contact')}
               className="button group inline-flex items-center gap-1.5 lg:gap-2 bg-[#ffb703] hover:bg-[#faa307] active:scale-98 text-[#0c2340] font-bold px-3.5 lg:px-6 py-2 lg:py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer text-xs lg:text-sm whitespace-nowrap"
             >
-              <span>Start a Project</span>
+              <span>Get a FREE audit</span>
               <ArrowRight className="w-3.5 h-3.5 lg:w-4 lg:h-4 transition-transform duration-200 group-hover:translate-x-1" />
             </button>
           </div>
@@ -442,7 +442,7 @@ export const Navbar = ({
                   onClick={() => navigate('/contact')}
                   className="button w-full inline-flex items-center justify-center gap-2 bg-[#ffb703] hover:bg-[#faa307] text-slate-900 font-bold px-6 py-3 rounded-full shadow-sm text-sm"
                 >
-                  <span>Start a Project</span>
+                  <span>Free Audit</span>
                   <ArrowRight className="w-4 h-4" />
                 </button>
               </div>

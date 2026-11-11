@@ -298,10 +298,10 @@ export function LeadGenerationServicePage({ onStartProject }) {
                   <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                   <span>Verified Leads <span className="font-normal text-slate-500">(Zero fake inquiries)</span></span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-slate-200/80 text-[12px] font-bold text-[#082D72] shadow-xs">
+                {/* <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/95 border border-slate-200/80 text-[12px] font-bold text-[#082D72] shadow-xs">
                   <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                   <span>24/7 Support <span className="font-normal text-slate-500">(PPC Specialists)</span></span>
-                </div>
+                </div> */}
               </div>
 
               {/* CTA Button & Social Proof */}

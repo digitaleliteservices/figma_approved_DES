@@ -23,20 +23,20 @@ export const ServicesSection = ({
         </svg>
       ),
     },
-    {
-      id: 'digital-marketing',
-      path: '/services/Digital-marketing-agency-in-bangalore',
-      title: 'Digital Marketing',
-      description: 'Data-driven marketing strategies to reach your audience.',
-      iconBg: 'bg-[#7c3aed]',
-      icon: (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
-          <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-          <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-        </svg>
-      ),
-    },
+    // {
+    //   id: 'digital-marketing',
+    //   path: '/services/Digital-marketing-agency-in-bangalore',
+    //   title: 'Digital Marketing',
+    //   description: 'Data-driven marketing strategies to reach your audience.',
+    //   iconBg: 'bg-[#7c3aed]',
+    //   icon: (
+    //     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+    //       <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+    //       <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+    //       <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    //     </svg>
+    //   ),
+    // },
     {
       id: 'seo-optimization',
       path: '/services/seo-services-in-bangalore',
@@ -176,46 +176,39 @@ export const ServicesSection = ({
           </motion.div>
         </div>
 
-        {/* ================= 7 HORIZONTAL CARDS GRID ================= */}
-        <div className="w-full overflow-x-auto no-scrollbar pb-4 pt-1 px-1">
-          <div 
-            className="w-full grid gap-2.5 sm:gap-3 xl:gap-3.5"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(7, minmax(130px, 1fr))',
-              minWidth: '960px',
-            }}
-          >
+        {/* ================= 6 HORIZONTAL CARDS GRID ================= */}
+        <div className="w-full">
+          <div className="w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 sm:gap-4 xl:gap-5">
             {serviceCards.map((card) => (
               <div
                 key={card.id}
                 id={`service-card-${card.id}`}
                 onClick={() => navigate(card.path || `/services/${card.id}`)}
-                className="group relative bg-white rounded-[22px] p-3.5 sm:p-4 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[220px] sm:min-h-[255px] cursor-pointer"
+                className="group relative bg-white rounded-[22px] p-4 sm:p-5 border border-slate-200/90 shadow-[0_4px_20px_rgba(0,0,0,0.025)] hover:shadow-[0_14px_34px_rgba(0,102,255,0.12)] hover:border-blue-300 hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between min-h-[240px] sm:min-h-[265px] cursor-pointer"
               >
                 <div>
                   {/* Top Squircle Icon */}
                   <div
-                    className={`w-10 h-10 sm:w-11 sm:h-11 rounded-[14px] ${card.iconBg} flex items-center justify-center shadow-xs mb-3.5 sm:mb-4 group-hover:scale-108 transition-transform duration-300`}
+                    className={`w-11 h-11 sm:w-12 sm:h-12 rounded-[14px] ${card.iconBg} flex items-center justify-center shadow-xs mb-4 group-hover:scale-108 transition-transform duration-300`}
                   >
                     {card.icon}
                   </div>
 
                   {/* Card headings: Plus Jakarta Sans 700 */}
-                  <h3 className="text-[13.5px] sm:text-[14px] font-bold text-[#0f2c6cff] tracking-tight leading-snug mb-2 group-hover:text-[#0066ff] transition-colors">
+                  <h3 className="text-[14px] sm:text-[15px] font-bold text-[#0f2c6cff] tracking-tight leading-snug mb-2 group-hover:text-[#0066ff] transition-colors">
                     {card.title}
                   </h3>
 
                   {/* Body paragraphs: Plus Jakarta Sans 500 */}
-                  <p className="text-[11.5px] sm:text-[12px] text-slate-500 font-medium leading-[1.5]">
+                  <p className="text-[12px] sm:text-[12.5px] text-slate-500 font-medium leading-[1.5]">
                     {card.description}
                   </p>
                 </div>
 
                 {/* Bottom Circle Arrow Button */}
-                <div className="pt-3 sm:pt-3.5">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#0066ff] bg-white group-hover:border-[#0066ff] group-hover:bg-[#0066ff] group-hover:text-white transition-all duration-200 shadow-2xs">
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
+                <div className="pt-4">
+                  <div className="w-8 h-8 rounded-full border border-slate-200/90 flex items-center justify-center text-[#0066ff] bg-white group-hover:border-[#0066ff] group-hover:bg-[#0066ff] group-hover:text-white transition-all duration-200 shadow-2xs">
+                    <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </div>

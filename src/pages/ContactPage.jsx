@@ -235,7 +235,10 @@ export function ContactPage({ onStartProject }) {
                   <a href="tel:+916366930178" className="text-lg sm:text-[20px] sm:leading-[28px] font-black text-[#0878F9] hover:underline block mb-0.5">
                     +91 6366930178
                   </a>
-                  <div className="text-[12px] leading-[16px] font-bold text-[#475569]">+91 63669 30178</div>
+                   <a href="tel:+916366930176" className="text-lg sm:text-[20px] sm:leading-[28px] font-black text-[#0878F9] hover:underline block mb-0.5">
+                    +91 6366930176
+                  </a>
+                  {/* <div className="text-[12px] leading-[16px] font-bold text-[#475569]">+91 63669 30178</div> */}
                 </div>
               </div>
             </div>

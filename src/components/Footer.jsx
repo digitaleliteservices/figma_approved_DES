@@ -246,14 +246,14 @@ export const Footer = ({
                   Web Development
                 </button>
               </li>
-              <li>
+              {/* <li>
                 <button
                   onClick={() => navigate("/services/Digital-marketing-agency-in-bangalore")}
                   className="hover:text-white transition-colors text-left cursor-pointer"
                 >
                   Digital Marketing
                 </button>
-              </li>
+              </li> */}
               <li>
                 <button
                   onClick={() => navigate("/services/seo-services-in-bangalore")}
@@ -315,7 +315,8 @@ export const Footer = ({
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-slate-300 shrink-0 stroke-[1.8]" />
                 <a href="tel:+916366930178" className="hover:text-white transition-colors">
-                  +91 63669 30178
+                  +91 63669 30178 <br/>
+                  +91 63669 30176
                 </a>
               </li>
               <li className="flex items-start gap-3">
@@ -334,7 +335,7 @@ export const Footer = ({
           
           {/* Copyright Notice */}
           <div className="text-slate-400 text-xs sm:text-[13.5px] font-normal">
-            © 2024 DES Digital Elite Services. All rights reserved.
+            © 2026 DES Digital Elite Services. All rights reserved.
           </div>
 
           {/* Tagline + Circular Back to Top Button */}

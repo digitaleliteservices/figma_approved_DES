@@ -9,7 +9,8 @@ export const TailoredServicesSection = ({ onSelectService }) => {
 
   const handleCardClick = (service) => {
     if (service.id === 'digital-marketing') {
-      navigate('/services/Digital-marketing-agency-in-bangalore');
+      // navigate('/services/Digital-marketing-agency-in-bangalore');
+       navigate('/services');
     } else if (service.id === 'seo-optimization') {
       navigate('/services/seo-services-in-bangalore');
     } else if (service.id === 'social-media-marketing') {

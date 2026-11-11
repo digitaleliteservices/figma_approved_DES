@@ -1,4 +1,4 @@
-import desWebCredibilityImg from '../assets/images/portfolio-assets/2 (1).jpg';
+//import desWebCredibilityImg from '../assets/images/portfolio-assets/2 (1).jpg';
 import dhsBillboardImg from '../assets/images/portfolio-assets/2.jpg';
 import slcmsDegreeImg from '../assets/images/portfolio-assets/3.2.png';
 import samrudhiFarmlandImg from '../assets/images/portfolio-assets/Creative 03_10.png';
@@ -7,7 +7,7 @@ import dhsFuturePlotImg from '../assets/images/portfolio-assets/Creative 20.png'
 import aquaGoldCareImg from '../assets/images/portfolio-assets/Creative 7.png';
 import aquaGoldBottleImg from '../assets/images/portfolio-assets/Creative 8.png';
 import petsNHugsBoardingImg from '../assets/images/portfolio-assets/Creative-14.png';
-import desWebDevImg from '../assets/images/portfolio-assets/DES_6.jpg';
+//import desWebDevImg from '../assets/images/portfolio-assets/DES_6.jpg';
 import dhsAerialMasterplanImg from '../assets/images/portfolio-assets/DHSWTS.jpg';
 import hyderabadHouseBiriyaniImg from '../assets/images/portfolio-assets/HHB- 2.png';
 import hyderabadHousePaneerImg from '../assets/images/portfolio-assets/HHB-7.png';
@@ -61,18 +61,18 @@ export const PORTFOLIO_FILTERS = [
  * Main Featured Client Case Studies (Rich Cards)
  */
 export const PORTFOLIO_CASE_STUDIES = [
-  {
-    id: 1,
-    category: 'web',
-    tagBadge: 'WEB ARCHITECTURE',
-    subtitle: 'MODERN HIGH-SPEED STOREFRONT & PORTAL',
-    title: 'Website Development & Performance Platform',
-    client: 'Digital Elite Services',
-    summary: 'Engineered a modern, high-speed digital presence featuring sub-second load times, interactive micro-interactions, and conversion-optimized service delivery funnels.',
-    tags: ['React', 'Vite', 'Tailwind CSS', 'Performance'],
-    image: desWebDevImg,
-    actionType: 'info',
-  },
+  // {
+  //   id: 1,
+  //   category: 'web',
+  //   tagBadge: 'WEB ARCHITECTURE',
+  //   subtitle: 'MODERN HIGH-SPEED STOREFRONT & PORTAL',
+  //   title: 'Website Development & Performance Platform',
+  //   client: 'Digital Elite Services',
+  //   summary: 'Engineered a modern, high-speed digital presence featuring sub-second load times, interactive micro-interactions, and conversion-optimized service delivery funnels.',
+  //   tags: ['React', 'Vite', 'Tailwind CSS', 'Performance'],
+  //   image: desWebDevImg,
+  //   actionType: 'info',
+  // },
   {
     id: 2,
     category: 'brand',
@@ -175,14 +175,14 @@ export const PORTFOLIO_CASE_STUDIES = [
  * 14 Complete Visual Showcase Portfolio Items
  */
 export const PORTFOLIO_SHOWCASE_ITEMS = [
-  {
-    id: 'sc-1',
-    category: 'web',
-    badge: 'WEB DESIGN UX',
-    title: 'Credibility Web Design & UX Strategy',
-    client: 'Digital Elite Services',
-    image: desWebCredibilityImg,
-  },
+  // {
+  //   id: 'sc-1',
+  //   category: 'web',
+  //   badge: 'WEB DESIGN UX',
+  //   title: 'Credibility Web Design & UX Strategy',
+  //   client: 'Digital Elite Services',
+  //   image: desWebCredibilityImg,
+  // },
   {
     id: 'sc-2',
     category: 'brand',

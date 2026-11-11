@@ -99,22 +99,22 @@ export default function App() {
             />
 
             {/* Dedicated Sub-Service Route: Digital Marketing */}
-            <Route
+            {/* <Route
               path="/services/Digital-marketing-agency-in-bangalore"
               element={
                 <DigitalMarketingServicePage
                   onStartProject={handleStartProject}
                 />
               }
-            />
-            <Route
+            /> */}
+            {/* <Route
               path="/services/digital-marketing-agency-in-bangalore"
               element={
                 <DigitalMarketingServicePage
                   onStartProject={handleStartProject}
                 />
               }
-            />
+            /> */}
             <Route
               path="/services/digital-marketing"
               element={

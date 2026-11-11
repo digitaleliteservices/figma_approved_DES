@@ -262,10 +262,10 @@ export const Hero = ({
             </button>
           </div>
 
-          <div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-6 sm:mb-9" />
+          {/*<div className="w-full max-w-[490px] h-[1px] bg-slate-200/90 mb-6 sm:mb-9" />*/}
 
-          <div className="relative max-w-[500px]">
-            {/* <div className="absolute -left-12 -bottom-10 w-48 h-48 rounded-full bg-sky-100/60 blur-2xl z-0 pointer-events-none" /> */}
+       {/*   <div className="relative max-w-[500px]">
+           
 
             <div
               ref={statsContainerRef}
@@ -327,7 +327,7 @@ export const Hero = ({
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
 
         </motion.div>
       </div>

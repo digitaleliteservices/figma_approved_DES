@@ -162,50 +162,7 @@ export function AboutPage({ onStartProject, onMoreAboutUs }) {
               </p>
 
               {/* Thin Horizontal Divider (Exact to Screenshot) */}
-              <div className="pt-6 sm:pt-7 border-t border-slate-200/90 max-w-[560px] z-10">
-                {/* 4 Stats Metrics Row */}
-                <div ref={statsRowRef} className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
-                  {/* Stat 1 */}
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      <AnimatedStatNumber target={150} suffix="+" isVisible={isStatsRowVisible} duration={1600} />
-                    </div>
-                    <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
-                      Projects Completed
-                    </div>
-                  </div>
-
-                  {/* Stat 2 */}
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      <AnimatedStatNumber target={70} suffix="+" isVisible={isStatsRowVisible} duration={1600} />
-                    </div>
-                    <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
-                      Happy Clients
-                    </div>
-                  </div>
-
-                  {/* Stat 3 */}
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      <AnimatedStatNumber target={300} suffix="%" isVisible={isStatsRowVisible} duration={1800} />
-                    </div>
-                    <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
-                      Average ROI Increase
-                    </div>
-                  </div>
-
-                  {/* Stat 4 */}
-                  <div>
-                    <div className="text-2xl sm:text-3xl lg:text-[34px] font-bold text-[#062A78] tracking-tight leading-none">
-                      <AnimatedStatNumber target={5} suffix="+" isVisible={isStatsRowVisible} duration={1400} />
-                    </div>
-                    <div className="text-xs sm:text-[12.5px] text-slate-500 font-medium leading-snug mt-1.5">
-                      Years of Innovation
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </motion.div>
 
             {/* Right Photography Card */}

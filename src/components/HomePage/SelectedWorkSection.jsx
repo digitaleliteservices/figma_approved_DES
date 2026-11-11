@@ -23,14 +23,14 @@ export const SelectedWorkSection = ({
 
   // All real client portfolio items for carousel rotation
   const allProjects = [
-    {
-      id: 'web-dev-des',
-      title: 'High-Performance Web Portal',
-      category: 'Web Development • UI/UX',
-      image: desWebDevImg,
-      alt: 'Digital Elite Services modern high-speed website development platform',
-      twoLineTitle: false,
-    },
+    // {
+    //   id: 'web-dev-des',
+    //   title: 'High-Performance Web Portal',
+    //   category: 'Web Development • UI/UX',
+    //   image: desWebDevImg,
+    //   alt: 'Digital Elite Services modern high-speed website development platform',
+    //   twoLineTitle: false,
+    // },
     {
       id: 'mrcl-luxury-villas',
       title: 'Unicon Sugarland Luxury Villas',
